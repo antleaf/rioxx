@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://docs.rioxx.net/schema/v1.0/rioxxterms/" xmlns:rioxxterms="http://docs.rioxx.net/schema/v1.0/rioxxterms/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <xs:element name="creator">
+    <xs:complexType mixed="true">
+      <xs:attribute name="id" use="optional" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="funder" type="xs:string"/>
+
+  <xs:element name="projectid" type="xs:string"/>
+
+  <xs:element name="contributor">
+    <xs:complexType mixed="true">
+      <xs:attribute name="id" use="optional" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,2393 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxxterms/</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript">
+         <!--
+        var propertiesBoxes= new Array('properties_rioxxterms.xsd', 
+				'properties_apc', 
+				'properties_author', 
+				'properties_contributor', 
+				'properties_project', 
+				'properties_type', 
+				'properties_version', 
+				'properties_version-of-record', 
+				'properties_id', 
+				'properties_funder_id');
+var facetsBoxes= new Array('facets_apc', 
+				'facets_type', 
+				'facets_version', 
+				'facets_apcList', 
+				'facets_typeList', 
+				'facets_versionList');
+var usedByBoxes= new Array('usedBy_apc', 
+				'usedBy_author', 
+				'usedBy_contributor', 
+				'usedBy_project', 
+				'usedBy_publication_date', 
+				'usedBy_type', 
+				'usedBy_version', 
+				'usedBy_version-of-record', 
+				'usedBy_apcList', 
+				'usedBy_typeList', 
+				'usedBy_versionList', 
+				'usedBy_id', 
+				'usedBy_funder_name', 
+				'usedBy_funder_id');
+var diagramBoxes= new Array('diagram_apc', 
+				'diagram_author', 
+				'diagram_contributor', 
+				'diagram_project', 
+				'diagram_publication_date', 
+				'diagram_type', 
+				'diagram_version', 
+				'diagram_version-of-record', 
+				'diagram_apcList', 
+				'diagram_typeList', 
+				'diagram_versionList');
+var annotationBoxes= new Array('annotations_rioxxterms.xsd', 
+				'annotations_apc', 
+				'annotations_author', 
+				'annotations_contributor', 
+				'annotations_project', 
+				'annotations_publication_date', 
+				'annotations_type', 
+				'annotations_version', 
+				'annotations_version-of-record', 
+				'annotations_apcList', 
+				'annotations_typeList', 
+				'annotations_versionList', 
+				'annotations_id', 
+				'annotations_funder_name', 
+				'annotations_funder_id');
+var attributesBoxes= new Array('attributes_author', 
+				'attributes_contributor', 
+				'attributes_project');
+var assertsBoxes= new Array('asserts_project');
+var modelBoxes= new Array('model_project');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, annotationBoxes);" class="control" /></span><span class="globalControlName">Annotations</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, attributesBoxes);" class="control" /></span><span class="globalControlName">Attributes </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, assertsBoxes);" class="control" /></span><span class="globalControlName">Asserts </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, diagramBoxes);" class="control" /></span><span class="globalControlName">Diagrams</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, facetsBoxes);" class="control" /></span><span class="globalControlName">Facets </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, modelBoxes);" class="control" /></span><span class="globalControlName">Model </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
+                     </tr>
+                  </table>
+                  <div align="right"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+               </td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div><a id="rioxxterms.xsd"></a><div class="componentTitle">Imported schema <span class="qname">rioxxterms.xsd</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://www.rioxx.net/schema/v2.0/rioxxterms/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_rioxxterms.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_rioxxterms.xsd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_rioxxterms.xsd" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Schema for the RIOXX Terms used within the RIOXX Application Profile, version 2.0</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">Created 2015-01-21</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">Created by</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">Paul Walk (p.walk@ed.ac.uk)</span><span class="tI">
+</span><span class="tT">Ian Stuart (ian.stuart@ed.ac.uk)</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">Terminology</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">'the resource' refers to the electronic copy of a publication held in a </span><span class="tI">
+</span><span class="tT">repository, and is that which is being described by the RIOXX metadata record.</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">'version of record' refers to the version of the publication being described</span><span class="tI">
+</span><span class="tT">in the RIOXX metadata record which has been made available, electronically, by the publisher.</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">The terms MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD,</span><span class="tI">
+</span><span class="tT">SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL used in the descriptions</span><span class="tI">
+</span><span class="tT">below should be interpreted as described in RFC 2119 (http://www.ietf.org/rfc/rfc2119.txt).</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">Note that its cast into XSD 1.1 as XSD 1.0 has a restriction that limits all elements in </span><span class="tI">
+</span><span class="tT">an 'all' grouping to have a maxOccurs of zero or one.</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">Location: The xsd file is located at http://www.rioxx.net/schema/v2.0/rioxx/rioxxterms.xsd</span><span class="tI">
+</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_rioxxterms.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_rioxxterms.xsd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_rioxxterms.xsd" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">attribute form default</td>
+                                    <td><b>unqualified</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">element form default</td>
+                                    <td><b>qualified</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="apc"></a><div class="componentTitle">Element <span class="qname">rioxxterms:apc</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://www.rioxx.net/schema/v2.0/rioxxterms/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_apc" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_apc');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_apc" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">This element expresses whether or not the resource has an associated 'article processing</span><span class="tI">
+</span><span class="tT">charge'. The value of this element is taken from a controlled list.</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_apc" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_apc');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_apc" style="display:block"><img alt="Diagram" border="0" src="img/rioxxterms_xsd_Element_rioxxterms_apc.jpeg" usemap="#rioxxterms_xsd_Element_rioxxterms_apc" /><map name="rioxxterms_xsd_Element_rioxxterms_apc" id="rioxxterms_xsd_Element_rioxxterms_apc">
+                                 <area alt="rioxxterms_.tmp#apcList" href="rioxxterms_.html#apcList" coords="99,0,259,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="rioxxterms_.html#apcList" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxxterms/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxxterms/')">rioxxterms:apcList</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_apc" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_apc');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_apc" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>unknown</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_apc" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_apc');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_apc" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>paid</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>partially waived</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>fully waived</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>not charged</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>not required</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>unknown</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_apc" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_apc');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_apc" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="author"></a><div class="componentTitle">Element <span class="qname">rioxxterms:author</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://www.rioxx.net/schema/v2.0/rioxxterms/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_author" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_author');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_author" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">The author of the resource may be a person, organisation or service, but is most commonly a </span><span class="tI">
+</span><span class="tT">person. This element SHOULD take an optional attribute called 'id', which MUST contain an </span><span class="tI">
+</span><span class="tT">HTTP URI which uniquely identifies the author. Where there is more than one author,</span><span class="tI">
+</span><span class="tT">a separate 'rioxxterms:author' element MUST be used for each. As many authors may be </span><span class="tI">
+</span><span class="tT">entered as required. The ideal use of this element is to include both an HTTP URI in the id </span><span class="tI">
+</span><span class="tT">attribute, and a text string in the body of the element, thus:</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">    &lt;rioxxterms:author id="identifier-for-this-author-entity"&gt;</span><span class="tI">
+</span><span class="tT">        name-of-this-author-entity</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:author&gt;</span><span class="tI">
+</span><span class="tT">    </span><span class="tI">
+</span><span class="tT">Where the author is a person, the RECOMMENDED format is to add text in the form Last Name, </span><span class="tI">
+</span><span class="tT">First Name(s), and to include an ORCID (http://orcid.org) ID, if known, in its HTTP URI form, e.g.</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">    &lt;rioxxterms:author id="http://orcid.org/0000-0002-1395-3092"&gt;</span><span class="tI">
+</span><span class="tT">        Lawson, Gerald</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:author&gt;</span><span class="tI">
+</span><span class="tT">    </span><span class="tI">
+</span><span class="tT">Where the author is an organisation, the RECOMMENDED format is to add the official name of</span><span class="tI">
+</span><span class="tT">the organisation, and to include an ISNI (http://isni.org) ID, if known, in its HTTP URI form, e.g.</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">    &lt;rioxxterms:author id="http://isni.org/isni/0000000419367988"&gt;</span><span class="tI">
+</span><span class="tT">        University of Edinburgh</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:author&gt;</span><span class="tI">
+</span><span class="tT">    </span><span class="tI">
+</span><span class="tT">Where the _rioxxterms:author_ element appears multiple times for one record, it CAN be assumed</span><span class="tI">
+</span><span class="tT">that the order is significant, in that the first element describes the 'first named author' of</span><span class="tI">
+</span><span class="tT">the resource. In order to make this more explicit, an extra attribute, _first-named-author_,</span><span class="tI">
+</span><span class="tT">SHOULD be used to indicate which of the _rioxxterms:author_ elements describes the first named</span><span class="tI">
+</span><span class="tT">author of the resource, thus:</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">    &lt;rioxxterms:author id="http://orcid.org/0000-0002-1395-3092" first-named-author="true"&gt;</span><span class="tI">
+</span><span class="tT">        Lawson, Gerald</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:author&gt;</span><span class="tI">
+</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_author" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_author');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_author" style="display:block"><img alt="Diagram" border="0" src="img/rioxxterms_xsd_Element_rioxxterms_author.jpeg" usemap="#rioxxterms_xsd_Element_rioxxterms_author" /><map name="rioxxterms_xsd_Element_rioxxterms_author" id="rioxxterms_xsd_Element_rioxxterms_author">
+                                 <area alt="rioxxterms_.tmp#id" href="rioxxterms_.html#id" coords="130,119,256,143" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>extension of <b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_author" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_author');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_author" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_author" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_author');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_author" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_author" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_author');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_author" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th width="10%">Type</th>
+                                       <th width="5%">Use</th>
+                                       <th>Annotation</th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="rioxxterms_.html#id" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxxterms/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxxterms/')">rioxxterms:id</a></b></td>
+                                    <td><b>xs:anyURI</b></td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td width="100%"><pre><span class="tT">This attribute, if used, MUST hold an HTTP URI which uniquely identifies the entity its attached to.</span><span class="tI">
+</span><span class="tT">    </span><span class="tI">
+</span><span class="tT">Where the entity is a person, the id should be an ORCID (http://orcid.org) ID:</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">    &lt;rioxxterms:author id="http://orcid.org/0000-0002-1395-3092"&gt;</span><span class="tI">
+</span><span class="tT">        Lawson, Gerald</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:author&gt;</span><span class="tI">
+</span><span class="tT">    </span><span class="tI">
+</span><span class="tT">Where the entity is an organisation, the id should be an ISNI (http://isni.org) ID:</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">   &lt;rioxxterms:contributor id="http://isni.org/isni/0000000419367988"&gt;</span><span class="tI">
+</span><span class="tT">        University of Edinburgh</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:contributor&gt;</span></pre></td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="contributor"></a><div class="componentTitle">Element <span class="qname">rioxxterms:contributor</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://www.rioxx.net/schema/v2.0/rioxxterms/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_contributor" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_contributor');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_contributor" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">This field is designed to describe an entity – for example the name of a person, </span><span class="tI">
+</span><span class="tT">organisation or service – responsible for making contributions to the content of the </span><span class="tI">
+</span><span class="tT">resource. As many _rioxxterms:contributor_ elements may be entered as required. </span><span class="tI">
+</span><span class="tT">This element SHOULD take an optional attribute called _id_, which MUST hold an HTTP URI</span><span class="tI">
+</span><span class="tT">which uniquely identifies the contributor. The ideal use of this element</span><span class="tI">
+</span><span class="tT">is to include both an HTTP URI in the id attribute, and a text string in the body of</span><span class="tI">
+</span><span class="tT">the element, thus:</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">    &lt;rioxxterms:contributor id="identifier-for-this-contributor-entity"&gt;</span><span class="tI">
+</span><span class="tT">        name-of-this-contributor-entity</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:contributor&gt;</span><span class="tI">
+</span><span class="tT">    </span><span class="tI">
+</span><span class="tT">Where the contributor is a person, the RECOMMENDED format is to add text in the form Last Name, </span><span class="tI">
+</span><span class="tT">First Name(s), and to include an [ORCID](http://orcid.org) ID, if known, in its HTTP URI form, e.g.</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">    &lt;rioxxterms:contributor id="http://orcid.org/0000-0002-1395-3092"&gt;</span><span class="tI">
+</span><span class="tT">        Lawson, Gerald</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:contributor&gt;</span><span class="tI">
+</span><span class="tT">    </span><span class="tI">
+</span><span class="tT">Where the contributor is an organisation, the RECOMMENDED format is to add the official name of</span><span class="tI">
+</span><span class="tT">the organisation, and to include an [ISNI](http://isni.org) ID, if known, in its HTTP URI form, e.g.</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">    &lt;rioxxterms:contributor id="http://isni.org/isni/0000000419367988"&gt;</span><span class="tI">
+</span><span class="tT">        University of Edinburgh</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:contributor&gt;</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_contributor" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_contributor');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_contributor" style="display:block"><img alt="Diagram" border="0" src="img/rioxxterms_xsd_Element_rioxxterms_contributor.jpeg" usemap="#rioxxterms_xsd_Element_rioxxterms_contributor" /><map name="rioxxterms_xsd_Element_rioxxterms_contributor" id="rioxxterms_xsd_Element_rioxxterms_contributor">
+                                 <area alt="rioxxterms_.tmp#id" href="rioxxterms_.html#id" coords="155,119,281,143" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>extension of <b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_contributor" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_contributor');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_contributor" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_contributor" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_contributor');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_contributor" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_contributor" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_contributor');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_contributor" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th width="10%">Type</th>
+                                       <th width="5%">Use</th>
+                                       <th>Annotation</th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="rioxxterms_.html#id" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxxterms/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxxterms/')">rioxxterms:id</a></b></td>
+                                    <td><b>xs:anyURI</b></td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td width="100%"><pre><span class="tT">This attribute, if used, MUST hold an HTTP URI which uniquely identifies the entity its attached to.</span><span class="tI">
+</span><span class="tT">    </span><span class="tI">
+</span><span class="tT">Where the entity is a person, the id should be an ORCID (http://orcid.org) ID:</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">    &lt;rioxxterms:author id="http://orcid.org/0000-0002-1395-3092"&gt;</span><span class="tI">
+</span><span class="tT">        Lawson, Gerald</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:author&gt;</span><span class="tI">
+</span><span class="tT">    </span><span class="tI">
+</span><span class="tT">Where the entity is an organisation, the id should be an ISNI (http://isni.org) ID:</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">   &lt;rioxxterms:contributor id="http://isni.org/isni/0000000419367988"&gt;</span><span class="tI">
+</span><span class="tT">        University of Edinburgh</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:contributor&gt;</span></pre></td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="project"></a><div class="componentTitle">Element <span class="qname">rioxxterms:project</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://www.rioxx.net/schema/v2.0/rioxxterms/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_project" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_project');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_project" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">This is designed to collect the project ID(s), issued by the funder(s), that relate to the </span><span class="tI">
+</span><span class="tT">resource, together with the name and/or global identifier for the funder(s).</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">The element MUST contain one project ID, an alphanumeric identifier provided by the funder </span><span class="tI">
+</span><span class="tT">in its original format. In cases where the resource has been funded internally, an appropriate </span><span class="tI">
+</span><span class="tT">internal code might be used.</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">The element takes two attributes, 'funder_name' and 'funder_id'. One</span><span class="tI">
+</span><span class="tT">or both of 'funder_name' and 'funder_id' MUST be supplied.</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">funder_name</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">funder_id</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">Example</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">    &lt;rioxxterms:project</span><span class="tI">
+</span><span class="tT">        funder_name="Engineering and Physical Sciences Research Council"</span><span class="tI">
+</span><span class="tT">        funder_id="http://isni.org/isni/0000000403948681"</span><span class="tI">
+</span><span class="tT">        &gt;</span><span class="tI">
+</span><span class="tT">      EP/K023195/1</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:project&gt;</span><span class="tI">
+</span><span class="tT">    </span><span class="tI">
+</span><span class="tT">or</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">    &lt;rioxxterms:project</span><span class="tI">
+</span><span class="tT">        funder_name="Engineering and Physical Sciences Research Council"</span><span class="tI">
+</span><span class="tT">        funder_id="http://doi.org/10.13039/501100000266"</span><span class="tI">
+</span><span class="tT">        &gt;</span><span class="tI">
+</span><span class="tT">      EP/K023195/1</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:project&gt;</span><span class="tI">
+</span><span class="tT">    </span><span class="tI">
+</span><span class="tT">Where the resource has been funded by more than one funder a separate </span><span class="tI">
+</span><span class="tT">'rioxxterms:project' element MUST be added for each. Similarly, where several project</span><span class="tI">
+</span><span class="tT">IDs provided by the same funder have been attached to the resource, a separate </span><span class="tI">
+</span><span class="tT">'rioxxterms:project' element MUST be added for each.</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">This means that it is quite normal for a given 'funder_name', 'funder_id' or 'project_id' to appear </span><span class="tI">
+</span><span class="tT">in multiple instances of the 'rioxxterms:project' element in a single RIOXX metadata </span><span class="tI">
+</span><span class="tT">record.</span><span class="tI">
+</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_project" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_project');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_project" style="display:block"><img alt="Diagram" border="0" src="img/rioxxterms_xsd_Element_rioxxterms_project.jpeg" usemap="#rioxxterms_xsd_Element_rioxxterms_project" /><map name="rioxxterms_xsd_Element_rioxxterms_project" id="rioxxterms_xsd_Element_rioxxterms_project">
+                                 <area alt="rioxxterms_.tmp#funder_name" href="rioxxterms_.html#funder_name" coords="132,40,312,64" />
+                                 <area alt="rioxxterms_.tmp#funder_id" href="rioxxterms_.html#funder_id" coords="132,117,301,141" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_project" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_project');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_project" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">mixed</td>
+                                    <td><b>true</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_project" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_project');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_project" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_project" type="image" src="img/btM.gif" value="-" onclick="switchState('model_project');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_project" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_project" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_project');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_project" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th width="10%">Type</th>
+                                       <th width="5%">Use</th>
+                                       <th>Annotation</th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="rioxxterms_.html#funder_id" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxxterms/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxxterms/')">rioxxterms:funder_id</a></b></td>
+                                    <td><b>xs:anyURI</b></td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td width="100%"><pre><span class="tT">This SHOULD be a globally unique identifier for the funder of the resource.</span><span class="tI">
+</span><span class="tT">An HTTP URI MUST be used for this. It is RECOMMENDED that one of the following identifier schemes is used:</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">* an ISNI (http://isni.org) ID</span><span class="tI">
+</span><span class="tT">* a DOI (in its HTTP URI form) made available by FundRef (http://www.crossref.org/fundref/)</span></pre></td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="rioxxterms_.html#funder_name" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxxterms/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxxterms/')">rioxxterms:funder_name</a></b></td>
+                                    <td></td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td width="100%"><pre><span class="tT">The canonical name of the entity responsible for funding the resource SHOULD be recorded here as text.</span></pre></td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Asserts</b></div>
+                           <div class="floatRight"><input id="button_asserts_project" type="image" src="img/btM.gif" value="-" onclick="switchState('asserts_project');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="asserts_project" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>Test</th>
+                                       <th>XPath default namespace</th>
+                                       <th>Annotation</th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn">(@rioxxterms:funder_name or @rioxxterms:finder_id)</td>
+                                    <td width="10%"></td>
+                                    <td width="10%">
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="publication_date"></a><div class="componentTitle">Element <span class="qname">rioxxterms:publication_date</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://www.rioxx.net/schema/v2.0/rioxxterms/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_publication_date" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_publication_date');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_publication_date" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">This element takes the publication date of the resource in the form in which it would be cited. This </span><span class="tI">
+</span><span class="tT">element is not used in a RIOXX context but allows for a RIOXX record to become a reasonable bibliographic </span><span class="tI">
+</span><span class="tT">record for the resource. This is a free-text field.</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">Examples</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">    &lt;rioxxterms:publication_date&gt;</span><span class="tI">
+</span><span class="tT">      2011-02-23</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:publication_date&gt;</span><span class="tI">
+</span><span class="tT">      </span><span class="tI">
+</span><span class="tT">    &lt;rioxxterms:publication_date&gt;</span><span class="tI">
+</span><span class="tT">      Spring, 2010</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:publication_date&gt;&lt;/pre&gt;</span><span class="tI">
+</span><span class="tT">    </span><span class="tI">
+</span><span class="tT">As RIOXX is primarily concerned with such issues as compliance with funders’ mandates and licensing of </span><span class="tI">
+</span><span class="tT">open access publications, the critical dates for the assertion of compliance are those held in the 'start_date' </span><span class="tI">
+</span><span class="tT">attributes of the 'ali:license_ref' elements.</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_publication_date" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_publication_date');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_publication_date" style="display:block"><img alt="Diagram" border="0" src="img/rioxxterms_xsd_Element_rioxxterms_publication_date.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_publication_date" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_publication_date');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_publication_date" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="type"></a><div class="componentTitle">Element <span class="qname">rioxxterms:type</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://www.rioxx.net/schema/v2.0/rioxxterms/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_type" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_type" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Type refers to the ‘type’ - the nature or genre of the content of the resource. The value is taken</span><span class="tI">
+</span><span class="tT">from a Controlled List</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">Take care not to confuse this with 'dc:format'.</span><span class="tI">
+</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_type" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_type');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_type" style="display:block"><img alt="Diagram" border="0" src="img/rioxxterms_xsd_Element_rioxxterms_type.jpeg" usemap="#rioxxterms_xsd_Element_rioxxterms_type" /><map name="rioxxterms_xsd_Element_rioxxterms_type" id="rioxxterms_xsd_Element_rioxxterms_type">
+                                 <area alt="rioxxterms_.tmp#typeList" href="rioxxterms_.html#typeList" coords="103,0,267,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="rioxxterms_.html#typeList" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxxterms/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxxterms/')">rioxxterms:typeList</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_type" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_type" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_type" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_type" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Book</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Book chapter</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Book edited</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Conference Paper/Proceeding/Abstract</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Journal Article/Review</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Manual/Guide</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Monograph</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Policy briefing report</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Technical Report</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Technical Standard</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Thesis</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Consultancy Report</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Working paper</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_type" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_type" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="version"></a><div class="componentTitle">Element <span class="qname">rioxxterms:version</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://www.rioxx.net/schema/v2.0/rioxxterms/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_version" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_version');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_version" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">This element indicates which 'version' of the resource is being described. The value is from a</span><span class="tI">
+</span><span class="tT">controlled list</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_version" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_version');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_version" style="display:block"><img alt="Diagram" border="0" src="img/rioxxterms_xsd_Element_rioxxterms_version.jpeg" usemap="#rioxxterms_xsd_Element_rioxxterms_version" /><map name="rioxxterms_xsd_Element_rioxxterms_version" id="rioxxterms_xsd_Element_rioxxterms_version">
+                                 <area alt="rioxxterms_.tmp#versionList" href="rioxxterms_.html#versionList" coords="121,0,303,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="rioxxterms_.html#versionList" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxxterms/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxxterms/')">rioxxterms:versionList</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_version" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_version');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_version" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_version" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_version');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_version" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>AO</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>SMUR</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>AM</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>P</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>VoR</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>CVoR</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>EVoR</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>NA</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_version" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_version');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_version" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="version-of-record"></a><div class="componentTitle">Element <span class="qname">rioxxterms:version-of-record</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://www.rioxx.net/schema/v2.0/rioxxterms/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_version-of-record" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_version-of-record');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_version-of-record" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">This field MUST contain an HTTP URI which is a persistent identifier for the published version of</span><span class="tI">
+</span><span class="tT">the resource. If a DOI has been issued by the publisher then this MUST be used. Such a DOI</span><span class="tI">
+</span><span class="tT">MUST be represented in its HTTP form, for example:</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">    &lt;rioxxterms:version-of-record&gt;</span><span class="tI">
+</span><span class="tT">        http://doi.org/10.1006/jmbi.1995.0238</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:version-of-record&gt;</span><span class="tI">
+</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_version-of-record" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_version-of-record');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_version-of-record" style="display:block"><img alt="Diagram" border="0" src="img/rioxxterms_xsd_Element_rioxxterms_version-of-record.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:anyURI</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_version-of-record" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_version-of-record');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_version-of-record" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_version-of-record" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_version-of-record');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_version-of-record" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="apcList"></a><div class="componentTitle">Simple Type <span class="qname">rioxxterms:apcList</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://www.rioxx.net/schema/v2.0/rioxxterms/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_apcList" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_apcList');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_apcList" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">A Controlled List</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_apcList" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_apcList');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_apcList" style="display:block"><img alt="Diagram" border="0" src="img/rioxxterms_xsd_Simple_Type_rioxxterms_apcList.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>restriction of <b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_apcList" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_apcList');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_apcList" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>paid</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>partially waived</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>fully waived</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>not charged</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>not required</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>unknown</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_apcList" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_apcList');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_apcList" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxxterms_.html#apc" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxxterms/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxxterms/')">rioxxterms:apc</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="typeList"></a><div class="componentTitle">Simple Type <span class="qname">rioxxterms:typeList</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://www.rioxx.net/schema/v2.0/rioxxterms/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_typeList" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_typeList');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_typeList" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">A Controlled List</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_typeList" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_typeList');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_typeList" style="display:block"><img alt="Diagram" border="0" src="img/rioxxterms_xsd_Simple_Type_rioxxterms_typeList.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>restriction of <b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_typeList" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_typeList');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_typeList" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Book</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Book chapter</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Book edited</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Conference Paper/Proceeding/Abstract</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Journal Article/Review</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Manual/Guide</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Monograph</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Policy briefing report</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Technical Report</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Technical Standard</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Thesis</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Consultancy Report</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Working paper</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_typeList" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_typeList');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_typeList" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxxterms_.html#type" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxxterms/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxxterms/')">rioxxterms:type</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="versionList"></a><div class="componentTitle">Simple Type <span class="qname">rioxxterms:versionList</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://www.rioxx.net/schema/v2.0/rioxxterms/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_versionList" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_versionList');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_versionList" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">A Controlled List</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">The value is from a controlled list whose terms are adopted from the Journal Article</span><span class="tI">
+</span><span class="tT">Versions (JAV): Recommendations of the NISO/ALPSP JAV Technical Working Group</span><span class="tI">
+</span><span class="tT">(http://www.niso.org/publications/rp/RP-8-2008.pdf) and have the following meanings:</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">* AO = Author's Original</span><span class="tI">
+</span><span class="tT">* SMUR = Submitted Manuscript Under Review</span><span class="tI">
+</span><span class="tT">* AM = Accepted Manuscript</span><span class="tI">
+</span><span class="tT">* P = Proof</span><span class="tI">
+</span><span class="tT">* VoR = Version of Record</span><span class="tI">
+</span><span class="tT">* CVoR = Corrected Version of Record</span><span class="tI">
+</span><span class="tT">* EVoR = Enhanced Version of Record</span><span class="tI">
+</span><span class="tT">* NA = Not Applicable (or Unknown)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_versionList" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_versionList');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_versionList" style="display:block"><img alt="Diagram" border="0" src="img/rioxxterms_xsd_Simple_Type_rioxxterms_versionList.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>restriction of <b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_versionList" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_versionList');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_versionList" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>AO</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>SMUR</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>AM</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>P</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>VoR</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>CVoR</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>EVoR</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>NA</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_versionList" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_versionList');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_versionList" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxxterms_.html#version" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxxterms/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxxterms/')">rioxxterms:version</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="id"></a><div class="componentTitle">Attribute <span class="qname">@rioxxterms:id</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://www.rioxx.net/schema/v2.0/rioxxterms/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_id" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_id');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_id" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">This attribute, if used, MUST hold an HTTP URI which uniquely identifies the entity its attached to.</span><span class="tI">
+</span><span class="tT">    </span><span class="tI">
+</span><span class="tT">Where the entity is a person, the id should be an ORCID (http://orcid.org) ID:</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">    &lt;rioxxterms:author id="http://orcid.org/0000-0002-1395-3092"&gt;</span><span class="tI">
+</span><span class="tT">        Lawson, Gerald</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:author&gt;</span><span class="tI">
+</span><span class="tT">    </span><span class="tI">
+</span><span class="tT">Where the entity is an organisation, the id should be an ISNI (http://isni.org) ID:</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">   &lt;rioxxterms:contributor id="http://isni.org/isni/0000000419367988"&gt;</span><span class="tI">
+</span><span class="tT">        University of Edinburgh</span><span class="tI">
+</span><span class="tT">    &lt;/rioxxterms:contributor&gt;</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:anyURI</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_id" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_id');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_id" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_id" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_id');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_id" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Elements </td>
+                                    <td><b><a href="rioxxterms_.html#author" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxxterms/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxxterms/')">rioxxterms:author</a></b>, <b><a href="rioxxterms_.html#contributor" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxxterms/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxxterms/')">rioxxterms:contributor</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="funder_name"></a><div class="componentTitle">Attribute <span class="qname">@rioxxterms:funder_name</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://www.rioxx.net/schema/v2.0/rioxxterms/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_funder_name" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_funder_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_funder_name" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">The canonical name of the entity responsible for funding the resource SHOULD be recorded here as text.</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_funder_name" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_funder_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_funder_name" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxxterms_.html#project" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxxterms/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxxterms/')">rioxxterms:project</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="funder_id"></a><div class="componentTitle">Attribute <span class="qname">@rioxxterms:funder_id</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://www.rioxx.net/schema/v2.0/rioxxterms/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_funder_id" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_funder_id');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_funder_id" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">This SHOULD be a globally unique identifier for the funder of the resource.</span><span class="tI">
+</span><span class="tT">An HTTP URI MUST be used for this. It is RECOMMENDED that one of the following identifier schemes is used:</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">* an ISNI (http://isni.org) ID</span><span class="tI">
+</span><span class="tT">* a DOI (in its HTTP URI form) made available by FundRef (http://www.crossref.org/fundref/)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:anyURI</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_funder_id" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_funder_id');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_funder_id" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_funder_id" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_funder_id');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_funder_id" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxxterms_.html#project" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxxterms/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxxterms/')">rioxxterms:project</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr />
+         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor.
+         </div>
+      </div><script type="text/javascript">
+         <!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>

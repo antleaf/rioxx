@@ -1,0 +1,28 @@
+div.item-metadata-card-footer {
+	font-size: 0.75em;
+	text-align: right;
+	padding: 3px;
+}
+
+div.item-title-card-header {
+	text-align: center;
+}
+
+div.read-more {
+  text-align: right;
+  font-size: 80%;
+  font-style: italic;
+  clear: both;
+}
+
+div.read-more a {
+  /*text-decoration: none;*/
+}
+
+div.read-more a:hover {
+  /*text-decoration: underline;*/
+}
+
+a.pager,a.pager:visited,a.pager:hover {
+  color: #23527c;
+}

@@ -1,0 +1,30 @@
+div.sidebar {
+  font-size: 1em;
+}
+
+.sidebar-header {
+  font-weight: bold;
+  text-align: center;
+}
+
+.sidebar-header a {
+  text-decoration: none;
+}
+
+.sidebar-header a:hover {
+  text-decoration: underline;
+}
+
+.sidebar-sub-header {
+  font-weight: bold;
+}
+
+.sidebar-post-header {
+  font-weight: bold;
+}
+
+div.sidebar ul {
+  /*margin-left: 0px;*/
+  padding-left: 2px;
+  list-style-position: inside;
+}

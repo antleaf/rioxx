@@ -1,0 +1,29 @@
+{{ define "main" }}
+  {{ $metadata_profile_name := .Params.metadata_profile_name }}
+  <div class="row justify-content-start">
+    <div class="col">
+      <h1 class="page-title">{{.Title}}</h1>
+      {{ .Content }}
+      <table class="table table-condensed table-striped sorted-table">
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Cardinality</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range (where .Site.Pages "Params.metadata_profile" "==" $metadata_profile_name) }}
+            <tr>
+              <td>{{.Title}}</td>
+              <td>{{.Params.cardinality}}</td>
+              <td>
+                {{.Content}}
+              </td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{{ end }}

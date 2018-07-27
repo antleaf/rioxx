@@ -1,0 +1,28 @@
+{{ define "main" }}
+  <div class="row">
+    <div class="col">
+      <h1 class="page-title">{{humanize .Data.Singular}}: {{.Title}}</h1>
+      {{ .Content }}
+      {{ .Site.Taxonomies.blah }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-sm sorted-table table-hover table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+        	{{ range .Data.Pages }}
+	          <tr>
+	          	<td><a href="{{.Permalink}}">{{.Title }}</a></td>
+	          </tr>
+	        {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{{ end }}
+

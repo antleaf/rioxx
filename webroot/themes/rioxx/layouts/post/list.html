@@ -1,0 +1,39 @@
+{{ define "main" }}
+  <div class="row">
+    <div class="col">
+      <h1 class="page-title">{{.Title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-9 col-md-10">
+      <div class="row">
+        {{ $pageSize := .Site.Params.pageSize }}
+        {{ if eq .Title "News"}}
+          {{ range (.Paginate (where $.Site.RegularPages.ByDate.Reverse "Type" "post") $pageSize).Pages }}
+            {{ partial "news_listing" . }}
+          {{ end }}
+        {{ else }}
+          {{ range (.Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") $pageSize).Pages }}
+            {{ partial "news_listing" . }}
+          {{ end }}
+        {{ end }}
+      </div>
+      {{ partial "pagination" . }}
+    </div>
+    <div class="col-3 col-md-2 sidebar">
+      <div class="card">
+        <div class="card-header sidebar-header">
+          News Archive
+        </div>
+        <div class="card-body">
+          <ul>
+          {{ $sections := (.Site.GetPage "section" "post").Sections }}
+          {{ range sort $sections "Title" "desc" }}
+            <li><a href="{{.Permalink}}" class="title-link">{{ substr .Title 10}}</a></li>
+          {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }}

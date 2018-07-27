@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col" style="font-size: 1.5rem;">
+    {{ if .Draft }}
+      <span class="badge badge-primary" style="width: 100%;">This page is a draft</span>
+    {{ end }}
+
+    {{ if or (eq .Site.Params.ShowPageStatusTagsOnLiveSite true) (eq .Site.BuildDrafts true) }}
+      {{ if in .Params.tags "revise" }}
+        <span class="badge badge-warning">This page is marked for <a href="/tags/revise/">revision</a></span>
+      {{ end }}
+      {{ if in .Params.tags "archive" }}
+        <span class="badge badge-danger">This page is marked for <a href="/tags/archive/">archiving</a></span>
+      {{ end }}
+      {{ if in .Params.tags "delete" }}
+        <span class="badge badge-danger">This page is marked for <a href="/tags/delete/">deletion</a></span>
+      {{ end }}
+      {{ if in .Params.tags "broken" }}
+        <span class="badge badge-danger">This page is substantially <a href="/tags/broken/">broken</a> or has broken links</span>
+      {{ end }}
+      {{ if in .Params.tags "promote" }}
+        <span class="badge badge-success">This page is marked for <a href="/tags/promote/">promotion</a></span>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <div id="site-strapline" class="d-none d-sm-block">{{.Site.Params.tagline}}</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <a href="/"><img id="header-logo" src="/images/rioxx_logo.png"/></a>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div id="navbar-rioxx">
+      <div id="navbar-system-icons">
+        <a href="https://github.com/antleaf/rioxx" title="Github" name="Github">
+          <img class="header-icon" src="/images/icons/github.png"/>
+        </a>
+        <a type="application/rss+xml" href="/index.xml" title="RSS" name="RSS">
+          <img class="header-icon" src="/images/icons/rss.png"/>
+        </a>
+      </div>
+      <div id="navbar-menus">
+        {{partial "navbar" .}}
+      </div>
+    </div>
+  </div>
+</div>

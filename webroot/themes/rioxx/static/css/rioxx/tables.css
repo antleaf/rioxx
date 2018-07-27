@@ -1,0 +1,20 @@
+table,tr {
+  border: 1px #cdcdcd solid;
+  width: 100%;
+}
+
+th,td {
+  vertical-align: top;
+  padding: 5px;
+  border: 1px #cdcdcd solid;
+  /*font-size: 90%;*/
+}
+
+th {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+th,td {
+  font-size: 0.9em;
+}

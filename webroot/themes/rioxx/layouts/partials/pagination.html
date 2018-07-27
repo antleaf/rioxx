@@ -1,0 +1,10 @@
+<nav aria-label="Page navigation example" class="nav nav-fill justify-content-center">
+  <ul class="pagination">
+    {{if .Paginator.Prev}}
+      <li class="page-item"><a class="page-link pager" href="{{.Paginator.Prev.URL}}">Previous page</a></li>
+    {{ end }}
+    {{if .Paginator.Next}}
+      <li class="page-item"><a class="page-link pager" href="{{.Paginator.Next.URL}}">Next page</a></li>
+    {{ end }}
+  </ul>
+</nav>

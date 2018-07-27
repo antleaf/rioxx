@@ -1,0 +1,17 @@
+<div class="col-12 col-sm-6 col-xl-4">
+  <div class="card">
+    <div class="card-header item-title-card-header">
+      <a class="title-link" href="{{.Permalink}}">{{.Title}}</a>
+    </div>
+    <div class="card-body">
+      {{ .Summary }}
+      {{ if .Truncated }}
+        <div class="read-more"><a href="{{.Permalink}}">read more...</a></div>
+      {{ end }}
+    </div>
+    <div class="card-footer item-metadata-card-footer">
+      {{ partial "news_and_article_metadata" . }}
+    </div>
+  </div>
+  <br/>
+</div>

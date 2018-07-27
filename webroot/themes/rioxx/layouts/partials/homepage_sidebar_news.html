@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header sidebar-header">
+    Recent News
+  </div>
+  <div class="card-body">
+    <ul>
+    {{ range first 3 (where .Data.Pages.ByDate.Reverse "Type" "post") }}
+      <li><a class="title-link" href="{{.Permalink}}">{{.Title}}</a></li>
+    {{end}}
+    </ul>
+  </div>
+</div>
