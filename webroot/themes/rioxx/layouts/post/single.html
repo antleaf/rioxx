@@ -9,6 +9,8 @@
     	<div class="card">
 		    <div class="card-body">
 		      {{.Content}}
+
+		      {{ template "_internal/disqus.html" . }}
 		    </div>
 		    <div class="card-footer item-metadata-card-footer">
 		      {{ partial "news_and_article_metadata" . }}
