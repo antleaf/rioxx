@@ -18,7 +18,7 @@ The RIOXX Metadata Application Profile has been implemented in a number of syste
 ## Software components
 
 #### EPrints repository plugin
-This plugin is [funded and supported by Jisc](https://www.jisc.ac.uk/repository-technical-support). It adds the following functionality to an EPrints respository:
+This plugin is [funded and supported by Jisc](https://www.jisc.ac.uk/repository-technical-support). It adds the following functionality to an EPrints repository:
 
 * capture of additional metadata required by the RIOXX application profile
 * measurement of RIOXX compliance across the repository

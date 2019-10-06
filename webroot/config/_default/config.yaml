@@ -1,0 +1,26 @@
+languageCode: "en-gb"
+uglyURLs: false
+title: "RIOXX"
+author: "Paul Walk"
+copyright: "Copyright © Paul Walk. This website and blog are licensed under a <a rel='license' href='http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>"
+enableRobotsTXT: true
+metaDataFormat: "yaml"
+theme: "rioxx"
+enableGitInfo: false
+blackfriday:
+  smartypants: false
+  smartDashes: false
+  extensionsmask: ["autolink"] #disables these extensions
+disablePathToLower: true
+taxonomies:
+  tag: "tags"
+  topic: "topics"
+  category: "categories"
+permalinks:
+  post: "/:year/:month/:day/:title/"
+  page: "/:title/"
+params:
+  tagline: "the RIOXX metadata application profile and guidelines"
+  pageSize: "10"
+  AuthorName: "Paul Walk"
+  showPageStatusTagsOnLiveSite: true

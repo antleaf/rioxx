@@ -14,7 +14,7 @@ aliases:
 
 This is the final release of RCUK RIOXX application profile version 2.0. For more details on changes see the [release notes](/release_notes).
 
-[XSD Schema files and documentaiton to support this application profile are available](/schema/v2.0/rioxx/).
+[XSD Schema files and documentation to support this application profile are available](/schema/v2.0/rioxx/).
 
 ## Terminology
 
