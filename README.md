@@ -8,4 +8,8 @@ The sources for the website are licensed under a <a rel='license' href='http://c
 
 This repository is maintained by Paul Walk at [Antleaf](http://www.antleaf.com).
 
-![Antleaf logo](./antleaf_logo.png)
+<div style="text-align: center">
+  <img src="./antleaf_logo.png" style="float: left; max-height: 50px"/>
+  <img src="./ukcorr_logo2.png" style="float: left; max-height: 50px"/>
+</div>
+
