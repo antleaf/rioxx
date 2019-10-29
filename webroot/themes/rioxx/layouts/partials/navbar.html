@@ -10,9 +10,9 @@
       {{ if (eq .Section "post")}}<li class="nav-item nav-item-selected">{{ else }}<li class="nav-item">{{ end }}
         <a class="nav-link" href="/post/">News</a>
       </li>
-      {{ if (eq .Section "guidelines")}}<li class="nav-item nav-item-selected dropdown">{{ else }}<li class="nav-item dropdown">{{ end }}
+      <!-- {{ if (eq .Section "guidelines")}}<li class="nav-item nav-item-selected dropdown">{{ else }}<li class="nav-item dropdown">{{ end }}
         <a class="nav-link" href="/guidelines/">Guidelines</a>
-      </li>
+      </li> -->
       {{ if (eq .Section "specification")}}<li class="nav-item nav-item-selected">{{ else }}<li class="nav-item">{{ end }}
         <a class="nav-link" href="/profiles/v2-0-final/">Specification</a>
       </li>
@@ -22,9 +22,9 @@
       {{ if (eq .Section "mappings")}}<li class="nav-item nav-item-selected">{{ else }}<li class="nav-item">{{ end }}
         <a class="nav-link" href="/crosswalk_rioxx_2_0_openaire_3_0/">OpenAIRE-Mapping</a>
       </li>
-      <!-- {{ if (eq .Section "governance")}}<li class="nav-item nav-item-selected">{{ else }}<li class="nav-item">{{ end }}
+      {{ if (eq .Section "governance")}}<li class="nav-item nav-item-selected">{{ else }}<li class="nav-item">{{ end }}
         <a class="nav-link" href="/governance/">Governance</a>
-      </li> -->
+      </li>
       {{ if (eq .Section "about")}}<li class="nav-item nav-item-selected dropdown">{{ else }}<li class="nav-item dropdown">{{ end }}
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           About

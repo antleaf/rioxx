@@ -8,13 +8,17 @@ title: Governance
 topics: []
 ---
 
-In 2019, UKCORR took responsibility for hosting and supporting the newly-formed *RIOXX Governance Group*.
-
 ## Membership
-*TBA*
+* George Macgregor, University of Strathclyde (Chair)
+* Nicola Dowson, The Open University
+* Michael Eadie, University of Glasgow
+* Petr Knoth, Knowledge Media institute, The Open University (representing CORE)
+* Kate O'Neill, University of Sheffield
+* Paul Walk, Antleaf Ltd.
 
 ## Group Charter
-*coming soon*
+
+* [RIOXX Metadata Application Profile – Governance Group Charter](/governance/charter/)
 
 ## Meeting Minutes
-<!-- links to minutes will flow under here automatically -->
+* [Minutes - 2019-09-23](/governance/minutes/2019-09-23/)
