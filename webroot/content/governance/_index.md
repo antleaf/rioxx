@@ -19,6 +19,3 @@ topics: []
 ## Group Charter
 
 * [RIOXX Metadata Application Profile – Governance Group Charter](/governance/charter/)
-
-## Meeting Minutes
-* [Minutes - 2019-09-23](/governance/minutes/2019-09-23/)

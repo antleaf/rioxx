@@ -17,8 +17,8 @@ taxonomies:
   topic: "topics"
   category: "categories"
 permalinks:
-  post: "/:year/:month/:day/:title/"
-  page: "/:title/"
+  # post: "/:year/:month/:day/:title/"
+  # page: "/:title/"
 params:
   tagline: "the RIOXX metadata application profile and guidelines"
   pageSize: "10"

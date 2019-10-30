@@ -3,3 +3,4 @@ baseurl: "http://www.rioxx.net"
 disqusShortname: "rioxx"
 params:
   showPageStatusTags: false
+  showDebugInfo: false
