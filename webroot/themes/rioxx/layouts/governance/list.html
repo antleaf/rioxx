@@ -10,10 +10,10 @@
     </div>
     <div class="col-lg-4">
       <h2>Meeting Minutes</h2>
-      {{ with .GetPage "/governance/minutes/index.md" }}
+      {{ with .GetPage "/governance/minutes/_index.md" }}
         <ul>
-        {{ range .Resources.Match "*.md" }}
-          <li><a href="{{.Permalink}}">{{ .Title }}</a></li>
+        {{ range .Pages }}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
         {{ end }}
         </ul>
       {{ end }}

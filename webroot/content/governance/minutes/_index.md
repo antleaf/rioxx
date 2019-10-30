@@ -6,5 +6,6 @@ draft: false
 tags: []
 title: Governance Group Meeting Minutes
 topics: []
+layout: minutes
 ---
 
