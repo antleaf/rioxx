@@ -2,7 +2,7 @@
 categories: []
 date: '2016-03-21T10:00:43+00:00'
 description: ''
-draft: false
+draft: true
 tags: []
 title: RIOXX Basic Application Profile Version 2.0 Final
 topics: []
