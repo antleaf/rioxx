@@ -6,7 +6,7 @@ The website sources are designed to be rendered with the [Hugo static website en
 
 The sources for the website are licensed under a <a rel='license' href='http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
 
-This repository is maintained by Paul Walk at [Antleaf](http://www.antleaf.com)
+This repository is maintained by Paul Walk at [Antleaf](http://www.antleaf.com).
 
 <div style="text-align: center">
   <img src="./antleaf_logo.png" style="float: left; max-height: 50px"/>
