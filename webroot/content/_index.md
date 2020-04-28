@@ -12,7 +12,7 @@ This website contains technical and supporting information about the RIOXX Metad
 
 The RIOXX metadata application profile has been developed for repositories to share metadata about the scholarly resources they contain.
 
-RIOXX is managed by Antleaf, and governed and supported by UKCORR.
+RIOXX is managed by Antleaf, and is governed and supported by UKCORR.
 
 <div style="text-align: center">
 <a href="http://www.antleaf.com"><img src="/images/antleaf_logo.png" class="credit_logo" alt="Antleaf Logo"/></a>
