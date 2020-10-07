@@ -7,10 +7,6 @@ enableRobotsTXT: true
 metaDataFormat: "yaml"
 theme: "rioxx"
 enableGitInfo: false
-blackfriday:
-  smartypants: false
-  smartDashes: false
-  extensionsmask: ["autolink"] #disables these extensions
 disablePathToLower: true
 taxonomies:
   tag: "tags"
@@ -24,3 +20,39 @@ params:
   pageSize: "10"
   AuthorName: "Paul Walk"
   showPageStatusTagsOnLiveSite: true
+markup:
+  defaultMarkdownHandler: blackFriday
+  # defaultMarkdownHandler: goldmark
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: false
+    parser:
+      attribute: true
+      autoHeadingID: true
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xHTML: false
+  blackFriday:
+    angledQuotes: false
+    extensions: null
+    footnoteAnchorPrefix: ""
+    footnoteReturnLinkContents: ""
+    fractions: true
+    hrefTargetBlank: false
+    latexDashes: true
+    nofollowLinks: false
+    noreferrerLinks: false
+    plainIDAnchors: true
+    skipHTML: false
+    smartypants: false
+    smartDashes: false
+    extensionsmask: ["autolink"] #disables these extensions
+    smartypantsQuotesNBSP: false
+    taskLists: true
