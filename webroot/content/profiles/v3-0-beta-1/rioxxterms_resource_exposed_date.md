@@ -1,23 +1,25 @@
 ---
-date: '2016-03-21T10:00:43+00:00'
+date: '2020-10-08T10:00:43+00:00'
 draft: false
 type: metadata_profile_property
-title: rioxxterms:publication_date
+title: rioxxterms:resource_exposed_date
 cardinality: Zero or one
 requirement: Optional
-metadata_profile: v2-0-final
+metadata_profile: v3-0-draft
 ---
-This element takes the publication date of ***the resource*** in the form in which it would be cited. This element is not used in a RIOXX context but allows for a RIOXX record to become a reasonable bibliographic record for ***the resource***. This is a free-text field.
+This element captures the date on which ***the resource*** is made publicly available. Element content should be encoded according to the [W3CDTF](https://www.w3.org/TR/NOTE-datetime) (a profile of [ISO 8601](https://www.iso.org/standard/40874.html)) which typically follows the following format: YYYY-MM-DD.
 
 Examples:
 
-    <rioxxterms:publication_date>
-        2011-02-23
-    </rioxxterms:publication_date>
+    <rioxxterms:resource_exposed_date>
+        2019-02-23
+    </rioxxterms:resource_exposed_date>
     
-    <rioxxterms:publication_date>
-        Spring, 2010
-    </rioxxterms:publication_date>
+    <rioxxterms:resource_exposed_date>
+        2020-07-16T19:20+01:00
+    </rioxxterms:resource_exposed_date>
 
+Repositories will typically fulfil `rioxxterms:resource_exposed_date` if ***the resource*** is made publicly visible immediately upon deposit, or when ***the resource*** embargo ends. 
 
-As RIOXX is primarily concerned with such issues as compliance with funders' mandates and licensing of open access publications, the critical dates for the assertion of compliance are those held in the *start_date* attributes of the *ali:license_ref* elements.
+This element should not be confused `rioxxterms:record_public_release_date`. 
+
