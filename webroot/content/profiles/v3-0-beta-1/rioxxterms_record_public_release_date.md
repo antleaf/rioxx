@@ -1,6 +1,6 @@
 ---
 date: '2020-10-08T10:00:43+00:00'
-draft: true
+draft: false
 type: metadata_profile_property
 title: rioxxterms:record_public_release_date
 cardinality: Zero or one

@@ -2,12 +2,11 @@
 categories: []
 date: '2020-10-08T10:00:43+00:00'
 description: ''
-draft: true
+draft: false
 tags: []
 title: RCUK RIOXX Application Profile Version 3.0 Draft
 topics: []
 aliases:
-- "/v2-0-final/"
 layout: auto_profile
 deprecated: false
 ---
