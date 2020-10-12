@@ -8,7 +8,7 @@ requirement: Optional
 metadata_profile: v3-0-draft
 ---
 
-This element takes the date on which ***the resource*** was first deposited, irrespective of any relevant embargoes or dark archiving, and irrespective of any subsequent file replacement(s). Element content should be encoded according to the [W3CDTF](https://www.w3.org/TR/NOTE-datetime) (a profile of [ISO 8601](https://www.iso.org/standard/40874.html)) which typically follows the following format: YYYY-MM-DD.
+This element takes the date on which ***the resource*** was first deposited, irrespective of any relevant embargoes or dark archiving, and irrespective of any subsequent file replacement(s). Element content **MUST** be encoded according to the [W3CDTF](https://www.w3.org/TR/NOTE-datetime) (a profile of [ISO 8601](https://www.iso.org/standard/40874.html)) which typically follows the following format: YYYY-MM-DD.
 
 Examples:
 

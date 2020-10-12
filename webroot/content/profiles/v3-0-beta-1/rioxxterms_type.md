@@ -1,27 +1,20 @@
 ---
-date: '2016-03-21T10:00:43+00:00'
+date: '2020-10-09T14:00:43+00:00'
 draft: false
 type: metadata_profile_property
 title: rioxxterms:type
 cardinality: One or more
 requirement: Mandatory
-metadata_profile: v2-0-final
+metadata_profile: v3-0-draft
 ---
-Type refers to the 'type' - the nature or genre of the content of ***the resource***. Take care not to confuse this with *dc&#58;format*.
+Type refers to the 'type' - the nature or genre of the content of ***the resource***. This element should not be confused this with `dc:format`.
 
-Values recorded here **MUST** be from the following controlled list of types:
+Values recorded at `rioxxterms:type` **MUST** be taken from the [COAR Controlled Vocabulary for Resource Type Genres](http://vocabularies.coar-repositories.org/documentation/resource_types/) (Version 2.0), which provides a hierarchical model of resource type genres supported by language independent HTTP(S) URIs.
 
-* Book
-* Book chapter
-* Book edited
-* Conference Paper/Proceeding/Abstract
-* Journal Article/Review
-* Manual/Guide
-* Monograph
-* Policy briefing report
-* Technical Report
-* Technical Standard
-* Thesis
-* Other
-* Consultancy Report
-* Working paper
+Example:
+
+    <rioxxterms:type id="http://purl.org/coar/resource_type/c_5794">
+        conference paper
+    </rioxxterms:type>
+
+The COAR Controlled Vocabulary for Resource Type Genres is detailed in its treatment of type genres. It is anticipated that only the largest repositories would accommodate all vocabulary values, with most others implementing a subset in line with the resource types managed by the repository.

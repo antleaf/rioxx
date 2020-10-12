@@ -1,25 +1,24 @@
 ---
-date: '2016-03-21T10:00:43+00:00'
+date: '2020-10-09T10:00:43+00:00'
 draft: false
 type: metadata_profile_property
 title: ali:license_ref
 cardinality: One or more
 requirement: Mandatory
-metadata_profile: v2-0-final
+metadata_profile: v3-0-draft
 ---
-This is defined in the [NISO Open Access Metadata and Indicators](http://www.niso.org/workrooms/ali/). This element **MUST** take an HTTP URI for its value. This HTTP URI **MUST** point to a resource which expresses the license terms specifying how ***the resource*** may be used.
+This is defined in the [NISO Open Access Metadata and Indicators](http://www.niso.org/workrooms/ali/). This element **MUST** take an HTTP(S) URI for its value. This URI **MUST** point to a resource which expresses the license terms specifying how ***the resource*** may be used.
+
+Element content **MUST** be encoded according to the [W3CDTF](https://www.w3.org/TR/NOTE-datetime) (a profile of [ISO 8601](https://www.iso.org/standard/40874.html)) which typically follows the following format: YYYY-MM-DD.
 
 This element **MUST** include the attribute:
 
 * start_date
 
-This attribute takes a date value which **MUST** be encoded using ISO 8601 (post&#8211;2004 versions) which follows the following format: YYYY-MM-DD.
-
 This attribute is used to indicate the date upon which this license takes effect. Multiple *ali:license_ref* elements may be included. Where several such elements are included, the one with the *start_date* attribute indicating the most recent date takes precedence.
 
-Example:
-    
-    <ali:license_ref start_date="2015-02-17">http://creativecommons.org/licenses/by/4.0</ali:license_ref>
+Example:    
+    <ali:license_ref start_date="2019-11-17">http://creativecommons.org/licenses/by/4.0</ali:license_ref>
 
 This approach allows the expression of &#39;embargoes&#39;, where a particular license takes effect at a date in the subjective future.
 
