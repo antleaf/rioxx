@@ -1,5 +1,5 @@
 ---
-date: '2020-10-28T14:21:43+00:00'
+date: '2020-12-04T10:21:43+00:00'
 draft: false
 type: metadata_profile_property
 title: dc:identifier
@@ -12,3 +12,5 @@ This field **MUST** contain an HTTP(S) URI which is a persistent identifier for 
 Note that RIOXX does not require any require particular file format to be used for ***the resource***.
 
 To describe another version of ***the resource*** with a different identifier, a completely separate RIOXX record should be created.
+
+@@@Need for dcterms:hasFormat to accommodate different 'expressions' of a PDF, e.g. JATS, Word, etc. 
