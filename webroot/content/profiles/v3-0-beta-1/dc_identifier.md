@@ -14,3 +14,5 @@ Note that RIOXX does not require any require particular file format to be used f
 To describe another version of ***the resource*** with a different identifier, a completely separate RIOXX record should be created.
 
 @@@Need for dcterms:hasFormat to accommodate different 'expressions' of a PDF, e.g. JATS, Word, etc. 
+
+@@@Files, items -- listing relevant files. File inventory.

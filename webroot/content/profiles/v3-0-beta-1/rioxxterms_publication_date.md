@@ -31,5 +31,5 @@ Examples:
         Spring, 2010
     </rioxxterms:publication_date>
 
-@@@Based on REF guidance, ISO8601 could be followed, obviating the need for this to be a free-text field.
+@@@Based on REF guidance, ISO8601-2004 could be followed, obviating the need for this to be a free-text field.
 
