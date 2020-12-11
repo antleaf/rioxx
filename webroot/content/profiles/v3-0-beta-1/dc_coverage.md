@@ -1,10 +1,15 @@
 ---
-date: '2016-03-21T10:00:43+00:00'
+date: '2020-11-18T10:00:43+00:00'
 draft: false
 type: metadata_profile_property
 title: dc:coverage
 cardinality: Zero or more
 requirement: Optional
-metadata_profile: v2-0-final
+metadata_profile: v3-0-draft
 ---
-The [Openaire Guidelines recommend the inclusion of this element](https://guidelines.openaire.eu/wiki/Literature_Guidelines:_Metadata_Field_Coverage).
+Coverage (`dc:coverage`) will typically include temporal period (a period label, date, or date range) or jurisdiction (such as a named administrative entity).
+
+In line with the [Openaire Guidelines, which recommends the inclusion of this element](https://guidelines.openaire.eu/wiki/Literature_Guidelines:_Metadata_Field_Coverage), `dc:coverage` is also considered a recommended property in RIOXX. 
+
+@@@TBC -- examples of GeoLocation???
+
