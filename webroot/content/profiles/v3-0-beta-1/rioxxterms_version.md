@@ -1,11 +1,11 @@
 ---
-date: '2016-03-21T10:00:43+00:00'
+date: '2021-01-15T10:00:43+00:00'
 draft: false
 type: metadata_profile_property
 title: rioxxterms:version
 cardinality: Exactly one
 requirement: Mandatory
-metadata_profile: v2-0-final
+metadata_profile: v3-0-draft
 ---
 This element indicates which &#39;version&#39; of ***the resource*** is being described. The value of this element **MUST** be one of the following:
 

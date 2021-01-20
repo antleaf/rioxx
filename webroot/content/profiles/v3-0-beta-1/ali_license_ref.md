@@ -18,7 +18,7 @@ This element **MUST** include the attribute:
 This attribute is used to indicate the date upon which this license takes effect. Multiple *ali:license_ref* elements may be included. Where several such elements are included, the one with the *start_date* attribute indicating the most recent date takes precedence.
 
 Example:    
-    <ali:license_ref start_date="2019-11-17">http://creativecommons.org/licenses/by/4.0</ali:license_ref>
+    `<ali:license_ref start_date="2020-11-17">https://creativecommons.org/licenses/by/4.0</ali:license_ref>`
 
 This approach allows the expression of &#39;embargoes&#39;, where a particular license takes effect at a date in the subjective future.
 

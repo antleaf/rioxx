@@ -1,11 +1,11 @@
 ---
-date: '2016-03-21T10:00:43+00:00'
+date: '2021-01-15T10:00:43+00:00'
 draft: false
 type: metadata_profile_property
 title: rioxxterms:project
 cardinality: One or more
-requirement: Mandatory
-metadata_profile: v2-0-final
+requirement: Optional
+metadata_profile: v3-0-draft
 ---
 This is designed to collect the project ID(s), issued by the funder(s), that relate to ***the resource***, together with the name and/or global identifier for the funder(s).
 
@@ -20,14 +20,13 @@ The canonical name of the entity responsible for funding ***the resource*** **SH
 A globally unique identifier for the funder of ***the resource*** **SHOULD** be recorded here. An HTTP URI **MUST** be used for this. It is **RECOMMENDED** that one of the following identifier schemes is used:
 
 * an [ISNI](http://isni.org) ID
-* a DOI (in its HTTP URI form) made available by [FundRef](http://www.crossref.org/fundref/)
+* a DOI (in its HTTPS URI form) made available by [FundRef](http://www.crossref.org/fundref/)
 
 ## Example
 
     <rioxxterms:project
         funder_name="Engineering and Physical Sciences Research Council"
-        funder_id="http://isni.org/isni/0000000403948681"
-    >
+        funder_id="https://isni.org/isni/0000000403948681">
         EP/K023195/1
     </rioxxterms:project>
 
@@ -35,8 +34,7 @@ or
 
     <rioxxterms:project
         funder_name="Engineering and Physical Sciences Research Council"
-        funder_id="http://dx.doi.org/10.13039/501100000266"
-    >
+        funder_id="https://doi.org/10.13039/501100000266">
         EP/K023195/1
     </rioxxterms:project>
 
