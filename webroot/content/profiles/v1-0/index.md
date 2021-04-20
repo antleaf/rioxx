@@ -9,11 +9,11 @@ topics: []
 aliases:
 - "/v1-0/"
 layout: auto_profile
-deprecated: true
+status: deprecated
 ---
 
 
-Note that there is a newer version of the application profile - [please check here for the latest version](http://rioxx.net/versions/)
+Note that there is a newer version of the application profile - [please check here for the latest version](/release_notes/)
 
 This is the first release of the RIOXX application profile, version 1.0. There are no changes from the previous draft version (0.91)
 

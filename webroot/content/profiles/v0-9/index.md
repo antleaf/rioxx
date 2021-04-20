@@ -8,9 +8,9 @@ title: RCUK RIOXX Application Profile Version 0.9
 topics: []
 aliases:
   - /v0-9/
-deprecated: true
+status: deprecated
 ---
-Note that there is a newer version of the application profile - [please check here for the latest version](http://rioxx.net/versions/)
+Note that there is a newer version of the application profile - [please check here for the latest version](/release_notes/)
 
 <p>
 This section details the application profile for RIOXX. The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>.

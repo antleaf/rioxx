@@ -8,12 +8,8 @@ title: RCUK RIOXX Application Profile Version 3.0 Draft
 topics: []
 aliases:
 layout: auto_profile
-deprecated: false
+status: draft
 ---
-
-This is the draft release of RIOXX application profile version 3.0. For more details on changes see the [release notes](/release_notes).
-
-[XSD Schema files and documentation to support this application profile are available](/schema/v2.0/rioxx/).
 
 ## Terminology
 

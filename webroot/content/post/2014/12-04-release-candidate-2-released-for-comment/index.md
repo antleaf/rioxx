@@ -13,7 +13,7 @@ aliases:
 
 Following further public consultation and discussion with stakeholders, we have just released  [RIOXX 2.0 Release Candidate 2](/v2-0-rc-2) for comment.
 
-The changes from RIOXX 2.0 Beta 1 are detailed in the [release notes](/release_notes), but the most significant change is that we have added a recommendation to use [ISNI](http://isni.org) identifiers for for organisations when named as authors, contributors or funders.
+The changes from RIOXX 2.0 Beta 1 are detailed in the [release notes](/release_notes/), but the most significant change is that we have added a recommendation to use [ISNI](http://isni.org) identifiers for for organisations when named as authors, contributors or funders.
 
 We think RIOXX 2.0 is very close to being ready for its final release and are aiming for a release date of 2015-01-09.
 

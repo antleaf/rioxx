@@ -21,8 +21,8 @@ params:
   AuthorName: "Paul Walk"
   showPageStatusTagsOnLiveSite: true
 markup:
-  defaultMarkdownHandler: blackFriday
-  # defaultMarkdownHandler: goldmark
+#  defaultMarkdownHandler: blackFriday
+  defaultMarkdownHandler: goldmark
   goldmark:
     extensions:
       definitionList: true

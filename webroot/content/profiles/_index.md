@@ -10,13 +10,15 @@ aliases:
 layout: profiles_list
 ---
 
-#### Version 2.0 Final Release
+
+
+#### [Version 2.0 Final Release](/profiles/v2-0-final/)
 
 ###### Changes since version 2.0 RC 2
 
 * changed &lt;dcterms:dateAccepted&gt; to only allow YYYY-MM-DD and not YYYY-MM
 
-#### Version 2.0 RC 2
+#### [Version 2.0 RC 2](/profiles/v2-0-rc-2/)
 
 ###### Changes since version 2.0 beta 1
 
@@ -27,11 +29,7 @@ layout: profiles_list
 * added the ali namespace prefix to &lt;license_ref&gt; and &lt;free_to_read&gt;
 * added recommendation to use ISNI for identification of funders, as well as for authors and contributors where these are organisations
 
-
-#### Version 2.0 RC 1
-This version was never published, but was used for further consultation with stakeholders
-
-#### Version 2.0 beta 1
+#### [Version 2.0 beta 1](/profiles/v2-0-beta-1/)
 
 This is an updated version of the RIOXX application profile, enhanced following the outcomes of the [V4OA](http://www.v4oa.net) project.
 
@@ -52,5 +50,5 @@ This is an updated version of the RIOXX application profile, enhanced following 
 * the &lt;dcterms:references&gt; element has been removed.
 * &lt;rioxxterms:publication_date&gt; has been added
 
-#### Version 1.0
+#### [Version 1.0](/profiles/v1-0/)
 This is the initial release of the RIOXX application profile

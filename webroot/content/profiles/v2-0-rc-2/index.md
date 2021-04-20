@@ -9,13 +9,11 @@ topics: []
 aliases:
 - "/v2-0-rc-2/"
 layout: auto_profile
-deprecated: true
+status: deprecated
 ---
 
 
-Note that there is a newer version of the application profile - [please check here for the latest version](http://rioxx.net/versions/)
-
-This is an updated version of the RIOXX application profile. For more details on changes see the [release notes](/release_notes)
+Note that there is a newer version of the application profile - [please check here for the latest version](/release_notes/)
 
 ## Terminology
 

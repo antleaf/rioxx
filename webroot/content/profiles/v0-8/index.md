@@ -8,10 +8,10 @@ title: RCUK RIOXX Application Profile Version 0.8
 topics: []
 aliases:
   - "/v0-8/"
-deprecated: true
+status: obsolete
 ---
 
-Note that there is a newer version of the application profile - [please check here for the latest version](http://rioxx.net/versions/)
+Note that there is a newer version of the application profile - [please check here for the latest version](/release_notes/)
 
 <table border="1" cellspacing="0" cellpadding="0">
 <tbody>

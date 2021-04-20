@@ -16,3 +16,4 @@ To describe another version of ***the resource*** with a different identifier, a
 @@@Need for dcterms:hasFormat to accommodate different 'expressions' of a PDF, e.g. JATS, Word, etc. 
 
 @@@Files, items -- listing relevant files. File inventory.
+

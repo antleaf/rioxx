@@ -9,11 +9,11 @@ topics: []
 aliases:
 - "/v1-2-a/"
 layout: auto_profile
-deprecated: true
+status: deprecated
 ---
 
 
-Note that there is a newer version of the application profile - [please check here for the latest version](http://rioxx.net/versions/)
+Note that there is a newer version of the application profile - [please check here for the latest version](/release_notes/)
 
 This is an updated version of the RIOXX applicaiton profile, enhanced following the outcomes of the [V4OA](http://www.v4oa.net) project.
 

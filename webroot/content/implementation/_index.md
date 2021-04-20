@@ -12,7 +12,6 @@ The RIOXX Metadata Application Profile has been implemented in a number of syste
 
 * [re-usable software components](#software_components)
 * [systems which *consume* RIOXX metadata](#consuming_systems)
-* [live instances of repositories which *publish* RIOXX metadata](#live_repositories)
 
 <a name="software_components"></a>
 ## Software components
