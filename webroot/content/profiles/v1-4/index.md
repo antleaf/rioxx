@@ -8,13 +8,8 @@ title: RCUK RIOXX Application Profile Version 1.4
 topics: []
 aliases:
 - "/v1-4/"
-layout: auto_profile
-status: deprecated
----
-
-
-Note that there is a newer version of the application profile - [please check here for the latest version](/release_notes/)
-
+status: obsolete
+---obsolete
 
 This is an updated version of the RIOXX application profile, enhanced following the outcomes of the [V4OA](http://www.v4oa.net) project.
 

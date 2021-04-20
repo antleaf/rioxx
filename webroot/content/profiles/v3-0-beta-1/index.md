@@ -7,7 +7,6 @@ tags: []
 title: RCUK RIOXX Application Profile Version 3.0 Draft
 topics: []
 aliases:
-layout: auto_profile
 status: draft
 ---
 

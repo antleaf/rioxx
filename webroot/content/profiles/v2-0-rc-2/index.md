@@ -8,12 +8,9 @@ title: RCUK RIOXX Application Profile Version 2.0 RC 2
 topics: []
 aliases:
 - "/v2-0-rc-2/"
-layout: auto_profile
-status: deprecated
+status: obsolete
 ---
 
-
-Note that there is a newer version of the application profile - [please check here for the latest version](/release_notes/)
 
 ## Terminology
 

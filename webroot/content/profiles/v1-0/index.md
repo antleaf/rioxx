@@ -8,12 +8,8 @@ title: RCUK RIOXX Application Profile Version 1.0
 topics: []
 aliases:
 - "/v1-0/"
-layout: auto_profile
-status: deprecated
+status: obsolete
 ---
-
-
-Note that there is a newer version of the application profile - [please check here for the latest version](/release_notes/)
 
 This is the first release of the RIOXX application profile, version 1.0. There are no changes from the previous draft version (0.91)
 

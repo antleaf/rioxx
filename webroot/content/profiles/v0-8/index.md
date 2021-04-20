@@ -9,9 +9,8 @@ topics: []
 aliases:
   - "/v0-8/"
 status: obsolete
+layout: single_special_case
 ---
-
-Note that there is a newer version of the application profile - [please check here for the latest version](/release_notes/)
 
 <table border="1" cellspacing="0" cellpadding="0">
 <tbody>

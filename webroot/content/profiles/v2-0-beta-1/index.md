@@ -8,14 +8,10 @@ title: RCUK RIOXX Application Profile Version 2.0 beta 1
 topics: []
 aliases:
 - "/v2-0-beta-1/"
-layout: auto_profile
-status: deprecated
+status: obsolete
 ---
 
-
-Note that there is a newer version of the application profile - [please check here for the latest version](/release_notes/)
-
-This is an updated version of the RIOXX application profile, enhanced following the outcomes of the [V4OA](http://www.v4oa.net) project. For more details on changes see the [release notes](/release_notes/)
+This is an updated version of the RIOXX application profile, enhanced following the outcomes of the [V4OA](http://www.v4oa.net) project.
 
 ## Terminology
 

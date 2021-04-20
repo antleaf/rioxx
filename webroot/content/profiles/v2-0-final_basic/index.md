@@ -8,8 +8,7 @@ title: RIOXX Basic Application Profile Version 2.0 Final
 topics: []
 aliases:
 - "/rioxx_basic_v2-0/"
-layout: auto_profile
-status: current
+status: obselete
 ---
 
 This is the RIOXX 'basic' application profile version 2.0. This is **not** the [full, RCUK-approved application profile](/v2-0-final), but is a description of the basic RIOXX syntax only. The basic RIOXX application-profile is somewhat less strict than the RCUK application profile.

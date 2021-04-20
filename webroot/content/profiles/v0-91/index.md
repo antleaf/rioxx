@@ -8,10 +8,10 @@ title: RCUK RIOXX Application Profile Version 0.91
 topics: []
 aliases:
   - /v0-91/
-status: deprecated
+status: obsolete
+layout: single_special_case
 ---
 
-Note that there is a newer version of the application profile - [please check here for the latest version](/release_notes/)
 
 <p>
 This version, 0.91, is a minor update from version 0.9<br />
