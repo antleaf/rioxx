@@ -13,8 +13,11 @@ Values recorded at `rioxxterms:type` **MUST** be taken from the [COAR Controlled
 
 Example:
 
-    <rioxxterms:type id="http://purl.org/coar/resource_type/c_5794">
-        conference paper
-    </rioxxterms:type>
+<pre><code class="language-xml">&lt;rioxxterms:type id="http://purl.org/coar/resource_type/c_5794"&gt;
+    conference paper
+&lt;/rioxxterms:type&gt;
+</code></pre>
+
+
 
 The COAR Controlled Vocabulary for Resource Type Genres is detailed in its treatment of type genres. It is anticipated that only the largest repositories would accommodate all vocabulary values, with most others implementing a subset in line with the resource types managed by the repository.

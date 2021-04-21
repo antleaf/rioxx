@@ -1,39 +1,79 @@
-<nav id="navbar-rioxx-breadcrumbs" class="" aria-label="breadcrumb">
-  <ol class="breadcrumb ml-auto breadcrumb-rioxx">
+{{/*<nav id="navbar-rioxx-breadcrumbs" class="" aria-label="breadcrumb">*/}}
+{{/*  <ol class="breadcrumb ml-auto breadcrumb-rioxx">*/}}
+{{/*		{{ if eq .Kind "home"}}*/}}
+{{/*			<li class="breadcrumb-item">Home</li>*/}}
+{{/*		{{ else if (or (eq .Kind "section") (eq .Kind "page")) }}*/}}
+{{/*			{{ $breadcrumbs := (slice .Path) }}*/}}
+{{/*			{{ with .Parent }}*/}}
+{{/*			  {{ $breadcrumbs = $breadcrumbs | append (.Path) }}*/}}
+{{/*			  {{ with .Parent }}*/}}
+{{/*			    {{ $breadcrumbs = $breadcrumbs | append (.Path) }}*/}}
+{{/*			    {{ with .Parent }}*/}}
+{{/*			      {{ $breadcrumbs = $breadcrumbs | append (.Path) }}*/}}
+{{/*			      {{ with .Parent }}*/}}
+{{/*			        {{ $breadcrumbs = $breadcrumbs | append (.Path) }}*/}}
+{{/*			        {{ with .Parent }}*/}}
+{{/*			          {{ $breadcrumbs = $breadcrumbs | append (.Path) }}*/}}
+{{/*			        {{ end }}*/}}
+{{/*			      {{ end }}*/}}
+{{/*			    {{ end }}*/}}
+{{/*			  {{ end }}*/}}
+{{/*			{{ end }}*/}}
+{{/*			{{ range (seq (sub (len $breadcrumbs) 1) 0)}}*/}}
+{{/*        {{ $page := $.Site.GetPage (index $breadcrumbs .) }}*/}}
+{{/*        {{ if gt . 0 }}*/}}
+{{/*          <li class="breadcrumb-item"><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></li>*/}}
+{{/*        {{ else }}*/}}
+{{/*          <li class="breadcrumb-item">{{ $page.Title }}</li>*/}}
+{{/*        {{ end }}*/}}
+{{/*      {{ end }}*/}}
+{{/*    {{ else if eq .Kind "taxonomy" }}*/}}
+{{/*    	<li class="breadcrumb-item"><a href="/">Home</a></li>*/}}
+{{/*    	<li class="breadcrumb-item"><a href="/{{.Data.Plural}}">{{title .Data.Plural}}</a></li>*/}}
+{{/*    	<li class="breadcrumb-item">{{ .Title }}</li>*/}}
+{{/*		{{ else if eq .Kind "taxonomyTerm" }}*/}}
+{{/*    	<li class="breadcrumb-item"><a href="/">Home</a></li>*/}}
+{{/*    	<li class="breadcrumb-item">{{title .Data.Plural}}</li>*/}}
+{{/*		{{ end }}*/}}
+{{/*	</ol>*/}}
+{{/*</nav>*/}}
+
+
+<nav id="navbar-breadcrumbs" class="" aria-label="breadcrumb">
+	<ol class="breadcrumb ml-auto breadcrumb-rioxx">
 		{{ if eq .Kind "home"}}
-			<li class="breadcrumb-item">Home</li>
 		{{ else if (or (eq .Kind "section") (eq .Kind "page")) }}
 			{{ $breadcrumbs := (slice .Path) }}
 			{{ with .Parent }}
-			  {{ $breadcrumbs = $breadcrumbs | append (.Path) }}
-			  {{ with .Parent }}
-			    {{ $breadcrumbs = $breadcrumbs | append (.Path) }}
-			    {{ with .Parent }}
-			      {{ $breadcrumbs = $breadcrumbs | append (.Path) }}
-			      {{ with .Parent }}
-			        {{ $breadcrumbs = $breadcrumbs | append (.Path) }}
-			        {{ with .Parent }}
-			          {{ $breadcrumbs = $breadcrumbs | append (.Path) }}
-			        {{ end }}
-			      {{ end }}
-			    {{ end }}
-			  {{ end }}
+				{{ $breadcrumbs = $breadcrumbs | append (.Path) }}
+				{{ with .Parent }}
+					{{ $breadcrumbs = $breadcrumbs | append (.Path) }}
+					{{ with .Parent }}
+						{{ $breadcrumbs = $breadcrumbs | append (.Path) }}
+						{{ with .Parent }}
+							{{ $breadcrumbs = $breadcrumbs | append (.Path) }}
+							{{ with .Parent }}
+								{{ $breadcrumbs = $breadcrumbs | append (.Path) }}
+							{{ end }}
+						{{ end }}
+					{{ end }}
+				{{ end }}
 			{{ end }}
 			{{ range (seq (sub (len $breadcrumbs) 1) 0)}}
-        {{ $page := $.Site.GetPage (index $breadcrumbs .) }}
-        {{ if gt . 0 }}
-          <li class="breadcrumb-item"><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></li>
-        {{ else }}
-          <li class="breadcrumb-item">{{ $page.Title }}</li>
-        {{ end }}
-      {{ end }}
-    {{ else if eq .Kind "taxonomy" }}
-    	<li class="breadcrumb-item"><a href="/">Home</a></li>
-    	<li class="breadcrumb-item"><a href="/{{.Data.Plural}}">{{title .Data.Plural}}</a></li>
-    	<li class="breadcrumb-item">{{ .Title }}</li>
-		{{ else if eq .Kind "taxonomyTerm" }}
-    	<li class="breadcrumb-item"><a href="/">Home</a></li>
-    	<li class="breadcrumb-item">{{title .Data.Plural}}</li>
+				{{ $page := $.Site.GetPage (index $breadcrumbs .) }}
+				{{ if gt . 0 }}
+					<li class="breadcrumb-item"><a href="{{ $page.Permalink }}">{{ $page.Title | markdownify }}</a></li>
+				{{ else }}
+					<li class="breadcrumb-item">{{ $page.Title | markdownify }}</li>
+				{{ end }}
+			{{ end }}
+		{{ else if eq .Kind "taxonomy" }}
+			<li class="breadcrumb-item"><a href="/">Home</a></li>
+			<li class="breadcrumb-item">{{ .Title | markdownify }}</li>
+		{{ else if eq .Kind "term" }}
+			<li class="breadcrumb-item"><a href="/">Home</a></li>
+			<li class="breadcrumb-item"><a href="/{{.Data.Plural}}">{{title .Data.Plural}}</a></li>
+			<li class="breadcrumb-item">{{.Title}}</li>
 		{{ end }}
 	</ol>
 </nav>

@@ -1,108 +1,107 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>{{.Site.Title}}{{if .Title}}: {{.Title}}{{end}}</title>
-  {{.Hugo.Generator}}
-  
-  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="{{ .Site.Title }} RSS" />
-  <link rel="feed" type="application/rss+xml" type="application/rss+xml" href="/index.xml" title="{{ .Site.Title }} RSS" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>{{.Site.Title}}{{if .Title}}: {{.Title}}{{end}}</title>
+    {{.Hugo.Generator}}
 
-  <!--favicons generated with https://realfavicongenerator.net -->
-<!--   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
-  <link rel="manifest" href="/images/favicons/site.webmanifest">
-  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff"> -->
-
-  
-
-  <!-- <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/datatables.min.css"/>
-  <link rel="stylesheet" href="/css/fixedHeader.dataTables.min.css"/>
-  <link rel="stylesheet" href="/css/fixedHeader.bootstrap4.min.css"/>
-  <link rel="stylesheet" href="/css/rioxx/main.css"/>
-  <link rel="stylesheet" href="/css/rioxx/header.css"/>
-  <link rel="stylesheet" href="/css/rioxx/sidebars.css"/>
-  <link rel="stylesheet" href="/css/rioxx/news_and_articles.css"/>
-  <link rel="stylesheet" href="/css/rioxx/tables.css"/>
-  <link rel="stylesheet" href="/css/rioxx/bootstrap_adjustments.css"/>
-
-  <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript" src="/js/datatables.min.js"></script>
-  <script type="text/javascript" src="/js/dataTables.fixedHeader.min.js"></script>
-  <script type="text/javascript" src="/js/rioxx.js"></script> -->  
+    <link rel="alternate" type="application/rss+xml" href="/index.xml" title="{{ .Site.Title }} RSS"/>
+    <link rel="feed" type="application/rss+xml" type="application/rss+xml" href="/index.xml" title="{{ .Site.Title }} RSS"/>
 
 
-  {{ $style_bootstrap_grid := resources.Get "css/bootstrap-grid.min.css" }}
-  <link rel="stylesheet" href="{{ $style_bootstrap_grid.Permalink }}">
+    {{/*  {{ $style_bootstrap_grid := resources.Get "css/bootstrap-grid.min.css" }}*/}}
+    {{/*  <link rel="stylesheet" href="{{ $style_bootstrap_grid.Permalink }}">*/}}
 
-  {{ $style_bootstrap_grid_map := resources.Get "css/bootstrap-grid.min.css.map" }}
-  <link rel="application/json" href="{{ $style_bootstrap_grid_map.Permalink }}">
+    {{/*  {{ $style_bootstrap_grid_map := resources.Get "css/bootstrap-grid.min.css.map" }}*/}}
+    {{/*  <link rel="application/json" href="{{ $style_bootstrap_grid_map.Permalink }}">*/}}
 
-  {{ $style_bootstrap_reboot := resources.Get "css/bootstrap-reboot.min.css" }}
-  <link rel="stylesheet" href="{{ $style_bootstrap_reboot.Permalink }}">
+    {{/*  {{ $style_bootstrap_reboot := resources.Get "css/bootstrap-reboot.min.css" }}*/}}
+    {{/*  <link rel="stylesheet" href="{{ $style_bootstrap_reboot.Permalink }}">*/}}
 
-  {{ $style_bootstrap_reboot_map := resources.Get "css/bootstrap-reboot.min.css.map" }}
-  <link rel="application/json" href="{{ $style_bootstrap_reboot_map.Permalink }}">
+    {{/*  {{ $style_bootstrap_reboot_map := resources.Get "css/bootstrap-reboot.min.css.map" }}*/}}
+    {{/*  <link rel="application/json" href="{{ $style_bootstrap_reboot_map.Permalink }}">*/}}
 
-  {{ $style_bootstrap := resources.Get "css/bootstrap.min.css" }}
-  <link rel="stylesheet" href="{{ $style_bootstrap.Permalink }}">
+    {{/*  {{ $style_bootstrap := resources.Get "css/bootstrap.min.css" }}*/}}
+    {{/*  <link rel="stylesheet" href="{{ $style_bootstrap.Permalink }}">*/}}
 
-  {{ $style_bootstrap_map := resources.Get "css/bootstrap.min.css.map" }}
-  <link rel="application/json" href="{{ $style_bootstrap_map.Permalink }}">
+    {{/*  {{ $style_bootstrap_map := resources.Get "css/bootstrap.min.css.map" }}*/}}
+    {{/*  <link rel="application/json" href="{{ $style_bootstrap_map.Permalink }}">*/}}
 
-  {{ $style_datatables := resources.Get "css/datatables.min.css" }}
-  <link rel="stylesheet" href="{{ $style_datatables.Permalink }}">
+    {{/*  {{ $style_datatables := resources.Get "css/datatables.min.css" }}*/}}
+    {{/*  <link rel="stylesheet" href="{{ $style_datatables.Permalink }}">*/}}
 
-  {{ $style_fixedHeader_datatables := resources.Get "css/fixedHeader.dataTables.min.css" }}
-  <link rel="stylesheet" href="{{ $style_fixedHeader_datatables.Permalink }}">
+    {{/*  {{ $style_fixedHeader_datatables := resources.Get "css/fixedHeader.dataTables.min.css" }}*/}}
+    {{/*  <link rel="stylesheet" href="{{ $style_fixedHeader_datatables.Permalink }}">*/}}
 
-  {{ $style_fixedHeader_bootstrap4 := resources.Get "css/fixedHeader.bootstrap4.min.css" }}
-  <link rel="stylesheet" href="{{ $style_fixedHeader_bootstrap4.Permalink }}">
+    {{/*  {{ $style_fixedHeader_bootstrap4 := resources.Get "css/fixedHeader.bootstrap4.min.css" }}*/}}
+    {{/*  <link rel="stylesheet" href="{{ $style_fixedHeader_bootstrap4.Permalink }}">*/}}
 
-  {{ $style_main := resources.Get "css/rioxx/main.css" }}
-  {{ $style_header := resources.Get "css/rioxx/header.css" }}
-  {{ $style_sidebars := resources.Get "css/rioxx/sidebars.css" }}
-  {{ $style_news_and_articles := resources.Get "css/rioxx/news_and_articles.css" }}
-  {{ $style_tables := resources.Get "css/rioxx/tables.css" }}
-  {{ $style_bootstrap_adjustments := resources.Get "css/rioxx/bootstrap_adjustments.css" }}
+    {{/*  {{ $style_main := resources.Get "css/rioxx/main.css" }}*/}}
+    {{/*  {{ $style_header := resources.Get "css/rioxx/header.css" }}*/}}
+    {{/*  {{ $style_sidebars := resources.Get "css/rioxx/sidebars.css" }}*/}}
+    {{/*  {{ $style_news_and_articles := resources.Get "css/rioxx/news_and_articles.css" }}*/}}
+    {{/*  {{ $style_tables := resources.Get "css/rioxx/tables.css" }}*/}}
+    {{/*  {{ $style_bootstrap_adjustments := resources.Get "css/rioxx/bootstrap_adjustments.css" }}*/}}
 
-  {{ $rioxx_css_bundle := slice $style_main $style_header $style_sidebars $style_news_and_articles $style_tables $style_bootstrap_adjustments | resources.Concat "css/rioxx/_bundle.css" }}
-  {{ $rioxx_css := $rioxx_css_bundle | resources.Minify | resources.Fingerprint }}
+    {{/*  {{ $rioxx_css_bundle := slice $style_main $style_header $style_sidebars $style_news_and_articles $style_tables $style_bootstrap_adjustments | resources.Concat "css/rioxx/_bundle.css" }}*/}}
+    {{/*  {{ $rioxx_css := $rioxx_css_bundle | resources.Minify | resources.Fingerprint }}*/}}
 
-  <link rel="stylesheet" href="{{ $rioxx_css.Permalink }}">
+    {{/*  <link rel="stylesheet" href="{{ $rioxx_css.Permalink }}">*/}}
 
-  {{ $js_jquery := resources.Get "js/jquery-3.2.1.min.js" }}
-  <script type="text/javascript" src="{{ $js_jquery.Permalink }}"></script>
+    {{/*  {{ $js_jquery := resources.Get "js/jquery-3.2.1.min.js" }}*/}}
+    {{/*  <script type="text/javascript" src="{{ $js_jquery.Permalink }}"></script>*/}}
 
-  {{ $js_bootstrap := resources.Get "js/bootstrap.bundle.min.js" }}
-  <script type="text/javascript" src="{{ $js_bootstrap.Permalink }}"></script>
+    {{/*  {{ $js_bootstrap := resources.Get "js/bootstrap.bundle.min.js" }}*/}}
+    {{/*  <script type="text/javascript" src="{{ $js_bootstrap.Permalink }}"></script>*/}}
 
-  {{ $js_bootstrap_map := resources.Get "js/bootstrap.bundle.min.js.map" }}
-  <link rel="application/json" href="{{ $js_bootstrap_map.Permalink }}">
+    {{/*  {{ $js_bootstrap_map := resources.Get "js/bootstrap.bundle.min.js.map" }}*/}}
+    {{/*  <link rel="application/json" href="{{ $js_bootstrap_map.Permalink }}">*/}}
 
-  {{ $js_datatables := resources.Get "js/datatables.min.js" }}
-  <script type="text/javascript" src="{{ $js_datatables.Permalink }}"></script>
+    {{/*  {{ $js_datatables := resources.Get "js/datatables.min.js" }}*/}}
+    {{/*  <script type="text/javascript" src="{{ $js_datatables.Permalink }}"></script>*/}}
 
-  {{ $js_dataTables_fixedHeader := resources.Get "js/dataTables.fixedHeader.min.js" }}
-  <script type="text/javascript" src="{{ $js_dataTables_fixedHeader.Permalink }}"></script>
+    {{/*  {{ $js_dataTables_fixedHeader := resources.Get "js/dataTables.fixedHeader.min.js" }}*/}}
+    {{/*  <script type="text/javascript" src="{{ $js_dataTables_fixedHeader.Permalink }}"></script>*/}}
 
-  {{ $js_dcmi := resources.Get "js/rioxx.js" }}
-  <script type="text/javascript" src="{{ $js_dcmi.Permalink }}"></script>
-
-  {{ if eq hugo.Environment "production_DISABLED" }}
-    {{ template "_internal/google_analytics.html" . }}
-  {{ end }}
-  
+    {{/*  {{ $js_dcmi := resources.Get "js/rioxx.js" }}*/}}
+    {{/*  <script type="text/javascript" src="{{ $js_dcmi.Permalink }}"></script>*/}}
 
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+    {{ $style_bootstrap := resources.Get "css/bootstrap.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style_bootstrap.Permalink }}">
+    {{ $style_main := resources.Get "css/rioxx/main.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style_main.Permalink }}">
+    {{ $style_prism := resources.Get "css/prism.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style_prism.Permalink }}">
+    {{ $style_header := resources.Get "css/rioxx/header.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style_header.Permalink }}">
+    {{ $style_tables := resources.Get "css/rioxx/tables.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style_tables.Permalink }}">
+    {{ $style_sidebar := resources.Get "css/rioxx/sidebars.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style_sidebar.Permalink }}">
+    {{ $style_news_and_articles := resources.Get "css/rioxx/news_and_articles.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style_news_and_articles.Permalink }}">
+    {{ $style_datatables := resources.Get "css/datatables.min.css" | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style_datatables.Permalink }}">
+
+    {{ $js_jquery := resources.Get "js/jquery-3.6.0.min.js" | resources.Fingerprint }}
+    <script type="text/javascript" src="{{ $js_jquery.Permalink }}"></script>
+    {{ $js_prism := resources.Get "js/prism.js" }}
+    <script type="text/javascript" src="{{ $js_prism.Permalink }}"></script>
+    {{ $js_bootstrap := resources.Get "js/bootstrap.js" | resources.Minify | resources.Fingerprint }}
+    <script type="text/javascript" src="{{ $js_bootstrap.Permalink }}"></script>
+    {{ $js_datatables := resources.Get "js/datatables.min.js" | resources.Fingerprint }}
+    <script type="text/javascript" src="{{ $js_datatables.Permalink }}"></script>
+    {{ $js_main := resources.Get "js/main.js"| resources.Minify | resources.Fingerprint }}
+    <script type="text/javascript" src="{{ $js_main.Permalink }}"></script>
+
+    {{ if eq hugo.Environment "production_DISABLED" }}
+        {{ template "_internal/google_analytics.html" . }}
+    {{ end }}
 
 
 </head>

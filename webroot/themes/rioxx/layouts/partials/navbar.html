@@ -1,40 +1,35 @@
-<nav id="top-nav-bar" class="navbar navbar-expand-lg navbar-light navbar-rioxx" >
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      {{ if eq .Section ""}}<li class="nav-item nav-item-selected">{{ else }}<li class="nav-item">{{ end }}
-        <a class="nav-link" href="/">Home</a>
-      </li>
-      {{ if (eq .Section "post")}}<li class="nav-item nav-item-selected">{{ else }}<li class="nav-item">{{ end }}
-        <a class="nav-link" href="/post/">News</a>
-      </li>
-      <!-- {{ if (eq .Section "guidelines")}}<li class="nav-item nav-item-selected dropdown">{{ else }}<li class="nav-item dropdown">{{ end }}
-        <a class="nav-link" href="/guidelines/">Guidelines</a>
-      </li> -->
-      {{ if (eq .Section "profiles")}}<li class="nav-item nav-item-selected">{{ else }}<li class="nav-item">{{ end }}
-        <a class="nav-link" href="/profiles/">Profiles</a>
-      </li>
-      {{ if (eq .Section "implementation")}}<li class="nav-item nav-item-selected">{{ else }}<li class="nav-item">{{ end }}
-        <a class="nav-link" href="/implementation/">Implementation</a>
-      </li>
-      {{ if (eq .Section "mappings")}}<li class="nav-item nav-item-selected">{{ else }}<li class="nav-item">{{ end }}
-        <a class="nav-link" href="/mappings/">Mappings</a>
-      </li>
-      {{ if (eq .Section "governance")}}<li class="nav-item nav-item-selected">{{ else }}<li class="nav-item">{{ end }}
-        <a class="nav-link" href="/governance/">Governance</a>
-      </li>
-      {{ if (eq .Section "about")}}<li class="nav-item nav-item-selected dropdown">{{ else }}<li class="nav-item dropdown">{{ end }}
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          About
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/about/">About RIOXX</a>
-          <a class="dropdown-item" href="/about/history/">History</a>
+<nav id="top-nav-bar" class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/post/">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/profiles/">Profiles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/mappings/">Mappings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/governance/">Governance</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/about/">About RIOXX</a></li>
+                        <li><a class="dropdown-item" href="/about/history/">History</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-      </li>
-    </ul>
-  </div>
+    </div>
 </nav>
-

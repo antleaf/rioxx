@@ -17,13 +17,13 @@ A manager of one of these repositories recently contacted me to suggest that  th
 
 There is a reason why this should not actually make any difference - and I'll come on to that in a moment- but in the meantime, we have re-run the script, configuring the OAI-PMH request to only ask for records with a date-stamp since 2015-01-01 (as well as a metadata-format of 'rioxx'). Formally, the OAI-PMH request therefore becomes:
 
-    <base-url>?verb=ListRecords&from=2015-01-01&metadataPrefix=rioxx
+<pre><code class="language-http">{BASE-URLl}?verb=ListRecords&from=2015-01-01&metadataPrefix=rioxx</code></pre>
 
-where <base-url> is the *base URL* of a given repository.
+where {BASE-URL} is the *base URL* of a given repository.
 
 The results of this are somewhat different to the results from previously, where we did not specify any date-stamp. What this suggests is that the OAI-PMH request which *ought* to work:
 
-    <base-url>?verb=ListRecords&metadataPrefix=rioxx
+<pre><code class="language-http">{BASE-URL}?verb=ListRecords&metadataPrefix=rioxx</code></pre>
 
 
 is actually returning records which the repository managers might not wish it to be returning - that is to say records which are not actually ready to be declared as 'RIOXX-compatible'. The OAI-PMH standard [states that](http://www.openarchives.org/OAI/openarchivesprotocol.html#ListRecords):

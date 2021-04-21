@@ -9,6 +9,7 @@ html {
 body {
   background-color: white;
   color: #555555;
+  font-family: 'Roboto',sans-serif;
 }
 
 /* ##### MAIN ELEMENTS ############################################### */
@@ -46,18 +47,17 @@ img {
 }
 
 pre {
-  color: #4C4C4C;
-  font-family: 'Fira Mono','Courier','monospaced';
-  display: block;
-  padding: 9.5px;
-  margin: 0 0 10px;
-  /*font-size: 13px;*/
-  line-height: 1.42857143;
-  word-break: break-all;
-  word-wrap: break-word;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  /*color: #4C4C4C;*/
+  /*font-family: 'Fira Mono','Courier','monospaced';*/
+  /*display: block;*/
+  /*padding: 9.5px;*/
+  /*margin: 0 0 10px;*/
+  /*line-height: 1.42857143;*/
+  /*word-break: break-all;*/
+  /*word-wrap: break-word;*/
+  /*background-color: #f5f5f5;*/
+  /*border: 1px solid #ccc;*/
+  /*border-radius: 4px;*/
 }
 
 /* ##### HEADINGS AND TITLES ############################################### */
