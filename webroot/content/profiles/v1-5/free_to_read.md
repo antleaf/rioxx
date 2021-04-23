@@ -9,7 +9,7 @@ metadata_profile: v1-5
 ---
 This is defined in the [NISO Open Access Metadata and Indicators](http://www.niso.org/workrooms/oami/). <del>This element is not used in a RIOXX context, but RIOXX strives to allow onward compatability with other important standards in the repository space.</del>
 
-This element **MUST NOT** take a value. The semantics of &lt;free_to_read&gt; are conveyed by its presence or absence. This element may be modified by two optional attributes
+This element **MUST NOT** take a value. The semantics of <free_to_read> are conveyed by its presence or absence. This element may be modified by two optional attributes
 
 * start_date
 * end_date

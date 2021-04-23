@@ -75,8 +75,8 @@
     <link rel="stylesheet" href="{{ $style_bootstrap.Permalink }}">
     {{ $style_main := resources.Get "css/rioxx/main.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style_main.Permalink }}">
-    {{ $style_prism := resources.Get "css/prism.css" | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style_prism.Permalink }}">
+{{/*    {{ $style_prism := resources.Get "css/prism.css" | resources.Minify | resources.Fingerprint }}*/}}
+{{/*    <link rel="stylesheet" href="{{ $style_prism.Permalink }}">*/}}
     {{ $style_header := resources.Get "css/rioxx/header.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style_header.Permalink }}">
     {{ $style_tables := resources.Get "css/rioxx/tables.css" | resources.Minify | resources.Fingerprint }}
@@ -90,8 +90,8 @@
 
     {{ $js_jquery := resources.Get "js/jquery-3.6.0.min.js" | resources.Fingerprint }}
     <script type="text/javascript" src="{{ $js_jquery.Permalink }}"></script>
-    {{ $js_prism := resources.Get "js/prism.js" }}
-    <script type="text/javascript" src="{{ $js_prism.Permalink }}"></script>
+{{/*    {{ $js_prism := resources.Get "js/prism.js" }}*/}}
+{{/*    <script type="text/javascript" src="{{ $js_prism.Permalink }}"></script>*/}}
     {{ $js_bootstrap := resources.Get "js/bootstrap.js" | resources.Minify | resources.Fingerprint }}
     <script type="text/javascript" src="{{ $js_bootstrap.Permalink }}"></script>
     {{ $js_datatables := resources.Get "js/datatables.min.js" | resources.Fingerprint }}

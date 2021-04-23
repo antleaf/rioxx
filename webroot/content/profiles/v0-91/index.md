@@ -54,15 +54,15 @@ As many creators may be entered as required. If the creator is a person and it i
 
 This element <strong>SHOULD</strong> take an optional attribute called <em>id</em>, designed to hold a machine-readable and unique identifier, if available, for the creator. Any ID entered here <strong>MUST</strong> be in a form which allows it to be parsed and recognised automatically. The ideal use of this element is to include both a machine-readable ID in the <em>id</em> attribute, and a text string in the body of the element, thus:
 
-<pre><code>&lt;rioxxterms:creator id=”identifier-for-this-creator-entity”&gt;
+<pre><code><rioxxterms:creator id=”identifier-for-this-creator-entity”>
     name-of-this-creator-entity
-&lt;/rioxxterms:creator&gt;</code></pre>
+</rioxxterms:creator>```
 
 Where the creator is a person, the <strong>RECOMMENDED</strong> format is to add text in the form Last Name, First Name(s), and to include an ORCID ID, if known, in its HTTP URI form, e.g. 
 
-<pre><code>&lt;rioxxterms:creator id=”http://orcid.org/0000-0002-1395-3092”&gt;
+<pre><code><rioxxterms:creator id=”http://orcid.org/0000-0002-1395-3092”>
     Lawson, Gerald
-&lt;/rioxxterms:creator&gt;</code></pre>
+</rioxxterms:creator>```
     </td>
     <td>
         &nbsp;
@@ -279,15 +279,15 @@ This field is designed to describe an entity – for example the name of a perso
 
 This element <strong>SHOULD</strong> take an optional attribute called <em>id</em>, designed to hold a machine-readable and unique identifier, if available, for the contributor. Any ID entered here <strong>MUST</strong> be in a form which allows it to be parsed and recognised automatically. The ideal use of this element is to include both a machine-readable ID in the <em>id</em> attribute, and a text string in the body of the element, thus:
 
-<pre><code>&lt;rioxxterms:contributor id=”identifier-for-this-contributor-entity”&gt;
+<pre><code><rioxxterms:contributor id=”identifier-for-this-contributor-entity”>
     name-of-this-contributor-entity
-&lt;/rioxxterms:contributor&gt;</code></pre>
+</rioxxterms:contributor>```
 
 Where the contributor is a person, the <strong>RECOMMENDED</strong> format is to add text in the form Last Name, First Name(s), and to include an ORCID ID, if known, in its HTTP URI form, e.g.
 
-<pre><code>&lt;rioxxterms:contributor id=”http://orcid.org/0000-0002-1395-3092”&gt;
+<pre><code><rioxxterms:contributor id=”http://orcid.org/0000-0002-1395-3092”>
     Lawson, Gerald
-&lt;/rioxxterms:contributor&gt;</code></pre>
+</rioxxterms:contributor>```
 
     </td>
     <td>

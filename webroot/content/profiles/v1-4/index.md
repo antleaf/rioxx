@@ -15,16 +15,16 @@ This is an updated version of the RIOXX application profile, enhanced following 
 
 ## Changes since version 1.0
 
-* the &lt;free_to_read&gt; element has been added
-* the &lt;license_ref&gt; element has been added
-* the &lt;dc:rights&gt; element has been removed - the introduction of the new &lt;license_ref&gt; has superceded this
-* the recommendations for the &lt;rioxxterms:funder&gt; element have changed - the use of [FundRef](http://www.crossref.org/fundref/) is now recommended.
-* the &lt;rioxxterms:apc&gt; element has been added
-* the &lt;rioxxterms:version&gt; element has been added
-* the &lt;rioxxterms:creator&gt; element has been replaced with &lt;rioxxterms:author&gt;
-* the new &lt;rioxxterms:project&gt; element has replaced both &lt;rioxxterms:projectid&gt; and &lt;rioxxterms:funder&gt;
-* the &lt;rioxxterms:version-of-record&gt; element has been added, and the recommendation to include, under &lt;dc:relation&gt;, the DOI to the version of record has been removed.
-* the &lt;dcterms:issued&gt; element has been replaced with the &lt;rioxxterms:acceptdate&gt; and the meaning of this element has changed.
+* the <free_to_read> element has been added
+* the <license_ref> element has been added
+* the <dc:rights> element has been removed - the introduction of the new <license_ref> has superceded this
+* the recommendations for the <rioxxterms:funder> element have changed - the use of [FundRef](http://www.crossref.org/fundref/) is now recommended.
+* the <rioxxterms:apc> element has been added
+* the <rioxxterms:version> element has been added
+* the <rioxxterms:creator> element has been replaced with <rioxxterms:author>
+* the new <rioxxterms:project> element has replaced both <rioxxterms:projectid> and <rioxxterms:funder>
+* the <rioxxterms:version-of-record> element has been added, and the recommendation to include, under <dc:relation>, the DOI to the version of record has been removed.
+* the <dcterms:issued> element has been replaced with the <rioxxterms:acceptdate> and the meaning of this element has changed.
 
 ## Terminology
 

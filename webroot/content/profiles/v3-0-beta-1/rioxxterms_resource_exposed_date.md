@@ -10,17 +10,19 @@ metadata_profile: v3-0-draft
 This element captures the date on which ***the resource*** is made publicly available. Element content **MUST** be encoded according to the [W3CDTF](https://www.w3.org/TR/NOTE-datetime) (a profile of [ISO 8601](https://www.iso.org/standard/40874.html)) which typically follows the following format: YYYY-MM-DD.
 
 Examples:
-<pre><code class="language-xml">&lt;rioxxterms:resource_exposed_date&gt;
+```xml
+<rioxxterms:resource_exposed_date>
     2019-02-23
-&lt;/rioxxterms:resource_exposed_date&gt;
-</code></pre>
+</rioxxterms:resource_exposed_date>
+```
 
 or
 
-<pre><code class="language-xml">&lt;rioxxterms:resource_exposed_date&gt;
+```xml
+<rioxxterms:resource_exposed_date>
     2020-07-16T19:20+01:00
-&lt;/rioxxterms:resource_exposed_date&gt;
-</code></pre>
+</rioxxterms:resource_exposed_date>
+```
 
 
 Repositories will typically fulfil `rioxxterms:resource_exposed_date` if ***the resource*** is made publicly visible immediately upon deposit, or when ***the resource*** embargo ends. 

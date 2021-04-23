@@ -10,17 +10,19 @@ metadata_profile: v3-0-draft
 This element takes the date upon which *metadata* about ***the resource*** being described was first made publicly visible. Element content **MUST** be encoded according to the [W3CDTF](https://www.w3.org/TR/NOTE-datetime) (a profile of [ISO 8601](https://www.iso.org/standard/40874.html)) which typically follows the following format: YYYY-MM-DD.
 
 Examples:
-<pre><code class="language-xml">&lt;rioxxterms:record_public_release_date&gt;
+```xml
+<rioxxterms:record_public_release_date>
     2020-10-02
-&lt;/rioxxterms:record_public_release_date&gt;
-</code></pre>
+</rioxxterms:record_public_release_date>
+```
 
 or
 
-<pre><code class="language-xml">&lt;rioxxterms:record_public_release_date&gt;
+```xml
+<rioxxterms:record_public_release_date>
     2020-09-29T19:20+01:00
-&lt;/rioxxterms:record_public_release_date&gt;
-</code></pre>
+</rioxxterms:record_public_release_date>
+```
 
 
 It is anticipated that in many circumstances `rioxxterms:record_public_release_date` will be captured and exposed in repository metadata prior to availability of ***the resource*** itself; for example as the result of a delay in depositing ***the resource***, or where ***the resource*** described is under temporary embargo or temporary dark archiving. 

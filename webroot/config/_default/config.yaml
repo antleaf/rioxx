@@ -21,7 +21,6 @@ params:
   AuthorName: "Paul Walk"
   showPageStatusTagsOnLiveSite: true
 markup:
-#  defaultMarkdownHandler: blackFriday
   defaultMarkdownHandler: goldmark
   goldmark:
     extensions:
@@ -39,20 +38,15 @@ markup:
       hardWraps: false
       unsafe: true
       xHTML: false
-  blackFriday:
-    angledQuotes: false
-    extensions: null
-    footnoteAnchorPrefix: ""
-    footnoteReturnLinkContents: ""
-    fractions: true
-    hrefTargetBlank: false
-    latexDashes: true
-    nofollowLinks: false
-    noreferrerLinks: false
-    plainIDAnchors: true
-    skipHTML: false
-    smartypants: false
-    smartDashes: false
-    extensionsmask: ["autolink"] #disables these extensions
-    smartypantsQuotesNBSP: false
-    taskLists: true
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: pygments
+    tabWidth: 4

@@ -15,10 +15,10 @@ This element **MAY** include an optional attribute:
 
 This attribute, if present, takes a date value which **MUST** be encoded using ISO 8601 (post&#8211;2004 versions) which follows the following format: YYYY-MM-DD.
 
-This atribute is used to indicate the date upon which this license takes effect. Multiple &lt;license_ref&gt; elements may be included. Where several such elements are included, the one with the start_date attribute indicating the most recent date takes precendence.
-A &lt;license_ref&gt; element with a start_date attribute takes precedence over a &lt;license_ref&gt; element without a start_date.
+This atribute is used to indicate the date upon which this license takes effect. Multiple <license_ref> elements may be included. Where several such elements are included, the one with the start_date attribute indicating the most recent date takes precendence.
+A <license_ref> element with a start_date attribute takes precedence over a <license_ref> element without a start_date.
 
-A single RIOXX record **MUST NOT** have more than one &lt;license_ref&gt; element **without** a start_date
+A single RIOXX record **MUST NOT** have more than one <license_ref> element **without** a start_date
 
 Examples:
 

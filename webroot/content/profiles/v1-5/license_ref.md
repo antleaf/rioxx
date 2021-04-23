@@ -15,7 +15,7 @@ This element **MUST** include the attribute:
 
 This attribute takes a date value which **MUST** be encoded using ISO 8601 (post&#8211;2004 versions) which follows the following format: YYYY-MM-DD.
 
-This atribute is used to indicate the date upon which this license takes effect. Multiple &lt;license_ref&gt; elements may be included. Where several such elements are included, the one with the start_date attribute indicating the most recent date takes precendence.
+This atribute is used to indicate the date upon which this license takes effect. Multiple <license_ref> elements may be included. Where several such elements are included, the one with the start_date attribute indicating the most recent date takes precendence.
 
 Example:
     

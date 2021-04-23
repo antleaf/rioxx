@@ -24,21 +24,23 @@ A globally unique identifier for the funder of ***the resource*** **SHOULD** be 
 
 ## Example
 
-<pre><code class="language-xml">&lt;rioxxterms:project
+```xml
+<rioxxterms:project
     funder_name="Engineering and Physical Sciences Research Council"
-    funder_id="https://isni.org/isni/0000000403948681"&gt;
+    funder_id="https://isni.org/isni/0000000403948681">
     EP/K023195/1
-&lt;/rioxxterms:project&gt;
-</code></pre>
+</rioxxterms:project>
+```
 
 or
 
-<pre><code class="language-xml">&lt;rioxxterms:project
+```xml
+<rioxxterms:project
     funder_name="Engineering and Physical Sciences Research Council"
-    funder_id="https://doi.org/10.13039/501100000266"&gt;
+    funder_id="https://doi.org/10.13039/501100000266">
     EP/K023195/1
-&lt;/rioxxterms:project&gt;
-</code></pre>
+</rioxxterms:project>
+```
 
 
 Where ***the resource*** has been funded by more than one funder a separate *rioxxterms:project* element **MUST** be added for each. Similarly, where several project IDs provided by the same funder have been attached to ***the resource***, a separate *rioxxterms:project* element **MUST** be added for each.

@@ -7,7 +7,7 @@ cardinality: Zero or one
 requirement: Optional
 metadata_profile: v1-3
 ---
-This is defined in the [NISO Open Access Metadata and Indicators](http://www.niso.org/workrooms/oami/). This element **MUST NOT** take a value. The semantics of &lt;free_to_read&gt; are conveyed by its presence or absence.
+This is defined in the [NISO Open Access Metadata and Indicators](http://www.niso.org/workrooms/oami/). This element **MUST NOT** take a value. The semantics of <free_to_read> are conveyed by its presence or absence.
 The presence of this element means that the *work* being described is freely and openly available to be read. This element may be modified by two optional attributes
 
 * start_date

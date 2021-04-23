@@ -1,18 +1,28 @@
 html {
-  padding-top: 1%;
   background-color: white;
-  /*font-size: 16px;*/
-  max-width: 2000px;
+  max-width: 1500px;
   margin: 0 auto;
+  padding: 1%;
 }
 
 body {
+  margin: 0 auto;
   background-color: white;
-  color: #555555;
+  border-radius: 8px;
+  /*font-family: 'Muli','Helvetica',sans-serif;*/
+  /*font-family: 'Montserrat','Helvetica',sans-serif;*/
   font-family: 'Roboto',sans-serif;
+  color: #555555;
+  font-size: 16px;
 }
 
 /* ##### MAIN ELEMENTS ############################################### */
+
+pre {
+  padding-left: 15px;
+  /*border: 1px #cdcdcd solid;*/
+  /*background-color: #efefef;*/
+}
 
 a,a:visited,a:hover {
   color: #23527c;

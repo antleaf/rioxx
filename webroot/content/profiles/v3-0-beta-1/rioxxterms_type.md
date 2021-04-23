@@ -13,10 +13,11 @@ Values recorded at `rioxxterms:type` **MUST** be taken from the [COAR Controlled
 
 Example:
 
-<pre><code class="language-xml">&lt;rioxxterms:type id="http://purl.org/coar/resource_type/c_5794"&gt;
+```xml
+<rioxxterms:type id="http://purl.org/coar/resource_type/c_5794">
     conference paper
-&lt;/rioxxterms:type&gt;
-</code></pre>
+</rioxxterms:type>
+```
 
 
 
