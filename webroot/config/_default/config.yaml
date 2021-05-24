@@ -3,7 +3,7 @@ uglyURLs: false
 title: "RIOXX"
 author: "Paul Walk"
 copyright: "This website and blog are licensed under a <a rel='license' href='http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>"
-enableRobotsTXT: true
+enableRobotsTXT: false
 metaDataFormat: "yaml"
 theme: "rioxx"
 enableGitInfo: false
