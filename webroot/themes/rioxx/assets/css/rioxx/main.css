@@ -1,152 +1,160 @@
 html {
-  background-color: white;
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 1%;
+    background-color: white;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 1%;
 }
 
 body {
-  margin: 0 auto;
-  background-color: white;
-  border-radius: 8px;
-  /*font-family: 'Muli','Helvetica',sans-serif;*/
-  /*font-family: 'Montserrat','Helvetica',sans-serif;*/
-  font-family: 'Roboto',sans-serif;
-  color: #555555;
-  font-size: 16px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    /*font-family: 'Muli','Helvetica',sans-serif;*/
+    /*font-family: 'Montserrat','Helvetica',sans-serif;*/
+    font-family: 'Roboto', sans-serif;
+    color: #555555;
+    font-size: 16px;
 }
 
 /* ##### MAIN ELEMENTS ############################################### */
 
 pre {
-  padding-left: 15px;
-  /*border: 1px #cdcdcd solid;*/
-  /*background-color: #efefef;*/
+    padding-left: 15px;
 }
 
-a,a:visited,a:hover {
-  color: #23527c;
+code {
+    font-family: 'Roboto Mono', monospace;
 }
 
-a,a:visited {
-  text-decoration: underline;
+a, a:visited, a:hover {
+    color: #23527c;
+}
+
+a, a:visited {
+    text-decoration: underline;
 }
 
 a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a.title-link {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a.title-link:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 a.white-link {
-  color: white;
+    color: white;
 }
 
 hr {
-  border-color: #cdcdcd;
+    border-color: #cdcdcd;
 }
 
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 pre {
-  /*color: #4C4C4C;*/
-  /*font-family: 'Fira Mono','Courier','monospaced';*/
-  /*display: block;*/
-  /*padding: 9.5px;*/
-  /*margin: 0 0 10px;*/
-  /*line-height: 1.42857143;*/
-  /*word-break: break-all;*/
-  /*word-wrap: break-word;*/
-  /*background-color: #f5f5f5;*/
-  /*border: 1px solid #ccc;*/
-  /*border-radius: 4px;*/
+    /*color: #4C4C4C;*/
+    /*font-family: 'Fira Mono','Courier','monospaced';*/
+    /*display: block;*/
+    /*padding: 9.5px;*/
+    /*margin: 0 0 10px;*/
+    /*line-height: 1.42857143;*/
+    /*word-break: break-all;*/
+    /*word-wrap: break-word;*/
+    /*background-color: #f5f5f5;*/
+    /*border: 1px solid #ccc;*/
+    /*border-radius: 4px;*/
 }
 
 /* ##### HEADINGS AND TITLES ############################################### */
 
 h1 {
-  font-size: 2.0em;
+    font-size: 2.0em;
 }
+
 h2 {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
+
 h3 {
-  font-size: 1.3em;
+    font-size: 1.3em;
 }
+
 h4 {
-  font-size: 1.2em;
+    font-size: 1.2em;
 }
+
 h5 {
-  font-size: 1.1em;
+    font-size: 1.1em;
 }
+
 h6 {
-  font-size: 1.0em;
+    font-size: 1.0em;
 }
 
 h1.page-title {
-  text-align: center;
-  border-top: 1px solid #cdcdcd;
-  border-bottom: 1px solid #cdcdcd;
-  padding-bottom: 3px;
+    text-align: center;
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    padding-bottom: 3px;
 }
 
 /* ##### FOOTER ############################################### */
 div#footer {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-top: 10px;
-  border-top: 1px solid #cdcdcd;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #cdcdcd;
 }
 
 div#footer p {
-	font-size: x-small;
+    font-size: x-small;
+    text-align: right;
 }
 
 /* ##### MISCELLANEOUS ############################################### */
 mark {
-  background-color: yellow;
+    background-color: yellow;
 }
 
 .nowrap {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
 img.credit_logo {
-  height: 40px;
-  margin-right: 10px;
+    height: 40px;
+    margin-right: 10px;
 }
 
 div.homepage-endorsement-card-footer {
-  font-size: 0.85em;
-  text-align: right;
-  padding: 3px;
+    font-size: 0.85em;
+    text-align: right;
+    padding: 3px;
 }
 
 div.homepage-endorsement-card-body {
-  font-style: italic;
+    font-style: italic;
 }
 
 div.sponsor-logos {
-  margin-top: 40px;
-  text-align: center;
+    margin-top: 40px;
+    text-align: center;
 }
 
 div.current-profiles-box {
-  border: 2px solid #cdcdcd;
-  background-color: #efefef;
-  padding: 10px;
-  text-align: center;
+    border: 2px solid #cdcdcd;
+    background-color: #efefef;
+    padding: 10px;
+    text-align: center;
 }
 
 div.release-notes-header {
-  padding: 5px;
-  text-align: center;
+    padding: 5px;
+    text-align: center;
 }
