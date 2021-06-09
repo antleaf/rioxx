@@ -4,7 +4,7 @@ date: '2020-10-08T10:00:43+00:00'
 description: ''
 draft: false
 tags: []
-title: RCUK RIOXX Application Profile Version 3.0 Draft
+title: RIOXX Application Profile Version 3.0 Draft
 topics: []
 aliases:
 status: draft
