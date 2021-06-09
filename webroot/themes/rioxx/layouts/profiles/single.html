@@ -23,7 +23,6 @@
                 </tr>
                 </thead>
                 <tbody>
-                {{/* range (where .Site.Pages "Params.metadata_profile" "==" $metadata_profile_name) */}}
                 {{ range .Resources.Match "*.md" }}
                     <tr>
                         <td><a id="{{.Title}}"></a>{{.Title}}</td>
