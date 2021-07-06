@@ -1,5 +1,5 @@
 ---
 title: "News"
-date: 2018-01-18T14:54:20+02:00
+date: 2018-01-18
 draft: false
 ---

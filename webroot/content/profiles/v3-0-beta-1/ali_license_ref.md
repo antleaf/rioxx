@@ -15,7 +15,7 @@ This element **MUST** include the attribute:
 
 * start_date
 
-This attribute is used to indicate the date upon which this license takes effect. Multiple *ali:license_ref* elements may be included. Where several such elements are included, the one with the *start_date* attribute indicating the most recent date takes precedence.
+This attribute indicates the date upon which this license takes effect. Multiple *ali:license_ref* elements may be included. Where several such elements are included, the one with the *start_date* attribute indicating the most recent date takes precedence.
 
 Example:
 
