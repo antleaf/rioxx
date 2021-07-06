@@ -8,19 +8,24 @@ requirement: Optional
 metadata_profile: v3-0-draft
 ---
 
-(Note that the related 'version of record' is not recorded here but **MUST** be recorded in the *rioxxterms:version_of_record* element.)
+Although this property is not strictly mandated in the RIOXX application profile, it **SHOULD** be included because this is the property which harvesting software will inspect - for example to find the "full text" associated with a repository record.
 
 The *resource* described by a RIOXX record is commonly a web page containing metadata and links to other resources, such as (in the case of a publication) a PDF file. The `dc:relation` property identifies these other, related resources. Each `dc:relation` property **MUST** contain an HTTP(S) URI, and **MUST** include the following attributes: 
 
 * `type`
 * `deposit_date`
 
-The `type` attribute must contain a value which is an identifier from the schema.org vocabulary. For example, for a
+The `type` attribute must contain a value which is an identifier from the schema.org vocabulary. For example, for in the case of the related resource being a PDF of a journal article, then the recommended value would be `https://schema.org/ScholarlyArticle`
 
-
-
-
-
-
+The `deposit_date` attribute takes the date on which this related resource was first deposited, irrespective of any relevant embargoes or dark archiving, and irrespective of any subsequent file replacement(s). It is anticipated that in some circumstances the `deposit_date` will be captured and exposed in repository metadata when the resource described is under temporary embargo or temporary dark archiving. This attribute's value **MUST** be encoded according to the [W3CDTF](https://www.w3.org/TR/NOTE-datetime) (a profile of [ISO 8601](https://www.iso.org/standard/40874.html)) which typically follows the following format: YYYY-MM-DD.
 
 Each related resource **MUST** appear as a separate instance of the element.
+
+(Note that the related 'version of record' is not recorded here but **MUST** be recorded in the *rioxxterms:version_of_record* element.)
+
+Example:
+```xml
+<dc:identifier type="https://schema.org/ScholarlyArticle" deposit_date="2021-07-06">
+    https://www.repsitory.org/article_123456.pdf
+</dc:identifier>
+```
