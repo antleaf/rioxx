@@ -25,7 +25,7 @@ Each related resource **MUST** appear as a separate instance of the element.
 
 Example:
 ```xml
-<dc:identifier type="https://schema.org/ScholarlyArticle" deposit_date="2021-07-06">
+<dc:relation type="https://schema.org/ScholarlyArticle" deposit_date="2021-07-06">
     https://www.repsitory.org/article_123456.pdf
-</dc:identifier>
+</dc:relation>
 ```
