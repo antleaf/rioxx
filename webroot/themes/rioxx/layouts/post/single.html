@@ -8,13 +8,14 @@
     <div class="col-9 col-md-10">
     	<div class="card">
 		    <div class="card-body">
-		      {{.Content}}
 
+				{{.Content}}
+				<div class="post-author-and-date">{{ partial "news_and_article_metadata" . }}</div>
 		      {{ template "_internal/disqus.html" . }}
 		    </div>
-		    <div class="card-footer item-metadata-card-footer">
-		      {{ partial "news_and_article_metadata" . }}
-		    </div>
+{{/*		    <div class="card-footer item-metadata-card-footer">*/}}
+{{/*		      {{ partial "news_and_article_metadata" . }}*/}}
+{{/*		    </div>*/}}
 		  </div>
     </div>
   	<div class="col-3 col-md-2 sidebar">

@@ -1,15 +1,3 @@
-{{ if .Params.Creators }}
-	{{ range .Params.Creators }}
-		{{ $person := $.Site.GetPage (print "/people/" . "/index.md")}}
-		{{ if $person }}
-			{{ with $person }}
-				{{ .Title }}
-			{{ end }}
-		{{ else }}
-			{{ . }}
-		{{ end }}|
-	{{ end }}
-{{ end }}
-{{.Date.Format "2006-01-02"}}
+{{ delimit .Params.Creators ", " }}
 
-<!--{{.Date.Format "Monday, January 02, 2006"}}-->
+ - {{.Date.Format "2006-01-02"}}

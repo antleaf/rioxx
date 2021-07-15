@@ -26,3 +26,9 @@ div.read-more a:hover {
 a.pager,a.pager:visited,a.pager:hover {
   color: #23527c;
 }
+
+div.post-author-and-date {
+    /*font-size: 0.75em;*/
+    text-align: right;
+    padding-top: 10px;
+}
