@@ -15,7 +15,7 @@ The *resource* described by a RIOXX record is commonly a web page containing met
 * `type`
 * `deposit_date`
 
-The `type` attribute must contain a value which is an identifier from the schema.org vocabulary. For example, for in the case of the related resource being a PDF of a journal article, then the recommended value would be `https://schema.org/ScholarlyArticle`
+The `type` attribute must contain a value which is an identifier from the [schema.org vocabulary](https://schema.org/docs/developers.html#defs). For example, for in the case of the related resource being a PDF of a journal article, then the recommended value would be `https://schema.org/ScholarlyArticle`
 
 The `deposit_date` attribute takes the date on which this related resource was first deposited, irrespective of any relevant embargoes or dark archiving, and irrespective of any subsequent file replacement(s). It is anticipated that in some circumstances the `deposit_date` will be captured and exposed in repository metadata when the resource described is under temporary embargo or temporary dark archiving. This attribute's value **MUST** be encoded according to the [W3CDTF](https://www.w3.org/TR/NOTE-datetime) (a profile of [ISO 8601](https://www.iso.org/standard/40874.html)) which typically follows the following format: YYYY-MM-DD.
 
