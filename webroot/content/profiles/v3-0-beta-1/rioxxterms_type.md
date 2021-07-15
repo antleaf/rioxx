@@ -14,7 +14,7 @@ Values recorded at `rioxxterms:type` **MUST** be taken from the [COAR Controlled
 Example:
 
 ```xml
-<rioxxterms:type id="http://purl.org/coar/resource_type/c_5794">
+<rioxxterms:type uri="https://purl.org/coar/resource_type/c_5794">
     conference paper
 </rioxxterms:type>
 ```
