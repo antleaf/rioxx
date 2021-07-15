@@ -14,11 +14,12 @@ layout: profiles_list
 ###### Changes since [Version 2.0 Final Release:](https://www.rioxx.net/profiles/v2-0-final/)
 - `<ali:license_ref>`, `<rioxxterms:author>`, `<rioxxterms:contributor>`, `<rioxxterms:project>`, `<rioxxterms:version_of_record>` **updated** to explicitly note HTTPS use where URI values are specified.
 - **Removed** the `<ali:free_to_read>` property.
+- **Removed** the `<rioxxterms:apc>` property.
 - Addition of the following **new** properties: `<rioxxterms:record_public_release_date>` and`<rioxxterms:resource_exposed_date>`, encoded according to ISO8601/W3CDTF.
 - `<rioxxterms:publication_date>` **updated** to specify encoding as per ISO8601/W3CDTF, including resources with seasonal publication dates.
-- Controlled list of types in  `<rioxxterms:type>` **removed** and **updated** to specify the [COAR Controlled Vocabulary Resource Type Genres (v 2.0+)](http://vocabularies.coar-repositories.org/documentation/resource_types/).
+- Controlled list of types in  `<rioxxterms:type>` **removed** and **updated** to specify the [COAR Controlled Vocabulary Resource Type Genres](http://vocabularies.coar-repositories.org/documentation/resource_types/).
 - **Major change** to the use of `<dc:identifier>` to accommodate multiple 'expressions' of the same 'work'. In particular, introduction of  `<dc:relation>` and the parallel use of the 'uri', 'deposit_date' and 'type' attributes to communicate persistent HTTPS URI(s) to identify expressions. The 'type' attribute makes use of [schema.org](https://schema.org/) [vocabulary definitions]().
-- General move away from using the XML 'id' attribute across RIOXX to uniquely identify element content using URI(s) and the introduction of the RIOXX 'uri' attribute. This change specifically affects `<rioxxterms:author>`, `<rioxxterms:contributor>`, `<rioxxterms:publisher>` and `<rioxxterms:type>`.
+- General move away from using the XML 'id' attribute across RIOXX to uniquely identify element content using URI(s) and the introduction of the 'uri' attribute. This change specifically affects `<rioxxterms:author>`, `<rioxxterms:contributor>`, `<rioxxterms:publisher>` and `<rioxxterms:type>`.
 
 
 

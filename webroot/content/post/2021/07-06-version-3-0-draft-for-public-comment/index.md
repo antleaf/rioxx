@@ -20,9 +20,10 @@ Readers are encouraged to review v 3.0 in its entirety; substantive changes can 
 
 - `<ali:license_ref>`, `<rioxxterms:author>`, `<rioxxterms:contributor>`, `<rioxxterms:project>`, `<rioxxterms:version_of_record>` **updated** to explicitly note HTTPS use where URI values are specified.
 - **Removed** the `<ali:free_to_read>` property.
+- **Removed** the `<rioxxterms:apc>` property.
 - Addition of the following **new** properties: `<rioxxterms:record_public_release_date>` and`<rioxxterms:resource_exposed_date>`, encoded according to ISO8601/W3CDTF.
 - `<rioxxterms:publication_date>` **updated** to specify encoding as per ISO8601/W3CDTF, including resources with seasonal publication dates.
-- Controlled list of types in  `<rioxxterms:type>` **removed** and **updated** to specify the [COAR Controlled Vocabulary Resource Type Genres (v 2.0+)](http://vocabularies.coar-repositories.org/documentation/resource_types/).
+- Controlled list of types in  `<rioxxterms:type>` **removed** and **updated** to specify the [COAR Controlled Vocabulary Resource Type Genres](http://vocabularies.coar-repositories.org/documentation/resource_types/).
 - Replacement of XML 'id' attributes within properties with new 'uri' attribute.
 - Modification to the application of `<dc:identifier>` and `<dc:relation>`.
 
