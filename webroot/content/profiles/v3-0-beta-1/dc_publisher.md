@@ -13,7 +13,7 @@ This element contains the name of the entity, typically a &#39;publisher&#39;, r
 Where available and possible, the **RECOMMENDED** format is to add the official name of the publisher, and to include an [ISNI](http://isni.org) ID, if known, in its HTTP(S) URI form, e.g.
 
 ```xml
-<dc:publisher id="https://isni.org/isni/000000040482455X">
+<dc:publisher uri="https://isni.org/isni/000000040482455X">
     Public Library of Science
 </dc:publisher>
 ```
