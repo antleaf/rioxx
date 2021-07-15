@@ -7,4 +7,4 @@ cardinality: Exactly one
 requirement: Mandatory
 metadata_profile: v3-0-draft
 ---
-This field **MUST** contain an HTTP(S) URI which is a persistent identifier for ***the resource***. In repositories, this is typically a webpage which provides links to other related resources. In the common case of a "splash-page" linking to files in different formats, then one or more instances of the `dc:hasFormat` property may be used to convey this.
+This field **MUST** contain an HTTP(S) URI which is a persistent identifier for ***the resource***. In repositories, this is typically a webpage which provides links to other related resources. In the common case of a "splash-page" linking to related files (potentially in different formats), then one or more instances of the `dc:relation` property may be used to convey this.
