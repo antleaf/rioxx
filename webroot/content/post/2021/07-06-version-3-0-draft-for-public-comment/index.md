@@ -1,5 +1,5 @@
 ---
-creators: ["George McGregor"]
+creators: ["George Macgregor"]
 categories: []
 date: 2021-07-06
 description: ""
