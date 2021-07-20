@@ -25,5 +25,5 @@ or
 ```
 
 
-It is anticipated that in many circumstances `rioxxterms:record_public_release_date` will be captured and exposed in repository metadata prior to availability of ***the resource*** itself; for example as the result of a delay in depositing ***the resource***, or where ***the resource*** described is under temporary embargo or temporary dark archiving. 
+It is anticipated that in many circumstances `rioxxterms:record_public_release_date` will be captured and exposed in repository metadata prior to availability of related resources such as the "full text" for a publication; for example as the result of a delay in depositing the full text, or where it is under temporary embargo or temporary dark archiving. 
 
