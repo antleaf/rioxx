@@ -20,7 +20,7 @@ This attribute indicates the date upon which this license takes effect. Multiple
 Example:
 
 ```xml
-<ali:license_ref start_date="2020-11-17"></ali:license_ref>
+<ali:license_ref start_date="2020-11-17">
     https://creativecommons.org/licenses/by/4.0
 </ali:license_ref>
 ```
