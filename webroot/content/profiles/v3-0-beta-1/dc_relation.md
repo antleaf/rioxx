@@ -29,6 +29,6 @@ Each related resource **MUST** appear as a separate instance of the element.
 Example:
 ```xml
 <dc:relation type="https://schema.org/ScholarlyArticle" deposit_date="2021-07-06" resource_exposed_date="2021-07-20">
-    https://www.repsitory.org/article_123456.pdf
+    https://www.repository.org/article_123456.pdf
 </dc:relation>
 ```
