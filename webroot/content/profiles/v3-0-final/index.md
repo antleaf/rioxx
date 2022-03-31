@@ -1,10 +1,10 @@
 ---
 categories: []
-date: '2020-10-08T10:00:43+00:00'
+date: '2022-03-31T15:00:43+00:00'
 description: ''
 draft: false
 tags: []
-title: RIOXX Application Profile Version 3.0 Beta 1
+title: RIOXX Application Profile Version 3.0 Final 1
 topics: []
 aliases:
 status: draft

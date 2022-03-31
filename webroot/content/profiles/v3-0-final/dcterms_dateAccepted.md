@@ -5,6 +5,6 @@ type: metadata_profile_property
 title: dcterms:date_accepted
 cardinality: Exactly one
 requirement: Mandatory
-metadata_profile: v3-0-draft
+metadata_profile: v3-0-final
 ---
 The date on which ***the resource*** was accepted for publication. Element content **MUST** be encoded according to the [W3CDTF](https://www.w3.org/TR/NOTE-datetime) (a profile of [ISO 8601](https://www.iso.org/standard/40874.html)) which typically follows the following format: YYYY-MM-DD.

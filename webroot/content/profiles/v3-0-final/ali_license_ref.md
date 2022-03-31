@@ -1,11 +1,11 @@
 ---
-date: '2020-10-09T10:00:43+00:00'
+date: '2022-03-09T10:00:43+00:00'
 draft: false
 type: metadata_profile_property
 title: ali:license_ref
 cardinality: One or more
 requirement: Mandatory
-metadata_profile: v3-0-draft
+metadata_profile: v3-0-final
 ---
 This is defined in the [NISO Open Access Metadata and Indicators](http://www.niso.org/workrooms/ali/). This element **MUST** take an HTTP(S) URI for its value. This URI **MUST** point to a resource which expresses the license terms specifying how ***the resource*** may be used.
 
