@@ -1,5 +1,5 @@
 ---
-date: '2022-03-31T14:00:43+00:00'
+date: '2022-05-10T14:00:43+00:00'
 draft: false
 type: metadata_profile_property
 title: dc:relation
@@ -8,7 +8,7 @@ requirement: Optional
 metadata_profile: v3-0-final
 ---
 
-Although this property is not strictly mandated in the RIOXX application profile, it **SHOULD** be included because this is the property which harvesting software will inspect - for example to find the "full text" associated with a repository record.
+Although this property is not strictly mandated in the RIOXX application profile, it **SHOULD** be included because this is the property which harvesting software will inspect for resource file content - for example to locate the "full text" associated with a repository record.
 
 The *resource* described by a RIOXX record is commonly a web page containing metadata and links to other resources, such as (in the case of a publication) a PDF file. The `dc:relation` property identifies these other, related resources. Each `dc:relation` property **MUST** contain an HTTP(S) URI, and **MUST** include the following attributes: 
 
@@ -24,20 +24,30 @@ The `resource_exposed_date` attribute takes the date on which this related resou
 
 Each related resource **MUST** appear as a separate instance of the element.
 
-(Note that the related 'version of record' is not recorded here but **MUST** be recorded in the *rioxxterms:version_of_record* element.)
+(Note that the persistent identifier for the 'version of record' is not recorded here but **MUST** be recorded in the *rioxxterms:version_of_record* element. If the file associated with the 'version of record' is a deposit then its file location can be encoded here)
 
 Example:
 ```xml
-<dc:relation type="https://schema.org/ScholarlyArticle" deposit_date="2021-07-06" resource_exposed_date="2021-07-20">
-    https://www.repository.org/article_123456.pdf
+<dc:relation type="https://schema.org/ScholarlyArticle" version="SMUR" deposit_date="2021-07-06" resource_exposed_date="2021-07-20">
+    https://www.repository.org/article_123456_preprint.pdf
+</dc:relation>
+
+<dc:relation type="https://schema.org/ScholarlyArticle" version="AM" deposit_date="2021-07-28" resource_exposed_date="2021-07-28">
+    https://www.repository.org/article_1234567.pdf
 </dc:relation>
 ```
 
-The schema.org vocabulary accommodates a diverse range of [creative work types](https://schema.org/CreativeWork).  `dc:relation` can therefore also be used to communicate the existence of related data or software, such as by types [DataSet](https://schema.org/DataSet) or [SoftwareSourceCode](https://schema.org/SoftwareSourceCode). Where such types have been encoded it will be considered to be for the purposes of contributing to the scholarly data graph rather than or assisting harvesting software in locating "full text".
+The schema.org vocabulary accommodates a diverse range of [creative work types](https://schema.org/CreativeWork).  `dc:relation` can therefore also be used to communicate the existence of related data or software, such as by types [DataSet](https://schema.org/DataSet) or [SoftwareSourceCode](https://schema.org/SoftwareSourceCode). Where such types have been encoded it will be considered to be for the purposes of contributing to the scholarly data graph rather than for assisting harvesting software in locating file content, such as full-text.
 
-Example:
+Examples:
 ```xml
-<dc:relation type="https://schema.org/DataSet" deposit_date="2022-01-13" resource_exposed_date="2022-01-20">
+<dc:relation type="https://schema.org/DataSet" version="NA" deposit_date="2022-01-13" resource_exposed_date="2022-01-20">
     https://doi.org/10.5281/zenodo.3538919
+</dc:relation>
+```
+
+```xml
+<dc:relation type="https://schema.org/SoftwareSourceCode" version="NA" deposit_date="2022-03-23" resource_exposed_date="2022-04-18">
+    https://github.com/covid19datahub/R
 </dc:relation>
 ```

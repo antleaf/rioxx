@@ -9,7 +9,7 @@ metadata_profile: v3-0-final
 ---
 The purpose of `rioxxterms:grant` is to collect grant ID(s), issued by the relevant funder(s), that relate to ***the resource*** being described, together with the name and/or global identifier for the funder(s) and (where available) directly funded projects.
 
-The element **MUST** contain one grant ID. A grant ID can take the form of an alphanumeric identifier provided by the funder in its original format or preferably an HTTP(S) URI, such as a grant identifier. In cases where ***the resource*** has been funded internally, an appropriate internal code might be used.
+The element **MUST** contain one grant ID. A grant ID can take the form of an alphanumeric identifier provided by the funder in its original format or preferably an HTTP(S) URI. In cases where ***the resource*** has been funded internally, an appropriate internal code might be used.
 
 The element takes three attributes, *funder_name*, *funder_id* and *project_id*. One or both of *funder_name* and *funder_id* **MUST** be supplied. *project_id* is **OPTIONAL**.
 
@@ -22,9 +22,10 @@ A globally unique identifier for the funder of ***the resource*** **SHOULD** be 
 * an [ISNI](https://isni.org) identifier
 * a DOI (in its HTTPS URI form) made available by [FundRef](https://www.crossref.org/fundref/)
 * a ROR identifier (in its HTTPS URI form) made available by the [Research Organization Registry](https://ror.org/)
+* a GRID idenitifier (in its HTTPS URI form) made available by the [Global Research Identifier Database](https://www.grid.ac/) 
 
 ## project_id
-A globally unique identifier that identifies a project which is a direct outcome of the relevant grant ID. This attribute is **OPTIONAL** but **MUST** use an HTTP(S) URI if included.
+A globally unique identifier that identifies a project which is a direct outcome of the relevant grant ID. This attribute is **OPTIONAL** but **MUST** use an HTTP(S) URI if included, such as a local identifier rendered as a persistent identifier or a [RAiD handle](https://www.raid.org.au). It is anticipated that this attribute will reflect the contents of `rioxxterms:project` if used. 
 
 ## Examples
 
@@ -41,7 +42,7 @@ or
 <rioxxterms:grant
     funder_name="Arts and Humanities Research Council"
     funder_id="https://ror.org/0505m1554"
-    project_id="https://blog.westminster.ac.uk/prvoices/">
+    project_id="https://handle.net/10378.1/1590366">
     AH/W007622/1
 </rioxxterms:project>
 ```

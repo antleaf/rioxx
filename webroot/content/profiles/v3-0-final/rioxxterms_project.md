@@ -1,5 +1,5 @@
 ---
-date: '2022-03-31T10:00:43+00:00'
+date: '2022-05-10T10:00:43+00:00'
 draft: false
 type: metadata_profile_property
 title: rioxxterms:project
@@ -9,19 +9,19 @@ metadata_profile: v3-0-final
 ---
 The purpose `rioxxterms:project` is to collect project ID(s), that relate to ***the resource***, together with any associated grant ID(s).
 
-The element **MUST** contain one project ID, a globally unique identifier that identifies a project which is a direct outcome of the relevant grant ID.
+The element **MUST** contain one project ID, a globally unique persistent identifier that identifies a project, such as a local identifier rendered as a persistent identifier or a [RAiD handle](https://www.raid.org.au). 
 
-The element accommodates the *grant_id* attribute. It is anticipated that this attribute will reflect the contents of `rioxxterms:grant` if used. 
+The element accommodates the optional *grant_id* attribute for projects which are the direct outcome of grant funding. It is anticipated that this attribute will reflect the contents of `rioxxterms:grant` if used. 
 
 ## grant_id
-A grant ID can take the form of an alphanumeric identifier provided by the funder in its original format or preferably an HTTP(S) URI, such as a grant identifier. In cases where ***the resource*** has been funded internally, an appropriate internal code might be used.
+A grant ID can take the form of an alphanumeric identifier provided by the funder in its original format or preferably an HTTP(S) URI, such as a grant identifier rendered as a persistent identiifer. In cases where ***the resource*** has been funded internally, an appropriate internal code might be used.
 
 ## Example
 
 ```xml
 <rioxxterms:project
     grant="https://doi.org/10.35802/218671">
-    https://all-suitable-project-idenitifier
+    https://handle.net/10378.1/1590366
 </rioxxterms:project>
 ```
 

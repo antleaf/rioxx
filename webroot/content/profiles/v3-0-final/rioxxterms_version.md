@@ -1,5 +1,5 @@
 ---
-date: '2021-01-15T10:00:43+00:00'
+date: '2022-05-10T10:00:43+00:00'
 draft: false
 type: metadata_profile_property
 title: rioxxterms:version
@@ -28,3 +28,5 @@ These terms are adopted from the [Journal Article Versions (JAV): Recommendation
 * CVoR = Corrected Version of Record
 * EVoR = Enhanced Version of Record
 * NA = Not Applicable (or Unknown) 
+
+Note that `rioxxterms:version` pertains to the version being described. `dc:relation` should be used to encode the location of related file content and their version(s), where applicable. 
