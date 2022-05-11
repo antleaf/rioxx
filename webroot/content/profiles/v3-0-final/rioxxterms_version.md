@@ -1,5 +1,5 @@
 ---
-date: '2022-05-10T10:00:43+00:00'
+date: '2022-05-11T10:00:43+00:00'
 draft: false
 type: metadata_profile_property
 title: rioxxterms:version
@@ -18,7 +18,7 @@ This element indicates which &#39;version&#39; of ***the resource*** is being de
 * EVoR
 * NA
 
-These terms are adopted from the [Journal Article Versions (JAV): Recommendations of the NISO/ALPSP JAV Technical Working Group](http://www.niso.org/publications/rp/RP-8-2008.pdf) and have the following meanings:
+These terms are adopted from the [NISO RP-8-2008 Journal Article Versions (JAV) standard](https://www.niso.org/publications/niso-rp-8-2008-jav) and have the following meanings:
 
 * AO = Author&#39;s Original
 * SMUR = Submitted Manuscript Under Review
