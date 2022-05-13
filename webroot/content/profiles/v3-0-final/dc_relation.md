@@ -43,6 +43,21 @@ Example:
 </dc:relation>
 ```
 
+This above approach could be extended to include related expressions of the same JAV type but which may be provided in an alternative file format.
+
+Example:
+```xml
+<dc:relation type="https://schema.org/ScholarlyArticle" version="VoR" deposit_date="2022-03-14" resource_exposed_date="2022-03-14">
+    https://www.repository.org/article_123456.pdf
+</dc:relation>
+
+<dc:relation type="https://schema.org/ScholarlyArticle" version="VoR" eposit_date="2022-03-14" resource_exposed_date="2022-03-14">
+    https://www.repository.org/article_1234567_JATS.xml
+</dc:relation>
+```
+
+
+
 The [schema.org](https://schema.org/) vocabulary accommodates a diverse range of [creative work types](https://schema.org/CreativeWork).  `dc:relation` can therefore also be used to communicate the existence of related data or software, such as by types [DataSet](https://schema.org/DataSet) or [SoftwareSourceCode](https://schema.org/SoftwareSourceCode). Where such types have been encoded it will be considered to be for the purposes of contributing to the scholarly data graph rather than for assisting harvesting software in locating file content, such as full-text. The `version` attribute is **OPTIONAL**
 
 Examples:
