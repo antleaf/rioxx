@@ -5,7 +5,7 @@ type: metadata_profile_property
 title: rioxxterms:publication_date
 cardinality: Zero or one
 requirement: Optional
-metadata_profile: v3-0-final
+metadata_profile: v3-0-rc-1
 ---
 This element takes the publication date of ***the resource*** in the form in which it would be cited. This allows for a RIOXX record to become a reasonable bibliographic record for ***the resource***. 
 

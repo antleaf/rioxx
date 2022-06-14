@@ -5,7 +5,7 @@ type: metadata_profile_property
 title: rioxxterms:type
 cardinality: One or more
 requirement: Mandatory
-metadata_profile: v3-0-final
+metadata_profile: v3-0-rc-1
 ---
 Type refers to the 'type' - the nature or genre of the content of ***the resource***. This element should not be confused this with `dc:format`.
 
