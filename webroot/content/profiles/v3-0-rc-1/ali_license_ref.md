@@ -1,5 +1,5 @@
 ---
-date: '2022-03-09T10:00:43+00:00'
+date: '2022-06-17T15:00:43+00:00'
 draft: false
 type: metadata_profile_property
 title: ali:license_ref
@@ -7,7 +7,7 @@ cardinality: One or more
 requirement: Mandatory
 metadata_profile: v3-0-rc-1
 ---
-This is defined in the [NISO Open Access Metadata and Indicators](http://www.niso.org/workrooms/ali/). This element **MUST** take an HTTP(S) URI for its value. This URI **MUST** point to a resource which expresses the license terms specifying how ***the resource*** may be used.
+This is defined in the [NISO Open Access Metadata and Indicators](https://www.niso.org/workrooms/ali/). This element **MUST** take an HTTP(S) URI for its value. This URI **MUST** point to a resource which expresses the license terms specifying how ***the resource*** may be used.
 
 Element content **MUST** be encoded according to the [W3CDTF](https://www.w3.org/TR/NOTE-datetime) (a profile of [ISO 8601](https://www.iso.org/standard/40874.html)) which typically follows the following format: YYYY-MM-DD.
 
@@ -29,5 +29,5 @@ This approach allows the expression of &#39;embargoes&#39;, where a particular l
 
 In the absence of any other license, the copyright holder reserves all rights automatically. As a convenience, RIOXX provides two URLs which may be used to explicitly convey this state:
 
-* [http://www.rioxx.net/licenses/all-rights-reserved](/licenses/all-rights-reserved)
-* [http://www.rioxx.net/licenses/under-embargo-all-rights-reserved](/licenses/under-embargo-all-rights-reserved)
+* [https://www.rioxx.net/licenses/all-rights-reserved](/licenses/all-rights-reserved)
+* [https://www.rioxx.net/licenses/under-embargo-all-rights-reserved](/licenses/under-embargo-all-rights-reserved)
