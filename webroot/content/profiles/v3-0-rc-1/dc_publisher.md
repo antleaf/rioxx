@@ -1,5 +1,5 @@
 ---
-date: '2022-05-10T13:00:43+00:00'
+date: '2022-06-14T11:00:43+00:00'
 draft: false
 type: metadata_profile_property
 title: dc:publisher
@@ -17,5 +17,9 @@ Where available and possible, the **RECOMMENDED** format is to add the official 
     Public Library of Science
 </dc:publisher>
 ```
-
-Where an ISNI is unavailable or cannot be provided, the name of the publisher entered here **SHOULD** instead be from a controlled list.
+```xml
+<dc:publisher uri="https://ror.org/00qpqrv96">
+    Ubiquity Press (United Kingdom)
+</dc:publisher>
+```
+Typical persistent identifier schemes likely to be relevant here include [ISNI](https://isni.org/), [ROR](https://ror.org/), [GRID](https://www.grid.ac/), [VIAF](http://viaf.org/). Where a recognised persistent identifier is unavailable or cannot be provided, the name of the publisher entered here **SHOULD** instead be from a controlled list.
