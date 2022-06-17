@@ -1,5 +1,5 @@
 ---
-date: '2022-06-13T11:00:43+00:00'
+date: '2022-06-17T11:00:43+00:00'
 draft: false
 type: metadata_profile_property
 title: dc:relation
@@ -38,7 +38,7 @@ Example:
     https://www.repository.org/article_1234567_JATS.xml
 </dc:relation>
 ```
-The [schema.org](https://schema.org/) vocabulary accommodates a diverse range of [creative work types](https://schema.org/CreativeWork).  `dc:relation` can therefore also be used to communicate the existence of related data or software, such as by types [DataSet](https://schema.org/DataSet) or [SoftwareSourceCode](https://schema.org/SoftwareSourceCode). Where such types have been encoded it will be considered to be for the purposes of contributing to the scholarly data graph rather than for assisting harvesting software in locating file content, such as full-text. The `version` attribute is **OPTIONAL**
+The [schema.org](https://schema.org/) vocabulary accommodates a diverse range of [creative work types](https://schema.org/CreativeWork).  `dc:relation` can therefore also be used to communicate the existence of related data or software, such as by types [DataSet](https://schema.org/DataSet) or [SoftwareSourceCode](https://schema.org/SoftwareSourceCode). Where such types have been encoded it will be considered to be for the purposes of contributing to the scholarly data graph rather than for assisting harvesting software in locating file content, such as full-text.
 
 Examples:
 ```xml
