@@ -24,8 +24,6 @@ The `resource_exposed_date` attribute takes the date on which this related resou
 
 Each related resource **MUST** appear as a separate instance of the element.
 
-(Note that the persistent identifier for the 'version of record' is not recorded here but **MUST** be recorded in the *rioxxterms:version_of_record* element. If the file associated with the 'version of record' is a deposit then its file location can be encoded here)
-
 Example:
 ```xml
 <dc:relation type="https://schema.org/ScholarlyArticle" deposit_date="2021-07-06" resource_exposed_date="2021-07-20">
