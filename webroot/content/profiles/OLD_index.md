@@ -10,7 +10,7 @@ aliases:
 layout: profiles_list
 ---
 
-#### [Version 3.0 Beta 1 (DRAFT)](/profiles/v3-0-beta-1/)
+#### [Version 3.0 Beta 1](/profiles/v3-0-beta-1/)
 ###### Changes since [Version 2.0 Final Release:](https://www.rioxx.net/profiles/v2-0-final/)
 - `<ali:license_ref>`, `<rioxxterms:author>`, `<rioxxterms:contributor>`, `<rioxxterms:project>`, `<rioxxterms:version_of_record>` **updated** to explicitly note HTTPS use where URI values are specified.
 - **Removed** the `<ali:free_to_read>` property.
@@ -25,17 +25,27 @@ layout: profiles_list
 
 #### [Version 2.0 Final](/profiles/v2-0-final/)
 
-This is an updated version of the RIOXX application profile, enhanced following the outcomes of the [V4OA](http://www.v4oa.net) project.
-
-###### Changes since version 1.0
+###### Changes since version 2.0 RC 2
 
 * changed <dcterms:dateAccepted> to only allow YYYY-MM-DD and not YYYY-MM
+
+#### [Version 2.0 RC 2](/profiles/v2-0-rc-2/)
+
+###### Changes since version 2.0 beta 1
+
 * changed <dcterms:dateAccepted> to only allow YYYY-MM and not YYYY
 * very slight change to wording in <dc:identifier>
 * recommendation to use ISBN13 rather than book title in dc:source
 * removed description of dc:subject and pointed to OpenAIRE guidelines
 * added the ali namespace prefix to <license_ref> and <free_to_read>
 * added recommendation to use ISNI for identification of funders, as well as for authors and contributors where these are organisations
+
+#### [Version 2.0 beta 1](/profiles/v2-0-beta-1/)
+
+This is an updated version of the RIOXX application profile, enhanced following the outcomes of the [V4OA](http://www.v4oa.net) project.
+
+###### Changes since version 1.0
+
 * the <free_to_read> element has been added
 * the <license_ref> element has been added
 * the <dc:rights> element has been removed - the introduction of the new <license_ref> has superseded this

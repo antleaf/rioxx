@@ -7,7 +7,7 @@ tags: []
 title: RIOXX Application Profile Version 3.0 Beta 1
 topics: []
 aliases:
-status: draft
+status: 
 ---
 
 ## Terminology
