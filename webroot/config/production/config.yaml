@@ -1,4 +1,5 @@
-baseurl: "https://www.rioxx.net"
+#baseurl: "https://www.rioxx.net"
+baseurl: "https://rioxx.antleaf.com"
 # googleAnalytics: "UA-1053639-1"
 disqusShortname: "rioxx"
 params:
