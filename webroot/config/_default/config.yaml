@@ -1,6 +1,6 @@
 languageCode: "en-gb"
 uglyURLs: false
-title: "RIOXX"
+title: "Rioxx: The Research Outputs Metadata Schema"
 author: "Paul Walk"
 copyright: "This website and blog are licensed under a <a rel='license' href='http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>"
 enableRobotsTXT: false
@@ -16,7 +16,7 @@ permalinks:
   # post: "/:year/:month/:day/:title/"
   # page: "/:title/"
 params:
-  tagline: "the RIOXX metadata application profile and guidelines"
+  tagline: "Rioxx: The Research Outputs Metadata Schema"
   pageSize: "10"
   AuthorName: "Paul Walk"
   showPageStatusTagsOnLiveSite: true

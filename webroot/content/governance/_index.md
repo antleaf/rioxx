@@ -21,4 +21,4 @@ topics: []
 
 ## Group Charter
 
-* [RIOXX Metadata Application Profile – Governance Group Charter](/governance/charter/)
+* [Rioxx: The Research Outputs Metadata Schema – Governance Group Charter](/governance/charter/)

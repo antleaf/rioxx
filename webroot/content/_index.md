@@ -8,11 +8,11 @@ title: Home
 topics: []
 ---
 
-This website contains technical and supporting information about the RIOXX Metadata Application Profile.
+This website contains technical and supporting information about _Rioxx: The Research Outputs Metadata Schema_.
 
-The RIOXX metadata application profile has been developed for repositories to share metadata about the scholarly resources they contain.
+Rioxx has been developed for repositories to share metadata about the scholarly resources they contain.
 
-RIOXX is managed by Antleaf, and is governed and supported by UKCORR.
+_Rioxx: The Research Outputs Metadata Schema_ is governed by [UKCORR](https://www.ukcorr.org), and its documentation (this website) is maintained by Paul Walk at [Antleaf](http://www.antleaf.com).
 
 <div style="text-align: center">
 <a href="http://www.antleaf.com"><img src="/images/antleaf_logo.png" class="credit_logo" alt="Antleaf Logo"/></a>
