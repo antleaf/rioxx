@@ -4,7 +4,7 @@ date: '2022-03-31T15:00:43+00:00'
 description: ''
 draft: false
 tags: []
-title: RIOXX Application Profile Version 3.0 Release Candidate 1
+title: Rioxx: The Research Outputs Metadata Schema Version 3.0 Release Candidate 1
 topics: []
 aliases:
 status: draft
