@@ -7,7 +7,7 @@ cardinality: Zero or more
 requirement: Optional
 metadata_profile: v3-0-rc-1
 ---
-This field is designed to describe an entity – for example the name of a person, organisation or service – responsible for making contributions to the content of ***the resource***. As many rioxxterms:contributor elements may be entered as required. This element **SHOULD** take an optional attribute called *uri*, which **MUST** contain a URI which uniquely identifies the contributor. The ideal use of this element is to include both an HTTP(S) URI in the *uri* attribute, and a text string in the body of the element, thus:
+This field is designed to describe an entity – for example the name of a person, organisation or service – responsible for making contributions to the content of ***the resource***. As many rioxxterms:contributor properties may be entered as required. This property **SHOULD** take an optional attribute called *uri*, which **MUST** contain a URI which uniquely identifies the contributor. The ideal use of this property is to include both an HTTP(S) URI in the *uri* attribute, and a text string in the body of the property, thus:
 
 ```xml
 <rioxxterms:contributor uri="https-uri-for-this-contributor-entity">

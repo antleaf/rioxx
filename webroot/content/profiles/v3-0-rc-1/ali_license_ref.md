@@ -7,15 +7,15 @@ cardinality: One or more
 requirement: Mandatory
 metadata_profile: v3-0-rc-1
 ---
-This is defined in the [NISO Open Access Metadata and Indicators](https://www.niso.org/workrooms/ali/). This element **MUST** take an HTTP(S) URI for its value. This URI **MUST** point to a resource which expresses the license terms specifying how ***the resource*** may be used.
+This is defined in the [NISO Open Access Metadata and Indicators](https://www.niso.org/workrooms/ali/). This property **MUST** take an HTTP(S) URI for its value. This URI **MUST** point to a resource which expresses the license terms specifying how ***the resource*** may be used.
 
-Element content **MUST** be encoded according to the [W3CDTF](https://www.w3.org/TR/NOTE-datetime) (a profile of [ISO 8601](https://www.iso.org/standard/40874.html)) which typically follows the following format: YYYY-MM-DD.
+property content **MUST** be encoded according to the [W3CDTF](https://www.w3.org/TR/NOTE-datetime) (a profile of [ISO 8601](https://www.iso.org/standard/40874.html)) which typically follows the following format: YYYY-MM-DD.
 
-This element **MUST** include the attribute:
+This property **MUST** include the attribute:
 
 * start_date
 
-This attribute indicates the date upon which this license takes effect. Multiple *ali:license_ref* elements may be included. Where several such elements are included, the one with the *start_date* attribute indicating the most recent date takes precedence.
+This attribute indicates the date upon which this license takes effect. Multiple *ali:license_ref* properties may be included. Where several such properties are included, the one with the *start_date* attribute indicating the most recent date takes precedence.
 
 Example:
 

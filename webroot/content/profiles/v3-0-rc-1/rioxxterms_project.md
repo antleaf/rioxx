@@ -7,9 +7,9 @@ cardinality: One or more
 requirement: Optional
 metadata_profile: v3-0-rc-1
 ---
-The purpose `rioxxterms:project` is to collect project ID(s), that relate to ***the resource***, together with any associated grant ID(s).
+The purpose of `rioxxterms:project` is to collect project ID(s), that relate to ***the resource***.
 
-The element **MUST** contain one project ID, a globally unique persistent identifier that identifies a project, such as a local identifier rendered as a persistent identifier or a [RAiD handle](https://www.raid.org.au). 
+The `rioxxterms:project` property **MUST** contain one project ID, a globally unique persistent identifier that identifies a project, such as a local identifier rendered as a persistent identifier or a [RAiD handle](https://www.raid.org.au). 
 
 ## Example
 
@@ -19,6 +19,6 @@ The element **MUST** contain one project ID, a globally unique persistent identi
 </rioxxterms:project>
 ```
 
-Where ***the resource*** is associated with more than one project ID, *rioxxterms:project* element **MUST** be added for each. This means that it is quite normal for multiple instances of the `rioxxterms:project` element in a single RIOXX metadata record.
+Where ***the resource*** is associated with more than one project ID, a *rioxxterms:project* property **MUST** be added for each. This means that it is permissible for multiple instances of the `rioxxterms:project` property to appear in a single RIOXX metadata record.
 
 

@@ -7,7 +7,7 @@ cardinality: Exactly one
 requirement: Mandatory
 metadata_profile: v3-0-rc-1
 ---
-This element indicates which &#39;version&#39; of ***the resource*** is being described. The value of this element **MUST** be one of the following:
+This property indicates which 'version' of ***the resource*** is being described. The value of this property **MUST** be one of the following:
 
 * AO
 * SMUR
@@ -29,4 +29,6 @@ These terms are adopted from the [NISO RP-8-2008 Journal Article Versions (JAV) 
 * EVoR = Enhanced Version of Record
 * NA = Not Applicable (or Unknown) 
 
+<!--
 Note that `rioxxterms:version` pertains to the version being described. `dc:relation` should be used to encode the location of related file content and their version(s), where applicable. 
+-->

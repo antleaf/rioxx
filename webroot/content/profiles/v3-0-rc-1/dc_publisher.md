@@ -8,7 +8,7 @@ requirement: Recommended
 metadata_profile: v3-0-rc-1
 ---
 
-This element contains the name of the entity, typically a &#39;publisher&#39;, responsible for making the ***version of record*** of ***the resource*** available. This could be a person, organisation or service.
+This property contains the name of the entity, typically a &#39;publisher&#39;, responsible for making the ***version of record*** of ***the resource*** available. This could be a person, organisation or service.
 
 Where available and possible, the **RECOMMENDED** format is to add the official name of the publisher, and to include a recognised persistent identifier in its HTTP(S) URI form as an attribute, e.g.
 

@@ -7,11 +7,11 @@ cardinality: One or more
 requirement: Optional
 metadata_profile: v3-0-rc-1
 ---
-The purpose of `rioxxterms:grant` is to collect grant ID(s), issued by the relevant funder(s), that relate to ***the resource*** being described, together with the name and/or global identifier for the funder(s) and (where available) directly funded projects.
+The purpose of `rioxxterms:grant` is to collect grant ID(s), issued by the relevant funder(s), that relate to ***the resource*** being described, together with the name and/or global identifier for the funder(s).
 
-The element **MUST** contain one grant ID. A grant ID can take the form of an alphanumeric identifier provided by the funder in its original format or preferably an HTTP(S) URI. In cases where ***the resource*** has been funded internally, an appropriate internal code might be used.
+The property **MUST** contain one grant ID. A grant ID can take the form of any identifier provided by the funder, preferably represented as an HTTP(S) URI. In cases where ***the resource*** has been funded internally, an appropriate internal code might be used.
 
-The element takes two attributes: *funder_name* and *funder_id*. One or both of *funder_name* and *funder_id* **MUST** be supplied.
+The property takes two attributes: *funder_name* and *funder_id*. One or both of *funder_name* and *funder_id* **MUST** be supplied.
 
 ## funder_name
 The canonical name of the entity responsible for funding ***the resource*** **SHOULD** be recorded here as text.
@@ -43,6 +43,6 @@ or
 </rioxxterms:grant>
 ```
 
-Where ***the resource*** has been funded by more than one funder a separate *rioxxterms:grant* element **MUST** be added for each. Similarly, where several grant IDs provided by the same funder have been attached to ***the resource***, a separate *rioxxterms:grant* element **MUST** be added for each.
+Where ***the resource*** has been funded by more than one funder a separate *rioxxterms:grant* property **MUST** be added for each. Similarly, where several grant IDs provided by the same funder have been attached to ***the resource***, a separate *rioxxterms:grant* property **MUST** be added for each.
 
-This means that it is quite normal for a given *funder_name* or *funder_id* to appear in multiple instances of the *rioxxterms:grant* element in a single RIOXX metadata record.
+This means that it is permissible for a given *funder_name* or *funder_id* to appear in multiple instances of the *rioxxterms:grant* property in a single RIOXX metadata record.

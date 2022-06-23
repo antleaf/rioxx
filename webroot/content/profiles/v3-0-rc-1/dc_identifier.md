@@ -7,6 +7,6 @@ cardinality: Exactly one
 requirement: Mandatory
 metadata_profile: v3-0-rc-1
 ---
-`dc:identifier` **MUST** contain an HTTP(S) URI which is a persistent identifier for ***the resource***. In repositories, this is typically a webpage from which links to other related resources are located. It is **RECOMMENDED** that that a DOI, Handle, URN, or other persistent identification scheme be used. In the common case of a "splash-page" linking to related files (potentially in different formats), then one or more instances of the `dc:relation` property may be used to convey this and thereby directing harvesting software agents.
+`dc:identifier` **MUST** contain an HTTP(S) URI which is a persistent identifier for ***the resource***. In repositories, this is typically a webpage which includes links to other related resources. It is **RECOMMENDED** that that a DOI, Handle, URN, or other persistent identification scheme be used. In the common case of a "splash-page" linking to related files (potentially in different formats), then one or more instances of the `dc:relation` property may be included in the RIOXX record to convey this and thereby direct harvesting software agents.
 
 Note that `dc:identifier` should not be confused with `rioxxterms:version_of_record`.
