@@ -27,7 +27,7 @@ Example:
 
 This approach allows the expression of &#39;embargoes&#39;, where a particular license takes effect at a date in the subjective future.
 
-In the absence of any other license, the copyright holder reserves all rights automatically. As a convenience, RIOXX provides two URLs which may be used to explicitly convey this state:
+In the absence of any other license, the copyright holder reserves all rights automatically. As a convenience, Rioxx provides two URLs which may be used to explicitly convey this state:
 
 * [https://www.rioxx.net/licenses/all-rights-reserved](/licenses/all-rights-reserved)
 * [https://www.rioxx.net/licenses/under-embargo-all-rights-reserved](/licenses/under-embargo-all-rights-reserved)

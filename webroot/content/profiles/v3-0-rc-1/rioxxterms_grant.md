@@ -45,4 +45,4 @@ or
 
 Where ***the resource*** has been funded by more than one funder a separate *rioxxterms:grant* property **MUST** be added for each. Similarly, where several grant IDs provided by the same funder have been attached to ***the resource***, a separate *rioxxterms:grant* property **MUST** be added for each.
 
-This means that it is permissible for a given *funder_name* or *funder_id* to appear in multiple instances of the *rioxxterms:grant* property in a single RIOXX metadata record.
+This means that it is permissible for a given *funder_name* or *funder_id* to appear in multiple instances of the *rioxxterms:grant* property in a single Rioxx metadata record.

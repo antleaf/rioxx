@@ -8,9 +8,9 @@ requirement: Should
 metadata_profile: v3-0-rc-1
 ---
 
-Although this property is not strictly mandated in the RIOXX application profile, it **SHOULD** be included because this is the property which harvesting software will inspect for to find the URLs for resource file content - for example to locate the "full text" associated with a repository record.
+Although this property is not strictly mandated in the Rioxx application profile, it **SHOULD** be included because this is the property which harvesting software will inspect for to find the URLs for resource file content - for example to locate the "full text" associated with a repository record.
 
-The *resource* described by a RIOXX record is commonly a web page containing metadata and links to other resources, such as (in the case of a publication) a PDF file. The `dc:relation` property identifies these other, related resources. Each `dc:relation` property **MUST** contain an HTTP(S) URI, and **SHOULD** include the following attributes: 
+The *resource* described by a Rioxx record is commonly a web page containing metadata and links to other resources, such as (in the case of a publication) a PDF file. The `dc:relation` property identifies these other, related resources. Each `dc:relation` property **MUST** contain an HTTP(S) URI, and **SHOULD** include the following attributes: 
 
 * `type`
 * `deposit_date`
