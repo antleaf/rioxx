@@ -2,7 +2,7 @@
 date: '2020-10-28T15:10:43+00:00'
 draft: false
 type: metadata_profile_property
-title: dcterms:date_accepted
+title: dcterms:dateAccepted
 cardinality: Exactly one
 requirement: Mandatory
 metadata_profile: v3-0-rc-1
