@@ -38,7 +38,7 @@ Example:
     https://www.repository.org/article_1234567_JATS.xml
 </dc:relation>
 ```
-The [schema.org](https://schema.org/) vocabulary accommodates a diverse range of [creative work types](https://schema.org/CreativeWork).  `dc:relation` can therefore also be used to communicate the existence of related data or software, such as by types [DataSet](https://schema.org/DataSet) or [SoftwareSourceCode](https://schema.org/SoftwareSourceCode). These examples are suggested in the interest of contributing to the scholarly data graph in general.
+The [schema.org](https://schema.org/) vocabulary accommodates a diverse range of [creative work types](https://schema.org/CreativeWork).  `dc:relation` can therefore also be used to communicate the existence of related data or software, such as by types [DataSet](https://schema.org/Dataset) or [SoftwareSourceCode](https://schema.org/SoftwareSourceCode). These examples are suggested in the interest of contributing to the scholarly data graph in general.
 
 Examples:
 ```xml
