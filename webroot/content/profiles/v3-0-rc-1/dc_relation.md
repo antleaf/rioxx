@@ -42,7 +42,7 @@ The [schema.org](https://schema.org/) vocabulary accommodates a diverse range of
 
 Examples:
 ```xml
-<dc:relation type="https://schema.org/DataSet" deposit_date="2022-01-13" resource_exposed_date="2022-01-20">
+<dc:relation type="https://schema.org/Dataset" deposit_date="2022-01-13" resource_exposed_date="2022-01-20">
     https://doi.org/10.5281/zenodo.3538919
 </dc:relation>
 ```
