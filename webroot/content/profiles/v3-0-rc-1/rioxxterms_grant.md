@@ -1,9 +1,9 @@
 ---
-date: '2022-06-13T11:38:43+00:00'
+date: '2022-11-03T11:38:43+00:00'
 draft: false
 type: metadata_profile_property
 title: rioxxterms:grant
-cardinality: One or more
+cardinality: Zero or more
 requirement: Optional
 metadata_profile: v3-0-rc-1
 ---
