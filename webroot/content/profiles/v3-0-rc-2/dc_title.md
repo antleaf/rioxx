@@ -5,7 +5,7 @@ type: metadata_profile_property
 title: dc:title
 cardinality: Exactly one
 requirement: Mandatory
-Rioxxmetadata_profile: v3-0-rc-2
+metadata_profile: v3-0-rc-2
 ---
 This refers to the title, and any sub-titles, of ***the resource***. The title should be represented using the original spelling and wording. The **RECOMMENDED** format for expressing subtitles is:
 

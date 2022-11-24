@@ -5,7 +5,7 @@ type: metadata_profile_property
 title: dc:source
 cardinality: Zero or one
 requirement: Mandatory where applicable
-Rioxxmetadata_profile: v3-0-rc-2
+metadata_profile: v3-0-rc-2
 ---
 
 The source label describes a resource from which ***the resource*** is derived (in whole or in part). It is **RECOMMENDED** that the source is referenced using a unique identifier from a recognised system e.g. the unique 8-digit International Standard Serial Numbers (ISSN) assigned to *electronic* periodicals, or the 13 digit International Standard Book Number (ISBN13) assigned to books. In the latter case, the ISBN13 for the electronic version of the book ***SHOULD*** be used if available.
