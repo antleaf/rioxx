@@ -11,7 +11,7 @@ layout: profiles_list
 ---
 
 #### [Version 3.0 RC 2 (DRAFT)](/profiles/v3-0-rc-2/)
-###### Changes since [Version 2.0 Final Release:](https://www.rioxx.net/profiles/v2-0-final/)
+###### Changes since [Version 2.0 Final Release:](/profiles/v2-0-final/)
 <mark>THESE NEED TO BE UPDATED</mark>
 - Separation of project and grant data, with the creation of `<rioxxterms:grants>` alongside `<rioxxterms:project>`
 - Wider support for persistent identifier (PID) schemes across `<rioxxterms:author>`, `<rioxxterms:contributor>`, `<rioxxterms:project>` and `<dc:publisher>`, with an increased range of PID schemes recommended to reflect growing maturity in the PID landscape
