@@ -7,4 +7,5 @@ cardinality: Zero or more
 requirement: Recommended
 metadata_profile: v3-0-rc-2
 ---
-The [Openaire Guidelines recommend the inclusion of this property](https://guidelines.openaire.eu/wiki/Literature_Guidelines:_Metadata_Field_Subject).
+
+`dc:subject` is used to describe the subject of *the resource*. It is **RECOMMENDED** that a URI be used for the value, however a literal value that identifies the subject may be provided instead. Both should preferably refer to a subject in a controlled vocabulary.

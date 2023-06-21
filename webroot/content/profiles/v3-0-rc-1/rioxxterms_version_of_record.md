@@ -7,7 +7,7 @@ cardinality: Zero or one
 requirement: Recommended
 metadata_profile: v3-0-rc-1
 ---
-This property **MUST** contain an HTTP(S) URI which is a persistent identifier for the published 'version of record' of ***the resource***. If a DOI has been issued by the publisher then this **MUST** be used (and such a DOI **MUST** be represented in its HTTP(S) form). For example:
+This property **MUST** contain an HTTP(S) URI which is a persistent identifier for the published 'version of record' of *the resource*. If a DOI has been issued by the publisher then this **MUST** be used (and such a DOI **MUST** be represented in its HTTP(S) form). For example:
 
 ```xml
 <rioxxterms:version_of_record>

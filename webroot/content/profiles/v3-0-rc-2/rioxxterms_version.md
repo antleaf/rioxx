@@ -6,11 +6,14 @@ title: rioxxterms:version
 cardinality: Exactly one
 requirement: Mandatory
 metadata_profile: v3-0-rc-2
-
-
 ---
 
-This property indicates which 'version' of ***the resource*** is being described. The value of this property uses concepts defined by [NISO RP-8-2008 Journal Article Versions (JAV) standard](https://www.niso.org/publications/niso-rp-8-2008-jav) and adapted by the [COAR Version Types vocabulary]([Controlled Vocabularies for Repositories: Version Types](https://vocabularies.coar-repositories.org/version_types/)). 
+<mark>Is this necessary at 'root' level, when version is encoded with greater specificity at file level, within `rioxxterms:item` and `rioxxterms:relation`? @g3om4c</mark>
+
+<mark>I think we should definitely remove this, for the reason George suggests above (Paul)</mark>
+
+<s>
+This property indicates which 'version' of *the resource* is being described. The value of this property uses concepts defined by [NISO RP-8-2008 Journal Article Versions (JAV) standard](https://www.niso.org/publications/niso-rp-8-2008-jav) and adapted by the [COAR Version Types vocabulary]([Controlled Vocabularies for Repositories: Version Types](https://vocabularies.coar-repositories.org/version_types/)). 
 
 The value of the property **MUST** be one of the following:
 
@@ -50,5 +53,6 @@ These abbreviations are defined by the JAV standard and have the following meani
 * NA = Not Applicable (or Unknown) 
 
 <!--
-Note that `rioxxterms:version` pertains to the version being described. `dc:relation` should be used to encode the location of related file content and their version(s), where applicable. 
+Note that `rioxxterms:version` pertains to the version being described. `rioxxterms:relation` should be used to encode the location of related file content and their version(s), where applicable. 
 -->
+</s>

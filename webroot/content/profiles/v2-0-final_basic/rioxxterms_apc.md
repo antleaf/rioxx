@@ -7,7 +7,7 @@ cardinality: Zero or one
 requirement: Optional
 metadata_profile: v2-0-final_basic
 ---
-This element expresses whether or not ***the resource*** has an associated &#39;article processing charge&#39;. The value of this element **SHOULD** be one of the following:
+This element expresses whether or not *the resource* has an associated &#39;article processing charge&#39;. The value of this element **SHOULD** be one of the following:
 
 * paid
 * partially waived

@@ -7,7 +7,7 @@ cardinality: Zero or one
 requirement: Recommended
 metadata_profile: v2-0-final_basic
 ---
-This element indicates which &#39;version&#39; of ***the resource*** is being described. The value of this element **SHOULD** be one of the following:
+This element indicates which &#39;version&#39; of *the resource* is being described. The value of this element **SHOULD** be one of the following:
 
 * AO
 * SMUR

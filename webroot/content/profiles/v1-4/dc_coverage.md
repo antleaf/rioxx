@@ -7,4 +7,4 @@ cardinality: Zero or more
 requirement: Optional
 metadata_profile: v1-4
 ---
-This refers to the scope or extent of the content of ***the resource***. It may include jurisdictional, temporal or spatial information. <del>It is **RECOMMENDED** that, where possible, a recognised globally unique identifier is used, such as the Thesaurus of Geographic Names</del>. For example, the place of publication may be recorded.
+This refers to the scope or extent of the content of *the resource*. It may include jurisdictional, temporal or spatial information. <del>It is **RECOMMENDED** that, where possible, a recognised globally unique identifier is used, such as the Thesaurus of Geographic Names</del>. For example, the place of publication may be recorded.

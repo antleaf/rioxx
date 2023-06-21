@@ -7,7 +7,7 @@ cardinality: One or more
 requirement: Mandatory
 metadata_profile: v3-0-rc-1
 ---
-Type refers to the nature or genre of the content of ***the resource***. This property should not be confused with `dc:format`.
+Type refers to the nature or genre of the content of *the resource*. This property should not be confused with `dc:format`.
 
 Values recorded at `rioxxterms:type` **MUST** be taken from the [COAR Controlled Vocabulary for Resource Type Genres](http://vocabularies.coar-repositories.org/documentation/resource_types/) (Version 3.0), which provides a hierarchical model of resource type genres supported by language independent HTTP(S) URIs.
 

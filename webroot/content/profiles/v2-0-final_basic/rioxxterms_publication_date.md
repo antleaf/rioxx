@@ -7,7 +7,7 @@ cardinality: Zero or one
 requirement: Optional
 metadata_profile: v2-0-final_basic
 ---
-This element takes the publication date of ***the resource*** in the form in which it would be cited. This element is not used in a RIOXX context but allows for a RIOXX record to become a reasonable bibliographic record for ***the resource***. This is a free-text field.
+This element takes the publication date of *the resource* in the form in which it would be cited. This element is not used in a RIOXX context but allows for a RIOXX record to become a reasonable bibliographic record for *the resource*. This is a free-text field.
 
 Examples:
 

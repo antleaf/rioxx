@@ -7,7 +7,7 @@ cardinality: Zero or one
 requirement: Recommended
 metadata_profile: v2-0-rc-2
 ---
-This field **MUST** contain an HTTP URI which is a persistent identifier for the published version of ***the resource***. If a DOI has been issued by the publisher then this *MUST* be used. Such a DOI **MUST** be represented in its HTTP form, for example:
+This field **MUST** contain an HTTP URI which is a persistent identifier for the published version of *the resource*. If a DOI has been issued by the publisher then this *MUST* be used. Such a DOI **MUST** be represented in its HTTP form, for example:
 
     <rioxxterms:version_of_record>
         http://dx.doi.org/10.1006/jmbi.1995.0238

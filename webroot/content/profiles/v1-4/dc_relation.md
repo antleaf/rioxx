@@ -7,6 +7,6 @@ cardinality: Zero or more
 requirement: Optional
 metadata_profile: v1-4
 ---
-The format of this element **SHOULD** be an HTTP URI which points to a related resource, e.g. a data-set which underpins ***the resource***.
+The format of this element **SHOULD** be an HTTP URI which points to a related resource, e.g. a data-set which underpins *the resource*.
 
 Each related resource **MUST** appear as a separate instance of the field.

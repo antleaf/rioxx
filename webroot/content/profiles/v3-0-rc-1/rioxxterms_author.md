@@ -7,7 +7,7 @@ cardinality: One or more
 requirement: Mandatory
 metadata_profile: v3-0-rc-1
 ---
-The author of ***the resource*** may be a person, organisation or service, but is most commonly a person. This property **SHOULD** take an optional attribute called *uri*, which **MUST** contain a URI which uniquely identifies the author. Where there is more than one author, a separate *rioxxterms:author* property **MUST** be used for each. As many authors may be entered as required. 
+The author of *the resource* may be a person, organisation or service, but is most commonly a person. This property **SHOULD** take an optional attribute called *uri*, which **MUST** contain a URI which uniquely identifies the author. Where there is more than one author, a separate *rioxxterms:author* property **MUST** be used for each. As many authors may be entered as required. 
 
 The ideal use of this property is to include both an HTTP(S) URI in the *uri* attribute and a text string in the body of the property, thus:
 ```xml
@@ -32,7 +32,7 @@ Where the author is an organisation, the **RECOMMENDED** format is to add the of
 </rioxxterms:author>
 ```
 
-Where the *rioxxterms:author* property appears multiple times for one record, it **CAN** be assumed that the order is significant, in that the first property describes the &#39;first named author&#39; of ***the resource***. In order to make this more explicit, an extra attribute, *first-named-author*, **SHOULD** be used to indicate which of the *rioxxterms:author* properties describes the first named author of ***the resource***, thus:
+Where the *rioxxterms:author* property appears multiple times for one record, it **CAN** be assumed that the order is significant, in that the first property describes the &#39;first named author&#39; of *the resource*. In order to make this more explicit, an extra attribute, *first-named-author*, **SHOULD** be used to indicate which of the *rioxxterms:author* properties describes the first named author of *the resource*, thus:
 
 ```xml
 <rioxxterms:author uri="https://orcid.org/0000-0001-5305-9450" first-named-author="true">

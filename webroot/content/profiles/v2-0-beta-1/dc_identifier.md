@@ -7,6 +7,6 @@ cardinality: Exactly one
 requirement: Mandatory
 metadata_profile: v2-0-beta-1
 ---
-This field **MUST** contain an HTTP URI which is a persistent identifier for ***the resource***. The purpose of this field is to allow access to ***the resource***, therefore it is **RECOMMENDED** that this identifier should point to the *actual resource being described by the RIOXX record* (typically a file in MS Word or PDF format), rather than to an intermediary resource such as a repository web page.
+This field **MUST** contain an HTTP URI which is a persistent identifier for *the resource*. The purpose of this field is to allow access to *the resource*, therefore it is **RECOMMENDED** that this identifier should point to the *actual resource being described by the RIOXX record* (typically a file in MS Word or PDF format), rather than to an intermediary resource such as a repository web page.
 
-To describe another version of ***the resource*** with a different identifier, a completely separate RIOXX record should be created.
+To describe another version of *the resource* with a different identifier, a completely separate RIOXX record should be created.

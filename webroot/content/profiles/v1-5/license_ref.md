@@ -7,7 +7,7 @@ cardinality: One or more
 requirement: Mandatory
 metadata_profile: v1-5
 ---
-This is defined in the [NISO Open Access Metadata and Indicators](http://www.niso.org/workrooms/oami/). This element **MUST** take an HTTP URI for its value. This HTTP URI **MUST** point to a resource which expresses the license terms specifying how ***the resource*** may be used.
+This is defined in the [NISO Open Access Metadata and Indicators](http://www.niso.org/workrooms/oami/). This element **MUST** take an HTTP URI for its value. This HTTP URI **MUST** point to a resource which expresses the license terms specifying how *the resource* may be used.
 
 This element **MUST** include the attribute:
 

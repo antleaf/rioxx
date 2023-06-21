@@ -7,7 +7,7 @@ cardinality: Exactly one
 requirement: Mandatory
 metadata_profile: v2-0-rc-1
 ---
-This element indicates which &#39;version&#39; of ***the resource*** is being described. The value of this element **MUST** be one of the following:
+This element indicates which &#39;version&#39; of *the resource* is being described. The value of this element **MUST** be one of the following:
 
 * AO
 * SMUR
