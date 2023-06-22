@@ -9,7 +9,7 @@ metadata_profile: v3-0-rc-2
 ---
 
 <mark>
-I have changed the name to `rioxxterms:publisher` and used the child `rioxxterms:id` approach instead of an attribute. This is now consistent with `rioxxterm:author` and `rioxxterms:contributor`. (Paul)
+I have changed the name to `rioxxterms:publisher` and used the child `rioxxterms:id` approach instead of an attribute. This is now consistent with `rioxxterms:author` and `rioxxterms:contributor`. (Paul)
 </mark>
 
 
