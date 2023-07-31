@@ -15,5 +15,3 @@ The `rioxxterms:id` property **MUST NOT** be used directly in the root of a Riox
 * `rioxxterms:publisher`
 
 Identifiers represented by the `rioxxterms:id` property **MUST** be HTTP(S) URIs.
-
-<mark>make sure I have listed all the possibilities above (Paul)</mark>

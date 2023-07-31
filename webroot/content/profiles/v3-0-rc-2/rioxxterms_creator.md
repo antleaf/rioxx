@@ -8,17 +8,13 @@ requirement: Mandatory
 metadata_profile: v3-0-rc-2
 ---
 
-<mark>
-I have used the child `rioxxterms:id` approach instead of an attribute. This is now consistent with `rioxxterms:publisher` and `rioxxterms:contributor`. (Paul)
-</mark>
-
 This property describes the party responsible for creating *the resource*. This is normally a person, but may be an organisation or service.
 
 Where available and possible, the **RECOMMENDED** format is to add the name of the creator as the content of the property, and to include a recognised identifier in its HTTP(S) URI form using a child `rioxxterms:id` property, e.g.
 
 ```xml
 <rioxxterms:creator>
-    Smith, Adam
+    <rioxxterms:name>Smith, Adam</rioxxterms:name>
     <rioxxterms:id>https://isni.org/isni/0000000122796642</rioxxterms:id>
 </rioxxterms:creator>
 ```
@@ -27,7 +23,7 @@ If necessary, multiple instances of `rioxxterms:id` may be included to communica
 
 ```xml
 <rioxxterms:creator>
-    Fry, Hannah
+    <rioxxterms:name>Fry, Hannah</rioxxterms:name>
     <rioxxterms:id>https://isni.org/isni/0000000446254946</rioxxterms:id>
     <rioxxterms:id>http://viaf.org/viaf/314908506</rioxxterms:id>
     <rioxxterms:id>https://orcid.org/0000-0003-0601-9100</rioxxterms:id>
@@ -38,7 +34,7 @@ Where an organisation requires attribution, the **RECOMMENDED** format is to add
 
 ```xml
 <rioxxterms:creator>
-    C.E.R.N.
+    <rioxxterms:name>C.E.R.N.</rioxxterms:name>
     <rioxxterms:id>https://isni.org/isni/000000012156142X</rioxxterms:id>
     <rioxxterms:id>https://ror.org/01ggx4157</rioxxterms:id>
 </rioxxterms:creator>
@@ -48,7 +44,7 @@ Where the `rioxxterms:creator` property appears multiple times for one record, i
 
 ```xml
 <rioxxterms:creator first-named-author="true">
-    Olusoga, David
+    <rioxxterms:name>Olusoga, David</rioxxterms:name>
     <rioxxterms:id>https://isni.org/isni/0000000096386112</rioxxterms:id>
 </rioxxterms:creator>
 ```

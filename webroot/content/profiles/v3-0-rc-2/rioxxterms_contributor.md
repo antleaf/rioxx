@@ -8,17 +8,13 @@ requirement: Optional
 metadata_profile: v3-0-rc-2
 ---
 
-<mark>
-I have used the child `rioxxterms:id` approach instead of an attribute. This is now consistent with `rioxxterms:publisher` and `rioxxterms:creator`. (Paul)
-</mark>
-
 This property describes the party responsible for making contributions to the content of *the resource*. This is normally a person, but may be an organisation or service.
 
 Where available and possible, the **RECOMMENDED** format is to add the name of the contributor as the content of the property, and to include a recognised identifier in its HTTP(S) URI form using a child `rioxxterms:id` property, e.g.
 
 ```xml
 <rioxxterms:contributor>
-    Bhopal, Kalwant
+    <rioxxterms:name>Bhopal, Kalwant</rioxxterms:name>
 	  <rioxxterms:id>https://orcid.org/0000-0003-3017-6595</rioxxterms:id>
 </rioxxterms:contributor>
 ```
@@ -27,7 +23,7 @@ If necessary, multiple instances of `rioxxterms:id` may be included to communica
 
 ```xml
 <rioxxterms:contributor>
-    Bhopal, Kalwant
+    <rioxxterms:name>Bhopal, Kalwant</rioxxterms:name>
 	  <rioxxterms:id>https://orcid.org/0000-0003-3017-6595</rioxxterms:id>
 	  <rioxxterms:id>https://isni.org/isni/0000000038079210</rioxxterms:id>
 	  <rioxxterms:id>https://www.wikidata.org/wiki/Q61998297</rioxxterms:id>
@@ -37,7 +33,7 @@ Where the contributor is an organisation, the **RECOMMENDED** format is to add t
 
 ```xml
 <rioxxterms:contributor>
-    Stanford University
+    <rioxxterms:name>Stanford University</rioxxterms:name>
 	  <rioxxterms:id>https://isni.org/isni/0000000419368956</rioxxterms:id>
 </rioxxterms:contributor>
 ```
