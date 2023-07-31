@@ -7,6 +7,5 @@ cardinality: Exactly one
 requirement: Mandatory
 metadata_profile: v3-0-rc-2
 ---
-`dc:identifier` **MUST** contain an HTTP(S) URI which is an identifier for *the resource*. In repositories, this is typically a URI which resolves to a repository 'landing page' which may contain links to other related resources. 
+`dc:identifier` **MUST** contain an HTTP(S) URI which is an identifier for *the resource*. This URI should resolve to, or contain an identifier that can be resolved to, a repository 'landing page' describing this resource. The landing page should provide links to related resources. We recommend using FAIR Signposting ([signposting.org/FAIR](http://signposting.org/FAIR)) to assist machine agents in navigating from the landing page to the relevant resources. 
 
-It is **RECOMMENDED** that a DOI, Handle.net, OAI ID, URN, or other "persistent" identifier be used in `dc:identifier`. However, a direct repository URI **MAY** be used instead.
