@@ -4,7 +4,7 @@ date: '2022-03-31T15:00:43+00:00'
 description: ''
 draft: false
 tags: []
-title: "Rioxx: The Research Outputs Metadata Schema Version 3.0 Release Candidate 2"
+title: "Rioxx: The Research Outputs Metadata Schema Version 3.0 Draft 2"
 topics: []
 aliases:
 status: draft
