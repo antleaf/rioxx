@@ -7,6 +7,6 @@ cardinality: Zero or one
 requirement: Mandatory where applicable
 metadata_profile: v2-0-beta-1
 ---
-The source label describes a resource from which ***the resource*** is derived (in whole or in part). It is **RECOMMENDED** that the source is referenced using a unique identifier from a recognised system e.g. the unique 8-digit International Standard Serial Numbers (ISSN) assigned to *electronic* periodicals.
+The source label describes a resource from which *the resource* is derived (in whole or in part). It is **RECOMMENDED** that the source is referenced using a unique identifier from a recognised system e.g. the unique 8-digit International Standard Serial Numbers (ISSN) assigned to *electronic* periodicals.
 
-Use of this element is applicable where ***the resource*** is to be published as part of a larger resource. Examples might include a journal article, a conference paper or a chapter of a book, but not a complete book for example.
+Use of this element is applicable where *the resource* is to be published as part of a larger resource. Examples might include a journal article, a conference paper or a chapter of a book, but not a complete book for example.

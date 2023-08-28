@@ -1,4 +1,4 @@
-baseURL: "http://localhost:1313"
+#baseURL: "http://localhost:1313"
 params:
   showPageStatusTags: true
   showDebugInfo: true

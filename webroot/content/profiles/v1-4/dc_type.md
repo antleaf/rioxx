@@ -7,4 +7,4 @@ cardinality: Zero or more
 requirement: Optional
 metadata_profile: v1-4
 ---
-Type refers to the nature or genre of the content of ***the resource*** and can be entered as free text. Take care not to confuse this with dc:format.
+Type refers to the nature or genre of the content of *the resource* and can be entered as free text. Take care not to confuse this with dc:format.

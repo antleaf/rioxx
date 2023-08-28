@@ -7,7 +7,7 @@ cardinality: Zero or more
 requirement: Optional
 metadata_profile: v1-5
 ---
-Type refers to the 'type' - the nature or genre of the content of ***the resource***. Take care not to confuse this with dc&#58;format.
+Type refers to the 'type' - the nature or genre of the content of *the resource*. Take care not to confuse this with dc&#58;format.
 
 Values recorded here **MUST** be from the following controlled list of types:
 

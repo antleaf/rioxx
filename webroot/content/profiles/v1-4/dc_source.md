@@ -7,4 +7,4 @@ cardinality: Exactly one
 requirement: Mandatory
 metadata_profile: v1-4
 ---
-The source label describes a resource from which ***the resource*** is derived (in whole or in part). It is **RECOMMENDED** that the source is referenced using a unique identifier from a recognised system e.g. the unique 8-digit International Standard Serial Numbers (ISSN) assigned to *electronic* periodicals.
+The source label describes a resource from which *the resource* is derived (in whole or in part). It is **RECOMMENDED** that the source is referenced using a unique identifier from a recognised system e.g. the unique 8-digit International Standard Serial Numbers (ISSN) assigned to *electronic* periodicals.

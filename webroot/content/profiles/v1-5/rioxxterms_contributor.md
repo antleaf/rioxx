@@ -7,7 +7,7 @@ cardinality: Zero or more
 requirement: Optional
 metadata_profile: v1-5
 ---
-This field is designed to describe an entity – for example the name of a person, organisation or service – responsible for making contributions to the content of ***the resource***. As many rioxxterms:contributor elements may be entered as required. <del>If the contributor is a person and it is desired to record that person&#39;s affiliation, the affiliation **MUST** be recorded as a separate rioxxterms:contributor element.</del> This element **SHOULD** take an optional attribute called *id*, designed to hold an HTTP URI, if available, which uniquely identifies the contributor. The ideal use of this element is to include both an HTTP URI in the *id* attribute, and a text string in the body of the element, thus:
+This field is designed to describe an entity – for example the name of a person, organisation or service – responsible for making contributions to the content of *the resource*. As many rioxxterms:contributor elements may be entered as required. <del>If the contributor is a person and it is desired to record that person&#39;s affiliation, the affiliation **MUST** be recorded as a separate rioxxterms:contributor element.</del> This element **SHOULD** take an optional attribute called *id*, designed to hold an HTTP URI, if available, which uniquely identifies the contributor. The ideal use of this element is to include both an HTTP URI in the *id* attribute, and a text string in the body of the element, thus:
 
     <rioxxterms:contributor id="identifier-for-this-contributor-entity">
         name-of-this-contributor-entity

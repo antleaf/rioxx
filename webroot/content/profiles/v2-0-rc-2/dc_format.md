@@ -7,4 +7,4 @@ cardinality: Zero or more
 requirement: Recommended
 metadata_profile: v2-0-rc-2
 ---
-This refers to the format of ***the resource***. The MIME type of the object pointed to by this RIOXX record’s *dc&#58;identifier* element **MUST** be entered here. Note that this element should not be confused with *rioxxterms&#58;type*
+This refers to the format of *the resource*. The MIME type of the object pointed to by this RIOXX record’s *dc&#58;identifier* element **MUST** be entered here. Note that this element should not be confused with *rioxxterms&#58;type*

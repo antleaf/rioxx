@@ -7,4 +7,4 @@ cardinality: Zero or more
 requirement: Recommended
 metadata_profile: v1-4
 ---
-A free text string giving the name of the entity, typically a &#39;publisher&#39;, responsible for making the ***version of record*** of ***the resource*** available. This could be a person, organisation or service.
+A free text string giving the name of the entity, typically a &#39;publisher&#39;, responsible for making the *version of record* of *the resource* available. This could be a person, organisation or service.

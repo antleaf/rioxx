@@ -7,4 +7,4 @@ cardinality: Exactly one
 requirement: Mandatory
 metadata_profile: v2-0-rc-2
 ---
-The date on which ***the resource*** was accepted for publication. The date **SHOULD** be encoded using ISO 8601 (post&#8211;2004 versions) which follows the following format: YYYY-MM-DD. Year and month (YYYY-MM) **MAY** be used if the full date is not known, but year only (YYYY) **MUST NOT** be used.
+The date on which *the resource* was accepted for publication. The date **SHOULD** be encoded using ISO 8601 (post&#8211;2004 versions) which follows the following format: YYYY-MM-DD. Year and month (YYYY-MM) **MAY** be used if the full date is not known, but year only (YYYY) **MUST NOT** be used.

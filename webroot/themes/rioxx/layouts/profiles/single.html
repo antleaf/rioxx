@@ -13,6 +13,9 @@
             {{ end }}
             {{ delimit ($scratch.Get "propertyNames") " | " }}
             <br/><br/>
+            <h2>Example Rioxx Records</h2>
+            <a href="#example-records">Some examples of full Rioxx records (serialised as XML) are provided at the bottom of this page</a>
+            <br/><br/>
             <h2>Property details and examples</h2>
             <table class="table table-sm sorted-table">
                 <thead>
@@ -34,6 +37,26 @@
                 {{ end }}
                 </tbody>
             </table>
+<br/>
+            <h1 id="example-records">Example Rioxx Records (XML)</h1>
+            {{ with .Resources.Match "example-records/*.md" }}
+                <div class="accordion" id="accordionExample">
+                    {{ range . }}
+                        {{ $exampleName := strings.TrimPrefix "example-records/" .Name }}
+                        {{ $exampleName = strings.TrimSuffix ".md" $exampleName }}
+                        <h2 class="accordion-header" id="heading{{ $exampleName }}">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $exampleName }}" aria-expanded="false" aria-controls="collapse{{ $exampleName }}">
+                                {{ .Title }}
+                            </button>
+                        </h2>
+                        <div id="collapse{{ $exampleName }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $exampleName }}" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div style="font-size: 0.9em;">{{ .Content }}</div>
+                            </div>
+                        </div>
+                    {{ end }}
+                </div>
+            {{ end }}
         </div>
     </div>
 {{ end }}
