@@ -10,7 +10,7 @@ aliases:
 layout: profiles_list
 ---
 
-#### [Version 3.0 Draft 2 (DRAFT)](/profiles/v3-0-draft-2/)
+#### [Version 3.0 Release Candidate 3 (DRAFT)](/profiles/v3-0-rc-3/)
 ###### Changes since [Version 2.0 Final Release:](/profiles/v2-0-final/)
 <mark>THESE NEED TO BE UPDATED</mark>
 - Separation of project and grant data, with the creation of `<rioxxterms:grants>` alongside `<rioxxterms:project>`
