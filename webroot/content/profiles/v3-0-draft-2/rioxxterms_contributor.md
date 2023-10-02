@@ -5,7 +5,7 @@ type: metadata_profile_property
 title: rioxxterms:contributor
 cardinality: Zero or more
 requirement: Optional
-metadata_profile: v3-0-rc-2
+metadata_profile: v3-0-draft-2
 ---
 
 This property describes the party responsible for making contributions to the content of *the resource*. This is normally a person, but may be an organisation or service.

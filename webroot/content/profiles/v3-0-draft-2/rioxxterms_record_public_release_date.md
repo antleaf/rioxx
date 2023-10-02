@@ -5,7 +5,7 @@ type: metadata_profile_property
 title: rioxxterms:record_public_release_date
 cardinality: Zero or one
 requirement: Optional
-metadata_profile: v3-0-rc-2
+metadata_profile: v3-0-draft-2
 ---
 This property takes the date upon which metadata about *the resource* being described was first made publicly visible. Property content **MUST** be encoded according to the [W3CDTF](https://www.w3.org/TR/NOTE-datetime) (a profile of [ISO 8601](https://www.iso.org/standard/40874.html)) which typically follows the following format: YYYY-MM-DD.
 

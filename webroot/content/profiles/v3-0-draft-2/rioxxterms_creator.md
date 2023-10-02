@@ -5,7 +5,7 @@ type: metadata_profile_property
 title: rioxxterms:creator
 cardinality: One or more
 requirement: Mandatory
-metadata_profile: v3-0-rc-2
+metadata_profile: v3-0-draft-2
 ---
 
 This property describes the party responsible for creating *the resource*. This is normally a person, but may be an organisation or service.

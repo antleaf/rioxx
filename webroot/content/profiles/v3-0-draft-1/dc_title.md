@@ -5,7 +5,7 @@ type: metadata_profile_property
 title: dc:title
 cardinality: Exactly one
 requirement: Mandatory
-metadata_profile: v3-0-rc-1
+metadata_profile: v3-0-draft-1
 ---
 This refers to the title, and any sub-titles, of *the resource*. The title should be represented using the original spelling and wording. The **RECOMMENDED** format for expressing subtitles is:
 

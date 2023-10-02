@@ -5,7 +5,7 @@ type: metadata_profile_property
 title: rioxxterms:author
 cardinality: One or more
 requirement: Mandatory
-metadata_profile: v3-0-rc-1
+metadata_profile: v3-0-draft-1
 ---
 The author of *the resource* may be a person, organisation or service, but is most commonly a person. This property **SHOULD** take an optional attribute called *uri*, which **MUST** contain a URI which uniquely identifies the author. Where there is more than one author, a separate *rioxxterms:author* property **MUST** be used for each. As many authors may be entered as required. 
 

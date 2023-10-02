@@ -5,7 +5,7 @@ type: metadata_profile_property
 title: rioxxterms:version
 cardinality: Exactly one
 requirement: Mandatory
-metadata_profile: v3-0-rc-1
+metadata_profile: v3-0-draft-1
 ---
 This property indicates which 'version' of *the resource* is being described. The value of this property **MUST** be one of the following:
 
