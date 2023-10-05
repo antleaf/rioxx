@@ -9,11 +9,12 @@ topics: []
 ---
 
 ## Membership
-* George Macgregor, University of Strathclyde (Chair)
+* George Macgregor, University of Glasgow (Chair)
 * Nicola Dowson, The Open University
 * Michael Eadie, University of Glasgow
 * Beverley Jones, University of Sheffield
 * Petr Knoth, Knowledge Media institute, The Open University (representing CORE)
+* Agustina Martínez-García, University of Cambridge
 * Paul Walk, Antleaf Ltd.
 
 #### Previous Membership
