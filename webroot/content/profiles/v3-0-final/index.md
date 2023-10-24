@@ -7,7 +7,7 @@ tags: []
 title: "Rioxx: The Research Outputs Metadata Schema Version 3.0 Final"
 topics: []
 aliases:
-status: 
+status: draft
 ---
 
 ## Terminology
