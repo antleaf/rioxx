@@ -5,7 +5,7 @@ type: metadata_profile_property
 title: rioxxterms:file
 cardinality: Zero or more
 requirement: Should
-metadata_profile: v3-0-rc-2
+metadata_profile: v3-0-draft-2
 ---
 
 Although this property is not strictly mandated in the Rioxx application profile, it **SHOULD** be included because this is the property which harvesting software will inspect to locate URLs for resource file content - for example to locate the "full text" associated with a repository record.

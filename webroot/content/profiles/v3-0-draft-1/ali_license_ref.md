@@ -5,7 +5,7 @@ type: metadata_profile_property
 title: ali:license_ref
 cardinality: One or more
 requirement: Mandatory
-metadata_profile: v3-0-rc-1
+metadata_profile: v3-0-draft-1
 ---
 This is defined in the [NISO Open Access Metadata and Indicators](https://www.niso.org/workrooms/ali/). This property **MUST** take an HTTP(S) URI for its value. This URI **MUST** point to a resource which expresses the license terms specifying how *the resource* may be used.
 

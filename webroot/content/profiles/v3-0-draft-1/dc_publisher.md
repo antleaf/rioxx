@@ -5,7 +5,7 @@ type: metadata_profile_property
 title: dc:publisher
 cardinality: Zero or more
 requirement: Recommended
-metadata_profile: v3-0-rc-1
+metadata_profile: v3-0-draft-1
 ---
 
 This property contains the name of the entity, typically a &#39;publisher&#39;, responsible for making the *version of record* of *the resource* available. This could be a person, organisation or service.

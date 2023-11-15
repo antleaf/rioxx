@@ -5,7 +5,7 @@ type: metadata_profile_property
 title: rioxxterms:project
 cardinality: One or more
 requirement: Optional
-metadata_profile: v3-0-rc-1
+metadata_profile: v3-0-draft-1
 ---
 The purpose of `rioxxterms:project` is to collect project ID(s), that relate to *the resource*.
 

@@ -5,7 +5,7 @@ type: metadata_profile_property
 title: "rioxxterms:relation"
 cardinality: Zero or more
 requirement: Should
-metadata_profile: v3-0-rc-2
+metadata_profile: v3-0-draft-2
 ---
 
 `rioxxterms:relation` is used to convey associations to related scholarly entities. This will typically include alternative 'expressions' of *the resource* (e.g. preprint, VoR, etc.) and/or entities relevant to understanding *the resource*, such as related research data, software, instruments, and so forth. Where such types have been encoded it will be considered to be for the purposes of contributing to the scholarly data graph rather than for assisting harvesting software in locating file content, such as full-text, which is instead enabled via `rioxxterms:file` property.
