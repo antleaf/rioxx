@@ -8,9 +8,9 @@ requirement: Should
 metadata_profile: v3-0-final
 ---
 
-Although this property is not strictly mandated in the Rioxx application profile, it **SHOULD** be included because this is the property which harvesting software will inspect to locate URLs for resource file content - for example to locate the "full text" associated with a repository record. It will also be the property to declare a persistent identifier (PID) that may be associated with such file content(s). 
+Although this property is not strictly mandated in the Rioxx application profile, it **SHOULD** be included because this is the property which harvesting software will inspect to locate URLs for resource file content - for example to locate the "full text" associated with a repository record. It will also be the property to declare a persistent identifier (PID) that may be associated with the resource. 
 
-When set to `rel="item"`, the `dc:relation` property identifies a downloadable resource. Each such `dc:relation` property **MUST** contain an HTTP(S) URI resolving to the downloadable resource. Note that only those resources under the direct custodianship of the repository should asserted within `dc:relation`. Entities outside the custodianship of the repository should be related using `rioxxterms:ext_relation`.  
+Note that only those resources under the direct custodianship of the repository should be asserted within `dc:relation`. Entities outside the custodianship of the repository should be related using `rioxxterms:ext_relation`. 
  
 `dc:relation` is refined by a series of attributes, which **SHOULD** be included (where applicable): 
 
@@ -23,11 +23,13 @@ When set to `rel="item"`, the `dc:relation` property identifies a downloadable r
 * `access_rights`
 * `license_ref`
 
-When set to `rel="cite-as"`, `dc:relation` can be repeated to specify a persistent identifier associated with a downloadable resource. Such an instance of `dc:relation` **MUST** declare the HTTP(S) URI which is associated with the file content(s). It is likely to be populated by a PID that resolves to a repository 'landing page', as per good practice. Possible values here may include a DOI, URN, CORE OAI ID; or an alternative repository URL/URI where there is no requirement for a PID.
+When set to `rel="item"`, the `dc:relation` property identifies a downloadable resource. Each such `dc:relation` property **MUST** contain an HTTP(S) URI resolving to the downloadable resource. It is **REQUIRED** that this property is used whenever the Rioxx record identifies a downloadable object under the direct custodianship of the repository, such as a full text, dataset or software. Where such deposited downloadable resource remains under a temporary embargo, the repository **SHOULD** return HTTP status code 451 Unavailable For Legal Reasons until the embargo's expiry. 
 
-### Attributes
+When set to `rel="cite-as"`, the `dc:relation` property specifies a persistent identifier associated with the resource. `dc:relation` shall only be used to convey PIDs identifying resources under the direct custodianship of the repository, therefore all PIDs specified under `dc:relation` **MUST** resolve to the repository. PIDs identifying related resources that resolve to resources outside of the direct custodianship of the repository will be specified under `rioxterms:ext_relation`. 
 
-1. *rel*: The `rel` attribute uses 'typed links' from the [IANA Link Relation Registry](https://www.iana.org/assignments/link-relations/link-relations.xhtml). This attribute will often be set to `rel='item'` where `dc:relation` is being used to communicate downloadable file content but will be set to `rel="cite-as"` where `dc:relation` is simulataneously being used to declare an associated persistent identifier.
+The `dc:relation` property can be repeated to specify more than one persistent identifier associated with the resource. Possible values here may include a DOI, URN, CORE OAI ID; or an alternative repository HTTP(S) URI where there is no requirement for a PID. ### Attributes
+
+1. *rel*: The `rel` attribute uses 'typed links' from the [IANA Link Relation Registry](https://www.iana.org/assignments/link-relations/link-relations.xhtml). This attribute will often be set to `rel='item'` where `dc:relation` is being used to communicate downloadable file content, but will be set to `rel="cite-as"` where `dc:relation` is simulataneously being used to declare an associated persistent identifier.
 2. *type*: The `type` attribute refers to the technical format of the value of `dc:relation`. When used, `type` **MUST** encode the [Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml) of the resource (formerly MIME Type). Note that this attribute should not be confused with `coar_type`.
 3. *coar_type*:  When used, the `coar_type` attribute **MUST** contain a value which is an identifier from the [COAR Resource Types Vocabulary](http://purl.org/coar/resource_type/). For example, for the common case of the resource being a PDF of a journal article, the **RECOMMENDED** value would be `http://purl.org/coar/resource_type/c_6501` ('journal article'). The [COAR Resource Types Vocabulary](http://purl.org/coar/resource_type/) accommodates a diverse range of resource types. `dc:relation` can therefore also be used to communicate the existence of directly harvestable related data or software, such as by types [experimental data](http://purl.org/coar/resource_type/63NG-B465) or [research software](http://purl.org/coar/resource_type/c_c950).
 2. *coar_version*: When used, the `coar_version` attribute **MUST** contain a value which is an identifier from the [COAR Version Types Vocabulary](http://purl.org/coar/version/).
