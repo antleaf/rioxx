@@ -18,7 +18,7 @@ Each external relation **MUST** appear as a separate instance of the `rioxxterms
 
 2. *coar_type*:  The `coar_type` attribute **MUST** contain an identifier from the [COAR Resource Types Vocabulary](http://purl.org/coar/resource_type/). For example, for the common case of the related resource being a PDF of a journal article, the **RECOMMENDED** value would be `http://purl.org/coar/resource_type/c_6501`. The [COAR Resource Types Vocabulary](http://purl.org/coar/resource_type/) accommodates a diverse range of resource types.  
 
-3. *coar_version*: The `coar_version` attribute **SHOULD** be included if `rioxxterms:ext_relation` is being used to indicate an associative relation with an alternative 'expression' of the *the resource*, where *the resource* is a publication. Where this is true `coar_version` **MUST** contain an identifier value from the [COAR Version Types Vocabulary](http://purl.org/coar/version/).
+3. *coar_version*: The `coar_version` attribute **SHOULD** be included if `rioxxterms:ext_relation` is being used to indicate an associative relation with an alternative instance of the *the resource*, where *the resource* is a publication. Where this is true `coar_version` **MUST** contain an identifier value from the [COAR Version Types Vocabulary](http://purl.org/coar/version/).
 
 ## Examples:
 

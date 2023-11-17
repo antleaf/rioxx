@@ -81,7 +81,9 @@ Example 1 can be elaborated to declare the local repository PID associated with 
 
 **Example 3:**
 
-The `dc:relation` property can be repeated to communicate the existence of more than one downloadable resource. This example also includes the declaration of a repository PID associated with resources. 
+The `dc:relation` property can be repeated to communicate the existence of more than one downloadable resource, including other instances (or 'expressions') providing they are within the custodianship of the local repository. 
+
+This example describes two downloadable resources (journal article and associated research instrument). It also includes the declaration of a repository PID associated with resources. 
 
 ```xml
 <dc:relation 
