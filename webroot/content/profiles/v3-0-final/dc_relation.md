@@ -1,5 +1,5 @@
 ---
-date: '2023-10-23T16:04:43+00:00'
+date: '2023-10-28T16:04:43+00:00'
 draft: false
 type: metadata_profile_property
 title: dc:relation
@@ -38,7 +38,7 @@ The `dc:relation` property can be repeated to specify more than one persistent i
 6. *access_rights*: When used, the `access_rights` attribute **MUST** take a URI value from the [COAR Access Rights Vocabulary](https://vocabularies.coar-repositories.org/access_rights/), which defines four access states: [embargoed access](http://purl.org/coar/access_right/c_f1cf), [metadata only access](http://purl.org/coar/access_right/c_14cb), [open access](http://purl.org/coar/access_right/c_abf2), [restricted access](http://purl.org/coar/access_right/c_16ec).
 7. *license_ref*: When used, the `license_ref` attribute **MUST** communicate the license terms under which the value of `rioxxterms:file` is subject using an HTTP(S) URI. Typical examples might include the variety of licenses made available by Creative Commons, but can conceivably include any license referencible by URI.
 
-### Examples
+## Examples
 
 **Example 1:**
 
