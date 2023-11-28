@@ -16,7 +16,7 @@ A typical example of this property is provided below, where the direct HTTP(S) U
 <dc:identifier>https://www.repository.cam.ac.uk/items/c6173013-1e2f-4818-9d1e-98a0f189c7c8</dc:identifier>
 ```
 
-`dc:identifier` can be supplemented by using `dc:relation` to declare the local repository PID for the corresponding downloadable resource, in this case a DOI.
+`dc:identifier` can be supplemented by using `dc:relation` to declare the local repository PID for the corresponding resource, in this case a DOI.
 
 ```xml
 <dc:relation rel="cite-as">https://doi.org/10.17863/CAM.101562</dc:relation>
