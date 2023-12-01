@@ -8,4 +8,4 @@ requirement: Recommended
 metadata_profile: v3-0-final
 ---
 
-`dc:subject` is used to describe the subject of *the resource*. It is **RECOMMENDED** that a URI be used for the value, however a literal value that identifies the subject may be provided instead. Both should preferably refer to a subject in a controlled vocabulary.
+`dc:subject` is used to describe the subject of *the primary resource*. It is **RECOMMENDED** that a URI be used for the value, however a literal value that identifies the subject may be provided instead. Both should preferably refer to a subject in a controlled vocabulary.
