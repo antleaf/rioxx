@@ -7,7 +7,7 @@ cardinality: Zero or one
 requirement: Optional
 metadata_profile: v3-0-final
 ---
-This property takes the publication date of *the resource* in the form in which it would be cited. This allows a Rioxx record to function as a reasonable bibliographic record for *the resource*. 
+This property takes the publication date of *the primary resource* in the form in which it would be cited. This allows a Rioxx record to function as a reasonable bibliographic record for *the primary resource*. 
 
 Where possible the property's value' **SHOULD** be encoded according to the [W3CDTF](https://www.w3.org/TR/NOTE-datetime) (a profile of [ISO 8601](https://www.iso.org/standard/40874.html)) which typically follows the following format: YYYY-MM-DD. 
 
