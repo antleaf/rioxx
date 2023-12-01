@@ -8,9 +8,9 @@ requirement: Optional
 metadata_profile: v3-0-final
 ---
 
-This property describes the party responsible for making contributions to the content of *the resource*. This is normally a person, but may be an organisation or service.
+The `rioxxterms:contributor` property describes the party responsible for making contributions to the content of *the primary resource*. This is normally a person, but may be an organisation or service.
 
-Where available and possible, the **RECOMMENDED** format is to add the name of the contributor as the content of the property, and to include a recognised identifier in its HTTP(S) URI form using a child `rioxxterms:id` property, e.g.
+Where available and possible, the **RECOMMENDED** format is to encode the name of the contributor within the sub-property `rioxxterms:name`, and to include a recognised identifier in its HTTP(S) URI form using the `rioxxterms:id` sub-property, e.g.
 
 ```xml
 <rioxxterms:contributor>
