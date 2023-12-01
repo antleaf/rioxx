@@ -10,7 +10,7 @@ metadata_profile: v3-0-final
 
 Although this property is not strictly mandated in the Rioxx schema, it **SHOULD** be included because this is the property which harvesting software will inspect to locate URLs for resource file content - for example to locate the "full text" associated with a repository record. It will also be the property to declare a persistent identifier (PID) that may be associated with the resource. 
 
-Note that only those resources under the direct custodianship of the repository should be asserted within `dc:relation`. Entities outside the custodianship of the repository should be related using `rioxxterms:ext_relation`. 
+Note that only those resources under the direct custodianship of the repository should be asserted within `dc:relation`. Resources demonstrating external custodianship should be related using `rioxxterms:ext_relation`. 
  
 `dc:relation` is refined by a series of attributes, which **SHOULD** be included (where applicable): 
 
