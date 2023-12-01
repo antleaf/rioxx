@@ -8,9 +8,9 @@ requirement: Mandatory
 metadata_profile: v3-0-final
 ---
 
-This property describes the party responsible for creating *the resource*. This is normally a person, but may be an organisation or service.
+The `rioxxterms:creator` property describes the party responsible for creating *the primary resource*. This is normally a person, but may be an organisation or service.
 
-Where available and possible, the **RECOMMENDED** format is to add the name of the creator as the content of the property, and to include a recognised identifier in its HTTP(S) URI form using a child `rioxxterms:id` property, e.g.
+Where available and possible, the **RECOMMENDED** the name of the creator should be encoded within the `rioxxterms:name` sub-property, and to include a recognised identifier in its HTTP(S) URI form using the `rioxxterms:id` sub-property, e.g.
 
 ```xml
 <rioxxterms:creator>
