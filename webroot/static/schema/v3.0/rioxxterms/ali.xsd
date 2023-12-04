@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://ali.niso.org/2014/ali/1.0" xmlns:ali="http://ali.niso.org/2014/ali/1.0"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+    vc:minVersion="1.1">
+    <xs:annotation>
+        <xs:documentation xml:lang="en"><![CDATA[
+Schema for the NISO Open Access Metadata and Indicator elements used within the RIOXX Application Profile, version 2.0
+
+This schema only exists as the NISO schema file is not yet available
+
+Created 2015-01-21
+
+Created by
+
+Ian Stuart (ian.stuart@ed.ac.uk)
+
+Terminology
+
+'the resource' refers to the electronic copy of a publication held in a 
+repository, and is that which is being described by the RIOXX metadata record.
+
+'version of record' refers to the version of the publication being described
+in the RIOXX metadata record which has been made available, electronically, by the publisher.
+
+The terms MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD,
+SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL used in the descriptions
+below should be interpreted as described in RFC 2119 (http://www.ietf.org/rfc/rfc2119.txt).
+
+Note that its cast into XSD 1.1 as XSD 1.0
+
+Location: The xsd file is located at http://www.rioxx.net/schema/v2.0/rioxx/ali.xsd
+
+]]>
+        </xs:documentation>
+    </xs:annotation>
+    <xs:element name="free_to_read">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Optional</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[ 
+This is defined in the NISO Open Access Metadata and Indicators (http://www.niso.org/workrooms/oami/)
+
+This element does not take a value. The semantics of _ali:free_to_read_ are conveyed
+by its presence or absence. This element may be modified by two optional attributes:
+
+* start_date
+* end_date
+
+Each of these attributes, if present, takes a date value which MUST be encoded using ISO 8601
+(post–2004 versions) which follows the following format: YYYY-MM-DD. Examples:
+
+
+    <free_to_read start_date="2013-03-28" end_date="2014-04-30">
+    <free_to_read start_date="2013-03-28">
+    <free_to_read>
+    
+The absence of a _start_date_ attribute implies that the ali:free_to_read status is current and 
+immediate, unless an _end_date_ attribute which is a date in the subjective past, is present
+in the element.
+]]>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType mixed="true">
+            <xs:attribute ref="ali:start_date"/>
+            <xs:attribute ref="ali:end_date"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="license_ref">
+        <xs:annotation>
+            <xs:documentation xml:lang="en"><![CDATA[
+This is defined in the NISO Open Access Metadata and Indicators (http://www.niso.org/workrooms/oami/). 
+This element MUST take an HTTP URI for its value. This HTTP URI MUST point to a resource
+which expresses the license terms specifying how the resource may be used.
+
+This element MUST include the attribute:
+
+*start_date
+
+This attribute takes a date value which MUST be encoded using ISO 8601 (post–2004 versions) which
+follows the following format: YYYY-MM-DD.
+
+This attribute is used to indicate the date upon which this license takes effect. Multiple
+*ali:license_ref* elements may be included. Where several such elements are included, the one with
+the *start_date* attribute indicating the most recent date takes precendence.
+
+Examples:
+
+    <license_ref start_date="2015-02-17">http://creativecommons.org/licenses/by/3.0/deed.en_US</license_ref>
+    
+This approach allows the expression of 'embargoes', where a particular license takes effect at a date in
+the subjective future.
+
+In the absence of any other license, the copyright holder reserves all rights automatically. As a
+convenience, RIOXX provides two URLs which may be used to explicitly convey this state:
+
+* http://www.rioxx.net/licenses/all-rights-reserved
+* http://www.rioxx.net/licenses/under-embargo-all-rights-reserved
+]]>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:anyURI">
+                    <xs:attribute ref="ali:start_date"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:attribute name="start_date" type="xs:date">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+This attribute takes a date value which MUST be encoded using ISO 8601 (post–2004 versions) which follows the following format: YYYY-MM-DD.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="end_date" type="xs:date">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                This attribute takes a date value which MUST be encoded using ISO 8601 (post–2004 versions) which follows the following format: YYYY-MM-DD.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+</xs:schema>
