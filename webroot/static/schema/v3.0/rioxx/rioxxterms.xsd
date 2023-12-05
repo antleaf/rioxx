@@ -1,8 +1,8 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-           targetNamespace="http://www.rioxx.net/schema/v2.0/rioxxterms/"
-           xmlns:rioxxterms="http://www.rioxx.net/schema/v2.0/rioxxterms/"
-           xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/"
-           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+    targetNamespace="http://www.rioxx.net/schema/v3.0/rioxxterms/"
+    xmlns:rioxxterms="http://www.rioxx.net/schema/v3.0/rioxxterms/"
+    xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
     <xs:annotation>
         <xs:documentation xml:lang="en"><![CDATA[
 Schema for the RIOXX Terms used within the RIOXX Application Profile, version 2.0
@@ -68,8 +68,10 @@ Such an identifier scheme might include ISNI, Research Organization Registry, VI
 ]]></xs:documentation>
         </xs:annotation>
         <xs:complexType>
-            <xs:attribute ref="rioxxterms:name"/>
-            <xs:attribute ref="rioxxterms:id"/>
+            <xs:all>
+                <xs:element ref="rioxxterms:name"/>
+                <xs:element ref="rioxxterms:id"/>
+            </xs:all>
         </xs:complexType>
     </xs:element>
 
@@ -117,14 +119,14 @@ SHOULD be used to indicate which of the rioxxterms:creator elements describes th
 ]]></xs:documentation>
         </xs:annotation>
         <xs:complexType>
-            <xs:attribute name="first-named-author" type="xs:boolean"/>
             <xs:all>
                 <xs:element ref="rioxxterms:name"/>
                 <xs:element ref="rioxxterms:id"/>
             </xs:all>
+            <xs:attribute name="first-named-author" type="xs:boolean"/>
         </xs:complexType>
     </xs:element>
-    <xs:element name="ext-relation">
+    <xs:element name="ext_relation">
         <xs:annotation>
             <xs:documentation xml:lang="en"><![CDATA[
 The element is used to convey external associations to related scholarly entities (i.e. external relations).
@@ -167,11 +169,11 @@ Related dataset
 </rioxxterms:ext_relation>
 ]]></xs:documentation>
         </xs:annotation>
-        <xs:simpleContent base="xs:anyURI">
-            <xs:attribute name="rel" type="xs:string" use="required"/>
+        <xs:complexType xml:base="xs:anyURI">
+            <xs:attribute name="rel" type="rioxxterms:ianaRelationList" use="required"/>
             <xs:attribute name="coar_type" type="xs:anyURI" use="required"/>
-            <xs:attribute name="coar_version" type="xs:anyURI" use="optional"/>
-        </xs:simpleContent>
+            <xs:attribute name="coar_version" type="rioxxterms:versionList" use="optional"/>
+        </xs:complexType>
     </xs:element>
     <xs:element name="grant">
         <xs:annotation>
@@ -216,34 +218,26 @@ This means that it is permissible for a given funder_name or funder_id to appear
 of the rioxxterms:grant property in a single Rioxx metadata record.
 ]]></xs:documentation>
         </xs:annotation>
-        <xs:simpleContent base="xs:anyURI">
+        <xs:complexType xml:base="xs:anyURI">
             <xs:attribute name="funder_name" type="xs:string" use="required"/>
             <xs:attribute name="funder_id" type="xs:anyURI" use="required"/>
-        </xs:simpleContent>
+        </xs:complexType>
     </xs:element>
     <xs:element name="id" default="unknown" type="xs:anyURI">
         <xs:annotation>
-            <xs:documentation xml:lang="en">
-                The rioxxterms:id property MUST NOT be used directly in the root of a Rioxx record, but MAY be used to
-                add identifiers into the following root properties:
-
-                - rioxxterms:contributor
-                - rioxxterms:creator
-                - rioxxterms:publisher
-                Identifiers represented by the rioxxterms:id property MUST be HTTP(S) URIs.
-            </xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[  The rioxxterms:id property MUST NOT be used directly in
+                the root of a Rioxx record, but MAY be used to add identifiers into the following
+                root properties: - rioxxterms:contributor - rioxxterms:creator -
+                rioxxterms:publisher Identifiers represented by the rioxxterms:id property MUST be
+                HTTP(S) URIs. ]]> </xs:documentation>
         </xs:annotation>
     </xs:element>
     <xs:element name="name" default="unknown" type="xs:string">
         <xs:annotation>
-            <xs:documentation xml:lang="en">
-
-                The rioxxterms:name property MUST NOT be used directly in the root of a Rioxx record, but MAY be used to
-                add a name into the following root properties:
-
-                - rioxxterms:contributor
-                - rioxxterms:creator
-                - rioxxterms:publisher
+            <xs:documentation xml:lang="en"><![CDATA[ The rioxxterms:name property MUST NOT be used directly
+                in the root of a Rioxx record, but MAY be used to add a name into the following root
+                properties: - rioxxterms:contributor - rioxxterms:creator - rioxxterms:publisher 
+                ]]>
             </xs:documentation>
         </xs:annotation>
     </xs:element>
@@ -310,7 +304,7 @@ Winter 2019 (end of year)
             </xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="publisher" type="xs:complexType">
+    <xs:element name="publisher">
         <xs:annotation>
             <xs:documentation xml:lang="en"><![CDATA[
 This property contains the name of the entity, typically a publisher,
@@ -367,17 +361,140 @@ under temporary embargo or temporary dark archiving.
 ]]></xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="type" type="rioxxterms:typeList">
+    <xs:simpleType name="ianaRelationList">
         <xs:annotation>
+            <xs:documentation xml:lang="en">A Controlled List</xs:documentation>
             <xs:documentation xml:lang="en"><![CDATA[
-Type refers to the ‘type’ - the nature or genre of the content of the resource. The value is taken
-from a Controlled List
-
-Take care not to confuse this with 'dc:format'.
-]]>
-            </xs:documentation>
+The value is from the list defined by the IANA Link Relation Registry
+]]></xs:documentation>
+            
         </xs:annotation>
-    </xs:element>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="about"/>
+            <xs:enumeration value="acl"/>
+            <xs:enumeration value="alternate"/>
+            <xs:enumeration value="amphtml"/>
+            <xs:enumeration value="appendix"/>
+            <xs:enumeration value="apple"/>
+            <xs:enumeration value="apple"/>
+            <xs:enumeration value="archives"/>
+            <xs:enumeration value="author"/>
+            <xs:enumeration value="blocked"/>
+            <xs:enumeration value="bookmark"/>
+            <xs:enumeration value="canonical"/>
+            <xs:enumeration value="chapter"/>
+            <xs:enumeration value="cite"/>
+            <xs:enumeration value="collection"/>
+            <xs:enumeration value="contents"/>
+            <xs:enumeration value="convertedfrom"/>
+            <xs:enumeration value="copyright"/>
+            <xs:enumeration value="create"/>
+            <xs:enumeration value="current"/>
+            <xs:enumeration value="describedby"/>
+            <xs:enumeration value="describes"/>
+            <xs:enumeration value="disclosure"/>
+            <xs:enumeration value="dns"/>
+            <xs:enumeration value="duplicate"/>
+            <xs:enumeration value="edit"/>
+            <xs:enumeration value="edit"/>
+            <xs:enumeration value="edit"/>
+            <xs:enumeration value="enclosure"/>
+            <xs:enumeration value="external"/>
+            <xs:enumeration value="first"/>
+            <xs:enumeration value="glossary"/>
+            <xs:enumeration value="help"/>
+            <xs:enumeration value="hosts"/>
+            <xs:enumeration value="hub"/>
+            <xs:enumeration value="icon"/>
+            <xs:enumeration value="index"/>
+            <xs:enumeration value="intervalafter"/>
+            <xs:enumeration value="intervalbefore"/>
+            <xs:enumeration value="intervalcontains"/>
+            <xs:enumeration value="intervaldisjoint"/>
+            <xs:enumeration value="intervalduring"/>
+            <xs:enumeration value="intervalequals"/>
+            <xs:enumeration value="intervalfinishedby"/>
+            <xs:enumeration value="intervalfinishes"/>
+            <xs:enumeration value="intervalin"/>
+            <xs:enumeration value="intervalmeets"/>
+            <xs:enumeration value="intervalmetby"/>
+            <xs:enumeration value="intervaloverlappedby"/>
+            <xs:enumeration value="intervaloverlaps"/>
+            <xs:enumeration value="intervalstartedby"/>
+            <xs:enumeration value="intervalstarts"/>
+            <xs:enumeration value="item"/>
+            <xs:enumeration value="last"/>
+            <xs:enumeration value="latest"/>
+            <xs:enumeration value="license"/>
+            <xs:enumeration value="linkset"/>
+            <xs:enumeration value="lrdd"/>
+            <xs:enumeration value="manifest"/>
+            <xs:enumeration value="mask"/>
+            <xs:enumeration value="me"/>
+            <xs:enumeration value="media"/>
+            <xs:enumeration value="memento"/>
+            <xs:enumeration value="micropub"/>
+            <xs:enumeration value="modulepreload"/>
+            <xs:enumeration value="monitor"/>
+            <xs:enumeration value="monitor"/>
+            <xs:enumeration value="next"/>
+            <xs:enumeration value="next"/>
+            <xs:enumeration value="nofollow"/>
+            <xs:enumeration value="noopener"/>
+            <xs:enumeration value="noreferrer"/>
+            <xs:enumeration value="opener"/>
+            <xs:enumeration value="openid2"/>
+            <xs:enumeration value="openid2"/>
+            <xs:enumeration value="original"/>
+            <xs:enumeration value="p3pv1"/>
+            <xs:enumeration value="payment"/>
+            <xs:enumeration value="pingback"/>
+            <xs:enumeration value="preconnect"/>
+            <xs:enumeration value="predecessor"/>
+            <xs:enumeration value="prefetch"/>
+            <xs:enumeration value="preload"/>
+            <xs:enumeration value="prerender"/>
+            <xs:enumeration value="prev"/>
+            <xs:enumeration value="preview"/>
+            <xs:enumeration value="previous"/>
+            <xs:enumeration value="prev"/>
+            <xs:enumeration value="privacy"/>
+            <xs:enumeration value="profile"/>
+            <xs:enumeration value="publication"/>
+            <xs:enumeration value="related"/>
+            <xs:enumeration value="restconf"/>
+            <xs:enumeration value="replies"/>
+            <xs:enumeration value="ruleinput"/>
+            <xs:enumeration value="search"/>
+            <xs:enumeration value="section"/>
+            <xs:enumeration value="self"/>
+            <xs:enumeration value="service"/>
+            <xs:enumeration value="service"/>
+            <xs:enumeration value="service"/>
+            <xs:enumeration value="service"/>
+            <xs:enumeration value="sip"/>
+            <xs:enumeration value="sponsored"/>
+            <xs:enumeration value="start"/>
+            <xs:enumeration value="status"/>
+            <xs:enumeration value="stylesheet"/>
+            <xs:enumeration value="subsection"/>
+            <xs:enumeration value="successor"/>
+            <xs:enumeration value="sunset"/>
+            <xs:enumeration value="tag"/>
+            <xs:enumeration value="terms"/>
+            <xs:enumeration value="timegate"/>
+            <xs:enumeration value="timemap"/>
+            <xs:enumeration value="type"/>
+            <xs:enumeration value="ugc"/>
+            <xs:enumeration value="up"/>
+            <xs:enumeration value="version"/>
+            <xs:enumeration value="via"/>
+            <xs:enumeration value="webmention"/>
+            <xs:enumeration value="working"/>
+            <xs:enumeration value="working"/>           
+        </xs:restriction>
+    </xs:simpleType>
+    
     <xs:simpleType name="versionList">
         <xs:annotation>
             <xs:documentation xml:lang="en">A Controlled List</xs:documentation>
@@ -408,26 +525,6 @@ Versions (JAV): Recommendations of the NISO/ALPSP JAV Technical Working Group
             <xs:enumeration value="NA"/>
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="typeList">
-        <xs:annotation>
-            <xs:documentation xml:lang="en">A Controlled List</xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="Book"/>
-            <xs:enumeration value="Book chapter"/>
-            <xs:enumeration value="Book edited"/>
-            <xs:enumeration value="Conference Paper/Proceeding/Abstract"/>
-            <xs:enumeration value="Journal Article/Review"/>
-            <xs:enumeration value="Manual/Guide"/>
-            <xs:enumeration value="Monograph"/>
-            <xs:enumeration value="Policy briefing report"/>
-            <xs:enumeration value="Technical Report"/>
-            <xs:enumeration value="Technical Standard"/>
-            <xs:enumeration value="Thesis"/>
-            <xs:enumeration value="Consultancy Report"/>
-            <xs:enumeration value="Working paper"/>
-        </xs:restriction>
-    </xs:simpleType>
 
     <xs:attribute name="id" type="xs:anyURI">
         <xs:annotation>
@@ -448,22 +545,6 @@ Where the entity is an organisation, the id should be an ISNI (http://isni.org) 
 ]]></xs:documentation>
         </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="funder_id" type="xs:anyURI">
-        <xs:annotation>
-            <xs:documentation xml:lang="en"><![CDATA[
-This SHOULD be a globally unique identifier for the funder of the resource.
-An HTTP URI MUST be used for this. It is RECOMMENDED that one of the following identifier schemes is used:
-
-* an ISNI (http://isni.org) ID
-* a DOI (in its HTTP URI form) made available by FundRef (http://www.crossref.org/fundref/)
-]]></xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="funder_name">
-        <xs:annotation>
-            <xs:documentation xml:lang="en">
-                The canonical name of the entity responsible for funding the resource SHOULD be recorded here as text.
-            </xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
+   
+   
 </xs:schema>

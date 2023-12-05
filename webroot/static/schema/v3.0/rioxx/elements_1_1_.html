@@ -4,14 +4,12 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <title>Schema documentation for namespace http://purl.org/dc/elements/1.1/</title>
-      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript">
-         <!--
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript"><!--
         var propertiesBoxes= new Array('properties_dc.xsd', 
 				'properties_schema_NAMESPACE_http___purl.org_dc_elements_1.1__LOCATION_http___www.dublincore.org_schemas_xmls_qdc_dc.xsd', 
 				'properties_any');
 var usedByBoxes= new Array('usedBy_coverage', 
 				'usedBy_description', 
-				'usedBy_format', 
 				'usedBy_identifier', 
 				'usedBy_language', 
 				'usedBy_publisher', 
@@ -19,12 +17,31 @@ var usedByBoxes= new Array('usedBy_coverage',
 				'usedBy_source', 
 				'usedBy_subject', 
 				'usedBy_title', 
+				'usedBy_type', 
 				'usedBy_any', 
 				'usedBy_SimpleLiteral', 
 				'usedBy_elementsGroup');
+var sourceBoxes= new Array('source_coverage', 
+				'source_description', 
+				'source_identifier', 
+				'source_language', 
+				'source_publisher', 
+				'source_relation', 
+				'source_source', 
+				'source_subject', 
+				'source_title', 
+				'source_type', 
+				'source_any', 
+				'source_http___purl.org_dc_elements_1.1__creator', 
+				'source_http___purl.org_dc_elements_1.1__contributor', 
+				'source_http___purl.org_dc_elements_1.1__date', 
+				'source_format', 
+				'source_rights', 
+				'source_SimpleLiteral', 
+				'source_elementContainer', 
+				'source_elementsGroup');
 var diagramBoxes= new Array('diagram_coverage', 
 				'diagram_description', 
-				'diagram_format', 
 				'diagram_identifier', 
 				'diagram_language', 
 				'diagram_publisher', 
@@ -32,11 +49,12 @@ var diagramBoxes= new Array('diagram_coverage',
 				'diagram_source', 
 				'diagram_subject', 
 				'diagram_title', 
+				'diagram_type', 
 				'diagram_any', 
-				'diagram_creator', 
+				'diagram_http___purl.org_dc_elements_1.1__creator', 
 				'diagram_http___purl.org_dc_elements_1.1__contributor', 
 				'diagram_http___purl.org_dc_elements_1.1__date', 
-				'diagram_http___purl.org_dc_elements_1.1__type', 
+				'diagram_format', 
 				'diagram_rights', 
 				'diagram_SimpleLiteral', 
 				'diagram_elementContainer', 
@@ -313,10 +331,13 @@ var modelBoxes= new Array('model_any',
                         <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
                      </tr>
                      <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
                         <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
                      </tr>
                   </table>
-                  <div align="right"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+                  <div style="text-align:center"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
                </td>
                <td class="rt_lineRight"></td>
             </tr>
@@ -345,14 +366,15 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Annotations</b></div>
-                           <div class="floatRight"><input id="button_annotations_dc.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_dc.xsd');" class="control" /></div>
+                           <div class="floatRight"><input id="button_annotations_dc.xsd" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('annotations_dc.xsd');" class="control" /></div>
                         </td>
                         <td>
                            <div id="annotations_dc.xsd" style="display:block">
                               <div class="annotation">
                                  <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                     <tr>
-                                       <td width="100%"><pre><span class="tT">DCMES 1.1 XML Schema</span><span class="tI">
+                                       <td style="width:100%">
+                                          <pre><span class="tT">DCMES 1.1 XML Schema</span><span class="tI">
 </span><span class="tT">      XML Schema for http://purl.org/dc/elements/1.1/ namespace</span><span class="tI">
 </span><span class="tT"></span><span class="tI">
 </span><span class="tT">      Created 2003-04-02</span><span class="tI">
@@ -376,7 +398,8 @@ var modelBoxes= new Array('model_any',
 </span><span class="tT">      which would permit child elements.</span><span class="tI">
 </span><span class="tT"></span><span class="tI">
 </span><span class="tT">      All elements are declared as substitutable for the abstract element any, </span><span class="tI">
-</span><span class="tT">      which means that the default type for all elements is dc:SimpleLiteral.</span></pre></td>
+</span><span class="tT">      which means that the default type for all elements is dc:SimpleLiteral.</span></pre>
+                                       </td>
                                     </tr>
                                  </table>
                               </div>
@@ -386,7 +409,7 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Properties</b></div>
-                           <div class="floatRight"><input id="button_properties_dc.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_dc.xsd');" class="control" /></div>
+                           <div class="floatRight"><input id="button_properties_dc.xsd" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_dc.xsd');" class="control" /></div>
                         </td>
                         <td>
                            <div id="properties_dc.xsd" style="display:block">
@@ -432,14 +455,15 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Annotations</b></div>
-                           <div class="floatRight"><input id="button_annotations_schema_NAMESPACE_http___purl.org_dc_elements_1.1__LOCATION_http___www.dublincore.org_schemas_xmls_qdc_dc.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_schema_NAMESPACE_http___purl.org_dc_elements_1.1__LOCATION_http___www.dublincore.org_schemas_xmls_qdc_dc.xsd');" class="control" /></div>
+                           <div class="floatRight"><input id="button_annotations_schema_NAMESPACE_http___purl.org_dc_elements_1.1__LOCATION_http___www.dublincore.org_schemas_xmls_qdc_dc.xsd" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('annotations_schema_NAMESPACE_http___purl.org_dc_elements_1.1__LOCATION_http___www.dublincore.org_schemas_xmls_qdc_dc.xsd');" class="control" /></div>
                         </td>
                         <td>
                            <div id="annotations_schema_NAMESPACE_http___purl.org_dc_elements_1.1__LOCATION_http___www.dublincore.org_schemas_xmls_qdc_dc.xsd" style="display:block">
                               <div class="annotation">
                                  <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                     <tr>
-                                       <td width="100%"><pre><span class="tT">DCMES 1.1 XML Schema</span><span class="tI">
+                                       <td style="width:100%">
+                                          <pre><span class="tT">DCMES 1.1 XML Schema</span><span class="tI">
 </span><span class="tT">      XML Schema for http://purl.org/dc/elements/1.1/ namespace</span><span class="tI">
 </span><span class="tT"></span><span class="tI">
 </span><span class="tT">      Created 2008-02-11</span><span class="tI">
@@ -463,7 +487,8 @@ var modelBoxes= new Array('model_any',
 </span><span class="tT">      which would permit child elements.</span><span class="tI">
 </span><span class="tT"></span><span class="tI">
 </span><span class="tT">      All elements are declared as substitutable for the abstract element any, </span><span class="tI">
-</span><span class="tT">      which means that the default type for all elements is dc:SimpleLiteral.</span></pre></td>
+</span><span class="tT">      which means that the default type for all elements is dc:SimpleLiteral.</span></pre>
+                                       </td>
                                     </tr>
                                  </table>
                               </div>
@@ -473,7 +498,7 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Properties</b></div>
-                           <div class="floatRight"><input id="button_properties_schema_NAMESPACE_http___purl.org_dc_elements_1.1__LOCATION_http___www.dublincore.org_schemas_xmls_qdc_dc.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_schema_NAMESPACE_http___purl.org_dc_elements_1.1__LOCATION_http___www.dublincore.org_schemas_xmls_qdc_dc.xsd');" class="control" /></div>
+                           <div class="floatRight"><input id="button_properties_schema_NAMESPACE_http___purl.org_dc_elements_1.1__LOCATION_http___www.dublincore.org_schemas_xmls_qdc_dc.xsd" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_schema_NAMESPACE_http___purl.org_dc_elements_1.1__LOCATION_http___www.dublincore.org_schemas_xmls_qdc_dc.xsd');" class="control" /></div>
                         </td>
                         <td>
                            <div id="properties_schema_NAMESPACE_http___purl.org_dc_elements_1.1__LOCATION_http___www.dublincore.org_schemas_xmls_qdc_dc.xsd" style="display:block">
@@ -519,32 +544,48 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_coverage" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_coverage');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_coverage" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_coverage');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_coverage" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_coverage.jpeg" usemap="#dc_xsd_Element_coverage" /><map name="dc_xsd_Element_coverage" id="dc_xsd_Element_coverage">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="125,38,176,62" /></map></div>
+                           <div id="diagram_coverage" style="display:block"><object style="border:0" data="img/dc_xsd_Element_coverage.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
                         <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
                            </ul>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_coverage" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_coverage');" class="control" /></div>
+                           <div class="floatRight"><input id="button_usedBy_coverage" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_coverage');" class="control" /></div>
                         </td>
                         <td>
                            <div id="usedBy_coverage" style="display:block">
                               <table class="usedByTable">
                                  <tr>
                                     <td class="firstColumn">Element </td>
-                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v3.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_coverage" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_coverage');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_coverage" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"coverage"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
                                  </tr>
                               </table>
                            </div>
@@ -579,92 +620,48 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_description" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_description');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_description" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_description');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_description" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_description.jpeg" usemap="#dc_xsd_Element_description" /><map name="dc_xsd_Element_description" id="dc_xsd_Element_description">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="136,38,187,62" /></map></div>
+                           <div id="diagram_description" style="display:block"><object style="border:0" data="img/dc_xsd_Element_description.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
                         <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
                            </ul>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_description" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_description');" class="control" /></div>
+                           <div class="floatRight"><input id="button_usedBy_description" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_description');" class="control" /></div>
                         </td>
                         <td>
                            <div id="usedBy_description" style="display:block">
                               <table class="usedByTable">
                                  <tr>
                                     <td class="firstColumn">Element </td>
-                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v3.0/rioxx/')">rioxx</a></b></td>
                                  </tr>
                               </table>
                            </div>
                         </td>
                      </tr>
-                  </tbody>
-               </table>
-            </td>
-            <td class="rt_lineRight"></td>
-         </tr>
-         <tr>
-            <td class="rt_cornerBottomLeft"></td>
-            <td class="rt_lineBottom"></td>
-            <td class="rt_cornerBottomRight"></td>
-         </tr>
-      </table><a id="format"></a><div class="componentTitle">Element <span class="qname">format</span></div>
-      <table class="rt">
-         <tr>
-            <td class="rt_cornerTopLeft"></td>
-            <td class="rt_lineTop"></td>
-            <td class="rt_cornerTopRight"></td>
-         </tr>
-         <tr>
-            <td class="rt_lineLeft"></td>
-            <td class="rt_content">
-               <table class="component">
-                  <tbody>
-                     <tr>
-                        <td class="firstColumn"><b>Namespace</b></td>
-                        <td>http://purl.org/dc/elements/1.1/</td>
-                     </tr>
                      <tr>
                         <td class="firstColumn">
-                           <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_format" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_format');" class="control" /></div>
-                        </td>
-                        <td class="diagram">
-                           <div id="diagram_format" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_format.jpeg" usemap="#dc_xsd_Element_format" /><map name="dc_xsd_Element_format" id="dc_xsd_Element_format">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="111,38,162,62" /></map></div>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
-                        <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
-                           </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td class="firstColumn">
-                           <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_format" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_format');" class="control" /></div>
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_description" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_description');" class="control" /></div>
                         </td>
                         <td>
-                           <div id="usedBy_format" style="display:block">
-                              <table class="usedByTable">
+                           <div id="source_description" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                  <tr>
-                                    <td class="firstColumn">Element </td>
-                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"description"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
                                  </tr>
                               </table>
                            </div>
@@ -699,32 +696,48 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_identifier" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_identifier');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_identifier" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_identifier');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_identifier" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_identifier.jpeg" usemap="#dc_xsd_Element_identifier" /><map name="dc_xsd_Element_identifier" id="dc_xsd_Element_identifier">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="123,38,174,62" /></map></div>
+                           <div id="diagram_identifier" style="display:block"><object style="border:0" data="img/dc_xsd_Element_identifier.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
                         <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
                            </ul>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_identifier" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_identifier');" class="control" /></div>
+                           <div class="floatRight"><input id="button_usedBy_identifier" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_identifier');" class="control" /></div>
                         </td>
                         <td>
                            <div id="usedBy_identifier" style="display:block">
                               <table class="usedByTable">
                                  <tr>
                                     <td class="firstColumn">Element </td>
-                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v3.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_identifier" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_identifier');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_identifier" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"identifier"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
                                  </tr>
                               </table>
                            </div>
@@ -759,32 +772,48 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_language" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_language');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_language" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_language');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_language" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_language.jpeg" usemap="#dc_xsd_Element_language" /><map name="dc_xsd_Element_language" id="dc_xsd_Element_language">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="125,38,176,62" /></map></div>
+                           <div id="diagram_language" style="display:block"><object style="border:0" data="img/dc_xsd_Element_language.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
                         <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
                            </ul>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_language" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_language');" class="control" /></div>
+                           <div class="floatRight"><input id="button_usedBy_language" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_language');" class="control" /></div>
                         </td>
                         <td>
                            <div id="usedBy_language" style="display:block">
                               <table class="usedByTable">
                                  <tr>
                                     <td class="firstColumn">Element </td>
-                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v3.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_language" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_language');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_language" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"language"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
                                  </tr>
                               </table>
                            </div>
@@ -819,32 +848,48 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_publisher" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_publisher');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_publisher" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_publisher');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_publisher" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_publisher.jpeg" usemap="#dc_xsd_Element_publisher" /><map name="dc_xsd_Element_publisher" id="dc_xsd_Element_publisher">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="126,38,177,62" /></map></div>
+                           <div id="diagram_publisher" style="display:block"><object style="border:0" data="img/dc_xsd_Element_publisher.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
                         <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
                            </ul>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_publisher" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_publisher');" class="control" /></div>
+                           <div class="floatRight"><input id="button_usedBy_publisher" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_publisher');" class="control" /></div>
                         </td>
                         <td>
                            <div id="usedBy_publisher" style="display:block">
                               <table class="usedByTable">
                                  <tr>
                                     <td class="firstColumn">Element </td>
-                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v3.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_publisher" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_publisher');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_publisher" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"publisher"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
                                  </tr>
                               </table>
                            </div>
@@ -879,32 +924,48 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_relation" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_relation');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_relation" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_relation');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_relation" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_relation.jpeg" usemap="#dc_xsd_Element_relation" /><map name="dc_xsd_Element_relation" id="dc_xsd_Element_relation">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="116,38,167,62" /></map></div>
+                           <div id="diagram_relation" style="display:block"><object style="border:0" data="img/dc_xsd_Element_relation.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
                         <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
                            </ul>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_relation" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_relation');" class="control" /></div>
+                           <div class="floatRight"><input id="button_usedBy_relation" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_relation');" class="control" /></div>
                         </td>
                         <td>
                            <div id="usedBy_relation" style="display:block">
                               <table class="usedByTable">
                                  <tr>
                                     <td class="firstColumn">Element </td>
-                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v3.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_relation" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_relation');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_relation" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"relation"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
                                  </tr>
                               </table>
                            </div>
@@ -939,32 +1000,48 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_source" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_source');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_source" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_source');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_source" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_source.jpeg" usemap="#dc_xsd_Element_source" /><map name="dc_xsd_Element_source" id="dc_xsd_Element_source">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="112,38,163,62" /></map></div>
+                           <div id="diagram_source" style="display:block"><object style="border:0" data="img/dc_xsd_Element_source.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
                         <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
                            </ul>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_source" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_source');" class="control" /></div>
+                           <div class="floatRight"><input id="button_usedBy_source" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_source');" class="control" /></div>
                         </td>
                         <td>
                            <div id="usedBy_source" style="display:block">
                               <table class="usedByTable">
                                  <tr>
                                     <td class="firstColumn">Element </td>
-                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v3.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_source" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_source');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_source" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"source"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
                                  </tr>
                               </table>
                            </div>
@@ -999,32 +1076,48 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_subject" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_subject');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_subject" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_subject');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_subject" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_subject.jpeg" usemap="#dc_xsd_Element_subject" /><map name="dc_xsd_Element_subject" id="dc_xsd_Element_subject">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="114,38,165,62" /></map></div>
+                           <div id="diagram_subject" style="display:block"><object style="border:0" data="img/dc_xsd_Element_subject.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
                         <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
                            </ul>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_subject" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_subject');" class="control" /></div>
+                           <div class="floatRight"><input id="button_usedBy_subject" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_subject');" class="control" /></div>
                         </td>
                         <td>
                            <div id="usedBy_subject" style="display:block">
                               <table class="usedByTable">
                                  <tr>
                                     <td class="firstColumn">Element </td>
-                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v3.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_subject" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_subject');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_subject" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"subject"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
                                  </tr>
                               </table>
                            </div>
@@ -1059,32 +1152,124 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_title" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_title');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_title" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_title');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_title" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_title.jpeg" usemap="#dc_xsd_Element_title" /><map name="dc_xsd_Element_title" id="dc_xsd_Element_title">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="94,38,145,62" /></map></div>
+                           <div id="diagram_title" style="display:block"><object style="border:0" data="img/dc_xsd_Element_title.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
                         <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
                            </ul>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_title" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_title');" class="control" /></div>
+                           <div class="floatRight"><input id="button_usedBy_title" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_title');" class="control" /></div>
                         </td>
                         <td>
                            <div id="usedBy_title" style="display:block">
                               <table class="usedByTable">
                                  <tr>
                                     <td class="firstColumn">Element </td>
-                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v2.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v2.0/rioxx/')">rioxx</a></b></td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v3.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_title" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_title');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_title" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"title"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="type"></a><div class="componentTitle">Element <span class="qname">type</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_type" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_type');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_type" style="display:block"><object style="border:0" data="img/dc_xsd_Element_type.svg" type="image/svg+xml"></object></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_type" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_type" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for namespace http://www.rioxx.net/schema/v3.0/rioxx/')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_type" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_type" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"type"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
                                  </tr>
                               </table>
                            </div>
@@ -1119,27 +1304,10 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_any" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_any');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_any" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_any');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_any" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_any.jpeg" usemap="#dc_xsd_Element_any" /><map name="dc_xsd_Element_any" id="dc_xsd_Element_any">
-                                 <area alt="namespace.tmp#lang" href="namespace.html#lang" coords="107,289,206,313" />
-                                 <area alt="elements_1_1_.tmp#SimpleLiteral" href="elements_1_1_.html#SimpleLiteral" coords="82,3,207,25" />
-                                 <area alt="elements_1_1_.tmp#http___purl.org_dc_elements_1.1__contributor" href="elements_1_1_.html#http___purl.org_dc_elements_1.1__contributor" coords="93,503,186,527" />
-                                 <area alt="elements_1_1_.tmp#coverage" href="elements_1_1_.html#coverage" coords="93,537,176,561" />
-                                 <area alt="elements_1_1_.tmp#creator" href="elements_1_1_.html#creator" coords="93,571,165,595" />
-                                 <area alt="elements_1_1_.tmp#http___purl.org_dc_elements_1.1__date" href="elements_1_1_.html#http___purl.org_dc_elements_1.1__date" coords="93,605,149,629" />
-                                 <area alt="elements_1_1_.tmp#description" href="elements_1_1_.html#description" coords="93,639,187,663" />
-                                 <area alt="elements_1_1_.tmp#format" href="elements_1_1_.html#format" coords="93,673,162,697" />
-                                 <area alt="elements_1_1_.tmp#identifier" href="elements_1_1_.html#identifier" coords="93,707,174,731" />
-                                 <area alt="elements_1_1_.tmp#language" href="elements_1_1_.html#language" coords="93,741,176,765" />
-                                 <area alt="elements_1_1_.tmp#publisher" href="elements_1_1_.html#publisher" coords="93,775,177,799" />
-                                 <area alt="elements_1_1_.tmp#relation" href="elements_1_1_.html#relation" coords="93,809,167,833" />
-                                 <area alt="elements_1_1_.tmp#rights" href="elements_1_1_.html#rights" coords="93,843,157,867" />
-                                 <area alt="elements_1_1_.tmp#source" href="elements_1_1_.html#source" coords="93,877,163,901" />
-                                 <area alt="elements_1_1_.tmp#subject" href="elements_1_1_.html#subject" coords="93,911,165,935" />
-                                 <area alt="elements_1_1_.tmp#title" href="elements_1_1_.html#title" coords="93,945,145,969" />
-                                 <area alt="elements_1_1_.tmp#http___purl.org_dc_elements_1.1__type" href="elements_1_1_.html#http___purl.org_dc_elements_1.1__type" coords="93,979,148,1003" /></map></div>
+                           <div id="diagram_any" style="display:block"><object style="border:0" data="img/dc_xsd_Element_any.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
@@ -1149,7 +1317,7 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Properties</b></div>
-                           <div class="floatRight"><input id="button_properties_any" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_any');" class="control" /></div>
+                           <div class="floatRight"><input id="button_properties_any" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_any');" class="control" /></div>
                         </td>
                         <td>
                            <div id="properties_any" style="display:block">
@@ -1169,29 +1337,29 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn"><b>Substitution Group</b></td>
                         <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#title" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">title</a></b></li>
-                              <li><b><a href="elements_1_1_.html#creator" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">creator</a></b></li>
-                              <li><b><a href="elements_1_1_.html#subject" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">subject</a></b></li>
-                              <li><b><a href="elements_1_1_.html#description" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">description</a></b></li>
-                              <li><b><a href="elements_1_1_.html#publisher" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">publisher</a></b></li>
-                              <li><b><a href="elements_1_1_.html#http___purl.org_dc_elements_1.1__contributor" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">contributor</a></b></li>
-                              <li><b><a href="elements_1_1_.html#http___purl.org_dc_elements_1.1__date" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">date</a></b></li>
-                              <li><b><a href="elements_1_1_.html#http___purl.org_dc_elements_1.1__type" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">type</a></b></li>
-                              <li><b><a href="elements_1_1_.html#format" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">format</a></b></li>
-                              <li><b><a href="elements_1_1_.html#identifier" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">identifier</a></b></li>
-                              <li><b><a href="elements_1_1_.html#source" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">source</a></b></li>
-                              <li><b><a href="elements_1_1_.html#language" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">language</a></b></li>
-                              <li><b><a href="elements_1_1_.html#relation" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">relation</a></b></li>
-                              <li><b><a href="elements_1_1_.html#coverage" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">coverage</a></b></li>
-                              <li><b><a href="elements_1_1_.html#rights" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">rights</a></b></li>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#title" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">title</a></b></li>
+                              <li class="internal"><b><a href="elements_1_1_.html#http___purl.org_dc_elements_1.1__creator" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">creator</a></b></li>
+                              <li class="internal"><b><a href="elements_1_1_.html#subject" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">subject</a></b></li>
+                              <li class="internal"><b><a href="elements_1_1_.html#description" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">description</a></b></li>
+                              <li class="internal"><b><a href="elements_1_1_.html#publisher" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">publisher</a></b></li>
+                              <li class="internal"><b><a href="elements_1_1_.html#http___purl.org_dc_elements_1.1__contributor" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">contributor</a></b></li>
+                              <li class="internal"><b><a href="elements_1_1_.html#http___purl.org_dc_elements_1.1__date" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">date</a></b></li>
+                              <li class="internal"><b><a href="elements_1_1_.html#type" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">type</a></b></li>
+                              <li class="internal"><b><a href="elements_1_1_.html#format" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">format</a></b></li>
+                              <li class="internal"><b><a href="elements_1_1_.html#identifier" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">identifier</a></b></li>
+                              <li class="internal"><b><a href="elements_1_1_.html#source" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">source</a></b></li>
+                              <li class="internal"><b><a href="elements_1_1_.html#language" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">language</a></b></li>
+                              <li class="internal"><b><a href="elements_1_1_.html#relation" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">relation</a></b></li>
+                              <li class="internal"><b><a href="elements_1_1_.html#coverage" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">coverage</a></b></li>
+                              <li class="internal"><b><a href="elements_1_1_.html#rights" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">rights</a></b></li>
                            </ul>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_any" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_any');" class="control" /></div>
+                           <div class="floatRight"><input id="button_usedBy_any" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_any');" class="control" /></div>
                         </td>
                         <td>
                            <div id="usedBy_any" style="display:block">
@@ -1205,7 +1373,7 @@ var modelBoxes= new Array('model_any',
                         </td>
                      </tr>
                      <tr>
-                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_any" type="image" src="img/btM.gif" value="-" onclick="switchState('model_any');" class="control" /></div>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_any" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_any');" class="control" /></div>
                         </td>
                         <td>
                            <div id="model_any" style="display:block"><b>ANY element from ANY namespace</b></div>
@@ -1214,7 +1382,7 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Attributes</b></div>
-                           <div class="floatRight"><input id="button_attributes_any" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_any');" class="control" /></div>
+                           <div class="floatRight"><input id="button_attributes_any" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('attributes_any');" class="control" /></div>
                         </td>
                         <td>
                            <div id="attributes_any" style="display:block">
@@ -1222,8 +1390,8 @@ var modelBoxes= new Array('model_any',
                                  <thead>
                                     <tr>
                                        <th>QName</th>
-                                       <th width="10%">Type</th>
-                                       <th width="5%">Use</th>
+                                       <th style="width:10%">Type</th>
+                                       <th style="width:10%">Use</th>
                                        <th>Annotation</th>
                                     </tr>
                                  </thead>
@@ -1235,11 +1403,30 @@ var modelBoxes= new Array('model_any',
                                        <div class="annotation">
                                           <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                              <tr>
-                                                <td width="100%"><pre><span class="tT">In due course, we should install the relevant ISO 2- and 3-letter</span><span class="tI">
-</span><span class="tT">codes as the enumerated possible values . . .</span></pre></td>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">In due course, we should install the relevant ISO 2- and 3-letter</span><span class="tI">
+</span><span class="tT">codes as the enumerated possible values . . .</span></pre>
+                                                </td>
                                              </tr>
                                           </table>
                                        </div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_any" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_any');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_any" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"any"</span><span class="tAN"> type=</span><span class="tAV">"SimpleLiteral"</span><span class="tAN"> abstract=</span><span class="tAV">"true"</span><span class="tEl">/&gt;</span></pre>
                                     </td>
                                  </tr>
                               </table>
@@ -1256,7 +1443,7 @@ var modelBoxes= new Array('model_any',
             <td class="rt_lineBottom"></td>
             <td class="rt_cornerBottomRight"></td>
          </tr>
-      </table><a id="creator"></a><div class="componentTitle">Element <span class="qname">creator</span></div>
+      </table><a id="http___purl.org_dc_elements_1.1__creator"></a><div class="componentTitle">Element <span class="qname">creator</span></div>
       <table class="rt">
          <tr>
             <td class="rt_cornerTopLeft"></td>
@@ -1275,19 +1462,35 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_creator" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_creator');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_http___purl.org_dc_elements_1.1__creator" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_http___purl.org_dc_elements_1.1__creator');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_creator" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_creator.jpeg" usemap="#dc_xsd_Element_creator" /><map name="dc_xsd_Element_creator" id="dc_xsd_Element_creator">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="114,38,165,62" /></map></div>
+                           <div id="diagram_http___purl.org_dc_elements_1.1__creator" style="display:block"><object style="border:0" data="img/dc_xsd_Element_creator.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
                         <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
                            </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_http___purl.org_dc_elements_1.1__creator" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_http___purl.org_dc_elements_1.1__creator');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_http___purl.org_dc_elements_1.1__creator" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"creator"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
                         </td>
                      </tr>
                   </tbody>
@@ -1319,19 +1522,35 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_http___purl.org_dc_elements_1.1__contributor" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_http___purl.org_dc_elements_1.1__contributor');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_http___purl.org_dc_elements_1.1__contributor" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_http___purl.org_dc_elements_1.1__contributor');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_http___purl.org_dc_elements_1.1__contributor" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_contributor.jpeg" usemap="#dc_xsd_Element_contributor" /><map name="dc_xsd_Element_contributor" id="dc_xsd_Element_contributor">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="135,38,186,62" /></map></div>
+                           <div id="diagram_http___purl.org_dc_elements_1.1__contributor" style="display:block"><object style="border:0" data="img/dc_xsd_Element_contributor.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
                         <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
                            </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_http___purl.org_dc_elements_1.1__contributor" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_http___purl.org_dc_elements_1.1__contributor');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_http___purl.org_dc_elements_1.1__contributor" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"contributor"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
                         </td>
                      </tr>
                   </tbody>
@@ -1363,19 +1582,35 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_http___purl.org_dc_elements_1.1__date" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_http___purl.org_dc_elements_1.1__date');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_http___purl.org_dc_elements_1.1__date" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_http___purl.org_dc_elements_1.1__date');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_http___purl.org_dc_elements_1.1__date" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_date.jpeg" usemap="#dc_xsd_Element_date" /><map name="dc_xsd_Element_date" id="dc_xsd_Element_date">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="98,38,149,62" /></map></div>
+                           <div id="diagram_http___purl.org_dc_elements_1.1__date" style="display:block"><object style="border:0" data="img/dc_xsd_Element_date.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
                         <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
                            </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_http___purl.org_dc_elements_1.1__date" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_http___purl.org_dc_elements_1.1__date');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_http___purl.org_dc_elements_1.1__date" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"date"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
                         </td>
                      </tr>
                   </tbody>
@@ -1388,7 +1623,7 @@ var modelBoxes= new Array('model_any',
             <td class="rt_lineBottom"></td>
             <td class="rt_cornerBottomRight"></td>
          </tr>
-      </table><a id="http___purl.org_dc_elements_1.1__type"></a><div class="componentTitle">Element <span class="qname">type</span></div>
+      </table><a id="format"></a><div class="componentTitle">Element <span class="qname">format</span></div>
       <table class="rt">
          <tr>
             <td class="rt_cornerTopLeft"></td>
@@ -1407,19 +1642,35 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_http___purl.org_dc_elements_1.1__type" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_http___purl.org_dc_elements_1.1__type');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_format" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_format');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_http___purl.org_dc_elements_1.1__type" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_type.jpeg" usemap="#dc_xsd_Element_type" /><map name="dc_xsd_Element_type" id="dc_xsd_Element_type">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="97,38,148,62" /></map></div>
+                           <div id="diagram_format" style="display:block"><object style="border:0" data="img/dc_xsd_Element_format.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
                         <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
                            </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_format" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_format');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_format" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"format"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
                         </td>
                      </tr>
                   </tbody>
@@ -1451,19 +1702,35 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_rights" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_rights');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_rights" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_rights');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_rights" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_rights.jpeg" usemap="#dc_xsd_Element_rights" /><map name="dc_xsd_Element_rights" id="dc_xsd_Element_rights">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="106,38,157,62" /></map></div>
+                           <div id="diagram_rights" style="display:block"><object style="border:0" data="img/dc_xsd_Element_rights.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
                         <td>
-                           <ul>
-                              <li><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></li>
                            </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_rights" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_rights');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_rights" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"rights"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
                         </td>
                      </tr>
                   </tbody>
@@ -1495,14 +1762,15 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Annotations</b></div>
-                           <div class="floatRight"><input id="button_annotations_SimpleLiteral" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_SimpleLiteral');" class="control" /></div>
+                           <div class="floatRight"><input id="button_annotations_SimpleLiteral" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('annotations_SimpleLiteral');" class="control" /></div>
                         </td>
                         <td>
                            <div id="annotations_SimpleLiteral" style="display:block">
                               <div class="annotation">
                                  <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                     <tr>
-                                       <td width="100%"><pre><span class="tT">This is the default type for all of the DC elements.</span><span class="tI">
+                                       <td style="width:100%">
+                                          <pre><span class="tT">This is the default type for all of the DC elements.</span><span class="tI">
 </span><span class="tT">            It permits text content only with optional</span><span class="tI">
 </span><span class="tT">            xml:lang attribute.</span><span class="tI">
 </span><span class="tT">            Text is allowed because mixed="true", but sub-elements</span><span class="tI">
@@ -1510,7 +1778,8 @@ var modelBoxes= new Array('model_any',
 </span><span class="tT">            are on the xs:any tag.</span><span class="tI">
 </span><span class="tT"></span><span class="tI">
 </span><span class="tT">    	    This complexType allows for restriction or extension permitting</span><span class="tI">
-</span><span class="tT">            child elements.</span></pre></td>
+</span><span class="tT">            child elements.</span></pre>
+                                       </td>
                                     </tr>
                                  </table>
                               </div>
@@ -1520,17 +1789,16 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_SimpleLiteral" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_SimpleLiteral');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_SimpleLiteral" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_SimpleLiteral');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_SimpleLiteral" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Complex_Type_SimpleLiteral.jpeg" usemap="#dc_xsd_Complex_Type_SimpleLiteral" /><map name="dc_xsd_Complex_Type_SimpleLiteral" id="dc_xsd_Complex_Type_SimpleLiteral">
-                                 <area alt="namespace.tmp#lang" href="namespace.html#lang" coords="191,249,290,273" /></map></div>
+                           <div id="diagram_SimpleLiteral" style="display:block"><object style="border:0" data="img/dc_xsd_Complex_Type_SimpleLiteral.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_SimpleLiteral" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_SimpleLiteral');" class="control" /></div>
+                           <div class="floatRight"><input id="button_usedBy_SimpleLiteral" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_SimpleLiteral');" class="control" /></div>
                         </td>
                         <td>
                            <div id="usedBy_SimpleLiteral" style="display:block">
@@ -1548,7 +1816,7 @@ var modelBoxes= new Array('model_any',
                         </td>
                      </tr>
                      <tr>
-                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_SimpleLiteral" type="image" src="img/btM.gif" value="-" onclick="switchState('model_SimpleLiteral');" class="control" /></div>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_SimpleLiteral" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_SimpleLiteral');" class="control" /></div>
                         </td>
                         <td>
                            <div id="model_SimpleLiteral" style="display:block"><b>ANY element from ANY namespace</b></div>
@@ -1557,7 +1825,7 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Attributes</b></div>
-                           <div class="floatRight"><input id="button_attributes_SimpleLiteral" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_SimpleLiteral');" class="control" /></div>
+                           <div class="floatRight"><input id="button_attributes_SimpleLiteral" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('attributes_SimpleLiteral');" class="control" /></div>
                         </td>
                         <td>
                            <div id="attributes_SimpleLiteral" style="display:block">
@@ -1565,8 +1833,8 @@ var modelBoxes= new Array('model_any',
                                  <thead>
                                     <tr>
                                        <th>QName</th>
-                                       <th width="10%">Type</th>
-                                       <th width="5%">Use</th>
+                                       <th style="width:10%">Type</th>
+                                       <th style="width:10%">Use</th>
                                        <th>Annotation</th>
                                     </tr>
                                  </thead>
@@ -1578,11 +1846,42 @@ var modelBoxes= new Array('model_any',
                                        <div class="annotation">
                                           <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                              <tr>
-                                                <td width="100%"><pre><span class="tT">In due course, we should install the relevant ISO 2- and 3-letter</span><span class="tI">
-</span><span class="tT">codes as the enumerated possible values . . .</span></pre></td>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">In due course, we should install the relevant ISO 2- and 3-letter</span><span class="tI">
+</span><span class="tT">codes as the enumerated possible values . . .</span></pre>
+                                                </td>
                                              </tr>
                                           </table>
                                        </div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_SimpleLiteral" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_SimpleLiteral');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_SimpleLiteral" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:complexType</span><span class="tAN"> name=</span><span class="tAV">"SimpleLiteral"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tAN"> xml:lang=</span><span class="tAV">"en"</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">This is the default type for all of the DC elements. It permits text content only with optional xml:lang attribute. Text is allowed because mixed="true", but sub-elements are disallowed because minOccurs="0" and maxOccurs="0" are on the xs:any tag. This complexType allows for restriction or extension permitting child elements.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexContent</span><span class="tAN"> mixed=</span><span class="tAV">"true"</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:anyType"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:any</span><span class="tAN"> processContents=</span><span class="tAV">"lax"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"0"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:attribute</span><span class="tAN"> ref=</span><span class="tAV">"xml:lang"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexContent&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:complexType&gt;</span></pre>
                                     </td>
                                  </tr>
                               </table>
@@ -1618,15 +1917,17 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Annotations</b></div>
-                           <div class="floatRight"><input id="button_annotations_elementContainer" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_elementContainer');" class="control" /></div>
+                           <div class="floatRight"><input id="button_annotations_elementContainer" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('annotations_elementContainer');" class="control" /></div>
                         </td>
                         <td>
                            <div id="annotations_elementContainer" style="display:block">
                               <div class="annotation">
                                  <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                     <tr>
-                                       <td width="100%"><pre><span class="tT">This complexType is included as a convenience for schema authors who need to define a root</span><span class="tI">
-</span><span class="tT">or container element for all of the DC elements.</span></pre></td>
+                                       <td style="width:100%">
+                                          <pre><span class="tT">This complexType is included as a convenience for schema authors who need to define a root</span><span class="tI">
+</span><span class="tT">or container element for all of the DC elements.</span></pre>
+                                       </td>
                                     </tr>
                                  </table>
                               </div>
@@ -1636,25 +1937,46 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_elementContainer" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_elementContainer');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_elementContainer" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_elementContainer');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_elementContainer" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Complex_Type_elementContainer.jpeg" usemap="#dc_xsd_Complex_Type_elementContainer" /><map name="dc_xsd_Complex_Type_elementContainer" id="dc_xsd_Complex_Type_elementContainer">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="453,48,504,72" />
-                                 <area alt="elements_1_1_.tmp#elementsGroup" href="elements_1_1_.html#elementsGroup" coords="278,3,421,29" /></map></div>
+                           <div id="diagram_elementContainer" style="display:block"><object style="border:0" data="img/dc_xsd_Complex_Type_elementContainer.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
-                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_elementContainer" type="image" src="img/btM.gif" value="-" onclick="switchState('model_elementContainer');" class="control" /></div>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_elementContainer" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_elementContainer');" class="control" /></div>
                         </td>
                         <td>
-                           <div id="model_elementContainer" style="display:block">((<b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b>))
-                           </div>
+                           <div id="model_elementContainer" style="display:block">((<b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b>))</div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Children</b></td>
                         <td><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_elementContainer" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_elementContainer');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_elementContainer" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:complexType</span><span class="tAN"> name=</span><span class="tAV">"elementContainer"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tAN"> xml:lang=</span><span class="tAV">"en"</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">This complexType is included as a convenience for schema authors who need to define a root or container element for all of the DC elements.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:choice</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:group</span><span class="tAN"> ref=</span><span class="tAV">"elementsGroup"</span><span class="tEl">/&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:choice&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:complexType&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
                      </tr>
                   </tbody>
                </table>
@@ -1685,16 +2007,18 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Annotations</b></div>
-                           <div class="floatRight"><input id="button_annotations_elementsGroup" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_elementsGroup');" class="control" /></div>
+                           <div class="floatRight"><input id="button_annotations_elementsGroup" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('annotations_elementsGroup');" class="control" /></div>
                         </td>
                         <td>
                            <div id="annotations_elementsGroup" style="display:block">
                               <div class="annotation">
                                  <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                     <tr>
-                                       <td width="100%"><pre><span class="tT">This group is included as a convenience for schema authors</span><span class="tI">
+                                       <td style="width:100%">
+                                          <pre><span class="tT">This group is included as a convenience for schema authors</span><span class="tI">
 </span><span class="tT">who need to refer to all the elements in the </span><span class="tI">
-</span><span class="tT">http://purl.org/dc/elements/1.1/ namespace.</span></pre></td>
+</span><span class="tT">http://purl.org/dc/elements/1.1/ namespace.</span></pre>
+                                       </td>
                                     </tr>
                                  </table>
                               </div>
@@ -1704,17 +2028,16 @@ var modelBoxes= new Array('model_any',
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_elementsGroup" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_elementsGroup');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_elementsGroup" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_elementsGroup');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_elementsGroup" style="display:block"><img alt="Diagram" border="0" src="img/dc_xsd_Element_Group_elementsGroup.jpeg" usemap="#dc_xsd_Element_Group_elementsGroup" /><map name="dc_xsd_Element_Group_elementsGroup" id="dc_xsd_Element_Group_elementsGroup">
-                                 <area alt="elements_1_1_.tmp#any" href="elements_1_1_.html#any" coords="355,4,406,28" /></map></div>
+                           <div id="diagram_elementsGroup" style="display:block"><object style="border:0" data="img/dc_xsd_Element_Group_elementsGroup.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_elementsGroup" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_elementsGroup');" class="control" /></div>
+                           <div class="floatRight"><input id="button_usedBy_elementsGroup" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_elementsGroup');" class="control" /></div>
                         </td>
                         <td>
                            <div id="usedBy_elementsGroup" style="display:block">
@@ -1728,16 +2051,41 @@ var modelBoxes= new Array('model_any',
                         </td>
                      </tr>
                      <tr>
-                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_elementsGroup" type="image" src="img/btM.gif" value="-" onclick="switchState('model_elementsGroup');" class="control" /></div>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_elementsGroup" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_elementsGroup');" class="control" /></div>
                         </td>
                         <td>
-                           <div id="model_elementsGroup" style="display:block">(<b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b>)
-                           </div>
+                           <div id="model_elementsGroup" style="display:block">(<b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b>)</div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Children</b></td>
                         <td><b><a href="elements_1_1_.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for namespace http://purl.org/dc/elements/1.1/')">any</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_elementsGroup" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_elementsGroup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_elementsGroup" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:group</span><span class="tAN"> name=</span><span class="tAV">"elementsGroup"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tAN"> xml:lang=</span><span class="tAV">"en"</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">This group is included as a convenience for schema authors who need to refer to all the elements in the http://purl.org/dc/elements/1.1/ namespace.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:choice</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:choice&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:group&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
                      </tr>
                   </tbody>
                </table>
@@ -1752,10 +2100,8 @@ var modelBoxes= new Array('model_any',
       </table>
       <div class="footer">
          <hr />
-         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor.
-         </div>
-      </div><script type="text/javascript">
-         <!--
+         <div style="text-align:center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor Trial Edition.</div>
+      </div><script type="text/javascript"><!--
                      // The namespace is the selected option in the TOC combo.
                     
                      // Floats the toolbar.

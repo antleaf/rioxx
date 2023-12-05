@@ -4,8 +4,7 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <title>Schema documentation for namespace http://www.w3.org/XML/1998/namespace</title>
-      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript">
-         <!--
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript"><!--
         var propertiesBoxes= new Array('properties_xml2001.xsd', 
 				'properties_lang', 
 				'properties_space', 
@@ -14,6 +13,10 @@ var facetsBoxes= new Array('facets_space');
 var usedByBoxes= new Array('usedBy_lang', 
 				'usedBy_space', 
 				'usedBy_base');
+var sourceBoxes= new Array('source_lang', 
+				'source_space', 
+				'source_base', 
+				'source_specialAttrs');
 var diagramBoxes= new Array('diagram_specialAttrs');
 var annotationBoxes= new Array('annotations_xml2001.xsd', 
 				'annotations_lang', 
@@ -280,10 +283,13 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                         <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
                      </tr>
                      <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
                         <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
                      </tr>
                   </table>
-                  <div align="right"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+                  <div style="text-align:center"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
                </td>
                <td class="rt_lineRight"></td>
             </tr>
@@ -312,14 +318,15 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Annotations</b></div>
-                           <div class="floatRight"><input id="button_annotations_xml2001.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_xml2001.xsd');" class="control" /></div>
+                           <div class="floatRight"><input id="button_annotations_xml2001.xsd" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('annotations_xml2001.xsd');" class="control" /></div>
                         </td>
                         <td>
                            <div id="annotations_xml2001.xsd" style="display:block">
                               <div class="annotation">
                                  <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                     <tr>
-                                       <td width="100%"><pre><span class="tT">See http://www.w3.org/XML/1998/namespace.html and</span><span class="tI">
+                                       <td style="width:100%">
+                                          <pre><span class="tT">See http://www.w3.org/XML/1998/namespace.html and</span><span class="tI">
 </span><span class="tT">   http://www.w3.org/TR/REC-xml for information about this namespace.</span><span class="tI">
 </span><span class="tT"></span><span class="tI">
 </span><span class="tT">    This schema document describes the XML namespace, in a form</span><span class="tI">
@@ -356,14 +363,16 @@ var attributesBoxes= new Array('attributes_specialAttrs');
 </span><span class="tT">             In appreciation for his vision, leadership and dedication</span><span class="tI">
 </span><span class="tT">             the W3C XML Plenary on this 10th day of February, 2000</span><span class="tI">
 </span><span class="tT">             reserves for Jon Bosak in perpetuity the XML name</span><span class="tI">
-</span><span class="tT">             xml:Father</span></pre></td>
+</span><span class="tT">             xml:Father</span></pre>
+                                       </td>
                                     </tr>
                                  </table>
                               </div>
                               <div class="annotation">
                                  <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                     <tr>
-                                       <td width="100%"><pre><span class="tT">This schema defines attributes and an attribute group</span><span class="tI">
+                                       <td style="width:100%">
+                                          <pre><span class="tT">This schema defines attributes and an attribute group</span><span class="tI">
 </span><span class="tT">        suitable for use by</span><span class="tI">
 </span><span class="tT">        schemas wishing to allow xml:base, xml:lang or xml:space attributes</span><span class="tI">
 </span><span class="tT">        on elements they define.</span><span class="tI">
@@ -383,14 +392,16 @@ var attributesBoxes= new Array('attributes_specialAttrs');
 </span><span class="tT">         &lt;attributeGroup ref="xml:specialAttrs"/&gt;</span><span class="tI">
 </span><span class="tT"> </span><span class="tI">
 </span><span class="tT">         will define a type which will schema-validate an instance</span><span class="tI">
-</span><span class="tT">         element with any of those attributes</span></pre></td>
+</span><span class="tT">         element with any of those attributes</span></pre>
+                                       </td>
                                     </tr>
                                  </table>
                               </div>
                               <div class="annotation">
                                  <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                     <tr>
-                                       <td width="100%"><pre><span class="tT">In keeping with the XML Schema WG's standard versioning</span><span class="tI">
+                                       <td style="width:100%">
+                                          <pre><span class="tT">In keeping with the XML Schema WG's standard versioning</span><span class="tI">
 </span><span class="tT">policy, this schema document will persist at</span><span class="tI">
 </span><span class="tT">http://www.w3.org/2001/03/xml.xsd.</span><span class="tI">
 </span><span class="tT">At the date of issue it can also be found at</span><span class="tI">
@@ -401,7 +412,8 @@ var attributesBoxes= new Array('attributes_specialAttrs');
 </span><span class="tT">of this document at</span><span class="tI">
 </span><span class="tT">http://www.w3.org/2001/xml.xsd will change</span><span class="tI">
 </span><span class="tT">accordingly; the version at</span><span class="tI">
-</span><span class="tT">http://www.w3.org/2001/03/xml.xsd will not change.</span></pre></td>
+</span><span class="tT">http://www.w3.org/2001/03/xml.xsd will not change.</span></pre>
+                                       </td>
                                     </tr>
                                  </table>
                               </div>
@@ -411,7 +423,7 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Properties</b></div>
-                           <div class="floatRight"><input id="button_properties_xml2001.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_xml2001.xsd');" class="control" /></div>
+                           <div class="floatRight"><input id="button_properties_xml2001.xsd" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_xml2001.xsd');" class="control" /></div>
                         </td>
                         <td>
                            <div id="properties_xml2001.xsd" style="display:block">
@@ -457,15 +469,17 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Annotations</b></div>
-                           <div class="floatRight"><input id="button_annotations_lang" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_lang');" class="control" /></div>
+                           <div class="floatRight"><input id="button_annotations_lang" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('annotations_lang');" class="control" /></div>
                         </td>
                         <td>
                            <div id="annotations_lang" style="display:block">
                               <div class="annotation">
                                  <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                     <tr>
-                                       <td width="100%"><pre><span class="tT">In due course, we should install the relevant ISO 2- and 3-letter</span><span class="tI">
-</span><span class="tT">codes as the enumerated possible values . . .</span></pre></td>
+                                       <td style="width:100%">
+                                          <pre><span class="tT">In due course, we should install the relevant ISO 2- and 3-letter</span><span class="tI">
+</span><span class="tT">codes as the enumerated possible values . . .</span></pre>
+                                       </td>
                                     </tr>
                                  </table>
                               </div>
@@ -479,7 +493,7 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Properties</b></div>
-                           <div class="floatRight"><input id="button_properties_lang" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_lang');" class="control" /></div>
+                           <div class="floatRight"><input id="button_properties_lang" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_lang');" class="control" /></div>
                         </td>
                         <td>
                            <div id="properties_lang" style="display:block">
@@ -495,7 +509,7 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_lang" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_lang');" class="control" /></div>
+                           <div class="floatRight"><input id="button_usedBy_lang" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_lang');" class="control" /></div>
                         </td>
                         <td>
                            <div id="usedBy_lang" style="display:block">
@@ -507,6 +521,27 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                                  <tr>
                                     <td class="firstColumn">Attribute Group </td>
                                     <td><b><a href="namespace.html#specialAttrs" target="mainFrame" title="http://www.w3.org/XML/1998/namespace" onclick="updatePageTitle('Schema documentation for namespace http://www.w3.org/XML/1998/namespace')">xml:specialAttrs</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_lang" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_lang');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_lang" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:attribute</span><span class="tAN"> name=</span><span class="tAV">"lang"</span><span class="tAN"> type=</span><span class="tAV">"xs:language"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">In due course, we should install the relevant ISO 2- and 3-letter codes as the enumerated possible values . . .</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:attribute&gt;</span></pre>
+                                    </td>
                                  </tr>
                               </table>
                            </div>
@@ -545,7 +580,7 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Properties</b></div>
-                           <div class="floatRight"><input id="button_properties_space" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_space');" class="control" /></div>
+                           <div class="floatRight"><input id="button_properties_space" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_space');" class="control" /></div>
                         </td>
                         <td>
                            <div id="properties_space" style="display:block">
@@ -561,21 +596,21 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Facets</b></div>
-                           <div class="floatRight"><input id="button_facets_space" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_space');" class="control" /></div>
+                           <div class="floatRight"><input id="button_facets_space" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('facets_space');" class="control" /></div>
                         </td>
                         <td>
                            <div id="facets_space" style="display:block">
                               <table class="facetsTable">
                                  <tr>
                                     <td class="firstColumn">enumeration</td>
-                                    <td width="30%"><b>default</b></td>
+                                    <td style="width:30%"><b>default</b></td>
                                     <td>
                                        <div class="annotation"></div>
                                     </td>
                                  </tr>
                                  <tr>
                                     <td class="firstColumn">enumeration</td>
-                                    <td width="30%"><b>preserve</b></td>
+                                    <td style="width:30%"><b>preserve</b></td>
                                     <td>
                                        <div class="annotation"></div>
                                     </td>
@@ -587,7 +622,7 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_space" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_space');" class="control" /></div>
+                           <div class="floatRight"><input id="button_usedBy_space" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_space');" class="control" /></div>
                         </td>
                         <td>
                            <div id="usedBy_space" style="display:block">
@@ -595,6 +630,30 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                                  <tr>
                                     <td class="firstColumn">Attribute Group </td>
                                     <td><b><a href="namespace.html#specialAttrs" target="mainFrame" title="http://www.w3.org/XML/1998/namespace" onclick="updatePageTitle('Schema documentation for namespace http://www.w3.org/XML/1998/namespace')">xml:specialAttrs</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_space" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_space');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_space" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:attribute</span><span class="tAN"> name=</span><span class="tAV">"space"</span><span class="tAN"> default=</span><span class="tAV">"preserve"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:NCName"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"default"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"preserve"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:attribute&gt;</span></pre>
+                                    </td>
                                  </tr>
                               </table>
                            </div>
@@ -629,15 +688,17 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Annotations</b></div>
-                           <div class="floatRight"><input id="button_annotations_base" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_base');" class="control" /></div>
+                           <div class="floatRight"><input id="button_annotations_base" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('annotations_base');" class="control" /></div>
                         </td>
                         <td>
                            <div id="annotations_base" style="display:block">
                               <div class="annotation">
                                  <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                     <tr>
-                                       <td width="100%"><pre><span class="tT">See http://www.w3.org/TR/xmlbase/ for</span><span class="tI">
-</span><span class="tT">information about this attribute.</span></pre></td>
+                                       <td style="width:100%">
+                                          <pre><span class="tT">See http://www.w3.org/TR/xmlbase/ for</span><span class="tI">
+</span><span class="tT">information about this attribute.</span></pre>
+                                       </td>
                                     </tr>
                                  </table>
                               </div>
@@ -651,7 +712,7 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Properties</b></div>
-                           <div class="floatRight"><input id="button_properties_base" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_base');" class="control" /></div>
+                           <div class="floatRight"><input id="button_properties_base" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_base');" class="control" /></div>
                         </td>
                         <td>
                            <div id="properties_base" style="display:block">
@@ -667,7 +728,7 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_base" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_base');" class="control" /></div>
+                           <div class="floatRight"><input id="button_usedBy_base" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_base');" class="control" /></div>
                         </td>
                         <td>
                            <div id="usedBy_base" style="display:block">
@@ -675,6 +736,27 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                                  <tr>
                                     <td class="firstColumn">Attribute Group </td>
                                     <td><b><a href="namespace.html#specialAttrs" target="mainFrame" title="http://www.w3.org/XML/1998/namespace" onclick="updatePageTitle('Schema documentation for namespace http://www.w3.org/XML/1998/namespace')">xml:specialAttrs</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_base" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_base');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_base" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:attribute</span><span class="tAN"> name=</span><span class="tAV">"base"</span><span class="tAN"> type=</span><span class="tAV">"xs:anyURI"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">See http://www.w3.org/TR/xmlbase/ for information about this attribute.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:attribute&gt;</span></pre>
+                                    </td>
                                  </tr>
                               </table>
                            </div>
@@ -709,19 +791,16 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_specialAttrs" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_specialAttrs');" class="control" /></div>
+                           <div class="floatRight"><input id="button_diagram_specialAttrs" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_specialAttrs');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_specialAttrs" style="display:block"><img alt="Diagram" border="0" src="img/xml2001_xsd_Attribute_Group_xml_specialAttrs.jpeg" usemap="#xml2001_xsd_Attribute_Group_xml_specialAttrs" /><map name="xml2001_xsd_Attribute_Group_xml_specialAttrs" id="xml2001_xsd_Attribute_Group_xml_specialAttrs">
-                                 <area alt="namespace.tmp#base" href="namespace.html#base" coords="150,0,253,24" />
-                                 <area alt="namespace.tmp#lang" href="namespace.html#lang" coords="150,77,249,101" />
-                                 <area alt="namespace.tmp#space" href="namespace.html#space" coords="150,154,259,178" /></map></div>
+                           <div id="diagram_specialAttrs" style="display:block"><object style="border:0" data="img/xml2001_xsd_Attribute_Group_xml_specialAttrs.svg" type="image/svg+xml"></object></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
                            <div class="floatLeft"><b>Attributes</b></div>
-                           <div class="floatRight"><input id="button_attributes_specialAttrs" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_specialAttrs');" class="control" /></div>
+                           <div class="floatRight"><input id="button_attributes_specialAttrs" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('attributes_specialAttrs');" class="control" /></div>
                         </td>
                         <td>
                            <div id="attributes_specialAttrs" style="display:block">
@@ -729,8 +808,8 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                                  <thead>
                                     <tr>
                                        <th>QName</th>
-                                       <th width="10%">Type</th>
-                                       <th width="5%">Use</th>
+                                       <th style="width:10%">Type</th>
+                                       <th style="width:10%">Use</th>
                                        <th>Annotation</th>
                                     </tr>
                                  </thead>
@@ -742,8 +821,10 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                                        <div class="annotation">
                                           <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                              <tr>
-                                                <td width="100%"><pre><span class="tT">See http://www.w3.org/TR/xmlbase/ for</span><span class="tI">
-</span><span class="tT">information about this attribute.</span></pre></td>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">See http://www.w3.org/TR/xmlbase/ for</span><span class="tI">
+</span><span class="tT">information about this attribute.</span></pre>
+                                                </td>
                                              </tr>
                                           </table>
                                        </div>
@@ -757,8 +838,10 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                                        <div class="annotation">
                                           <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                              <tr>
-                                                <td width="100%"><pre><span class="tT">In due course, we should install the relevant ISO 2- and 3-letter</span><span class="tI">
-</span><span class="tT">codes as the enumerated possible values . . .</span></pre></td>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">In due course, we should install the relevant ISO 2- and 3-letter</span><span class="tI">
+</span><span class="tT">codes as the enumerated possible values . . .</span></pre>
+                                                </td>
                                              </tr>
                                           </table>
                                        </div>
@@ -770,6 +853,27 @@ var attributesBoxes= new Array('attributes_specialAttrs');
                                     <td>optional</td>
                                     <td>
                                        <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_specialAttrs" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_specialAttrs');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_specialAttrs" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:attributeGroup</span><span class="tAN"> name=</span><span class="tAV">"specialAttrs"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:attribute</span><span class="tAN"> ref=</span><span class="tAV">"xml:base"</span><span class="tEl">/&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:attribute</span><span class="tAN"> ref=</span><span class="tAV">"xml:lang"</span><span class="tEl">/&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:attribute</span><span class="tAN"> ref=</span><span class="tAV">"xml:space"</span><span class="tEl">/&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:attributeGroup&gt;</span></pre>
                                     </td>
                                  </tr>
                               </table>
@@ -789,10 +893,8 @@ var attributesBoxes= new Array('attributes_specialAttrs');
       </table>
       <div class="footer">
          <hr />
-         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor.
-         </div>
-      </div><script type="text/javascript">
-         <!--
+         <div style="text-align:center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor Trial Edition.</div>
+      </div><script type="text/javascript"><!--
                      // The namespace is the selected option in the TOC combo.
                     
                      // Floats the toolbar.

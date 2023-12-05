@@ -1,29 +1,28 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-           targetNamespace="http://www.rioxx.net/schema/v2.0/rioxx/"
-           xmlns:rioxxterms="http://www.rioxx.net/schema/v2.0/rioxxterms/"
-           xmlns:ali="http://ali.niso.org/2014/ali/1.0" xmlns:dcterms="http://purl.org/dc/terms/"
-           xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-           vc:minVersion="1.1" xmlns="http://www.rioxx.net/schema/v2.0/rioxx/">
+    targetNamespace="http://www.rioxx.net/schema/v3.0/rioxx/"
+    xmlns:rioxxterms="http://www.rioxx.net/schema/v3.0/rioxxterms/"
+    xmlns:ali="http://ali.niso.org/2014/ali/1.0" xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
+    xmlns="http://www.rioxx.net/schema/v3.0/rioxx/">
     <!-- Import rather than using schemaLocation attributes in the main schema element
          This is so the GUI editors can see the elements & use them -->
-    <xs:import namespace="http://www.rioxx.net/schema/v2.0/rioxxterms/"
-               schemaLocation="rioxxterms.xsd"/>
-    <xs:import namespace="http://ali.niso.org/2014/ali/1.0" schemaLocation="ali.xsd"/>
+    <xs:import namespace="http://www.rioxx.net/schema/v3.0/rioxxterms/"
+        schemaLocation="rioxxterms.xsd"/>
     <xs:import namespace="http://purl.org/dc/elements/1.1/"
-               schemaLocation="http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"/>
+        schemaLocation="http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"/>
     <xs:import namespace="http://purl.org/dc/terms/"
-               schemaLocation="http://www.dublincore.org/schemas/xmls/qdc/dcterms.xsd"/>
+        schemaLocation="http://www.dublincore.org/schemas/xmls/qdc/dcterms.xsd"/>
     <xs:element name="rioxx">
         <xs:annotation>
             <xs:documentation xml:lang="en"><![CDATA[
 Schema for the RIOXX Application Profile, version 2.0
 
-Created 2015-01-21
+Created 2023-12-05
 
 Created by
 
-Paul Walk (p.walk@ed.ac.uk)
-Ian Stuart (ian.stuart@ed.ac.uk)
+The CORE team (theteam@core.ac.uk)
 
 Terminology
 
@@ -42,13 +41,212 @@ an 'all' grouping to have a maxOccurs of zero or one.
 
 Elements are listed in alphabetical order.
 
-Location: The xsd file is located at http://www.rioxx.net/schema/v2.0/rioxx/rioxx.xsd
+Location: The xsd file is located at http://www.rioxx.net/schema/v3.0/rioxx/rioxx.xsd
 
 ]]>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:all>
+                <xs:element ref="dc:coverage" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">Optional</xs:documentation>
+                        <xs:documentation xml:lang="en"><![CDATA[
+Coverage will typically include a temporal period (a period label, date, or date range) or jurisdiction (such as a named administrative entity).
+]]></xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="dc:description" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">Recommended</xs:documentation>
+                        <xs:documentation xml:lang="en"><![CDATA[
+The purpose of dc:description is to describe the content of the resource using free text.
+It is RECOMMENDED that an English language abstract be used where available.
+HTML or other markup tags SHOULD NOT be included in this field.
+This field may be indexed and its contents presented to people conducting searches.
+]]>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="dc:identifier" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">Mandatory</xs:documentation>
+                        <xs:documentation xml:lang="en"><![CDATA[
+
+dc:identifier MUST contain an identifying HTTP(S) URI of the repository 'landing page' describing this resource.
+The landing page should provide links to related resources.
+We RECOMMEND using FAIR Signposting (signposting.org/FAIR) to assist machine agents in navigating from the landing page to the relevant resources.
+The value of dc:identifier does not have to be a persistent identifier (PID), instead, in order to facilitate indexing by machine agents,
+it is RECOMMENDED that dc:identifier contains a direct HTTP(S) URI of the landing page,
+i.e. resolving dc:identifier SHOULD be possible without the use of HTTP redirection.
+Example
+A typical example of this property is provided below, where the direct HTTP(S) URI of the repository landing page is expressed.
+
+<dc:identifier>https://www.repository.cam.ac.uk/items/c6173013-1e2f-4818-9d1e-98a0f189c7c8</dc:identifier>
+dc:identifier can be supplemented by using dc:relation to declare the local repository PID for the corresponding resource, in this case a DOI.
+
+<dc:relation rel="cite-as">https://doi.org/10.17863/CAM.101562</dc:relation>
+]]>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="dc:language" minOccurs="1" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">Mandatory</xs:documentation>
+                        <xs:documentation xml:lang="en"><![CDATA[
+
+This refers to the primary language in which the content of the resource is presented.
+The property MAY be repeated if the resource contains multiple languages.
+Values used for this property MUST conform to ISO 639-3.
+This offers two and three letter tags e.g. "en" or "eng" for English and "en-GB" for English used in the UK.
+]]>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                
+
+                <xs:element ref="dc:publisher" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">Recommended</xs:documentation>
+                        <xs:documentation xml:lang="en"><![CDATA[
+
+This property contains the name of the entity, typically a publisher,
+responsible for making the version of record of the resource available.
+This could be a person, organisation or service.
+Where available and possible, the RECOMMENDED format is to add the official name of the publisher as the content of the property,
+and to include one or more recognised identifiers in their HTTP(S) URI form using child rioxxterms:id properties.
+Typical identifier schemes likely to be relevant here include ISNI, ROR, and VIAF.
+
+]]></xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+
+                <xs:element ref="dc:relation" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">Optional</xs:documentation>
+                        <xs:documentation xml:lang="en"><![CDATA[
+Although this property is not strictly mandated in the Rioxx schema,
+it SHOULD be included because this is the property which harvesting software will inspect to locate
+URLs for resource file content - for example to locate the "full text" associated with a repository record.
+It will also be the property to declare a persistent identifier (PID) that may be associated with the resource.
+
+Note that only those resources under the direct custodianship of the repository should be asserted within dc:relation.
+Resources demonstrating external custodianship should be related using rioxxterms:ext_relation.
+
+dc:relation is refined by a series of attributes, which SHOULD be included (where applicable):
+
+rel
+type
+coar_type
+coar_version
+deposit_date
+resource_exposed_date
+access_rights
+license_ref
+When set to rel="item", the dc:relation property identifies a downloadable resource.
+Each such dc:relation property MUST contain an HTTP(S) URI resolving to the downloadable resource.
+It is REQUIRED that this property is used whenever the Rioxx record identifies a downloadable object
+under the direct custodianship of the repository, such as a full text, dataset or software.
+Where such deposited downloadable resource remains under a temporary embargo,
+the repository SHOULD return an appropriate HTTP status code to indicate that access to the resource is forbidden,
+until the embargo's expiry. The most appropriate HTTP code to return is 451 Unavailable For Legal Reasons.
+
+When set to rel="cite-as", the dc:relation property specifies a cite-able identifier associated with the resource.
+
+dc:relation MUST only be used to identify resources under the direct custodianship of the repository, therefore all URIs
+specified under dc:relation MUST resolve to the repository. URIs identifying related resources that resolve to resources
+outside of the direct custodianship of the repository MUST be specified under rioxterms:ext_relation.
+
+The dc:relation property can be repeated to specify more than one associated resource. Possible values here may include
+a DOI, URN, CORE OAI ID; or an alternative repository HTTP(S) URI where there is no requirement for a PID.
+
+Attributes
+- rel: The rel attribute uses 'typed links' from the IANA Link Relation Registry. This attribute will often be set to rel='item' where dc:relation is being used to communicate downloadable file content, but will be set to rel="cite-as" where dc:relation is simulataneously being used to declare an associated persistent identifier.
+- type: The type attribute refers to the technical format of the value of dc:relation. When used, type MUST encode the Media Type of the resource (formerly MIME Type). Note that this attribute should not be confused with coar_type.
+- coar_type: When used, the coar_type attribute MUST contain a value which is an identifier from the COAR Resource Types Vocabulary. For example, for the common case of the resource being a PDF of a journal article, the RECOMMENDED value would be http://purl.org/coar/resource_type/c_6501 ('journal article'). The COAR Resource Types Vocabulary accommodates a diverse range of resource types. dc:relation can therefore also be used to communicate the existence of directly harvestable related data or software, such as by types experimental data or research software.
+- coar_version: When used, the coar_version attribute MUST contain a value which is an identifier from the COAR Version Types Vocabulary.
+- deposit_date: The deposit_date attribute (if present) takes the date on which this resource was first deposited, irrespective of any relevant embargoes or dark archiving, and irrespective of any subsequent file replacement(s). It is anticipated that in some circumstances the deposit_date will be captured and exposed in repository metadata when the resource described is under temporary embargo or temporary dark archiving. If included, this attribute's value MUST be encoded according to the W3CDTF (a profile of ISO 8601) which typically follows the following format: YYYY-MM-DD.
+- resource_exposed_date: The resource_exposed_date attribute (if present) takes the date on which this related resource was made publicly available, irrespective of any subsequent file replacement(s). If included, this attribute's value MUST be encoded according to the W3CDTF (a profile of ISO 8601) which typically follows the following format: YYYY-MM-DD. Repositories will typically fulfil resource_exposed_date if the related resource is made publicly visible immediately upon deposit, or when an applicable embargo ends.
+- access_rights: When used, the access_rights attribute MUST take a URI value from the COAR Access Rights Vocabulary, which defines four access states: embargoed access, metadata only access, open access, restricted access.
+- license_ref: When used, the license_ref attribute MUST communicate the license terms under which the value of rioxxterms:file is subject using an HTTP(S) URI. Typical examples might include the variety of licenses made available by Creative Commons, but can conceivably include any license referencible by URI.
+]]>
+                        </xs:documentation>
+                    </xs:annotation>                    
+                </xs:element>
+
+                <xs:element ref="dc:source" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">Mandatory where applicable</xs:documentation>
+                        <xs:documentation xml:lang="en"><![CDATA[
+
+The dc:source property describes a resource from which the resource is derived (in whole or in part).
+It is RECOMMENDED that the source is referenced using a unique identifier from a recognised system
+e.g. the unique 8-digit International Standard Serial Numbers (ISSN) assigned to electronic periodicals,
+or the 13 digit International Standard Book Number (ISBN13) assigned to books. In the latter case,
+the ISBN13 for the electronic version of the book SHOULD be used if available.
+
+Use of this property is applicable where the resource is to be published as part of a larger resource.
+Examples might include a conference paper belonging to proceedings or a chapter of a book (but not a complete book).
+]]></xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+
+                <xs:element ref="dc:subject" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">Recommended</xs:documentation>
+                        <xs:documentation xml:lang="en"><![CDATA[
+
+dc:subject is used to describe the subject of the resource.
+It is RECOMMENDED that a URI be used for the value, however a literal value that identifies the subject may be provided instead.
+Both should preferably refer to a subject in a controlled vocabulary.]]>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+
+                <xs:element ref="dc:title" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">Mandatory</xs:documentation>
+                        <xs:documentation xml:lang="en"><![CDATA[
+>
+This refers to the title, and any sub-titles, of the resource.
+The title should be represented using the original spelling and wording. The RECOMMENDED format for expressing subtitles is:
+
+Title: Subtitle
+
+Note that where the resource is a chapter in a book, the chapter title MUST be entered here,
+with the ISBN13 of the book being recorded in the dc:source property.
+]]>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+
+                <xs:element ref="dc:type" minOccurs="1" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">Mandatory</xs:documentation>
+                        <xs:documentation xml:lang="en"><![CDATA[
+Type refers to the nature or genre of the content of the primary resource.
+This property should not be confused with the type attribute in dc:relation.
+
+The value recorded in dc:type MUST be an HTTP(S) URI taken from the COAR Controlled Vocabulary for Resource Type Genres,
+which provides a hierarchical model of resource type genres.
+
+]]>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                
+                <xs:element ref="dcterms:dateAccepted" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">Mandatory</xs:documentation>
+                        <xs:documentation><![CDATA[
+
+The date on which the resource was accepted for publication.
+Property content MUST be encoded according to the W3CDTF (a profile of ISO 8601) which typically follows
+the following format: YYYY-MM-DD.
+]]></xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                
                 <xs:element ref="rioxxterms:contributor" minOccurs="0" maxOccurs="unbounded">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Optional</xs:documentation>
@@ -129,72 +327,77 @@ thus:
 </rioxxterms:creator>]]></xs:documentation>
                     </xs:annotation>
                 </xs:element>
-
-
-                <xs:element ref="dc:coverage" minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="rioxxterms:ext_relation" minOccurs="0" maxOccurs="unbounded">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Optional</xs:documentation>
                         <xs:documentation xml:lang="en"><![CDATA[
-Coverage will typically include a temporal period (a period label, date, or date range) or jurisdiction (such as a named administrative entity).
-]]></xs:documentation>
+rioxxterms:ext_relation is used to convey external associations to related resources (i.e. external relations). Such relational associations will be scholarly resources hosted externally, i.e. outside of the direct custodianship of the repository asserting the relational associations. Examples of these associations might typically include alternative 'expressions' of the primary resource (e.g. preprint, VoR, etc.) and/or resources relevant to understanding the primary resource, such as related research data, software, code, instruments, and so forth. Where such types have been encoded it will be considered to be for the purposes of contributing to the scholarly data graph and/or end users, rather than for assisting harvesting software in locating file content, such as full text, which is instead conveyed via dc:relation property.
+
+Each external relation MUST appear as a separate instance of the rioxxterms:ext_relation property.
+
+rioxxterms:ext_relation MUST include the rel and coar_type attributes. The coar_version attribute MAY be included (where appropriate), if the related resource is a publication.
+
+rel: The rel attribute uses 'typed links' from the IANA Link Relation Registry. As Rioxx uses rioxxterms:ext_relation to communicate external associations, this attribute will normally be set to "cite-as", e.g. rel='cite-as' when the rioxterms:ext_relation conveys a related PID resolving to an external resource or rel='item' when rioxterms:ext_relation identifies a downloadable external resource.
+
+coar_type: The coar_type attribute MUST contain an identifier from the COAR Resource Types Vocabulary. For example, for the common case of the related resource being a PDF of a journal article, the RECOMMENDED value would be http://purl.org/coar/resource_type/c_6501. The COAR Resource Types Vocabulary accommodates a diverse range of resource types.
+
+coar_version: The coar_version attribute SHOULD be included if rioxxterms:ext_relation is being used to indicate an associative relation with an alternative instance of the the primnary resource, where the resource is a publication. Where this is true coar_version MUST contain an identifier value from the COAR Version Types Vocabulary.
+
+Examples:
+Related published article
+<rioxxterms:ext_relation 
+    rel="cite-as"
+    coar_type="https://purl.org/coar/resource_type/c_6501" 
+    coar_version="https://purl.org/coar/version/c_970fb48d4fbd8a85">
+            https://doi.org/10.1007/s11229-020-02724-x
+</rioxxterms:ext_relation>
+Related dataset
+<rioxxterms:ext_relation 
+    rel="cite-as"            
+    coar_type="https://purl.org/coar/resource_type/c_ddb1">
+            https://doi.org/10.15129/589f7af3-26b3-4a93-b042-fbc8100fc977
+</rioxxterms:ext_relation>]]></xs:documentation>
                     </xs:annotation>
                 </xs:element>
-
-                <xs:element ref="dcterms:dateAccepted" minOccurs="1" maxOccurs="1">
+                <xs:element ref="rioxxterms:grant" minOccurs="0" maxOccurs="unbounded">
                     <xs:annotation>
-                        <xs:documentation xml:lang="en">Mandatory</xs:documentation>
+                        <xs:documentation xml:lang="en">Optional</xs:documentation>
                         <xs:documentation><![CDATA[
+The purpose of rioxxterms:grant is to collect grant ID(s), issued by the relevant funder(s), that relate to the primnary resource being described, together with the name and/or global identifier for the funder(s).
 
-The date on which the resource was accepted for publication.
-Property content MUST be encoded according to the W3CDTF (a profile of ISO 8601) which typically follows
-the following format: YYYY-MM-DD.
-]]></xs:documentation>
-                    </xs:annotation>
-                </xs:element>
+The property MUST contain one grant ID. A grant ID can take the form of any identifier provided by the funder, preferably represented as an HTTP(S) URI. In cases where the primnary resource has been funded internally, an appropriate internal code might be used.
 
-                <xs:element ref="dc:description" minOccurs="0" maxOccurs="unbounded">
-                    <xs:annotation>
-                        <xs:documentation xml:lang="en">Recommended</xs:documentation>
-                        <xs:documentation xml:lang="en"><![CDATA[
-The purpose of dc:description is to describe the content of the resource using free text.
-It is RECOMMENDED that an English language abstract be used where available.
-HTML or other markup tags SHOULD NOT be included in this field.
-This field may be indexed and its contents presented to people conducting searches.
+The property takes two attributes: funder_name and funder_id. One or both of funder_name and funder_id MUST be supplied.
+
+funder_name
+The canonical name of the entity responsible for funding the primary resource SHOULD be recorded here as text.
+
+funder_id
+A globally unique identifier for the funder of the primary resource SHOULD be recorded here. An HTTP(S) URI MUST be used for this. It is RECOMMENDED that one of the following identifier schemes is used:
+
+a ROR identifier (in its HTTPS URI form) made available by the Research Organization Registry
+an ISNI identifier
+a DOI (in its HTTPS URI form) made available by FundRef
+Examples
+<rioxxterms:grant
+    funder_name="Wellcome Trust"
+    funder_id="https://isni.org/isni/0000000404277672">
+    https://doi.org/10.35802/218671
+</rioxxterms:grant>
+or
+
+<rioxxterms:grant
+    funder_name="Arts and Humanities Research Council"
+    funder_id="https://ror.org/0505m1554">
+    AH/W007622/1
+</rioxxterms:grant>
+Where the primary resource has been funded by more than one funder a separate rioxxterms:grant property can be added for each. Similarly, where several grant IDs provided by the same funder have been attached to the primary resource, a separate rioxxterms:grant property can be added for each.
+
+This means that it is permissible for a given funder_name or funder_id to appear in multiple instances of the rioxxterms:grant property in a single Rioxx metadata record.
 ]]>
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-
-                <xs:element ref="dc:identifier" minOccurs="1" maxOccurs="1">
-                    <xs:annotation>
-                        <xs:documentation xml:lang="en">Mandatory</xs:documentation>
-                        <xs:documentation xml:lang="en"><![CDATA[
-
-dc:identifier MUST contain an identifying HTTP(S) URI of the repository 'landing page' describing this resource.
-The landing page should provide links to related resources.
-We RECOMMEND using FAIR Signposting (signposting.org/FAIR) to assist machine agents in navigating from the landing page to the relevant resources.
-The value of dc:identifier does not have to be a persistent identifier (PID), instead, in order to facilitate indexing by machine agents,
-it is RECOMMENDED that dc:identifier contains a direct HTTP(S) URI of the landing page,
-i.e. resolving dc:identifier SHOULD be possible without the use of HTTP redirection.
-]]>
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <xs:element ref="dc:language" minOccurs="1" maxOccurs="unbounded">
-                    <xs:annotation>
-                        <xs:documentation xml:lang="en">Mandatory</xs:documentation>
-                        <xs:documentation xml:lang="en"><![CDATA[
-
-This refers to the primary language in which the content of the resource is presented.
-The property MAY be repeated if the resource contains multiple languages.
-Values used for this property MUST conform to ISO 639-3.
-This offers two and three letter tags e.g. "en" or "eng" for English and "en-GB" for English used in the UK.
-]]>
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
                 <xs:element ref="rioxxterms:project" minOccurs="1" maxOccurs="unbounded">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Mandatory</xs:documentation>
@@ -209,7 +412,7 @@ When present, the rioxxterms:project property MUST contain one project ID, a glo
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-
+                
                 <xs:element minOccurs="0" ref="rioxxterms:publication_date" maxOccurs="1">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Optional</xs:documentation>
@@ -221,134 +424,46 @@ which typically follows the following format: YYYY-MM-DD.
 ]]></xs:documentation>
                     </xs:annotation>
                 </xs:element>
-
-                <xs:element ref="dc:publisher" minOccurs="0" maxOccurs="unbounded">
-                    <xs:annotation>
-                        <xs:documentation xml:lang="en">Recommended</xs:documentation>
-                        <xs:documentation xml:lang="en"><![CDATA[
-
-This property contains the name of the entity, typically a publisher,
-responsible for making the version of record of the resource available.
-This could be a person, organisation or service.
-Where available and possible, the RECOMMENDED format is to add the official name of the publisher as the content of the property,
-and to include one or more recognised identifiers in their HTTP(S) URI form using child rioxxterms:id properties.
-Typical identifier schemes likely to be relevant here include ISNI, ROR, and VIAF.
-
-]]></xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <xs:element ref="dc:relation" minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="rioxxterms:publisher"  minOccurs="0" maxOccurs="unbounded">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Optional</xs:documentation>
-                        <xs:documentation xml:lang="en"><![CDATA[
-Although this property is not strictly mandated in the Rioxx schema,
-it SHOULD be included because this is the property which harvesting software will inspect to locate
-URLs for resource file content - for example to locate the "full text" associated with a repository record.
-It will also be the property to declare a persistent identifier (PID) that may be associated with the resource.
+                        <xs:documentation><![CDATA[
+This property contains the name of the entity, typically a publisher, responsible for making the version of record of the primary resource available. This could be a person, organisation or service.
 
-Note that only those resources under the direct custodianship of the repository should be asserted within dc:relation.
-Resources demonstrating external custodianship should be related using rioxxterms:ext_relation.
+Where available and possible, the RECOMMENDED format is to add the official name of the publisher as the content of the property, and to include one or more recognised identifiers in their HTTP(S) URI form using child rioxxterms:id properties, e.g.
 
-dc:relation is refined by a series of attributes, which SHOULD be included (where applicable):
-
-rel
-type
-coar_type
-coar_version
-deposit_date
-resource_exposed_date
-access_rights
-license_ref
-When set to rel="item", the dc:relation property identifies a downloadable resource.
-Each such dc:relation property MUST contain an HTTP(S) URI resolving to the downloadable resource.
-It is REQUIRED that this property is used whenever the Rioxx record identifies a downloadable object
-under the direct custodianship of the repository, such as a full text, dataset or software.
-Where such deposited downloadable resource remains under a temporary embargo,
-the repository SHOULD return an appropriate HTTP status code to indicate that access to the resource is forbidden,
-until the embargo's expiry. The most appropriate HTTP code to return is 451 Unavailable For Legal Reasons.
-
-When set to rel="cite-as", the dc:relation property specifies a cite-able identifier associated with the resource.
-
-dc:relation MUST only be used to identify resources under the direct custodianship of the repository, therefore all URIs
-specified under dc:relation MUST resolve to the repository. URIs identifying related resources that resolve to resources
-outside of the direct custodianship of the repository MUST be specified under rioxterms:ext_relation.
-
-The dc:relation property can be repeated to specify more than one associated resource. Possible values here may include
-a DOI, URN, CORE OAI ID; or an alternative repository HTTP(S) URI where there is no requirement for a PID.
-
-Attributes
-- rel: The rel attribute uses 'typed links' from the IANA Link Relation Registry. This attribute will often be set to rel='item' where dc:relation is being used to communicate downloadable file content, but will be set to rel="cite-as" where dc:relation is simulataneously being used to declare an associated persistent identifier.
-- type: The type attribute refers to the technical format of the value of dc:relation. When used, type MUST encode the Media Type of the resource (formerly MIME Type). Note that this attribute should not be confused with coar_type.
-- coar_type: When used, the coar_type attribute MUST contain a value which is an identifier from the COAR Resource Types Vocabulary. For example, for the common case of the resource being a PDF of a journal article, the RECOMMENDED value would be http://purl.org/coar/resource_type/c_6501 ('journal article'). The COAR Resource Types Vocabulary accommodates a diverse range of resource types. dc:relation can therefore also be used to communicate the existence of directly harvestable related data or software, such as by types experimental data or research software.
-- coar_version: When used, the coar_version attribute MUST contain a value which is an identifier from the COAR Version Types Vocabulary.
-- deposit_date: The deposit_date attribute (if present) takes the date on which this resource was first deposited, irrespective of any relevant embargoes or dark archiving, and irrespective of any subsequent file replacement(s). It is anticipated that in some circumstances the deposit_date will be captured and exposed in repository metadata when the resource described is under temporary embargo or temporary dark archiving. If included, this attribute's value MUST be encoded according to the W3CDTF (a profile of ISO 8601) which typically follows the following format: YYYY-MM-DD.
-- resource_exposed_date: The resource_exposed_date attribute (if present) takes the date on which this related resource was made publicly available, irrespective of any subsequent file replacement(s). If included, this attribute's value MUST be encoded according to the W3CDTF (a profile of ISO 8601) which typically follows the following format: YYYY-MM-DD. Repositories will typically fulfil resource_exposed_date if the related resource is made publicly visible immediately upon deposit, or when an applicable embargo ends.
-- access_rights: When used, the access_rights attribute MUST take a URI value from the COAR Access Rights Vocabulary, which defines four access states: embargoed access, metadata only access, open access, restricted access.
-- license_ref: When used, the license_ref attribute MUST communicate the license terms under which the value of rioxxterms:file is subject using an HTTP(S) URI. Typical examples might include the variety of licenses made available by Creative Commons, but can conceivably include any license referencible by URI.
-]]>
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <xs:element ref="dc:source" minOccurs="0" maxOccurs="1">
-                    <xs:annotation>
-                        <xs:documentation xml:lang="en">Mandatory where applicable</xs:documentation>
-                        <xs:documentation xml:lang="en"><![CDATA[
-
-The dc:source property describes a resource from which the resource is derived (in whole or in part).
-It is RECOMMENDED that the source is referenced using a unique identifier from a recognised system
-e.g. the unique 8-digit International Standard Serial Numbers (ISSN) assigned to electronic periodicals,
-or the 13 digit International Standard Book Number (ISBN13) assigned to books. In the latter case,
-the ISBN13 for the electronic version of the book SHOULD be used if available.
-
-Use of this property is applicable where the resource is to be published as part of a larger resource.
-Examples might include a conference paper belonging to proceedings or a chapter of a book (but not a complete book).
+<rioxxterms:publisher>
+    <rioxxterms:name>Public Library of Science</rioxxterms:name>
+    <rioxxterms:id>https://isni.org/isni/000000040482455X</rioxxterms:id>
+    <rioxxterms:id>https://isni.org/isni/0000000404826432</rioxxterms:id>
+</rioxxterms:publisher>
+<rioxxterms:publisher>
+    <rioxxterms:name>Ubiquity Press (United Kingdom)</rioxxterms:name>
+    <rioxxterms:id>https://ror.org/00qpqrv96</rioxxterms:id>
+</rioxxterms:publisher>
+Typical identifier schemes likely to be relevant here include ISNI, ROR, and VIAF.
 ]]></xs:documentation>
                     </xs:annotation>
                 </xs:element>
-
-                <xs:element ref="dc:subject" minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="rioxxterms:record_public_release_date"  minOccurs="0" maxOccurs="1">
                     <xs:annotation>
-                        <xs:documentation xml:lang="en">Recommended</xs:documentation>
-                        <xs:documentation xml:lang="en"><![CDATA[
+                        <xs:documentation xml:lang="en">Optional</xs:documentation>
+                        <xs:documentation><![CDATA[
+	
+This property takes the date upon which metadata about the primary resource being described was first made publicly visible. Property content MUST be encoded according to the W3CDTF (a profile of ISO 8601) which typically follows the following format: YYYY-MM-DD.
 
-dc:subject is used to describe the subject of the resource.
-It is RECOMMENDED that a URI be used for the value, however a literal value that identifies the subject may be provided instead.
-Both should preferably refer to a subject in a controlled vocabulary.]]>
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:element>
+Examples:
 
-                <xs:element ref="dc:title" minOccurs="1" maxOccurs="1">
-                    <xs:annotation>
-                        <xs:documentation xml:lang="en">Mandatory</xs:documentation>
-                        <xs:documentation xml:lang="en"><![CDATA[
->
-This refers to the title, and any sub-titles, of the resource.
-The title should be represented using the original spelling and wording. The RECOMMENDED format for expressing subtitles is:
+<rioxxterms:record_public_release_date>
+    2020-10-02
+</rioxxterms:record_public_release_date>
+or
 
-Title: Subtitle
-
-Note that where the resource is a chapter in a book, the chapter title MUST be entered here,
-with the ISBN13 of the book being recorded in the dc:source property.
-]]>
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <xs:element ref="dc:type" minOccurs="1" maxOccurs="unbounded">
-                    <xs:annotation>
-                        <xs:documentation xml:lang="en">Mandatory</xs:documentation>
-                        <xs:documentation xml:lang="en"><![CDATA[
-Type refers to the nature or genre of the content of the primary resource.
-This property should not be confused with the type attribute in dc:relation.
-
-The value recorded in dc:type MUST be an HTTP(S) URI taken from the COAR Controlled Vocabulary for Resource Type Genres,
-which provides a hierarchical model of resource type genres.
-
-]]>
-                        </xs:documentation>
+<rioxxterms:record_public_release_date>
+    2020-09-29T19:20+01:00
+</rioxxterms:record_public_release_date>
+It is accepted that in some circumstances rioxxterms:record_public_release_date will be captured and exposed in repository metadata prior to the availability of related resources such as the "full text" for a publication; for example as the result of a delay in depositing the full text, or where it is under temporary embargo or temporary dark archiving.
+]]></xs:documentation>
                     </xs:annotation>
                 </xs:element>
             </xs:all>
