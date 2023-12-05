@@ -1,0 +1,26 @@
+{{ define "main" }}
+    <div class="row">
+        <div class="col">
+            <h1 class="page-title">{{ .Title }}</h1>
+            <br/><br/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <div id="homepage-content">
+                {{ .Content }}
+                {{ range (first 10 (where .Site.RegularPages "Section" "post")) }}
+                    <div class="post-container">
+                        {{ partial "post" . }}
+                    </div>
+                {{ end }}
+                <div style="text-align: center; font-size: 110%; font-weight: bold;">
+                    <a href="/post">more posts (archive)</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            {{ partial "news_sidebar" . }}
+        </div>
+    </div>
+{{ end }}

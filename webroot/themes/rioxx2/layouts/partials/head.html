@@ -31,9 +31,6 @@
 {{ $postStyle := resources.Get "css/post.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $postStyle.Permalink }}">
 
-{{ $mastodonStyle := resources.Get "css/mastodon.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $mastodonStyle.Permalink }}">
-
 {{ $homePageStyle := resources.Get "css/homepage.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $homePageStyle.Permalink }}">
 

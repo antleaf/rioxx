@@ -1,3 +1,4 @@
+@import 'variables';
 .post {
   //margin-bottom: 30px;
   //border-bottom: 2px dotted #cdcdcd;
@@ -10,4 +11,17 @@
 
 .post-footer .post-footer-right {
   text-align: right;
+}
+
+
+#news-sidebar {
+  border-left: 1px solid $border-colour;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+#news-sidebar-header {
+  text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 2px solid $border-colour;
 }

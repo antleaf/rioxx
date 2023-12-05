@@ -10,7 +10,7 @@ topics: []
 aliases:
 ---
 
-A [previous blog post over the summer of 2022](https://www.rioxx.net/post/2022/06-23-version-3-0-rc-1-released-for-comment/)) reported that a [v3.0 Release Candidate of Rioxx](https://www.rioxx.net/profiles/v3-0-rc-1/) had been published. Publication of this candidate has stimulated additional feedback from the community and the Rioxx Governance Group (RGG) is therefore working hard to address this feedback, ahead of finalizing the publication of Rioxx v3.0.    
+A [previous blog post over the summer of 2022](https://www.rioxx.net/post/2022/06-23-version-3-0-rc-1-released-for-comment/)) reported that a [v3.0 Release Candidate of Rioxx](https://www.rioxx.net/profiles/v3-0-rc-1/) had been published. Publication of this candidate has stimulated additional feedback from the community and the Rioxx Governance Group (RGG) is therefore working hard to address this feedback, ahead of finalizing the publication of Rioxx v3.0.
 
 In the meantime, members of the RGG recently presented at The 3rd Workshop on Open Citations and Open Scholarly Metadata 2022 (WOOC2022) about Rioxx: [Enhancing discovery and enriching the scholarly graph with the Research Outputs Metadata Schema (Rioxx)](https://doi.org/10.17868/strath.00082458). This contribution highlighted recent Rioxx developments and how it had the potential to contribute to the burgeoning scholarly graph; but it also highlighted the importance of Rioxx as a facilitator of aggregation. That is, how Rioxx can better support the operations of content harvesters which are seeking to aggregate repository content.
 

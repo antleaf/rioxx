@@ -1,11 +1,14 @@
 <div id="site-header">
     <div class="row">
         <div class="col-sm-4">
-            <h2><a href="/">{{.Site.Title}}</a></h2>
+            <h2><a href="/">{{ site.Title}}</a></h2>
+            {{ site.Params.strapline }}
         </div>
         <div class="col-sm-8">
             <div id="header-icon-bar">
-                <a class="site-header-link" href="/about">About</a>
+                {{ range site.Menus.main }}
+                    <a class="site-header-link" href="{{ .URL }}">{{ .Name }}</a>
+                {{ end }}
                 <a href="/posts/index.xml">
                     <img src="/images/icons/rss.svg" alt="RSS" title="RSS"/>
                 </a>

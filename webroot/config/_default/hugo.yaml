@@ -3,7 +3,7 @@ theme: "rioxx2"
 #resourceDir: this is configured with env variable "$HUGO_RESOURCEDIR"
 languageCode: "en-gb"
 uglyURLs: false
-title: "Rioxx: The Research Outputs Metadata Schema"
+title: "Rioxx"
 copyright: "Copyright © Paul Walk. This website and blog are licensed under a <a rel='license' href='https://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 International License</a>"
 enableRobotsTXT: true
 metaDataFormat: "yaml"
@@ -20,6 +20,23 @@ disablePathToLower: true
 #    keywords: "/tags"
 #taxonomies:
 #  keywords: "keywords"
+menu:
+  main:
+    - name: Home
+      pageRef: /
+      weight: 10
+    - name: Profile
+      pageRef: /profiles
+      weight: 30
+    - name: News
+      pageRef: /post
+      weight: 35
+    - name: Governance
+      pageRef: /governance
+      weight: 40
+    - name: About
+      pageRef: /about
+      weight: 90
 caches:
   getjson:
     dir: :cacheDir/:project
@@ -31,6 +48,7 @@ caches:
     dir: :cacheDir/:project
     maxAge: 5s
 params:
+  strapline: "The Research Outputs Metadata Schema"
   googleCustomSearchEngineID: ""
   googleSiteVerification: ""
   googleAnalyticsID: ""
