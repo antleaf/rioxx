@@ -12,6 +12,5 @@ This website contains the technical specifications for and supporting informatio
 
 Rioxx is recommended for use as a "format" in OAI-PMH, but it has also been updated to work well with more modern Web protocols.
 
-Rioxx is governed by [UKCORR](https://www.ukcorr.org), and its documentation (this website) is maintained by Paul Walk at [Antleaf](http://www.antleaf.com).
 
 

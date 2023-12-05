@@ -4,12 +4,31 @@ date: 2018-01-18
 draft: false
 ---
 
-
-
-_Rioxx: The Research Outputs Metadata Schema_ was developed for institutional repositories to share metadata about the scholarly resources they contain. Originally designed to meet the reporting requirements of [Research Councils UK (RCUK)](http://www.rcuk.ac.uk), Rioxx has also proven to be generally useful as a standard for sharing metadata between repositories and network services such as large-scale metadata aggregators (e.g. [Core](http://www.core.ac.uk)).
+Rioxx has been developed for institutional repositories to share metadata about the scholarly resources they contain. Originally designed to meet the reporting requirements of [Research Councils UK (RCUK)](http://www.rcuk.ac.uk), Rioxx has also proven to be generally useful as a standard for sharing metadata between repositories and network services such as large-scale metadata aggregators (e.g. [Core](http://www.core.ac.uk)).
 
 Rioxx focuses on applying consistency to the metadata fields used for identifiers of scholarly outputs, people and organisations, research funders and project/grants, and is designed to support the consistent tracking of open-access research publications across scholarly systems.
 
-_Rioxx: The Research Outputs Metadata Schema_ is governed by [UKCORR](https://www.ukcorr.org), and its documentation (this website) is maintained by Paul Walk at [Antleaf](http://www.antleaf.com).
+Rioxx is governed by [UKCORR](https://www.ukcorr.org)
 
 Email: [paul@paulwalk.net](mailto:paul@antleaf.com)
+
+## Acknowledgments
+<mark>list people who have made significant contributions</mark>
+
+***
+## History
+The RIOXX metadata application profile was originally developed by Paul Walk (while at [UKOLN][2]) and then [EDINA][1]) and by Sheridan Brown (Chygrove Ltd), working closely with [RCUK][3] who acted as sponsor and in collaboration
+with [HEFCE][4] who supported and endorsed this work. This original work was funded and supported by [Jisc][5].
+
+
+[1]:  https://www.edina.ac.uk
+
+[2]:  http://www.ukoln.ac.uk
+
+[3]:  http://www.rcuk.ac.uk
+
+[4]:  http://www.hefce.ac.uk
+
+[5]:  https://www.jisc.ac.uk
+
+[6]: https://www.antleaf.com

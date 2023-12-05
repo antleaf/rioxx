@@ -1,0 +1,9 @@
+{{ define "main" }}
+    <div class="row">
+        <div class="col">
+            <h1 class="page-title">{{.Title}}</h1>
+            {{ partial "release_notes_header" .}}
+            <p>{{ .Content }}</p>
+        </div>
+    </div>
+{{ end }}

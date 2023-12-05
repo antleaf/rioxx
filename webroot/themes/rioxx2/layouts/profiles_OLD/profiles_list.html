@@ -1,0 +1,25 @@
+{{ define "main" }}
+  <div class="row">
+    <div class="col">
+      <h1 class="page-title">{{.Title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="current-profiles-box">
+        <h2>Current version of the RIOXX Profile</h2>
+        {{ range where .Pages.ByTitle.Reverse "Params.status" "eq" "current" }}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </div>
+      <br/>
+      <h2>Draft version(s) of the RIOXX Profile</h2>
+      {{ range where .Pages.ByTitle.Reverse "Params.status" "eq" "draft" }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+      <br/>
+      <h2>Release Notes</h2>
+      {{ .Content }}
+    </div>
+  </div>
+{{ end }}
