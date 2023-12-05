@@ -8,10 +8,10 @@
             <h2>Properties in this profile</h2>
             {{ $scratch := newScratch }}
             {{ range sort (.Resources.Match "*.md") ".Title" }}
-                {{ $propertyLink := print "<a href=\"#" .Title "\">" .Title "</a>"}}
+                {{ $propertyLink := print "<a href=\"#" .Title "\">" .Title "</a>" }}
                 {{ $scratch.Add "propertyNames" (slice $propertyLink) }}
             {{ end }}
-            {{ delimit ($scratch.Get "propertyNames") " | " }}
+            {{ delimit ($scratch.Get "propertyNames") " | "  | markdownify }}
             <br/><br/>
             <h2>Example Rioxx Records</h2>
             <a href="#example-records">Some examples of full Rioxx records (serialised as XML) are provided at the bottom of this page</a>
