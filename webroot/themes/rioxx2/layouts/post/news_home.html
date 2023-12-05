@@ -9,7 +9,7 @@
         <div class="col-md-10">
             <div id="homepage-content">
                 {{ .Content }}
-                    {{ range .RegularPages }}
+                {{ range (first 10 (where .Site.RegularPages "Section" "post")) }}
                     <div class="post-container">
                         {{ partial "post" . }}
                     </div>

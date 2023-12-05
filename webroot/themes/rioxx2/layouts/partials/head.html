@@ -31,6 +31,9 @@
 {{ $postStyle := resources.Get "css/post.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $postStyle.Permalink }}">
 
+{{ $sidebarStyle := resources.Get "css/sidebar.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $sidebarStyle.Permalink }}">
+
 {{ $homePageStyle := resources.Get "css/homepage.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $homePageStyle.Permalink }}">
 
