@@ -1,0 +1,11 @@
+{{/*{{ if ne .Title nil }}*/}}
+{{/*    <img src="{{ .Page.Permalink }}/{{ .Destination }}" title="{{ .Title }}"  alt="{{ .Title }}"/>*/}}
+{{/*{{ else }}*/}}
+{{/*    <img src="{{ .Page.Permalink }}/{{ .Destination }}"/>*/}}
+{{/*{{ end }}*/}}
+
+{{ if ne .Text nil }}
+    <img src="{{ .Page.Permalink }}/{{ .Destination }}" title="{{ .Text }}"  alt="{{ .Text }}"/>
+{{ else }}
+    <img src="{{ .Page.Permalink }}/{{ .Destination }}"/>
+{{ end }}

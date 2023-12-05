@@ -1,0 +1,3 @@
+baseURL: "https://www.rioxx.net"
+params:
+  showDebugInfo: false

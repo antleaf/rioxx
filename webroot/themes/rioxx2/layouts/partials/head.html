@@ -1,0 +1,41 @@
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<meta content='width=device-width,initial-scale=1' name='viewport'>
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+{{/*{{ partial "google_analytics" . }}*/}}
+<link href='https://fonts.googleapis.com' rel='preconnect'>
+<link crossorigin='true' href='https://fonts.gstatic.com' rel='preconnect'>
+{{/*<meta name="google-site-verification" content="{{ site.Params.googleSiteVerification }}"/>*/}}
+<meta property="og:title" content="{{ .Title }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ .Permalink }}"/>
+<meta property="og:site_name" content="{{ site.Title }}"/>
+
+{{/*    {{ with .Params.tags }}*/}}
+{{/*        <meta name="keywords" content="{{ delimit . ", "}}" />*/}}
+{{/*    {{ end }}*/}}
+
+<title>{{ site.Title }}{{ if .Title }}: {{ .Title }}{{ end }}</title>
+
+{{ $variablesStyle := resources.Get "css/_variables.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $variablesStyle.Permalink }}">
+
+{{ $bootstrapStyle := resources.Get "css/bootstrap.min.css" }}
+<link rel="stylesheet" href="{{ $bootstrapStyle.Permalink }}">
+
+{{ $mainStyle := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $mainStyle.Permalink }}">
+
+{{ $headerAndFooterStyle := resources.Get "css/header_and_footer.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $headerAndFooterStyle.Permalink }}">
+
+{{ $postStyle := resources.Get "css/post.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $postStyle.Permalink }}">
+
+{{ $mastodonStyle := resources.Get "css/mastodon.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $mastodonStyle.Permalink }}">
+
+{{ $homePageStyle := resources.Get "css/homepage.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $homePageStyle.Permalink }}">
+
+{{ $taxonomiesStyle := resources.Get "css/taxonomies.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $taxonomiesStyle.Permalink }}">

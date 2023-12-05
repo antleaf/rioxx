@@ -1,0 +1,42 @@
+@import 'variables';
+div#site-header {
+  border-bottom: 4px solid #666666;
+  margin-bottom: 40px;
+}
+
+#header-icon-bar {
+  text-align: right;
+}
+
+#header-icon-bar img {
+  width: 24px;
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 0px;
+  float: right;
+  box-shadow: none;
+  opacity: 75%;
+}
+
+a.site-header-link,a.site-header-linkr:visited {
+  color: $navbar-link-color;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  margin-right: 40px;
+}
+a.site-header-link:hover {
+  text-decoration: none;
+}
+
+div#footer {
+  margin-bottom: 0px;
+  font-size: small;
+  border-top: 1px solid #666666;
+  padding-top: 10px;
+  text-align: right;
+  margin-top: 40px;
+}

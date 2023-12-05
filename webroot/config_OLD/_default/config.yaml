@@ -2,8 +2,8 @@ languageCode: "en-gb"
 uglyURLs: false
 title: "Rioxx: The Research Outputs Metadata Schema"
 author: "Paul Walk"
-copyright: "This website and blog are licensed under a <a rel='license' href='http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>"
-enableRobotsTXT: false
+copyright: "This website and blog are licensed under a <a rel='license' href='https://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 International License</a>"
+enableRobotsTXT: true
 metaDataFormat: "yaml"
 theme: "rioxx"
 enableGitInfo: false
