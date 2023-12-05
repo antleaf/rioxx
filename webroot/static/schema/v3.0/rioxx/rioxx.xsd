@@ -1,7 +1,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
     targetNamespace="http://www.rioxx.net/schema/v3.0/rioxx/"
     xmlns:rioxxterms="http://www.rioxx.net/schema/v3.0/rioxxterms/"
-    xmlns:ali="http://ali.niso.org/2014/ali/1.0" xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
     xmlns:dc="http://purl.org/dc/elements/1.1/"
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
     xmlns="http://www.rioxx.net/schema/v3.0/rioxx/">
