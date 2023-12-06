@@ -13,13 +13,7 @@ disablePathToLower: true
 #summaryLength: 70
 #permalinks:
 #  page:
-#    posts: "/:year/:filename/"
-#  term:
-#    keywords: "/tags/:slug"
-#  taxonomy:
-#    keywords: "/tags"
-#taxonomies:
-#  keywords: "keywords"
+#    post: "/news/:year/:filename/"
 menu:
   main:
     - name: Home
@@ -34,6 +28,9 @@ menu:
     - name: Governance
       pageRef: /governance
       weight: 40
+    - name: Feedback
+      pageRef: /feedback
+      weight: 50
     - name: About
       pageRef: /about
       weight: 90

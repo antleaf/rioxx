@@ -8,6 +8,7 @@ tags: []
 title: "RIOXX metadata application profile v 3.0 beta draft released"
 topics: []
 aliases:
+- /post/2022/07-06-version-3-0-draft-for-public-comment
 ---
 
 Those of you following the status of RIOXX will be aware that [a new governance group was formed](https://www.rioxx.net/post/2019/10-31-new-governance-group-and-plans-for-revision/) in late 2019 under the auspices of [UKCORR](https://www.ukcorr.org/) (RIOXX Governance Group - RGG). Following [a period of consultation and review](https://www.ukcorr.org/2020/08/25/rioxx-as-an-effective-mechanism-for-the-efficient-exposure-and-aggregation-of-repository-content/), the RGG is pleased to announce the publication of a [beta draft of **RIOXX v 3.0** for public comment](/profiles/v3-0-beta-1/).

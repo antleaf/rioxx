@@ -16,8 +16,8 @@
                     {{ if gt $i 0 }}
                         <li>
                             {{ index $v 0 }} {{ index $v 1 }}
-                            {{ with index $v 2 }}
-                                , {{ . }}
+                            {{- with index $v 2 }}
+                                {{- print ", " . }}
                             {{ end }}
                         </li>
                     {{ end }}

@@ -25,18 +25,10 @@ Rioxx is governed by the [Rioxx Governance Group](/governance), appointed by [UK
 
 ## History
 
-The RIOXX metadata application profile was originally developed by Paul Walk (while at [UKOLN][2]) and then [EDINA][1]) and by Sheridan Brown (Chygrove Ltd), working closely with [RCUK][3] who acted as sponsor and in collaboration
-with [HEFCE][4] who supported and endorsed this work. This original work was funded and supported by [Jisc][5].
+The RIOXX metadata application profile was originally developed in 2013 by Paul Walk (while at [UKOLN](http://www.ukoln.ac.uk) and then [EDINA](https://www.edina.ac.uk)) and by Sheridan Brown (Chygrove Ltd), working closely with [RCUK](http://www.rcuk.ac.uk) who acted as sponsor and in collaboration
+with [HEFCE](http://www.hefce.ac.uk) who supported and endorsed this work. The initial development was funded and supported by the [JISC](https://www.jisc.ac.uk).
 
-
-[1]:  https://www.edina.ac.uk
-
-[2]:  http://www.ukoln.ac.uk
-
-[3]:  http://www.rcuk.ac.uk
-
-[4]:  http://www.hefce.ac.uk
-
-[5]:  https://www.jisc.ac.uk
-
-[6]: https://www.antleaf.com
+#### Releases:
+- Version 1.0 (2013-04-18) ([announcement](/post/2013/04-18-rioxx-version-1-0-released/))
+- Version 2.0 (2015-01-22) ([announcement](/post/2015/01-22-rioxx-2-0-final-release/))
+- Version 3.0 (2023-12-06) ([announcement](/post/2023/-rioxx-v3-0-final-release-published/))

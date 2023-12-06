@@ -8,6 +8,7 @@ tags: []
 title: "New Governance Group and plans for revision to the profile"
 topics: []
 aliases:
+- /post/2019/10-31-new-governance-group-and-plans-for-revision
 ---
 
 The RIOXX metadata application profile was developed for repositories to share metadata about the scholarly resources they contain. It has been deployed as a metadata application profile in approximately 70 institutional repositories in the UK, and (with support from Jisc) has software implementations in DSpace and ePrints.
