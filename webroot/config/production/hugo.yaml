@@ -1,3 +1,4 @@
-baseURL: "https://www.rioxx.net"
+#baseURL: "https://www.rioxx.net"
+baseURL: "https://rioxx.antleaf.com"
 params:
   showDebugInfo: false
