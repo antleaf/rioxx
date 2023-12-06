@@ -8,8 +8,7 @@ requirement: Recommended
 metadata_profile: v3-0-final
 ---
 
-This property contains the name of the entity, typically a publisher, responsible for making the *version of record* of *the resource* available. This could be a person, organisation or service.
-
+This property contains the name of the entity, typically a publisher, responsible for making the *version of record* of *the primary resource* available. This could be a person, organisation or service.
 
 Where available and possible, the **RECOMMENDED** format is to add the official name of the publisher as the content of the property, and to include one or more recognised identifiers in their HTTP(S) URI form using child `rioxxterms:id` properties, e.g.
 ```xml

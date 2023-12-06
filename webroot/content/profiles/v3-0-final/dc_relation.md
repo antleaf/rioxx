@@ -1,5 +1,5 @@
 ---
-date: '2023-10-23T16:04:43+00:00'
+date: '2023-10-28T16:04:43+00:00'
 draft: false
 type: metadata_profile_property
 title: dc:relation
@@ -8,9 +8,9 @@ requirement: Should
 metadata_profile: v3-0-final
 ---
 
-Although this property is not strictly mandated in the Rioxx application profile, it **SHOULD** be included because this is the property which harvesting software will inspect to locate URLs for resource file content - for example to locate the "full text" associated with a repository record. It will also be the property to declare a persistent identifier (PID) that may be associated with the resource. 
+Although this property is not strictly mandated in the Rioxx schema, it **SHOULD** be included because this is the property which harvesting software will inspect to locate URLs for resource file content - for example to locate the "full text" associated with a repository record. It will also be the property to declare a persistent identifier (PID) that may be associated with the resource. 
 
-Note that only those resources under the direct custodianship of the repository should be asserted within `dc:relation`. Entities outside the custodianship of the repository should be related using `rioxxterms:ext_relation`. 
+Note that only those resources under the direct custodianship of the repository should be asserted within `dc:relation`. Resources demonstrating external custodianship should be related using `rioxxterms:ext_relation`. 
  
 `dc:relation` is refined by a series of attributes, which **SHOULD** be included (where applicable): 
 
@@ -23,11 +23,15 @@ Note that only those resources under the direct custodianship of the repository 
 * `access_rights`
 * `license_ref`
 
-When set to `rel="item"`, the `dc:relation` property identifies a downloadable resource. Each such `dc:relation` property **MUST** contain an HTTP(S) URI resolving to the downloadable resource. It is **REQUIRED** that this property is used whenever the Rioxx record identifies a downloadable object under the direct custodianship of the repository, such as a full text, dataset or software. Where such deposited downloadable resource remains under a temporary embargo, the repository **SHOULD** return HTTP status code 451 Unavailable For Legal Reasons until the embargo's expiry. 
+When set to `rel="item"`, the `dc:relation` property identifies a downloadable resource. Each such `dc:relation` property **MUST** contain an HTTP(S) URI resolving to the downloadable resource. It is **REQUIRED** that this property is used whenever the Rioxx record identifies a downloadable object under the direct custodianship of the repository, such as a full text, dataset or software. Where such deposited downloadable resource remains under a temporary embargo, the repository **SHOULD** return an appropriate HTTP status code to indicate that access to the resource is forbidden, until the embargo's expiry. The most appropriate HTTP code to return is `451 Unavailable For Legal Reasons`. 
 
-When set to `rel="cite-as"`, the `dc:relation` property specifies a persistent identifier associated with the resource. `dc:relation` shall only be used to convey PIDs identifying resources under the direct custodianship of the repository, therefore all PIDs specified under `dc:relation` **MUST** resolve to the repository. PIDs identifying related resources that resolve to resources outside of the direct custodianship of the repository will be specified under `rioxterms:ext_relation`. 
+When set to `rel="cite-as"`, the `dc:relation` property specifies a cite-able identifier associated with the resource.
 
-The `dc:relation` property can be repeated to specify more than one persistent identifier associated with the resource. Possible values here may include a DOI, URN, CORE OAI ID; or an alternative repository HTTP(S) URI where there is no requirement for a PID. ### Attributes
+`dc:relation` **MUST** only be used to identify resources under the direct custodianship of the repository, therefore all URIs specified under `dc:relation` **MUST** resolve to the repository. URIs identifying related resources that resolve to resources outside of the direct custodianship of the repository **MUST** be specified under `rioxterms:ext_relation`. 
+
+The `dc:relation` property can be repeated to specify more than one associated resource. Possible values here may include a DOI, URN, CORE OAI ID; or an alternative repository HTTP(S) URI where there is no requirement for a PID.
+
+### Attributes
 
 1. *rel*: The `rel` attribute uses 'typed links' from the [IANA Link Relation Registry](https://www.iana.org/assignments/link-relations/link-relations.xhtml). This attribute will often be set to `rel='item'` where `dc:relation` is being used to communicate downloadable file content, but will be set to `rel="cite-as"` where `dc:relation` is simulataneously being used to declare an associated persistent identifier.
 2. *type*: The `type` attribute refers to the technical format of the value of `dc:relation`. When used, `type` **MUST** encode the [Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml) of the resource (formerly MIME Type). Note that this attribute should not be confused with `coar_type`.
@@ -38,7 +42,7 @@ The `dc:relation` property can be repeated to specify more than one persistent i
 6. *access_rights*: When used, the `access_rights` attribute **MUST** take a URI value from the [COAR Access Rights Vocabulary](https://vocabularies.coar-repositories.org/access_rights/), which defines four access states: [embargoed access](http://purl.org/coar/access_right/c_f1cf), [metadata only access](http://purl.org/coar/access_right/c_14cb), [open access](http://purl.org/coar/access_right/c_abf2), [restricted access](http://purl.org/coar/access_right/c_16ec).
 7. *license_ref*: When used, the `license_ref` attribute **MUST** communicate the license terms under which the value of `rioxxterms:file` is subject using an HTTP(S) URI. Typical examples might include the variety of licenses made available by Creative Commons, but can conceivably include any license referencible by URI.
 
-### Examples
+## Examples
 
 **Example 1:**
 
@@ -81,7 +85,7 @@ Example 1 can be elaborated to declare the local repository PID associated with 
 
 **Example 3:**
 
-The `dc:relation` property can be repeated to communicate the existence of more than one downloadable resource, including other instances (or 'expressions') providing they are within the custodianship of the local repository. 
+The `dc:relation` property can be repeated to communicate the existence of more than one downloadable resource, including other instances (or 'expressions') providing they are within the direct custodianship of the local repository. 
 
 This example describes two downloadable resources (journal article and associated research instrument). It also includes the declaration of a repository PID associated with resources. 
 

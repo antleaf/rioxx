@@ -8,7 +8,7 @@ requirement: Should
 metadata_profile: v3-0-final
 ---
 
-`rioxxterms:ext_relation` is used to convey external associations to related scholarly entities (i.e. external relations). Such relational associations will be scholarly entities hosted externally, i.e. outside of the direct custodianship of the repository asserting the relational associations. Examples of these associations might typically include alternative 'expressions' of *the resource* (e.g. preprint, VoR, etc.) and/or entities relevant to understanding *the resource*, such as related research data, software, code, instruments, and so forth. Where such types have been encoded it will be considered to be for the purposes of contributing to the scholarly data graph and/or end users, rather than for assisting harvesting software in locating file content, such as full text, which is instead conveyed via `dc:relation` property.
+`rioxxterms:ext_relation` is used to convey external associations to related resources (i.e. external relations). Such relational associations will be scholarly resources hosted externally, i.e. outside of the direct custodianship of the repository asserting the relational associations. Examples of these associations might typically include alternative 'expressions' of *the primary resource* (e.g. preprint, VoR, etc.) and/or resources relevant to understanding *the primary resource*, such as related research data, software, code, instruments, and so forth. Where such types have been encoded it will be considered to be for the purposes of contributing to the scholarly data graph and/or end users, rather than for assisting harvesting software in locating file content, such as full text, which is instead conveyed via `dc:relation` property.
 
 Each external relation **MUST** appear as a separate instance of the `rioxxterms:ext_relation` property. 
 
@@ -18,7 +18,7 @@ Each external relation **MUST** appear as a separate instance of the `rioxxterms
 
 2. *coar_type*:  The `coar_type` attribute **MUST** contain an identifier from the [COAR Resource Types Vocabulary](http://purl.org/coar/resource_type/). For example, for the common case of the related resource being a PDF of a journal article, the **RECOMMENDED** value would be `http://purl.org/coar/resource_type/c_6501`. The [COAR Resource Types Vocabulary](http://purl.org/coar/resource_type/) accommodates a diverse range of resource types.  
 
-3. *coar_version*: The `coar_version` attribute **SHOULD** be included if `rioxxterms:ext_relation` is being used to indicate an associative relation with an alternative instance of the *the resource*, where *the resource* is a publication. Where this is true `coar_version` **MUST** contain an identifier value from the [COAR Version Types Vocabulary](http://purl.org/coar/version/).
+3. *coar_version*: The `coar_version` attribute **SHOULD** be included if `rioxxterms:ext_relation` is being used to indicate an associative relation with an alternative instance of the *the primnary resource*, where *the resource* is a publication. Where this is true `coar_version` **MUST** contain an identifier value from the [COAR Version Types Vocabulary](http://purl.org/coar/version/).
 
 ## Examples:
 

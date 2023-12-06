@@ -12,7 +12,7 @@ layout: profiles_list
 
 #### [Version 3.0](/profiles/v3-0-final/)
 ###### Changes since [Version 2.0 Final Release:](/profiles/v2-0-final/)
-- Separation of project and grant data, with the creation of **new** properties: `<rioxxterms:grants>` and `<rioxxterms:project>`.
+- Separation of project and grant data, with the creation of **new** properties: `<rioxxterms:grant>` and `<rioxxterms:project>`.
 - Creation of **new** sub-properties `<rioxxterms:name>` and `<rioxxterms:id>`, to be used in conjunction with `<rioxxterms:creator>` (updated from `<rioxxterms:author>` in Version 2.0) and `<rioxxterms:contributor>`.
 - Creation of a **new** property: `<rioxxterms:record_public_release_date>` encoded according to ISO8601/W3CDTF.
 - Creation of the **new** property `<rioxxterms:ext_relation>`, used to convey external associations to related scholarly entities. Such relational associations will be scholarly entities hosted externally or outsider the direct custodianship of the repository.
@@ -25,7 +25,7 @@ layout: profiles_list
 - **Removed** the `<rioxxterms:apc>` property.
 - **Removed** the `<rioxxterms:version_of_record>` property, superseded by updates to attribute usage within the `<dc:relation>` and `<rioxxterms:ext_relation>` properties.
 - **Major change** to the use of `<dc:identifier>` to accommodate an HTTP(S) URI identifying the resource, resolving to a repository 'landing page' which describes the resource. 
-- **Major change** to the use of `<dc:relation>`, with the introduction of the following associated attributes: `rel`, `type`, `coar_type`, `coar_verison`, `deposit_date`, `resource_exposed_date`, `access_rights`, and `license_ref`. `<dc:relation>` to be used as principal mechanism for expressing the existence of harvestable file content, as well as other internally curated resources. To be considered in conjunction with the **new** property, `<rioxxterms:ext_relation>`.
+- **Major change** to the use of `<dc:relation>`, with the introduction of the following associated attributes: `rel`, `type`, `coar_type`, `coar_version`, `deposit_date`, `resource_exposed_date`, `access_rights`, and `license_ref`. `<dc:relation>` to be used as principal mechanism for expressing the existence of harvestable file content, as well as other internally curated resources. To be considered in conjunction with the **new** property, `<rioxxterms:ext_relation>`.
 - General move away from using the XML 'id' attribute across Rioxx to uniquely identify element content using URI(s) and the introduction of the 'uri' attribute. 
 - General improvements to language used in schema documentation
 - The name of the 'RIOXX Metadata Application Profile' changed to 'Rioxx: Research Outputs Metadata Schema' to better communicate its purpose
