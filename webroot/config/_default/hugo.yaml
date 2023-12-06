@@ -48,7 +48,7 @@ params:
   strapline: "The Research Outputs Metadata Schema"
   googleCustomSearchEngineID: ""
   googleSiteVerification: ""
-  googleAnalyticsID: ""
+  googleAnalyticsID: "G-68NB5DCQRZ"
 markup:
   defaultMarkdownHandler: goldmark
   goldmark:
