@@ -4,11 +4,11 @@ date: '2016-03-21T10:00:43+00:00'
 description: ''
 draft: false
 tags: []
-title: RCUK RIOXX Application Profile Version 2.0 Final
+title: RCUK RIOXX 2.0
 topics: []
 aliases:
 - "/v2-0-final/"
-status: current
+status: deprecated
 ---
 
 ## Terminology

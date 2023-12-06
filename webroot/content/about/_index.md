@@ -12,9 +12,6 @@ Rioxx is governed by [UKCORR](https://www.ukcorr.org)
 
 Email: [paul@paulwalk.net](mailto:paul@antleaf.com)
 
-## Acknowledgments
-<mark>list people who have made significant contributions</mark>
-
 ***
 ## History
 The RIOXX metadata application profile was originally developed by Paul Walk (while at [UKOLN][2]) and then [EDINA][1]) and by Sheridan Brown (Chygrove Ltd), working closely with [RCUK][3] who acted as sponsor and in collaboration

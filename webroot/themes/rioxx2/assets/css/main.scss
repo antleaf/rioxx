@@ -143,14 +143,13 @@ iframe {
   width: 0;
 }
 
-img.credit_logo {
-  height: 40px;
-  margin-right: 10px;
-  float: left;
-  //max-width: 100%;
-  padding: 0;
+div.release-notes-header {
+  padding: 5px;
+  text-align: center;
+  font-size: 1.5em;
 }
 
-.sponsor-logos {
-  text-align: center;
+div.alternative-profile-link {
+  font-size: 0.75em;
+  //text-align: right;
 }

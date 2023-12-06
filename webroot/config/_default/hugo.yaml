@@ -4,7 +4,7 @@ theme: "rioxx2"
 languageCode: "en-gb"
 uglyURLs: false
 title: "Rioxx"
-copyright: "Copyright © Paul Walk. This website and blog are licensed under a <a rel='license' href='https://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 International License</a>"
+copyright: "This website and blog are licensed under a <a rel='license' href='https://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 International License</a>"
 enableRobotsTXT: true
 metaDataFormat: "yaml"
 enableGitInfo: false
@@ -25,7 +25,7 @@ menu:
     - name: Home
       pageRef: /
       weight: 10
-    - name: Profile
+    - name: "Metadata Profile"
       pageRef: /profiles
       weight: 30
     - name: News

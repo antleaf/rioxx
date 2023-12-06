@@ -2,3 +2,4 @@
 resources/*
 webroot/.hugo_build.lock
 webroot/resources
+docs

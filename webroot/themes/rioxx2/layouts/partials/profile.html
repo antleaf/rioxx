@@ -1,4 +1,3 @@
-{{ $metadata_profile_name := .Params.metadata_profile_name }}
 <div class="row">
     <div class="col">
         <h1 class="page-title">{{.Title}}</h1>
@@ -14,7 +13,6 @@
             {{ delimit . " | "  | markdownify }}
         {{ end }}
 
-
         <br/><br/>
         {{ with .Resources.Match "example-records/*.md" }}
             <h2>Example Rioxx Records</h2>
@@ -22,7 +20,8 @@
             <br/><br/>
         {{ end }}
         <h2>Property details and examples</h2>
-        <table class="table table-sm sorted-table">
+{{/*        <table class="table table-sm sorted-table">*/}}
+            <table class="table table-bordered">
             <thead>
             <tr>
                 <th>Element</th>

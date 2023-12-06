@@ -13,10 +13,10 @@ The property **MUST** contain one grant ID. A grant ID can take the form of any 
 
 The property takes two attributes: `funder_name` and `funder_id`. One or both of `funder_name` and `funder_id` **MUST** be supplied.
 
-## `funder_name`
+#### `funder_name`
 The canonical name of the entity responsible for funding *the primary resource* **SHOULD** be recorded here as text.
 
-## `funder_id`
+#### `funder_id`
 A globally unique identifier for the funder of *the primary resource* **SHOULD** be recorded here. An HTTP(S) URI **MUST** be used for this. It is **RECOMMENDED** that one of the following identifier schemes is used:
 
 * a ROR identifier (in its HTTPS URI form) made available by the [Research Organization Registry](https://ror.org/)
