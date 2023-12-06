@@ -23,14 +23,14 @@ body, p, ol, ul, td {
 
 pre {
   padding: 15px;
-  background-color: #F7F7F7;
-  font-size: 80%;
+  background-color: #efefef;
+  //font-size: 80%;
 }
 
 code, span.monospace {
   font-family: $monospace-font;
   font-weight: $monospace-font-weight-default;
-  font-size: 90% !important;
+  font-size: 0.9em !important;
   color: $code-text-color;
 }
 
@@ -151,5 +151,9 @@ div.release-notes-header {
 
 div.alternative-profile-link {
   font-size: 0.75em;
-  //text-align: right;
+}
+
+.acknowledgment-logo {
+  max-width: 150px;
+  float: left;
 }

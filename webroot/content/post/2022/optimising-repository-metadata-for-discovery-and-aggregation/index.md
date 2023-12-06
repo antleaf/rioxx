@@ -5,9 +5,10 @@ date: 2022-12-08
 description: ""
 draft: false
 tags: []
-title: "Harvesting Rioxx: optimizing repositories for content aggregation"
+title: "Harvesting Rioxx: optimising repositories for content aggregation"
 topics: []
 aliases:
+  - /post/2022/12-08-optimizing-repository-metadata-for-discovery-and-aggregation
 ---
 
 A [previous blog post over the summer of 2022](https://www.rioxx.net/post/2022/06-23-version-3-0-rc-1-released-for-comment/)) reported that a [v3.0 Release Candidate of Rioxx](https://www.rioxx.net/profiles/v3-0-rc-1/) had been published. Publication of this candidate has stimulated additional feedback from the community and the Rioxx Governance Group (RGG) is therefore working hard to address this feedback, ahead of finalizing the publication of Rioxx v3.0.

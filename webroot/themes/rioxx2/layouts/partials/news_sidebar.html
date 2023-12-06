@@ -4,8 +4,8 @@
     </div>
     <ul>
         {{ $newsSection := site.GetPage "/post"}}
-    {{ range $newsSection.Pages }}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-    {{ end }}
+        {{ range $newsSection.Pages.ByDate.Reverse }}
+            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
     </ul>
 </div>

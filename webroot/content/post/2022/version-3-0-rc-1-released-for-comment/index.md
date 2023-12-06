@@ -5,9 +5,10 @@ date: 2022-06-23
 description: ""
 draft: false
 tags: []
-title: "Rioxx: The Research Outputs Metadata Schema v3.0 Release Candidate 1 published"
+title: "Rioxx v3.0 Release Candidate 1 published"
 topics: []
 aliases:
+  - /post/2022/06-23-version-3-0-rc-1-released-for-comment
 ---
 
 The [Rioxx Governance Group (RGG)](https://www.rioxx.net/governance/) is pleased to announce the [publication of the v3.0 Release Candidat 1 of Rioxx: The Research Outputs Metadata Schema](https://www.rioxx.net/profiles/v3-0-rc-1/) -- formerly known as the *RIOXX Metadata Application Profile*.
