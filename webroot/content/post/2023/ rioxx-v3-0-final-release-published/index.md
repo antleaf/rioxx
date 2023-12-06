@@ -5,7 +5,7 @@ date: 2023-12-05
 description: ""
 draft: false
 tags: []
-title: "Rioxx v3.0 Final Release Published"
+title: "Rioxx v3.0 Release Published"
 topics: []
 aliases:
 ---
