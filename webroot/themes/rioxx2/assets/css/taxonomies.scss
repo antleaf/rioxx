@@ -1,0 +1,17 @@
+@import 'variables';
+
+.taxonomy-sidebar {
+  border-left: 1px solid $border-colour;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.taxonomy-sidebar-header {
+  text-align: center;
+  margin-bottom: 15px;
+  //border-bottom: 2px solid $border-colour;
+}
+
+ul.taxonomy-tag-cloud > li {
+  display: inline-block;
+}

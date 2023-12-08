@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <div class="row">
+    <div class="col">
+      <h1 class="page-title">{{.Title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10">
+      <div class="text-justify">{{ .Content }}</div>
+    </div>
+    <div class="col-lg-2">
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <h4>Meeting Minutes</h4>
+        </div>
+        {{ with .GetPage "/governance/minutes/_index.md" }}
+          <ul>
+            {{ range .Pages }}
+              <li><a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }}</a></li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}

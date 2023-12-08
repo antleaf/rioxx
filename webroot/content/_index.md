@@ -8,13 +8,15 @@ title: Home
 topics: []
 ---
 
-This website contains technical and supporting information about _Rioxx: The Research Outputs Metadata Schema_.
+This website contains the technical specifications for Rioxx, with some supporting information. Rioxx is a metadata profile, designed to aid open-access repositories to share metadata about the scholarly resources they contain.
 
-Rioxx has been developed for repositories to share metadata about the scholarly resources they contain.
+Rioxx is recommended for use as a "format" in OAI-PMH, but it has also been updated to work well with more modern Web protocols too. It has been optimised to better enable the harvesting of metadata from distributed repositories by services (such as aggregation services).
 
-_Rioxx: The Research Outputs Metadata Schema_ is governed by [UKCORR](https://www.ukcorr.org), and its documentation (this website) is maintained by Paul Walk at [Antleaf](http://www.antleaf.com).
+#### For more information:
 
-<div style="text-align: center">
-<a href="http://www.antleaf.com"><img src="/images/antleaf_logo.png" class="credit_logo" alt="Antleaf Logo"/></a>
-<a href="http://www.ukcorr.org"><img src="/images/ukcorr_logo2.png" class="credit_logo" alt="UKCORR Logo"/></a>
-</div>
+- View the [current version of the Rioxx metadata profile (version 3.0)](/profiles/v3-0-final/)
+- Read the [latest announcements about Rioxx](/post/)
+
+
+
+

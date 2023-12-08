@@ -1,0 +1,22 @@
+<div id="site-header">
+    <div class="row">
+        <div class="col-sm-4">
+            <h2><a href="/">{{ site.Title}}</a></h2>
+            {{ site.Params.strapline }}
+        </div>
+        <div class="col-sm-8">
+            <div id="header-icon-bar">
+                {{ range site.Menus.main }}
+                    <a class="site-header-link" href="{{ .URL }}">{{ .Name }}</a>
+                {{ end }}
+                <a href="/posts/index.xml">
+                    <img src="/images/icons/rss.svg" alt="RSS" title="RSS"/>
+                </a>
+                <a href="https://github.com/antleaf/rioxx">
+                    <img src="/images/icons/github.svg" alt="GitHub" title="GitHub"/>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{{/*{{ partial "search_modal" . }}*/}}

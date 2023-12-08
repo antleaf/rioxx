@@ -1,0 +1,5 @@
+{{ if ne .Text nil }}
+    <img src="{{ .Page.Permalink }}/{{ .Destination }}" title="{{ .Text }}"  alt="{{ .Text }}"/>
+{{ else }}
+    <img src="{{ .Page.Permalink }}/{{ .Destination }}"/>
+{{ end }}

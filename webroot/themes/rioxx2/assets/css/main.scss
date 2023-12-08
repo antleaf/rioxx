@@ -1,0 +1,159 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'variables';
+
+html {
+  background-color: white;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2%;
+}
+
+body {
+  background-color: white;
+}
+
+body, p, ol, ul, td {
+  font-family: $main-content-font;
+  font-weight: $main-content-font-weight-default;
+  color: $main-content-text-color;
+  font-size: 18px;
+}
+
+pre {
+  padding: 15px;
+  background-color: #efefef;
+  //font-size: 80%;
+}
+
+code, span.monospace {
+  font-family: $monospace-font;
+  font-weight: $monospace-font-weight-default;
+  font-size: 0.9em !important;
+  color: $code-text-color;
+}
+
+a, a:visited, a:hover {
+  color: $link-colour;
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+//a.a-img:link,
+//a.a-img:link:focus,
+//a.a-img:link:hover,
+//a.a-img:link:active {
+//  text-underline: none;
+//}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, {
+  text-decoration: none;
+  color: $header-link-colour;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  color: $header-link-colour;
+}
+
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited, {
+  color: $header-link-colour;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+  font-weight: $heading-font-weight-default;
+  color: $heading-text-color;
+}
+
+h1 {
+  border-bottom: 2px solid #555555;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.6em
+}
+
+h3 {
+  font-size: 1.4em
+}
+
+h4 {
+  font-size: 1.2em
+}
+
+h5 {
+  font-size: 1.1em
+}
+
+h6 {
+  font-size: 1.0em
+}
+
+
+
+blockquote {
+  font-style: italic;
+  margin-left: 20px;
+  padding: 10px;
+  margin-right: 20px;
+  border-left: 3px solid #cdcdcd;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+div.right-aligned {
+  text-align: right;
+}
+
+img,iframe {
+  max-width: 90%;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+}
+
+iframe {
+  width: 90%;
+}
+
+.invisible {
+  display: inline-block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  position: absolute;
+  width: 0;
+}
+
+div.release-notes-header {
+  padding: 5px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+div.alternative-profile-link {
+  font-size: 0.75em;
+}
+
+.acknowledgment-logo {
+  max-width: 150px;
+  float: left;
+}

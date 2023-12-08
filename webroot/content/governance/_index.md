@@ -4,11 +4,13 @@ date: 2019-10-06
 description: ""
 draft: false
 tags: []
-title: Governance Group
+title: Governance
 topics: []
 ---
 
-## Membership
+Development and maintenance of the Rioxx profile is governed by the Rioxx Governance Group, which is appointed by UKCORR.
+
+## Current Governance Group Membership
 * George Macgregor, University of Glasgow (Chair)
 * Nicola Dowson, The Open University
 * Michael Eadie, University of Glasgow

@@ -4,10 +4,10 @@ date: '2022-10-20T15:00:43+00:00'
 description: ''
 draft: false
 tags: []
-title: "Rioxx: The Research Outputs Metadata Schema Version 3.0 Final"
+title: "Rioxx 3.0"
 topics: []
 aliases:
-status: draft
+status: current
 ---
 
 ## Terminology

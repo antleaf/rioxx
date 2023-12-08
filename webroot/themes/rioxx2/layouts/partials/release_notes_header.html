@@ -1,0 +1,27 @@
+{{ if eq .Params.status "current" }}
+    <div class="release-notes-header alert alert-success">
+        This is the <b>current</b> version of the application profile
+        <div class="alternative-profile-link"><a href="/release-notes/">see other versions</a></div>
+    </div>
+{{ else if eq .Params.status "deprecated" }}
+    <div class="release-notes-header alert alert-warning">
+        Note that this is a <b>deprecated</b> version of the application profile
+        <div class="alternative-profile-link">
+            <a href="/profiles/">please check here for the latest version</a>
+        </div>
+    </div>
+{{ else if eq .Params.status "draft" }}
+    <div class="release-notes-header alert alert-warning">
+        Note that this is a <b>draft</b> version of the application profile
+        <div class="alternative-profile-link">
+            <a href="/profiles/">please check here for the current version</a>
+        </div>
+    </div>
+{{ else }}
+    <div class="release-notes-header alert alert-danger">
+        This version of the application profile is <b>obsolete</b>
+        <div class="alternative-profile-link">
+            <a href="/profiles/">latest version</a>
+        </div>
+    </div>
+{{ end }}

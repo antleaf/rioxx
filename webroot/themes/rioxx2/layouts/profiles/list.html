@@ -1,0 +1,9 @@
+{{ define "main" }}
+    <div class="row">
+        <div class="col">
+            {{ range where .Pages.ByTitle.Reverse "Params.status" "eq" "current" }}
+                {{ partial "profile" . }}
+            {{ end }}
+        </div>
+    </div>
+{{ end }}

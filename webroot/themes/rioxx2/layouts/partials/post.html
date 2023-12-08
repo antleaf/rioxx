@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col">
+        <div class="post">
+            <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+            {{ .Content }}
+            <div class="post-footer">
+                <div class="row">
+{{/*                    <div class="col">*/}}
+{{/*                        {{ delimit .Params.creators ", " }}, {{ time.Format "2 January 2006" .Date }}*/}}
+{{/*                    </div>*/}}
+                    <div class="col">
+                        <div class="post-footer-right">
+                            {{ delimit .Params.creators ", " }}, {{ time.Format "2 January 2006" .Date }}
+{{/*                            {{ with .Params.keywords }}*/}}
+{{/*                                {{ partial "tag_link_list" . }}*/}}
+{{/*                            {{ end }}*/}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

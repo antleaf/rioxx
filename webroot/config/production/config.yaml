@@ -1,6 +1,0 @@
-#baseurl: "https://www.rioxx.net"
-# googleAnalytics: "UA-1053639-1"
-disqusShortname: "rioxx"
-params:
-  showPageStatusTags: false
-  showDebugInfo: false
