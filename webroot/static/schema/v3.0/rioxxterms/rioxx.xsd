@@ -1,0 +1,305 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="http://www.rioxx.net/schema/v2.0/rioxx/"
+  xmlns:rioxxterms="http://www.rioxx.net/schema/v2.0/rioxxterms/"
+  xmlns:ali="http://ali.niso.org/2014/ali/1.0" xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+  vc:minVersion="1.1" xmlns="http://www.rioxx.net/schema/v2.0/rioxx/">
+  <!-- Import rather than using schemaLocation attributes in the main schema element
+       This is so the GUI editors can see the elements & use them -->
+  <xs:import namespace="http://www.rioxx.net/schema/v2.0/rioxxterms/"
+    schemaLocation="rioxxterms.xsd"/>
+  <xs:import namespace="http://ali.niso.org/2014/ali/1.0" schemaLocation="ali.xsd"/>
+  <xs:import namespace="http://purl.org/dc/elements/1.1/"
+    schemaLocation="http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"/>
+  <xs:import namespace="http://purl.org/dc/terms/"
+    schemaLocation="http://www.dublincore.org/schemas/xmls/qdc/dcterms.xsd"/>
+  <xs:element name="rioxx">
+    <xs:annotation>
+      <xs:documentation xml:lang="en"><![CDATA[
+Schema for the RIOXX Application Profile, version 2.0
+
+Created 2015-01-21
+
+Created by
+
+Paul Walk (p.walk@ed.ac.uk)
+Ian Stuart (ian.stuart@ed.ac.uk)
+
+Terminology
+
+'the resource' refers to the electronic copy of a publication held in a 
+repository, and is that which is being described by the RIOXX metadata record.
+
+'version of record' refers to the version of the publication being described
+in the RIOXX metadata record which has been made available, electronically, by the publisher.
+
+The terms MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD,
+SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL used in the descriptions
+below should be interpreted as described in RFC 2119 (http://www.ietf.org/rfc/rfc2119.txt).
+
+Note that its cast into XSD 1.1 as XSD 1.0 has a restriction that limits all elements in 
+an 'all' grouping to have a maxOccurs of zero or one.
+
+Elements are listed in alphabetical order.
+
+Location: The xsd file is located at http://www.rioxx.net/schema/v2.0/rioxx/rioxx.xsd
+
+]]>
+</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" maxOccurs="1" ref="rioxxterms:apc">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Optional</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[
+This element expresses whether or not the resource has an associated 'article processing
+charge'.
+]]></xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="rioxxterms:author" minOccurs="1" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Mandatory</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[
+The author of the resource may be a person, organisation or service, but is most commonly a 
+person.
+]]></xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element ref="rioxxterms:contributor" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Optional</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[ 
+This field is designed to describe an entity – for example the name of a person, 
+organisation or service – responsible for making contributions to the content of the 
+resource.
+]]></xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element ref="dc:coverage" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Optional</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[
+The [Openaire Guidelines](https://guidelines.openaire.eu/wiki/Literature_Guidelines:_Metadata_Field_Coverage)
+recommends the inclusion of this element.
+]]></xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element ref="dcterms:dateAccepted" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Mandatory</xs:documentation>
+            <xs:documentation><![CDATA[
+The date on which the resource was accepted for publication. The date MUST be encoded using
+ISO 8601 (post–2004 versions) using the following format: YYYY-MM-DD.
+]]></xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element ref="dc:description" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Recommended</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[ 
+This field may be indexed and its contents presented to people conducting searches.
+
+The goal is to describe the content of the resource using free text.
+
+It is RECOMMENDED that an English language abstract be used where available. 
+HTML or other markup tags SHOULD NOT be included in this field.
+]]>
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element minOccurs="0" maxOccurs="1" ref="ali:free_to_read">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Optional</xs:documentation>
+            <xs:documentation xml:lang="en">
+              This is defined in the NISO Open Access Metadata and Indicators.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element ref="dc:format" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Reccomended</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[
+This refers to the format of the resource. The MIME type of the object pointed to by this 
+RIOXX record’s 'dc:identifier' element MUST be entered here (eg: application/pdf).
+
+Note that this element should not be confused with 'rioxxterms:type', which is the genre of item
+]]></xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element ref="dc:identifier" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Mandatory</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[
+This field MUST contain a globally unique and persistent identifier for the resource.
+
+The purpose of this field is, through direct identification of the resource, to allow access
+to it, therefore it is RECOMMENDED that this identifier should point to the _actual resource
+being described by the RIOXX record_ (typically a file in MS Word or PDF format), rather than to
+an intermediary resource such as a repository web page. Note that RIOXX does not require any
+require particular file format to be used for the resource.
+
+To describe another version of the resource (eg 'Version of Record' as opposed to 
+'Accepted Manuscript') with a different identifier, a completely separate RIOXX record should
+be created.
+]]>
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element ref="dc:language" minOccurs="1" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Mandatory</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[
+This refers to the primary language in which the content of the resource is presented.
+
+The element MAY be repeated if the_ resource contains multiple languages. Values used
+for this element MUST conform to ISO 639–3. This offers two and three letter tags
+e.g. "en" or "eng" for English and "en-GB" for English used in the UK.
+]]>
+</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="ali:license_ref">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Mandatory</xs:documentation>
+            <xs:documentation xml:lang="en">
+              This is defined in the NISO Open Access Metadata and Indicators.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element maxOccurs="unbounded" ref="rioxxterms:project" minOccurs="1">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Mandatory</xs:documentation>
+            <xs:documentation><![CDATA[ 
+This is designed to collect the project ID(s), issued by the funder(s), that relate to the 
+resource, together with the name and/or global identifier for the funder(s).
+]]>
+</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element minOccurs="0" ref="rioxxterms:publication_date" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Optional</xs:documentation>
+            <xs:documentation><![CDATA[
+This element takes the publication date of the resource in the form in which it would be cited. This 
+element is not used in a RIOXX context but allows for a RIOXX record to become a reasonable bibliographic 
+record for the resource. This is a free-text field.
+]]></xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element ref="dc:publisher" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Recommended</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[ 
+A free text string giving the name of the entity, typically a 'publisher', responsible for 
+making the _version of record_ of the resource available. This could be a person,
+organisation or service.
+
+Where available, the name of the publisher entered here SHOULD be from a controlled list.
+]]></xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element ref="dc:relation" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Optional</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[
+The format of this element MUST be an HTTP URI which points to a related resource, e.g. a research
+data-set which underpins the resource. An exception to this is the DOI identifying the related
+‘version of record’ - this MUST be recorded in the _rioxxterms:version_of_record_ element.
+
+Each related resource MUSTty appear as a separate instance of the field.
+]]>
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element ref="dc:source" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Mandatory where applicable</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[ 
+The source label describes a resource from which the resource is derived (in whole or in part). It 
+is RECOMMENDED that the source is referenced using a unique identifier from a recognised system
+e.g. the unique 8-digit International Standard Serial Numbers (ISSN) assigned to _electronic_ periodicals,
+or the 13 digit International Standard Book Number (ISBN13) assigned to books. In the latter case,
+the ISBN13 for the electronic verison of the book SHOULD be used if available.
+
+Use of this element is applicable where the resource is to be published as part of a larger 
+resource. Eaxmples might include a journal article, a conference paper or a chapter of a book, but 
+not a complete book for example.
+]]></xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element ref="dc:subject" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Recommended</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[
+The Openaire Guidelines (https://guidelines.openaire.eu/wiki/Literature_Guidelines:_Metadata_Field_Coverage) recommend the inclusion of this element.
+]]></xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element ref="dc:title" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Mandatory</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[
+>This refers to the title, and any sub-titles, of the resource. The title is the form of words by 
+which the resource will be formally known and should be represented using the original spelling and 
+wording. The RECOMMENDED format for expressing subtitles is:
+
+    Title:Subtitle
+
+Note that where the resource is a chapter in a book, the chapter title MUST be entered here, with 
+the ISBN13 of the book being recorded in the `dc:source` element
+]]>
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element ref="rioxxterms:type" minOccurs="1" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Mandatory</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[
+Type refers to the ‘type’ - the nature or genre of the content of the resource. Take care not to 
+confuse this with 'dc:format'. The value of this element is from a Controlled List
+]]>
+</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element ref="rioxxterms:version" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Mandatory</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[ 
+This element indicates which 'version' of the resource is being described. The value of
+this element is from a Coltrolled List
+]]></xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element minOccurs="0" ref="rioxxterms:version-of-record" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Recommended</xs:documentation>
+            <xs:documentation xml:lang="en">
+              This field MUST contain an HTTP URI which is a persistent identifier for the published version of the resource.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
