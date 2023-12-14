@@ -46,9 +46,10 @@ caches:
     maxAge: 5s
 params:
   strapline: "The Research Outputs Metadata Schema"
-  googleCustomSearchEngineID: ""
-  googleSiteVerification: ""
-  googleAnalyticsID: "G-68NB5DCQRZ"
+#  googleCustomSearchEngineID: ""
+#  googleSiteVerification: ""
+#  googleAnalyticsID: "G-68NB5DCQRZ"
+  enableAnalytics: false  # this param may be overridden in production/development envs
 markup:
   defaultMarkdownHandler: goldmark
   goldmark:
