@@ -3,7 +3,7 @@ date: '2023-05-05T15:10:43+00:00'
 draft: false
 type: metadata_profile_property
 title: dcterms:date_accepted
-cardinality: Exactly one
+cardinality: Zero or one
 requirement: Recommended
 metadata_profile: v3-0-final
 ---
