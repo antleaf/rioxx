@@ -16,7 +16,7 @@
     <xs:element name="rioxx">
         <xs:annotation>
             <xs:documentation xml:lang="en"><![CDATA[
-Schema for the RIOXX Application Profile, version 2.0
+Schema for the RIOXX Application Profile, version 3.0
 
 Created 2023-12-05
 
@@ -48,7 +48,7 @@ Location: The xsd file is located at http://www.rioxx.net/schema/v3.0/rioxx/riox
         </xs:annotation>
         <xs:complexType>
             <xs:all>
-                <xs:element ref="dc:coverage" minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="dc:coverage" minOccurs="0" >
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Optional</xs:documentation>
                         <xs:documentation xml:lang="en"><![CDATA[
@@ -56,7 +56,7 @@ Coverage will typically include a temporal period (a period label, date, or date
 ]]></xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element ref="dc:description" minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="dc:description" minOccurs="0" >
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Recommended</xs:documentation>
                         <xs:documentation xml:lang="en"><![CDATA[
@@ -90,7 +90,7 @@ dc:identifier can be supplemented by using dc:relation to declare the local repo
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element ref="dc:language" minOccurs="1" maxOccurs="unbounded">
+                <xs:element ref="dc:language" minOccurs="1" >
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Mandatory</xs:documentation>
                         <xs:documentation xml:lang="en"><![CDATA[
@@ -105,7 +105,7 @@ This offers two and three letter tags e.g. "en" or "eng" for English and "en-GB"
                 </xs:element>
                 
 
-                <xs:element ref="dc:publisher" minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="dc:publisher" minOccurs="0" >
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Recommended</xs:documentation>
                         <xs:documentation xml:lang="en"><![CDATA[
@@ -121,7 +121,7 @@ Typical identifier schemes likely to be relevant here include ISNI, ROR, and VIA
                     </xs:annotation>
                 </xs:element>
 
-                <xs:element ref="dc:relation" minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="dc:relation" minOccurs="0" >
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Optional</xs:documentation>
                         <xs:documentation xml:lang="en"><![CDATA[
@@ -191,7 +191,7 @@ Examples might include a conference paper belonging to proceedings or a chapter 
                     </xs:annotation>
                 </xs:element>
 
-                <xs:element ref="dc:subject" minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="dc:subject" minOccurs="0" >
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Recommended</xs:documentation>
                         <xs:documentation xml:lang="en"><![CDATA[
@@ -220,7 +220,7 @@ with the ISBN13 of the book being recorded in the dc:source property.
                     </xs:annotation>
                 </xs:element>
 
-                <xs:element ref="dc:type" minOccurs="1" maxOccurs="unbounded">
+                <xs:element ref="dc:type" minOccurs="1" >
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Mandatory</xs:documentation>
                         <xs:documentation xml:lang="en"><![CDATA[
@@ -247,7 +247,7 @@ the following format: YYYY-MM-DD.
                     </xs:annotation>
                 </xs:element>
                 
-                <xs:element ref="rioxxterms:contributor" minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="rioxxterms:contributor" minOccurs="0" >
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Optional</xs:documentation>
                         <xs:documentation xml:lang="en"><![CDATA[
@@ -282,7 +282,7 @@ Research Organization Registry (ROR), VIAF or WikiData concept URI, e.g.
 ]]></xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element ref="rioxxterms:creator" minOccurs="1" maxOccurs="unbounded">
+                <xs:element ref="rioxxterms:creator" minOccurs="1" >
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Mandatory</xs:documentation>
                         <xs:documentation xml:lang="en"><![CDATA[
@@ -327,7 +327,7 @@ thus:
 </rioxxterms:creator>]]></xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element ref="rioxxterms:ext_relation" minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="rioxxterms:ext_relation" minOccurs="0" >
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Optional</xs:documentation>
                         <xs:documentation xml:lang="en"><![CDATA[
@@ -359,7 +359,7 @@ Related dataset
 </rioxxterms:ext_relation>]]></xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element ref="rioxxterms:grant" minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="rioxxterms:grant" minOccurs="0" >
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Optional</xs:documentation>
                         <xs:documentation><![CDATA[
@@ -398,7 +398,7 @@ This means that it is permissible for a given funder_name or funder_id to appear
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element ref="rioxxterms:project" minOccurs="1" maxOccurs="unbounded">
+                <xs:element ref="rioxxterms:project" minOccurs="1" >
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Mandatory</xs:documentation>
                         <xs:documentation><![CDATA[
@@ -424,7 +424,7 @@ which typically follows the following format: YYYY-MM-DD.
 ]]></xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element ref="rioxxterms:publisher"  minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="rioxxterms:publisher"  minOccurs="0" >
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Optional</xs:documentation>
                         <xs:documentation><![CDATA[

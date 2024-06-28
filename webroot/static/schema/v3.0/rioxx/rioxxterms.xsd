@@ -5,14 +5,13 @@
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
     <xs:annotation>
         <xs:documentation xml:lang="en"><![CDATA[
-Schema for the RIOXX Terms used within the RIOXX Application Profile, version 2.0
+Schema for the RIOXX Terms used within the RIOXX Application Profile, version 3.0
 
-Created 2015-01-21
+Created 2023-12-05
 
 Created by
 
-Paul Walk (p.walk@ed.ac.uk)
-Ian Stuart (ian.stuart@ed.ac.uk)
+The CORE team (theteam@core.ac.uk)
 
 Terminology
 
@@ -29,7 +28,7 @@ below should be interpreted as described in RFC 2119 (http://www.ietf.org/rfc/rf
 Note that its cast into XSD 1.1 as XSD 1.0 has a restriction that limits all elements in 
 an 'all' grouping to have a maxOccurs of zero or one.
 
-Location: The xsd file is located at http://www.rioxx.net/schema/v2.0/rioxx/rioxxterms.xsd
+Location: The xsd file is located at http://www.rioxx.net/schema/v3.0/rioxx/rioxxterms.xsd
 
 ]]>
         </xs:documentation>
