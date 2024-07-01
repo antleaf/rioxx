@@ -1,0 +1,2042 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for dc.xsd</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript"><!--
+        var propertiesBoxes= new Array('properties_dc.xsd', 
+				'properties_any');
+var usedByBoxes= new Array('usedBy_coverage', 
+				'usedBy_description', 
+				'usedBy_identifier', 
+				'usedBy_language', 
+				'usedBy_publisher', 
+				'usedBy_relation', 
+				'usedBy_source', 
+				'usedBy_subject', 
+				'usedBy_title', 
+				'usedBy_type', 
+				'usedBy_any', 
+				'usedBy_SimpleLiteral', 
+				'usedBy_elementsGroup');
+var sourceBoxes= new Array('source_coverage', 
+				'source_description', 
+				'source_identifier', 
+				'source_language', 
+				'source_publisher', 
+				'source_relation', 
+				'source_source', 
+				'source_subject', 
+				'source_title', 
+				'source_type', 
+				'source_any', 
+				'source_http___purl.org_dc_elements_1.1__creator', 
+				'source_http___purl.org_dc_elements_1.1__contributor', 
+				'source_http___purl.org_dc_elements_1.1__date', 
+				'source_format', 
+				'source_rights', 
+				'source_SimpleLiteral', 
+				'source_elementContainer', 
+				'source_elementsGroup');
+var diagramBoxes= new Array('diagram_coverage', 
+				'diagram_description', 
+				'diagram_identifier', 
+				'diagram_language', 
+				'diagram_publisher', 
+				'diagram_relation', 
+				'diagram_source', 
+				'diagram_subject', 
+				'diagram_title', 
+				'diagram_type', 
+				'diagram_any', 
+				'diagram_http___purl.org_dc_elements_1.1__creator', 
+				'diagram_http___purl.org_dc_elements_1.1__contributor', 
+				'diagram_http___purl.org_dc_elements_1.1__date', 
+				'diagram_format', 
+				'diagram_rights', 
+				'diagram_SimpleLiteral', 
+				'diagram_elementContainer', 
+				'diagram_elementsGroup');
+var annotationBoxes= new Array('annotations_dc.xsd', 
+				'annotations_SimpleLiteral', 
+				'annotations_elementContainer', 
+				'annotations_elementsGroup');
+var attributesBoxes= new Array('attributes_any', 
+				'attributes_SimpleLiteral');
+var modelBoxes= new Array('model_any', 
+				'model_SimpleLiteral', 
+				'model_elementContainer', 
+				'model_elementsGroup');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, annotationBoxes);" class="control" /></span><span class="globalControlName">Annotations</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, attributesBoxes);" class="control" /></span><span class="globalControlName">Attributes </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, diagramBoxes);" class="control" /></span><span class="globalControlName">Diagrams</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, modelBoxes);" class="control" /></span><span class="globalControlName">Model </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
+                     </tr>
+                  </table>
+                  <div style="text-align:center"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+               </td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div><a id="dc.xsd"></a><div class="componentTitle">Imported schema <span class="qname">dc.xsd</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_dc.xsd" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('annotations_dc.xsd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_dc.xsd" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td style="width:100%">
+                                          <pre><span class="tT">DCMES 1.1 XML Schema</span><span class="tI">
+</span><span class="tT">      XML Schema for http://purl.org/dc/elements/1.1/ namespace</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">      Created 2003-04-02</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">      Created by </span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">      Tim Cole (t-cole3@uiuc.edu)</span><span class="tI">
+</span><span class="tT">      Tom Habing (thabing@uiuc.edu)</span><span class="tI">
+</span><span class="tT">      Jane Hunter (jane@dstc.edu.au)</span><span class="tI">
+</span><span class="tT">      Pete Johnston (p.johnston@ukoln.ac.uk),</span><span class="tI">
+</span><span class="tT">      Carl Lagoze (lagoze@cs.cornell.edu)</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">      This schema declares XML elements for the 15 DC elements from the</span><span class="tI">
+</span><span class="tT">      http://purl.org/dc/elements/1.1/ namespace.</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">      It defines a complexType SimpleLiteral which permits mixed content </span><span class="tI">
+</span><span class="tT">      and makes the xml:lang attribute available. It disallows child elements by</span><span class="tI">
+</span><span class="tT">      use of minOcccurs/maxOccurs.</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">      However, this complexType does permit the derivation of other complexTypes</span><span class="tI">
+</span><span class="tT">      which would permit child elements.</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">      All elements are declared as substitutable for the abstract element any, </span><span class="tI">
+</span><span class="tT">      which means that the default type for all elements is dc:SimpleLiteral.</span></pre>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_dc.xsd" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_dc.xsd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_dc.xsd" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">attribute form default</td>
+                                    <td><b>unqualified</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">element form default</td>
+                                    <td><b>qualified</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="coverage"></a><div class="componentTitle">Element <span class="qname">coverage</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_coverage" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_coverage');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_coverage" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_coverage.jpeg" usemap="#dc_xsd_Element_coverage" /><map name="dc_xsd_Element_coverage" id="dc_xsd_Element_coverage"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="122,38,173,62" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_coverage" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_coverage');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_coverage" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_xsd.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for rioxx.xsd')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_coverage" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_coverage');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_coverage" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"coverage"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="description"></a><div class="componentTitle">Element <span class="qname">description</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_description" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_description');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_description" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_description.jpeg" usemap="#dc_xsd_Element_description" /><map name="dc_xsd_Element_description" id="dc_xsd_Element_description"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="134,38,185,62" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_description" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_description');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_description" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_xsd.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for rioxx.xsd')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_description" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_description');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_description" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"description"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="identifier"></a><div class="componentTitle">Element <span class="qname">identifier</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_identifier" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_identifier');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_identifier" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_identifier.jpeg" usemap="#dc_xsd_Element_identifier" /><map name="dc_xsd_Element_identifier" id="dc_xsd_Element_identifier"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="121,38,172,62" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_identifier" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_identifier');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_identifier" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_xsd.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for rioxx.xsd')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_identifier" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_identifier');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_identifier" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"identifier"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="language"></a><div class="componentTitle">Element <span class="qname">language</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_language" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_language');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_language" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_language.jpeg" usemap="#dc_xsd_Element_language" /><map name="dc_xsd_Element_language" id="dc_xsd_Element_language"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="122,38,173,62" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_language" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_language');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_language" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_xsd.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for rioxx.xsd')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_language" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_language');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_language" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"language"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="publisher"></a><div class="componentTitle">Element <span class="qname">publisher</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_publisher" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_publisher');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_publisher" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_publisher.jpeg" usemap="#dc_xsd_Element_publisher" /><map name="dc_xsd_Element_publisher" id="dc_xsd_Element_publisher"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="124,38,175,62" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_publisher" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_publisher');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_publisher" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_xsd.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for rioxx.xsd')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_publisher" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_publisher');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_publisher" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"publisher"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="relation"></a><div class="componentTitle">Element <span class="qname">relation</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_relation" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_relation');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_relation" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_relation.jpeg" usemap="#dc_xsd_Element_relation" /><map name="dc_xsd_Element_relation" id="dc_xsd_Element_relation"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="114,38,165,62" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_relation" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_relation');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_relation" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_xsd.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for rioxx.xsd')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_relation" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_relation');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_relation" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"relation"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="source"></a><div class="componentTitle">Element <span class="qname">source</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_source" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_source');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_source" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_source.jpeg" usemap="#dc_xsd_Element_source" /><map name="dc_xsd_Element_source" id="dc_xsd_Element_source"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="110,38,161,62" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_source" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_source');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_source" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_xsd.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for rioxx.xsd')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_source" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_source');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_source" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"source"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="subject"></a><div class="componentTitle">Element <span class="qname">subject</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_subject" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_subject');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_subject" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_subject.jpeg" usemap="#dc_xsd_Element_subject" /><map name="dc_xsd_Element_subject" id="dc_xsd_Element_subject"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="112,38,163,62" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_subject" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_subject');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_subject" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_xsd.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for rioxx.xsd')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_subject" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_subject');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_subject" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"subject"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="title"></a><div class="componentTitle">Element <span class="qname">title</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_title" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_title');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_title" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_title.jpeg" usemap="#dc_xsd_Element_title" /><map name="dc_xsd_Element_title" id="dc_xsd_Element_title"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="93,38,144,62" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_title" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_title');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_title" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_xsd.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for rioxx.xsd')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_title" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_title');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_title" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"title"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="type"></a><div class="componentTitle">Element <span class="qname">type</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_type" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_type');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_type" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_type.jpeg" usemap="#dc_xsd_Element_type" /><map name="dc_xsd_Element_type" id="dc_xsd_Element_type"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="96,38,147,62" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_type" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_type" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rioxx_xsd.html#rioxx" target="mainFrame" title="http://www.rioxx.net/schema/v3.0/rioxx/" onclick="updatePageTitle('Schema documentation for rioxx.xsd')">rioxx</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_type" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_type" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"type"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="any"></a><div class="componentTitle">Element <span class="qname">any</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_any" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_any');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_any" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_any.jpeg" usemap="#dc_xsd_Element_any" /><map name="dc_xsd_Element_any" id="dc_xsd_Element_any"><area alt="xml2001_xsd.tmp#lang" href="xml2001_xsd.html#lang" coords="107,289,201,313" /><area alt="dc_xsd.tmp#SimpleLiteral" href="dc_xsd.html#SimpleLiteral" coords="82,3,201,25" /><area alt="dc_xsd.tmp#http___purl.org_dc_elements_1.1__contributor" href="dc_xsd.html#http___purl.org_dc_elements_1.1__contributor" coords="93,516,186,540" /><area alt="dc_xsd.tmp#coverage" href="dc_xsd.html#coverage" coords="93,550,173,574" /><area alt="dc_xsd.tmp#http___purl.org_dc_elements_1.1__creator" href="dc_xsd.html#http___purl.org_dc_elements_1.1__creator" coords="93,584,163,608" /><area alt="dc_xsd.tmp#http___purl.org_dc_elements_1.1__date" href="dc_xsd.html#http___purl.org_dc_elements_1.1__date" coords="93,618,147,642" /><area alt="dc_xsd.tmp#description" href="dc_xsd.html#description" coords="93,652,185,676" /><area alt="dc_xsd.tmp#format" href="dc_xsd.html#format" coords="93,686,160,710" /><area alt="dc_xsd.tmp#identifier" href="dc_xsd.html#identifier" coords="93,720,172,744" /><area alt="dc_xsd.tmp#language" href="dc_xsd.html#language" coords="93,754,173,778" /><area alt="dc_xsd.tmp#publisher" href="dc_xsd.html#publisher" coords="93,788,175,812" /><area alt="dc_xsd.tmp#relation" href="dc_xsd.html#relation" coords="93,822,165,846" /><area alt="dc_xsd.tmp#rights" href="dc_xsd.html#rights" coords="93,856,156,880" /><area alt="dc_xsd.tmp#source" href="dc_xsd.html#source" coords="93,890,161,914" /><area alt="dc_xsd.tmp#subject" href="dc_xsd.html#subject" coords="93,924,163,948" /><area alt="dc_xsd.tmp#title" href="dc_xsd.html#title" coords="93,958,144,982" /><area alt="dc_xsd.tmp#type" href="dc_xsd.html#type" coords="93,992,147,1016" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="dc_xsd.html#SimpleLiteral" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">SimpleLiteral</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_any" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_any');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_any" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">abstract</td>
+                                    <td><b>true</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#title" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">title</a></b></li>
+                              <li class="internal"><b><a href="dc_xsd.html#http___purl.org_dc_elements_1.1__creator" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">creator</a></b></li>
+                              <li class="internal"><b><a href="dc_xsd.html#subject" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">subject</a></b></li>
+                              <li class="internal"><b><a href="dc_xsd.html#description" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">description</a></b></li>
+                              <li class="internal"><b><a href="dc_xsd.html#publisher" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">publisher</a></b></li>
+                              <li class="internal"><b><a href="dc_xsd.html#http___purl.org_dc_elements_1.1__contributor" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">contributor</a></b></li>
+                              <li class="internal"><b><a href="dc_xsd.html#http___purl.org_dc_elements_1.1__date" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">date</a></b></li>
+                              <li class="internal"><b><a href="dc_xsd.html#type" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">type</a></b></li>
+                              <li class="internal"><b><a href="dc_xsd.html#format" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">format</a></b></li>
+                              <li class="internal"><b><a href="dc_xsd.html#identifier" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">identifier</a></b></li>
+                              <li class="internal"><b><a href="dc_xsd.html#source" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">source</a></b></li>
+                              <li class="internal"><b><a href="dc_xsd.html#language" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">language</a></b></li>
+                              <li class="internal"><b><a href="dc_xsd.html#relation" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">relation</a></b></li>
+                              <li class="internal"><b><a href="dc_xsd.html#coverage" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">coverage</a></b></li>
+                              <li class="internal"><b><a href="dc_xsd.html#rights" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">rights</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_any" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_any');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_any" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element Groups </td>
+                                    <td><b><a href="dcterms_xsd.html#elementsAndRefinementsGroup" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">elementsAndRefinementsGroup</a></b>, <b><a href="dc_xsd.html#elementsGroup" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">elementsGroup</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_any" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_any');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_any" style="display:block"><b>ANY element from ANY namespace</b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_any" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('attributes_any');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_any" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th style="width:10%">Type</th>
+                                       <th style="width:10%">Use</th>
+                                       <th>Annotation</th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="xml2001_xsd.html#lang" target="mainFrame" title="http://www.w3.org/XML/1998/namespace" onclick="updatePageTitle('Schema documentation for xml2001.xsd')">xml:lang</a></b></td>
+                                    <td><b>xs:language</b></td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">In due course, we should install the relevant ISO 2- and 3-letter</span><span class="tI">
+</span><span class="tT">codes as the enumerated possible values . . .</span></pre>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_any" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_any');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_any" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"any"</span><span class="tAN"> type=</span><span class="tAV">"SimpleLiteral"</span><span class="tAN"> abstract=</span><span class="tAV">"true"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="http___purl.org_dc_elements_1.1__creator"></a><div class="componentTitle">Element <span class="qname">creator</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_http___purl.org_dc_elements_1.1__creator" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_http___purl.org_dc_elements_1.1__creator');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_http___purl.org_dc_elements_1.1__creator" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_creator.jpeg" usemap="#dc_xsd_Element_creator" /><map name="dc_xsd_Element_creator" id="dc_xsd_Element_creator"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="112,38,163,62" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_http___purl.org_dc_elements_1.1__creator" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_http___purl.org_dc_elements_1.1__creator');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_http___purl.org_dc_elements_1.1__creator" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"creator"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="http___purl.org_dc_elements_1.1__contributor"></a><div class="componentTitle">Element <span class="qname">contributor</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_http___purl.org_dc_elements_1.1__contributor" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_http___purl.org_dc_elements_1.1__contributor');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_http___purl.org_dc_elements_1.1__contributor" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_contributor.jpeg" usemap="#dc_xsd_Element_contributor" /><map name="dc_xsd_Element_contributor" id="dc_xsd_Element_contributor"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="135,38,186,62" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_http___purl.org_dc_elements_1.1__contributor" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_http___purl.org_dc_elements_1.1__contributor');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_http___purl.org_dc_elements_1.1__contributor" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"contributor"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="http___purl.org_dc_elements_1.1__date"></a><div class="componentTitle">Element <span class="qname">date</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_http___purl.org_dc_elements_1.1__date" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_http___purl.org_dc_elements_1.1__date');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_http___purl.org_dc_elements_1.1__date" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_date.jpeg" usemap="#dc_xsd_Element_date" /><map name="dc_xsd_Element_date" id="dc_xsd_Element_date"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="96,38,147,62" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_http___purl.org_dc_elements_1.1__date" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_http___purl.org_dc_elements_1.1__date');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_http___purl.org_dc_elements_1.1__date" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"date"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="format"></a><div class="componentTitle">Element <span class="qname">format</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_format" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_format');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_format" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_format.jpeg" usemap="#dc_xsd_Element_format" /><map name="dc_xsd_Element_format" id="dc_xsd_Element_format"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="109,38,160,62" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_format" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_format');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_format" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"format"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="rights"></a><div class="componentTitle">Element <span class="qname">rights</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_rights" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_rights');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_rights" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_rights.jpeg" usemap="#dc_xsd_Element_rights" /><map name="dc_xsd_Element_rights" id="dc_xsd_Element_rights"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="105,38,156,62" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Substitution Group Affiliation</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_rights" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_rights');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_rights" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"rights"</span><span class="tAN"> substitutionGroup=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="SimpleLiteral"></a><div class="componentTitle">Complex Type <span class="qname">SimpleLiteral</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_SimpleLiteral" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('annotations_SimpleLiteral');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_SimpleLiteral" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td style="width:100%">
+                                          <pre><span class="tT">This is the default type for all of the DC elements.</span><span class="tI">
+</span><span class="tT">            It permits text content only with optional</span><span class="tI">
+</span><span class="tT">            xml:lang attribute.</span><span class="tI">
+</span><span class="tT">            Text is allowed because mixed="true", but sub-elements</span><span class="tI">
+</span><span class="tT">            are disallowed because minOccurs="0" and maxOccurs="0" </span><span class="tI">
+</span><span class="tT">            are on the xs:any tag.</span><span class="tI">
+</span><span class="tT"></span><span class="tI">
+</span><span class="tT">    	    This complexType allows for restriction or extension permitting</span><span class="tI">
+</span><span class="tT">            child elements.</span></pre>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_SimpleLiteral" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_SimpleLiteral');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_SimpleLiteral" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Complex_Type_SimpleLiteral.jpeg" usemap="#dc_xsd_Complex_Type_SimpleLiteral" /><map name="dc_xsd_Complex_Type_SimpleLiteral" id="dc_xsd_Complex_Type_SimpleLiteral"><area alt="xml2001_xsd.tmp#lang" href="xml2001_xsd.html#lang" coords="185,249,279,273" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_SimpleLiteral" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_SimpleLiteral');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_SimpleLiteral" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">Complex Types </td>
+                                    <td><b><a href="dcterms_xsd.html#Box" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">Box</a></b>, <b><a href="dcterms_xsd.html#DCMIType" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">DCMIType</a></b>, <b><a href="dcterms_xsd.html#DDC" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">DDC</a></b>, <b><a href="dcterms_xsd.html#IMT" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">IMT</a></b>, <b><a href="dcterms_xsd.html#ISO3166" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">ISO3166</a></b>, <b><a href="dcterms_xsd.html#ISO639-2" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">ISO639-2</a></b>, <b><a href="dcterms_xsd.html#ISO639-3" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">ISO639-3</a></b>, <b><a href="dcterms_xsd.html#LCC" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">LCC</a></b>, <b><a href="dcterms_xsd.html#LCSH" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">LCSH</a></b>, <b><a href="dcterms_xsd.html#MESH" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">MESH</a></b>, <b><a href="dcterms_xsd.html#Period" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">Period</a></b>, <b><a href="dcterms_xsd.html#Point" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">Point</a></b>, <b><a href="dcterms_xsd.html#RFC1766" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">RFC1766</a></b>, <b><a href="dcterms_xsd.html#RFC3066" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">RFC3066</a></b>, <b><a href="dcterms_xsd.html#RFC4646" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">RFC4646</a></b>, <b><a href="dcterms_xsd.html#TGN" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">TGN</a></b>, <b><a href="dcterms_xsd.html#UDC" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">UDC</a></b>, <b><a href="dcterms_xsd.html#URI" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">URI</a></b>, <b><a href="dcterms_xsd.html#W3CDTF" target="mainFrame" title="http://purl.org/dc/terms/" onclick="updatePageTitle('Schema documentation for dcterms.xsd')">W3CDTF</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_SimpleLiteral" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_SimpleLiteral');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_SimpleLiteral" style="display:block"><b>ANY element from ANY namespace</b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_SimpleLiteral" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('attributes_SimpleLiteral');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_SimpleLiteral" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th style="width:10%">Type</th>
+                                       <th style="width:10%">Use</th>
+                                       <th>Annotation</th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="xml2001_xsd.html#lang" target="mainFrame" title="http://www.w3.org/XML/1998/namespace" onclick="updatePageTitle('Schema documentation for xml2001.xsd')">xml:lang</a></b></td>
+                                    <td><b>xs:language</b></td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">In due course, we should install the relevant ISO 2- and 3-letter</span><span class="tI">
+</span><span class="tT">codes as the enumerated possible values . . .</span></pre>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_SimpleLiteral" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_SimpleLiteral');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_SimpleLiteral" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:complexType</span><span class="tAN"> name=</span><span class="tAV">"SimpleLiteral"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tAN"> xml:lang=</span><span class="tAV">"en"</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">This is the default type for all of the DC elements. It permits text content only with optional xml:lang attribute. Text is allowed because mixed="true", but sub-elements are disallowed because minOccurs="0" and maxOccurs="0" are on the xs:any tag. This complexType allows for restriction or extension permitting child elements.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexContent</span><span class="tAN"> mixed=</span><span class="tAV">"true"</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:anyType"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:any</span><span class="tAN"> processContents=</span><span class="tAV">"lax"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"0"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:attribute</span><span class="tAN"> ref=</span><span class="tAV">"xml:lang"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexContent&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:complexType&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="elementContainer"></a><div class="componentTitle">Complex Type <span class="qname">elementContainer</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_elementContainer" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('annotations_elementContainer');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_elementContainer" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td style="width:100%">
+                                          <pre><span class="tT">This complexType is included as a convenience for schema authors who need to define a root</span><span class="tI">
+</span><span class="tT">or container element for all of the DC elements.</span></pre>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_elementContainer" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_elementContainer');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_elementContainer" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Complex_Type_elementContainer.jpeg" usemap="#dc_xsd_Complex_Type_elementContainer" /><map name="dc_xsd_Complex_Type_elementContainer" id="dc_xsd_Complex_Type_elementContainer"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="446,48,497,72" /><area alt="dc_xsd.tmp#elementsGroup" href="dc_xsd.html#elementsGroup" coords="272,3,409,29" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_elementContainer" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_elementContainer');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_elementContainer" style="display:block">((<b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b>))</div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_elementContainer" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_elementContainer');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_elementContainer" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:complexType</span><span class="tAN"> name=</span><span class="tAV">"elementContainer"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tAN"> xml:lang=</span><span class="tAV">"en"</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">This complexType is included as a convenience for schema authors who need to define a root or container element for all of the DC elements.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:choice</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:group</span><span class="tAN"> ref=</span><span class="tAV">"elementsGroup"</span><span class="tEl">/&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:choice&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:complexType&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="elementsGroup"></a><div class="componentTitle">Element Group <span class="qname">elementsGroup</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://purl.org/dc/elements/1.1/</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_elementsGroup" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('annotations_elementsGroup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_elementsGroup" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td style="width:100%">
+                                          <pre><span class="tT">This group is included as a convenience for schema authors</span><span class="tI">
+</span><span class="tT">who need to refer to all the elements in the </span><span class="tI">
+</span><span class="tT">http://purl.org/dc/elements/1.1/ namespace.</span></pre>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_elementsGroup" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_elementsGroup');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_elementsGroup" style="display:block"><img alt="Diagram" style="border:0" src="img/dc_xsd_Element_Group_elementsGroup.jpeg" usemap="#dc_xsd_Element_Group_elementsGroup" /><map name="dc_xsd_Element_Group_elementsGroup" id="dc_xsd_Element_Group_elementsGroup"><area alt="dc_xsd.tmp#any" href="dc_xsd.html#any" coords="348,4,399,28" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_elementsGroup" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_elementsGroup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_elementsGroup" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Complex Type </td>
+                                    <td><b><a href="dc_xsd.html#elementContainer" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">elementContainer</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_elementsGroup" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_elementsGroup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_elementsGroup" style="display:block">(<b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b>)</div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="dc_xsd.html#any" target="mainFrame" title="http://purl.org/dc/elements/1.1/" onclick="updatePageTitle('Schema documentation for dc.xsd')">any</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_elementsGroup" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_elementsGroup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_elementsGroup" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:group</span><span class="tAN"> name=</span><span class="tAV">"elementsGroup"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tAN"> xml:lang=</span><span class="tAV">"en"</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">This group is included as a convenience for schema authors who need to refer to all the elements in the http://purl.org/dc/elements/1.1/ namespace.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:choice</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"any"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:choice&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:group&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr />
+         <div style="text-align:center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor Trial Edition.</div>
+      </div><script type="text/javascript"><!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>
