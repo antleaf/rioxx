@@ -27,7 +27,7 @@ When set to `rel="item"`, the `dc:relation` property identifies a downloadable r
 
 When set to `rel="cite-as"`, the `dc:relation` property specifies a cite-able identifier associated with the resource.
 
-`dc:relation` **MUST** only be used to identify resources under the direct custodianship of the repository, therefore all URIs specified under `dc:relation` **MUST** resolve to the repository. URIs identifying related resources that resolve to resources outside of the direct custodianship of the repository **MUST** be specified under `rioxterms:ext_relation`. 
+`dc:relation` **MUST** only be used to identify resources under the direct custodianship of the repository, therefore all URIs specified under `dc:relation` **MUST** resolve to the repository. URIs identifying related resources that resolve to resources outside of the direct custodianship of the repository **MUST** be specified under `rioxxterms:ext_relation`. 
 
 The `dc:relation` property can be repeated to specify more than one associated resource. Possible values here may include a DOI, URN, CORE OAI ID; or an alternative repository HTTP(S) URI where there is no requirement for a PID.
 

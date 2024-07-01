@@ -14,7 +14,7 @@ Each external relation **MUST** appear as a separate instance of the `rioxxterms
 
 `rioxxterms:ext_relation` **MUST** include the `rel` and `coar_type` attributes. The `coar_version` attribute **MAY** be included (where appropriate), if the related resource is a publication.
 
-1. *rel*: The `rel` attribute uses 'typed links' from the [IANA Link Relation Registry](https://www.iana.org/assignments/link-relations/link-relations.xhtml). As Rioxx uses `rioxxterms:ext_relation` to communicate external associations, this attribute will normally be set to "cite-as", e.g. `rel='cite-as'` when the `rioxterms:ext_relation` conveys a related PID resolving to an external resource or `rel='item'` when `rioxterms:ext_relation` identifies a downloadable external resource. 
+1. *rel*: The `rel` attribute uses 'typed links' from the [IANA Link Relation Registry](https://www.iana.org/assignments/link-relations/link-relations.xhtml). As Rioxx uses `rioxxterms:ext_relation` to communicate external associations, this attribute will normally be set to "cite-as", e.g. `rel='cite-as'` when the `rioxxterms:ext_relation` conveys a related PID resolving to an external resource or `rel='item'` when `rioxxterms:ext_relation` identifies a downloadable external resource. 
 
 2. *coar_type*:  The `coar_type` attribute **MUST** contain an identifier from the [COAR Resource Types Vocabulary](http://purl.org/coar/resource_type/). For example, for the common case of the related resource being a PDF of a journal article, the **RECOMMENDED** value would be `http://purl.org/coar/resource_type/c_6501`. The [COAR Resource Types Vocabulary](http://purl.org/coar/resource_type/) accommodates a diverse range of resource types.  
 

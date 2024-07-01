@@ -30,7 +30,7 @@
             </tr>
             </thead>
             <tbody>
-            {{ range .Resources.Match "*.md" }}
+            {{ range sort (.Resources.Match "*.md") ".Title" }}
                 <tr>
                     <td><a id="{{.Title}}"></a>{{.Title}}</td>
                     <td>{{.Params.cardinality}}</td>
