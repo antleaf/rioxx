@@ -1,18 +1,17 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-  targetNamespace="http://www.rioxx.net/schema/v2.0/rioxxterms/"
-  xmlns:rioxxterms="http://www.rioxx.net/schema/v2.0/rioxxterms/"
-  xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
-  <xs:annotation>
-    <xs:documentation xml:lang="en"><![CDATA[
-Schema for the RIOXX Terms used within the RIOXX Application Profile, version 2.0
+    targetNamespace="http://www.rioxx.net/schema/v3.0/rioxxterms/"
+    xmlns:rioxxterms="http://www.rioxx.net/schema/v3.0/rioxxterms/"
+    xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+    <xs:annotation>
+        <xs:documentation xml:lang="en"><![CDATA[
+Schema for the RIOXX Terms used within the RIOXX Application Profile, version 3.0
 
-Created 2015-01-21
+Created 2023-12-05
 
 Created by
 
-Paul Walk (p.walk@ed.ac.uk)
-Ian Stuart (ian.stuart@ed.ac.uk)
+The CORE team (theteam@core.ac.uk)
 
 Terminology
 
@@ -29,236 +28,476 @@ below should be interpreted as described in RFC 2119 (http://www.ietf.org/rfc/rf
 Note that its cast into XSD 1.1 as XSD 1.0 has a restriction that limits all elements in 
 an 'all' grouping to have a maxOccurs of zero or one.
 
-Location: The xsd file is located at http://www.rioxx.net/schema/v2.0/rioxx/rioxxterms.xsd
+Location: The xsd file is located at http://www.rioxx.net/schema/v3.0/rioxx/rioxxterms.xsd
 
 ]]>
-    </xs:documentation>
-  </xs:annotation>
-  <xs:element name="author">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"><![CDATA[
-The author of the resource may be a person, organisation or service, but is most commonly a 
-person. This element SHOULD take an optional attribute called 'id', which MUST contain an 
-HTTP URI which uniquely identifies the author. Where there is more than one author,
-a separate 'rioxxterms:author' element MUST be used for each. As many authors may be 
-entered as required. The ideal use of this element is to include both an HTTP URI in the id 
-attribute, and a text string in the body of the element, thus:
-
-    <rioxxterms:author id="identifier-for-this-author-entity">
-        name-of-this-author-entity
-    </rioxxterms:author>
-    
-Where the author is a person, the RECOMMENDED format is to add text in the form Last Name, 
-First Name(s), and to include an ORCID (http://orcid.org) ID, if known, in its HTTP URI form, e.g.
-
-    <rioxxterms:author id="http://orcid.org/0000-0002-1395-3092">
-        Lawson, Gerald
-    </rioxxterms:author>
-    
-Where the author is an organisation, the RECOMMENDED format is to add the official name of
-the organisation, and to include an ISNI (http://isni.org) ID, if known, in its HTTP URI form, e.g.
-
-    <rioxxterms:author id="http://isni.org/isni/0000000419367988">
-        University of Edinburgh
-    </rioxxterms:author>
-    
-Where the _rioxxterms:author_ element appears multiple times for one record, it CAN be assumed
-that the order is significant, in that the first element describes the 'first named author' of
-the resource. In order to make this more explicit, an extra attribute, _first-named-author_,
-SHOULD be used to indicate which of the _rioxxterms:author_ elements describes the first named
-author of the resource, thus:
-
-    <rioxxterms:author id="http://orcid.org/0000-0002-1395-3092" first-named-author="true">
-        Lawson, Gerald
-    </rioxxterms:author>
-]]>
-    </xs:documentation>
+        </xs:documentation>
     </xs:annotation>
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:string">
-          <xs:attribute ref="rioxxterms:id"/>
-        </xs:extension>
-      </xs:simpleContent>
-    </xs:complexType>
-  </xs:element>
+    <xs:element name="contributor">
+        <xs:annotation>
+            <xs:documentation xml:lang="en"><![CDATA[
+This property describes the party responsible for making contributions to the content of the resource.
+This is normally a person, but may be an organisation or service.
 
-  <xs:element name="contributor">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"><![CDATA[ 
-This field is designed to describe an entity – for example the name of a person, 
-organisation or service – responsible for making contributions to the content of the 
-resource. As many _rioxxterms:contributor_ elements may be entered as required. 
-This element SHOULD take an optional attribute called _id_, which MUST hold an HTTP URI
-which uniquely identifies the contributor. The ideal use of this element
-is to include both an HTTP URI in the id attribute, and a text string in the body of
-the element, thus:
+Where available and possible, the RECOMMENDED format is to add the name of the contributor as the content of the property,
+and to include a recognised identifier in its HTTP(S) URI form using a child rioxxterms:id property, e.g.
 
-    <rioxxterms:contributor id="identifier-for-this-contributor-entity">
-        name-of-this-contributor-entity
-    </rioxxterms:contributor>
-    
-Where the contributor is a person, the RECOMMENDED format is to add text in the form Last Name, 
-First Name(s), and to include an [ORCID](http://orcid.org) ID, if known, in its HTTP URI form, e.g.
+  <rioxxterms:contributor>
+      <rioxxterms:name>Bhopal, Kalwant</rioxxterms:name>
+        <rioxxterms:id>https://orcid.org/0000-0003-3017-6595</rioxxterms:id>
+  </rioxxterms:contributor>
 
-    <rioxxterms:contributor id="http://orcid.org/0000-0002-1395-3092">
-        Lawson, Gerald
-    </rioxxterms:contributor>
-    
-Where the contributor is an organisation, the RECOMMENDED format is to add the official name of
-the organisation, and to include an [ISNI](http://isni.org) ID, if known, in its HTTP URI form, e.g.
+If necessary, multiple instances of rioxxterms:id may be included to communicate additional identifier schemes, e.g.
 
-    <rioxxterms:contributor id="http://isni.org/isni/0000000419367988">
-        University of Edinburgh
-    </rioxxterms:contributor>
+  <rioxxterms:contributor>
+      <rioxxterms:name>Bhopal, Kalwant</rioxxterms:name>
+        <rioxxterms:id>https://orcid.org/0000-0003-3017-6595</rioxxterms:id>
+        <rioxxterms:id>https://isni.org/isni/0000000038079210</rioxxterms:id>
+        <rioxxterms:id>https://www.wikidata.org/wiki/Q61998297</rioxxterms:id>
+  </rioxxterms:contributor>
+Where the contributor is an organisation,
+the RECOMMENDED format is to add the official name of the organisation as the content of rioxxterms:contributor and
+to include a recognised persistent identifier scheme in its HTTP(S) URI form within an instance of rioxxterms:id.
+Such an identifier scheme might include ISNI, Research Organization Registry, VIAF or WikiData concept URI, e.g.
+
+  <rioxxterms:contributor>
+      <rioxxterms:name>Stanford University</rioxxterms:name>
+        <rioxxterms:id>https://isni.org/isni/0000000419368956</rioxxterms:id>
+  </rioxxterms:contributor>
 ]]></xs:documentation>
-    </xs:annotation>
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:string">
-          <xs:attribute ref="rioxxterms:id"/>
-        </xs:extension>
-      </xs:simpleContent>
-    </xs:complexType>
-  </xs:element>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="rioxxterms:name"/>
+                <xs:element ref="rioxxterms:id"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
 
-  <xs:element name="apc" default="unknown" type="rioxxterms:apcList">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">
-This element expresses whether or not the resource has an associated 'article processing
-charge'. The value of this element is taken from a controlled list.
-</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="project">
-    <xs:annotation>
-      <xs:documentation><![CDATA[ 
-This is designed to collect the project ID(s), issued by the funder(s), that relate to the 
-resource, together with the name and/or global identifier for the funder(s).
+    <xs:element name="creator">
+        <xs:annotation>
+            <xs:documentation xml:lang="en"><![CDATA[
+This property describes the party responsible for creating the resource.
+This is normally a person, but may be an organisation or service.
 
-The element MUST contain one project ID, an alphanumeric identifier provided by the funder 
-in its original format. In cases where the resource has been funded internally, an appropriate 
-internal code might be used.
+Where available and possible, the RECOMMENDED format is to add the name of the creator as the content of the property,
+and to include a recognised identifier in its HTTP(S) URI form using a child rioxxterms:id property, e.g.
 
-The element takes two attributes, 'funder_name' and 'funder_id'. One
-or both of 'funder_name' and 'funder_id' MUST be supplied.
+<rioxxterms:creator>
+    <rioxxterms:name>Smith, Adam</rioxxterms:name>
+    <rioxxterms:id>https://isni.org/isni/0000000122796642</rioxxterms:id>
+</rioxxterms:creator>
+If necessary, multiple instances of rioxxterms:id may be included to communicate additional identifier schemes, e.g.
+
+<rioxxterms:creator>
+    <rioxxterms:name>Fry, Hannah</rioxxterms:name>
+    <rioxxterms:id>https://isni.org/isni/0000000446254946</rioxxterms:id>
+    <rioxxterms:id>http://viaf.org/viaf/314908506</rioxxterms:id>
+    <rioxxterms:id>https://orcid.org/0000-0003-0601-9100</rioxxterms:id>
+</rioxxterms:creator>
+Where an organisation requires attribution, the RECOMMENDED format is to add the official name of the organisation as
+the content of rioxxterms:creator,
+and to include a recognised persistent identifier scheme in its HTTP(S) URI form within rioxxterms:id.
+Such an identifier scheme might include ISNI, Research Organization Registry, VIAF or WikiData concept URI, e.g.
+
+<rioxxterms:creator>
+    <rioxxterms:name>C.E.R.N.</rioxxterms:name>
+    <rioxxterms:id>https://isni.org/isni/000000012156142X</rioxxterms:id>
+    <rioxxterms:id>https://ror.org/01ggx4157</rioxxterms:id>
+</rioxxterms:creator>
+Where the rioxxterms:creator property appears multiple times for one record,
+it CAN be assumed that the order is significant, in that the first element describes the first named author
+of the resource.
+In order to make this more explicit, an extra attribute, first-named-author,
+SHOULD be used to indicate which of the rioxxterms:creator elements describes the first named author of the resource, thus:
+
+<rioxxterms:creator first-named-author="true">
+    <rioxxterms:name>Olusoga, David</rioxxterms:name>
+    <rioxxterms:id>https://isni.org/isni/0000000096386112</rioxxterms:id>
+</rioxxterms:creator>
+]]></xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="rioxxterms:name"/>
+                <xs:element ref="rioxxterms:id"/>
+            </xs:all>
+            <xs:attribute name="first-named-author" type="xs:boolean"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ext_relation">
+        <xs:annotation>
+            <xs:documentation xml:lang="en"><![CDATA[
+The element is used to convey external associations to related scholarly entities (i.e. external relations).
+Such relational associations will be scholarly entities hosted externally, i.e.
+outside of the direct custodianship of the repository asserting the relational associations.
+Examples of these associations might typically include alternative 'expressions' of the resource (e.g. preprint, VoR, etc.)
+and/or entities relevant to understanding the resource, such as related research data, software, code, instruments, and so forth.
+Where such types have been encoded it will be considered to be for the purposes of contributing to
+the scholarly data graph and/or end users, rather than for assisting harvesting software in locating file content,
+such as full text, which is instead conveyed via dc:relation property.
+
+Each external relation MUST appear as a separate instance of the rioxxterms:ext_relation property.
+
+rioxxterms:ext_relation MUST include the rel and coar_type attributes.
+The coar_version attribute MAY be included (where appropriate), if the related resource is a publication.
+
+1. rel: The rel attribute uses 'typed links' from the IANA Link Relation Registry.
+As Rioxx uses rioxxterms:ext_relation to communicate external associations, this attribute will normally be set to "cite-as", e.g. rel='cite-as' when the rioxterms:ext_relation conveys a related PID resolving to an external resource or rel='item' when rioxterms:ext_relation identifies a downloadable external resource.
+
+2. coar_type: The coar_type attribute MUST contain an identifier from the COAR Resource Types Vocabulary.
+For example, for the common case of the related resource being a PDF of a journal article, the RECOMMENDED value would be http://purl.org/coar/resource_type/c_6501. The COAR Resource Types Vocabulary accommodates a diverse range of resource types.
+
+3. coar_version: The coar_version attribute SHOULD be included
+if rioxxterms:ext_relation is being used to indicate an associative relation with an alternative instance of the resource,
+where the resource is a publication. Where this is true coar_version MUST contain an identifier value from the COAR Version Types Vocabulary.
+
+Examples:
+Related published article
+<rioxxterms:ext_relation
+    rel="cite-as"
+    coar_type="https://purl.org/coar/resource_type/c_6501"
+    coar_version="https://purl.org/coar/version/c_970fb48d4fbd8a85">
+            https://doi.org/10.1007/s11229-020-02724-x
+</rioxxterms:ext_relation>
+Related dataset
+<rioxxterms:ext_relation
+    rel="cite-as"
+    coar_type="https://purl.org/coar/resource_type/c_ddb1">
+            https://doi.org/10.15129/589f7af3-26b3-4a93-b042-fbc8100fc977
+</rioxxterms:ext_relation>
+]]></xs:documentation>
+        </xs:annotation>
+        <xs:complexType xml:base="xs:anyURI">
+            <xs:attribute name="rel" type="rioxxterms:ianaRelationList" use="required"/>
+            <xs:attribute name="coar_type" type="xs:anyURI" use="required"/>
+            <xs:attribute name="coar_version" type="rioxxterms:versionList" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="grant">
+        <xs:annotation>
+            <xs:documentation xml:lang="en"><![CDATA[
+The purpose of rioxxterms:grant is to collect grant ID(s), issued by the relevant funder(s),
+that relate to the resource being described, together with the name and/or global identifier for the funder(s).
+
+The property MUST contain one grant ID. A grant ID can take the form of any identifier provided by the funder,
+preferably represented as an HTTP(S) URI. In cases where the resource has been funded internally,
+an appropriate internal code might be used.
+
+The property takes two attributes: funder_name and funder_id. One or both of funder_name and funder_id MUST be supplied.
 
 funder_name
-
-
+The canonical name of the entity responsible for funding the resource SHOULD be recorded here as text.
 
 funder_id
+A globally unique identifier for the funder of the resource SHOULD be recorded here.
+An HTTP(S) URI MUST be used for this. It is RECOMMENDED that one of the following identifier schemes is used:
 
-
-
-Example
-
-    <rioxxterms:project
-        funder_name="Engineering and Physical Sciences Research Council"
-        funder_id="http://isni.org/isni/0000000403948681"
-        >
-      EP/K023195/1
-    </rioxxterms:project>
-    
+a ROR identifier (in its HTTPS URI form) made available by the Research Organization Registry
+an ISNI identifier
+a DOI (in its HTTPS URI form) made available by FundRef
+Examples
+<rioxxterms:grant
+    funder_name="Wellcome Trust"
+    funder_id="https://isni.org/isni/0000000404277672">
+    https://doi.org/10.35802/218671
+</rioxxterms:grant>
 or
 
-    <rioxxterms:project
-        funder_name="Engineering and Physical Sciences Research Council"
-        funder_id="http://doi.org/10.13039/501100000266"
-        >
-      EP/K023195/1
-    </rioxxterms:project>
-    
-Where the resource has been funded by more than one funder a separate 
-'rioxxterms:project' element MUST be added for each. Similarly, where several project
-IDs provided by the same funder have been attached to the resource, a separate 
-'rioxxterms:project' element MUST be added for each.
+<rioxxterms:grant
+    funder_name="Arts and Humanities Research Council"
+    funder_id="https://ror.org/0505m1554">
+    AH/W007622/1
+</rioxxterms:grant>
+Where the resource has been funded by more than one funder a separate rioxxterms:grant property can be added for each.
+Similarly, where several grant IDs provided by the same funder have been attached to the resource,
+a separate rioxxterms:grant property can be added for each.
 
-This means that it is quite normal for a given 'funder_name', 'funder_id' or 'project_id' to appear 
-in multiple instances of the 'rioxxterms:project' element in a single RIOXX metadata 
-record.
-]]>
-      </xs:documentation>
-    </xs:annotation>
-    <xs:complexType mixed="true">
-      <xs:attribute ref="rioxxterms:funder_name"/>
-      <xs:attribute ref="rioxxterms:funder_id"/>
-      <xs:assert test="(@rioxxterms:funder_name or @rioxxterms:finder_id)"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="version" type="rioxxterms:versionList">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"> 
-This element indicates which 'version' of the resource is being described. The value is from a
-controlled list
-</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="version-of-record" type="xs:anyURI">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"><![CDATA[
-This field MUST contain an HTTP URI which is a persistent identifier for the published version of
-the resource. If a DOI has been issued by the publisher then this MUST be used. Such a DOI
-MUST be represented in its HTTP form, for example:
-
-    <rioxxterms:version-of-record>
-        http://doi.org/10.1006/jmbi.1995.0238
-    </rioxxterms:version-of-record>
-]]>
-      </xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="publication_date">
-    <xs:annotation>
-      <xs:documentation><![CDATA[
-This element takes the publication date of the resource in the form in which it would be cited. This 
-element is not used in a RIOXX context but allows for a RIOXX record to become a reasonable bibliographic 
-record for the resource. This is a free-text field.
-
-Examples
-
-    <rioxxterms:publication_date>
-      2011-02-23
-    </rioxxterms:publication_date>
-      
-    <rioxxterms:publication_date>
-      Spring, 2010
-    </rioxxterms:publication_date></pre>
-    
-As RIOXX is primarily concerned with such issues as compliance with funders’ mandates and licensing of 
-open access publications, the critical dates for the assertion of compliance are those held in the 'start_date' 
-attributes of the 'ali:license_ref' elements.
+This means that it is permissible for a given funder_name or funder_id to appear in multiple instances
+of the rioxxterms:grant property in a single Rioxx metadata record.
 ]]></xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="type" type="rioxxterms:typeList">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"><![CDATA[
-Type refers to the ‘type’ - the nature or genre of the content of the resource. The value is taken
-from a Controlled List
+        </xs:annotation>
+        <xs:complexType xml:base="xs:anyURI">
+            <xs:attribute name="funder_name" type="xs:string" use="required"/>
+            <xs:attribute name="funder_id" type="xs:anyURI" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="id" default="unknown" type="xs:anyURI">
+        <xs:annotation>
+            <xs:documentation xml:lang="en"><![CDATA[  The rioxxterms:id property MUST NOT be used directly in
+                the root of a Rioxx record, but MAY be used to add identifiers into the following
+                root properties: - rioxxterms:contributor - rioxxterms:creator -
+                rioxxterms:publisher Identifiers represented by the rioxxterms:id property MUST be
+                HTTP(S) URIs. ]]> </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="name" default="unknown" type="xs:string">
+        <xs:annotation>
+            <xs:documentation xml:lang="en"><![CDATA[ The rioxxterms:name property MUST NOT be used directly
+                in the root of a Rioxx record, but MAY be used to add a name into the following root
+                properties: - rioxxterms:contributor - rioxxterms:creator - rioxxterms:publisher 
+                ]]>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="project" type="xs:anyURI">
+        <xs:annotation>
+            <xs:documentation><![CDATA[
+The purpose of rioxxterms:project is to collect project ID(s), that relate to the resource.
 
-Take care not to confuse this with 'dc:format'.
+When present, the rioxxterms:project property MUST contain one project ID,
+a globally unique persistent identifier that identifies a project. Examples might include:
+
+a local identifier rendered as a URI
+a RAiD handle.
+Example
+<rioxxterms:project>
+    https://handle.net/10378.1/1590366
+</rioxxterms:project>
+Where the resource is associated with more than one project ID, a rioxxterms:project property can be added for each.
+This means that it is permissible for multiple instances of the rioxxterms:project property to appear
+in a single Rioxx metadata record.
 ]]>
-      </xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:simpleType name="apcList">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">A Controlled List</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="paid"/>
-      <xs:enumeration value="partially waived"/>
-      <xs:enumeration value="fully waived"/>
-      <xs:enumeration value="not charged"/>
-      <xs:enumeration value="not required"/>
-      <xs:enumeration value="unknown"/>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="versionList">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">A Controlled List</xs:documentation>
-      <xs:documentation xml:lang="en"><![CDATA[ 
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="publication_date" type="xs:date">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                <![CDATA[
+                This property takes the publication date of the primary resource in the form in which it would be cited.
+                This allows a Rioxx record to function as a reasonable bibliographic record for the primary resource.
+
+Where possible the property's value' SHOULD be encoded according to the W3CDTF (a profile of ISO 8601)
+which typically follows the following format: YYYY-MM-DD.
+
+Example:
+
+<rioxxterms:publication_date>
+    2011-02-23
+</rioxxterms:publication_date>
+It is acknowledged that the publication date conventions of certain publishers vary, making the identification of
+precise publication dates problematic, especially in instances where a publisher assigns a resource to
+a seasonal issue date, e.g. "Spring 2020", "Winter 2019", etc. To maintain adherence to the above noted
+encoding conventions, resources with publication dates assigned to seasonal issues should be expressed
+according to the following convention, with months expressed as per:
+
+01 = winter (beginning of year)
+04 = spring
+07 = summer
+10 = autumn
+12 = winter (end of year)
+Examples:
+
+Spring 2020
+
+<rioxxterms:publication_date>
+    2020-04
+</rioxxterms:publication_date>
+Winter 2019 (end of year)
+
+<rioxxterms:publication_date>
+    2019-12
+</rioxxterms:publication_date>
+                ]]>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="publisher">
+        <xs:annotation>
+            <xs:documentation xml:lang="en"><![CDATA[
+This property contains the name of the entity, typically a publisher,
+responsible for making the version of record of the primary resource available.
+This could be a person, organisation or service.
+
+Where available and possible, the RECOMMENDED format is to add the official name of the publisher
+as the content of the property, and to include one or more recognised identifiers in their HTTP(S) URI form
+using child rioxxterms:id properties, e.g.
+
+<rioxxterms:publisher>
+    <rioxxterms:name>Public Library of Science</rioxxterms:name>
+    <rioxxterms:id>https://isni.org/isni/000000040482455X</rioxxterms:id>
+    <rioxxterms:id>https://isni.org/isni/0000000404826432</rioxxterms:id>
+</rioxxterms:publisher>
+<rioxxterms:publisher>
+    <rioxxterms:name>Ubiquity Press (United Kingdom)</rioxxterms:name>
+    <rioxxterms:id>https://ror.org/00qpqrv96</rioxxterms:id>
+</rioxxterms:publisher>
+Typical identifier schemes likely to be relevant here include ISNI, ROR, and VIAF.
+]]>
+            </xs:documentation>
+
+        </xs:annotation>
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="rioxxterms:name"/>
+                <xs:element ref="rioxxterms:id"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="record_public_release_date">
+        <xs:annotation>
+            <xs:documentation><![CDATA[
+
+This property takes the date upon which metadata about the primary resource being described was first made publicly
+visible. Property content MUST be encoded according to the W3CDTF (a profile of ISO 8601)
+which typically follows the following format: YYYY-MM-DD.
+
+Examples:
+
+<rioxxterms:record_public_release_date>
+    2020-10-02
+</rioxxterms:record_public_release_date>
+or
+
+<rioxxterms:record_public_release_date>
+    2020-09-29T19:20+01:00
+</rioxxterms:record_public_release_date>
+It is accepted that in some circumstances rioxxterms:record_public_release_date will be captured and exposed in
+repository metadata prior to the availability of related resources such as the "full text" for
+a publication; for example as the result of a delay in depositing the full text, or where it is
+under temporary embargo or temporary dark archiving.
+]]></xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:simpleType name="ianaRelationList">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">A Controlled List</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[
+The value is from the list defined by the IANA Link Relation Registry
+]]></xs:documentation>
+            
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="about"/>
+            <xs:enumeration value="acl"/>
+            <xs:enumeration value="alternate"/>
+            <xs:enumeration value="amphtml"/>
+            <xs:enumeration value="appendix"/>
+            <xs:enumeration value="apple"/>
+            <xs:enumeration value="apple"/>
+            <xs:enumeration value="archives"/>
+            <xs:enumeration value="author"/>
+            <xs:enumeration value="blocked"/>
+            <xs:enumeration value="bookmark"/>
+            <xs:enumeration value="canonical"/>
+            <xs:enumeration value="chapter"/>
+            <xs:enumeration value="cite"/>
+            <xs:enumeration value="collection"/>
+            <xs:enumeration value="contents"/>
+            <xs:enumeration value="convertedfrom"/>
+            <xs:enumeration value="copyright"/>
+            <xs:enumeration value="create"/>
+            <xs:enumeration value="current"/>
+            <xs:enumeration value="describedby"/>
+            <xs:enumeration value="describes"/>
+            <xs:enumeration value="disclosure"/>
+            <xs:enumeration value="dns"/>
+            <xs:enumeration value="duplicate"/>
+            <xs:enumeration value="edit"/>
+            <xs:enumeration value="edit"/>
+            <xs:enumeration value="edit"/>
+            <xs:enumeration value="enclosure"/>
+            <xs:enumeration value="external"/>
+            <xs:enumeration value="first"/>
+            <xs:enumeration value="glossary"/>
+            <xs:enumeration value="help"/>
+            <xs:enumeration value="hosts"/>
+            <xs:enumeration value="hub"/>
+            <xs:enumeration value="icon"/>
+            <xs:enumeration value="index"/>
+            <xs:enumeration value="intervalafter"/>
+            <xs:enumeration value="intervalbefore"/>
+            <xs:enumeration value="intervalcontains"/>
+            <xs:enumeration value="intervaldisjoint"/>
+            <xs:enumeration value="intervalduring"/>
+            <xs:enumeration value="intervalequals"/>
+            <xs:enumeration value="intervalfinishedby"/>
+            <xs:enumeration value="intervalfinishes"/>
+            <xs:enumeration value="intervalin"/>
+            <xs:enumeration value="intervalmeets"/>
+            <xs:enumeration value="intervalmetby"/>
+            <xs:enumeration value="intervaloverlappedby"/>
+            <xs:enumeration value="intervaloverlaps"/>
+            <xs:enumeration value="intervalstartedby"/>
+            <xs:enumeration value="intervalstarts"/>
+            <xs:enumeration value="item"/>
+            <xs:enumeration value="last"/>
+            <xs:enumeration value="latest"/>
+            <xs:enumeration value="license"/>
+            <xs:enumeration value="linkset"/>
+            <xs:enumeration value="lrdd"/>
+            <xs:enumeration value="manifest"/>
+            <xs:enumeration value="mask"/>
+            <xs:enumeration value="me"/>
+            <xs:enumeration value="media"/>
+            <xs:enumeration value="memento"/>
+            <xs:enumeration value="micropub"/>
+            <xs:enumeration value="modulepreload"/>
+            <xs:enumeration value="monitor"/>
+            <xs:enumeration value="monitor"/>
+            <xs:enumeration value="next"/>
+            <xs:enumeration value="next"/>
+            <xs:enumeration value="nofollow"/>
+            <xs:enumeration value="noopener"/>
+            <xs:enumeration value="noreferrer"/>
+            <xs:enumeration value="opener"/>
+            <xs:enumeration value="openid2"/>
+            <xs:enumeration value="openid2"/>
+            <xs:enumeration value="original"/>
+            <xs:enumeration value="p3pv1"/>
+            <xs:enumeration value="payment"/>
+            <xs:enumeration value="pingback"/>
+            <xs:enumeration value="preconnect"/>
+            <xs:enumeration value="predecessor"/>
+            <xs:enumeration value="prefetch"/>
+            <xs:enumeration value="preload"/>
+            <xs:enumeration value="prerender"/>
+            <xs:enumeration value="prev"/>
+            <xs:enumeration value="preview"/>
+            <xs:enumeration value="previous"/>
+            <xs:enumeration value="prev"/>
+            <xs:enumeration value="privacy"/>
+            <xs:enumeration value="profile"/>
+            <xs:enumeration value="publication"/>
+            <xs:enumeration value="related"/>
+            <xs:enumeration value="restconf"/>
+            <xs:enumeration value="replies"/>
+            <xs:enumeration value="ruleinput"/>
+            <xs:enumeration value="search"/>
+            <xs:enumeration value="section"/>
+            <xs:enumeration value="self"/>
+            <xs:enumeration value="service"/>
+            <xs:enumeration value="service"/>
+            <xs:enumeration value="service"/>
+            <xs:enumeration value="service"/>
+            <xs:enumeration value="sip"/>
+            <xs:enumeration value="sponsored"/>
+            <xs:enumeration value="start"/>
+            <xs:enumeration value="status"/>
+            <xs:enumeration value="stylesheet"/>
+            <xs:enumeration value="subsection"/>
+            <xs:enumeration value="successor"/>
+            <xs:enumeration value="sunset"/>
+            <xs:enumeration value="tag"/>
+            <xs:enumeration value="terms"/>
+            <xs:enumeration value="timegate"/>
+            <xs:enumeration value="timemap"/>
+            <xs:enumeration value="type"/>
+            <xs:enumeration value="ugc"/>
+            <xs:enumeration value="up"/>
+            <xs:enumeration value="version"/>
+            <xs:enumeration value="via"/>
+            <xs:enumeration value="webmention"/>
+            <xs:enumeration value="working"/>
+            <xs:enumeration value="working"/>           
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="versionList">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">A Controlled List</xs:documentation>
+            <xs:documentation xml:lang="en"><![CDATA[
 The value is from a controlled list whose terms are adopted from the Journal Article
 Versions (JAV): Recommendations of the NISO/ALPSP JAV Technical Working Group
 (http://www.niso.org/publications/rp/RP-8-2008.pdf) and have the following meanings:
@@ -273,42 +512,22 @@ Versions (JAV): Recommendations of the NISO/ALPSP JAV Technical Working Group
 * NA = Not Applicable (or Unknown)
 ]]></xs:documentation>
 
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="AO"/>
-      <xs:enumeration value="SMUR"/>
-      <xs:enumeration value="AM"/>
-      <xs:enumeration value="P"/>
-      <xs:enumeration value="VoR"/>
-      <xs:enumeration value="CVoR"/>
-      <xs:enumeration value="EVoR"/>
-      <xs:enumeration value="NA"/>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="typeList">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">A Controlled List</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Book"/>
-      <xs:enumeration value="Book chapter"/>
-      <xs:enumeration value="Book edited"/>
-      <xs:enumeration value="Conference Paper/Proceeding/Abstract"/>
-      <xs:enumeration value="Journal Article/Review"/>
-      <xs:enumeration value="Manual/Guide"/>
-      <xs:enumeration value="Monograph"/>
-      <xs:enumeration value="Policy briefing report"/>
-      <xs:enumeration value="Technical Report"/>
-      <xs:enumeration value="Technical Standard"/>
-      <xs:enumeration value="Thesis"/>
-      <xs:enumeration value="Consultancy Report"/>
-      <xs:enumeration value="Working paper"/>
-    </xs:restriction>
-  </xs:simpleType>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AO"/>
+            <xs:enumeration value="SMUR"/>
+            <xs:enumeration value="AM"/>
+            <xs:enumeration value="P"/>
+            <xs:enumeration value="VoR"/>
+            <xs:enumeration value="CVoR"/>
+            <xs:enumeration value="EVoR"/>
+            <xs:enumeration value="NA"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-  <xs:attribute name="id" type="xs:anyURI">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"><![CDATA[ 
+    <xs:attribute name="id" type="xs:anyURI">
+        <xs:annotation>
+            <xs:documentation xml:lang="en"><![CDATA[
 This attribute, if used, MUST hold an HTTP URI which uniquely identifies the entity its attached to.
     
 Where the entity is a person, the id should be an ORCID (http://orcid.org) ID:
@@ -323,24 +542,8 @@ Where the entity is an organisation, the id should be an ISNI (http://isni.org) 
         University of Edinburgh
     </rioxxterms:contributor>
 ]]></xs:documentation>
-    </xs:annotation>
-  </xs:attribute>
-  <xs:attribute name="funder_id" type="xs:anyURI">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"><![CDATA[ 
-This SHOULD be a globally unique identifier for the funder of the resource.
-An HTTP URI MUST be used for this. It is RECOMMENDED that one of the following identifier schemes is used:
-
-* an ISNI (http://isni.org) ID
-* a DOI (in its HTTP URI form) made available by FundRef (http://www.crossref.org/fundref/)
-]]></xs:documentation>
-    </xs:annotation>
-  </xs:attribute>
-  <xs:attribute name="funder_name">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">
-        The canonical name of the entity responsible for funding the resource SHOULD be recorded here as text.
-      </xs:documentation>
-    </xs:annotation>
-  </xs:attribute>
+        </xs:annotation>
+    </xs:attribute>
+   
+   
 </xs:schema>
