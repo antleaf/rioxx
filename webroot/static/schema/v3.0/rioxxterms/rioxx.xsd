@@ -155,7 +155,7 @@ When set to rel="cite-as", the dc:relation property specifies a cite-able identi
 
 dc:relation MUST only be used to identify resources under the direct custodianship of the repository, therefore all URIs
 specified under dc:relation MUST resolve to the repository. URIs identifying related resources that resolve to resources
-outside of the direct custodianship of the repository MUST be specified under rioxterms:ext_relation.
+outside of the direct custodianship of the repository MUST be specified under rioxxterms:ext_relation.
 
 The dc:relation property can be repeated to specify more than one associated resource. Possible values here may include
 a DOI, URN, CORE OAI ID; or an alternative repository HTTP(S) URI where there is no requirement for a PID.
@@ -337,7 +337,7 @@ Each external relation MUST appear as a separate instance of the rioxxterms:ext_
 
 rioxxterms:ext_relation MUST include the rel and coar_type attributes. The coar_version attribute MAY be included (where appropriate), if the related resource is a publication.
 
-rel: The rel attribute uses 'typed links' from the IANA Link Relation Registry. As Rioxx uses rioxxterms:ext_relation to communicate external associations, this attribute will normally be set to "cite-as", e.g. rel='cite-as' when the rioxterms:ext_relation conveys a related PID resolving to an external resource or rel='item' when rioxterms:ext_relation identifies a downloadable external resource.
+rel: The rel attribute uses 'typed links' from the IANA Link Relation Registry. As Rioxx uses rioxxterms:ext_relation to communicate external associations, this attribute will normally be set to "cite-as", e.g. rel='cite-as' when the rioxxterms:ext_relation conveys a related PID resolving to an external resource or rel='item' when rioxxterms:ext_relation identifies a downloadable external resource.
 
 coar_type: The coar_type attribute MUST contain an identifier from the COAR Resource Types Vocabulary. For example, for the common case of the related resource being a PDF of a journal article, the RECOMMENDED value would be http://purl.org/coar/resource_type/c_6501. The COAR Resource Types Vocabulary accommodates a diverse range of resource types.
 
