@@ -11,12 +11,12 @@ topics: []
 Development and maintenance of the Rioxx profile is governed by the Rioxx Governance Group, which is appointed by UKCORR.
 
 ## Current Governance Group Membership
-* George Macgregor, University of Glasgow (Chair)
+* Agustina Martínez-García, University of Cambridge (Chair)
+* George Macgregor, University of Glasgow
 * Nicola Dowson, The Open University
 * Michael Eadie, University of Glasgow
 * Beverley Jones, University of Sheffield
 * Petr Knoth, Knowledge Media institute, The Open University (representing CORE)
-* Agustina Martínez-García, University of Cambridge
 * Paul Walk, Antleaf Ltd.
 
 #### Previous Membership
