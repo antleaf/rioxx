@@ -6,6 +6,8 @@ draft: false
 tags: []
 title: Home
 topics: []
+aliases:
+  - /repositories
 ---
 
 This website contains the technical specifications for Rioxx, with some supporting information. Rioxx is a metadata profile, designed to aid open-access repositories to share metadata about the scholarly resources they contain.
