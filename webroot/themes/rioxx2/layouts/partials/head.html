@@ -17,31 +17,31 @@
 
 <title>{{ site.Title }}{{ if .Title }}: {{ .Title }}{{ end }}</title>
 
-{{ $variablesStyle := resources.Get "css/_variables.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $variablesStyle := resources.Get "css/_variables.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $variablesStyle.Permalink }}">
 
 {{ $bootstrapStyle := resources.Get "css/bootstrap.min.css" }}
 <link rel="stylesheet" href="{{ $bootstrapStyle.Permalink }}">
 
-{{ $mainStyle := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $mainStyle := resources.Get "css/main.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $mainStyle.Permalink }}">
 
-{{ $headerAndFooterStyle := resources.Get "css/header_and_footer.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $headerAndFooterStyle := resources.Get "css/header_and_footer.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $headerAndFooterStyle.Permalink }}">
 
-{{ $postStyle := resources.Get "css/post.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $postStyle := resources.Get "css/post.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $postStyle.Permalink }}">
 
-{{ $sidebarStyle := resources.Get "css/sidebar.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $sidebarStyle := resources.Get "css/sidebar.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $sidebarStyle.Permalink }}">
 
-{{ $homePageStyle := resources.Get "css/homepage.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $homePageStyle := resources.Get "css/homepage.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $homePageStyle.Permalink }}">
 
-{{ $taxonomiesStyle := resources.Get "css/taxonomies.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $taxonomiesStyle := resources.Get "css/taxonomies.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $taxonomiesStyle.Permalink }}">
 
-{{ $cardsStyle := resources.Get "css/cards.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $cardsStyle := resources.Get "css/cards.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $cardsStyle.Permalink }}">
 
 {{ $js_bootstrap := resources.Get "js/bootstrap.bundle.js" | resources.Minify | resources.Fingerprint }}

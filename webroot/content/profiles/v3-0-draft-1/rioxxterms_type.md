@@ -1,5 +1,5 @@
 ---
-date: '2022-06-021T15:57:43+00:00'
+date: '2022-06-02T15:57:43+00:00'
 draft: false
 type: metadata_profile_property
 title: rioxxterms:type

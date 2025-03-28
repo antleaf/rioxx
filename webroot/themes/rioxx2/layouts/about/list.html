@@ -11,7 +11,7 @@
         <div class="col-4">
             <h4>Acknowledgments</h4>
             <ul>
-                {{ $contributorsCSV := data.GetCSV "," "content/about/contributors.csv" }}
+                {{ $contributorsCSV := .Resources.Get "contributors.csv" | transform.Unmarshal (dict "delimiter" ",")}}
                 {{ range $i,$v := $contributorsCSV }}
                     {{ if gt $i 0 }}
                         <li>
@@ -23,6 +23,7 @@
                     {{ end }}
                 {{ end }}
             </ul>
+
         </div>
     </div>
 {{ end }}
