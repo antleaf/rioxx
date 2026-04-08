@@ -1,7 +1,7 @@
 ---
 theme: "rioxx2"
 #resourceDir: this is configured with env variable "$HUGO_RESOURCEDIR"
-languageCode: "en-gb"
+locale: "en-gb"
 uglyURLs: false
 title: "Rioxx"
 copyright: "This website and blog are licensed under a <a rel='license' href='https://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 International License</a>"
@@ -35,15 +35,27 @@ menu:
       pageRef: /about
       weight: 90
 caches:
-  getjson:
-    dir: :cacheDir/:project
-    maxAge: 5s
+  assets:
+    dir: :resourceDir/_gen
+    maxAge: -1
   getresource:
     dir: :cacheDir/:project
-    maxAge: 5s
-  getcsv:
+    maxAge: -1
+  images:
+    dir: :resourceDir/_gen
+    maxAge: -1
+  misc:
     dir: :cacheDir/:project
-    maxAge: 5s
+    maxAge: -1
+  modulegitinfo:
+    dir: :cacheDir/modules
+    maxAge: 24h
+  modulequeries:
+    dir: :cacheDir/modules
+    maxAge: 24h
+  modules:
+    dir: :cacheDir/modules
+    maxAge: -1
 params:
   strapline: "The Research Outputs Metadata Schema"
 #  googleCustomSearchEngineID: ""

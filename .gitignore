@@ -5,3 +5,4 @@ webroot/resources
 docs
 public
 /.idea/
+/.run/
